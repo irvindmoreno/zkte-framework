@@ -20,7 +20,7 @@ var componentes=
 
 
 /* Tareas para ejecutar*/
-function TareaJade(rutaOrigen,rutaDestino) {
+function TareaJade(rutaOrigen,rutaDestinoVista) {
     
     function compilarVistas()
     {   
@@ -30,26 +30,24 @@ function TareaJade(rutaOrigen,rutaDestino) {
                 pretty: true
             }))
             .pipe(rename({extname:'.html'}))
-            .pipe(gulp.dest(rutaDestino));
+            .pipe(gulp.dest(rutaDestinoVista));
     }
     gulp.watch(rutaOrigen, compilarVistas);
 }
-function TareaCss(pathIn, pathOut) {
+function TareaCss(rutaOrigen,rutaDestinoVista) {
     
-    function Taskstylus()
-    {   
-         console.log("css");
-         gulp.src([pathIn,pathIn2])
+  
+    function compilarVistaCss()
+    {
+        console.log("vistas css");
+         gulp.src(rutaOrigen)
         .pipe(stylus({use:[rupture()]}))
-        .pipe(gulp.dest(pathOut));
-       // gulp.src(pathIn2)
-       //.pipe(stylus({use:[rupture()]}))
-       // .pipe(gulp.dest(pathOut2));
-    }
-    gulp.watch(pathIn, Taskstylus);
+        .pipe(gulp.dest(rutaDestinoVista));
+    }    
+    gulp.watch(rutaOrigen, compilarVistaCss);
     //gulp.watch(pathIn2, Taskstylus);
 }
-function TareaBabel(componentes,rutaOrigen, rutaDestino) {
+function TareaBabel(componentes,rutaOrigen, rutaDestinoComponentes,rutaDestinoVista) {
     
     function compilarComponenetesJs()
     {   
@@ -57,7 +55,7 @@ function TareaBabel(componentes,rutaOrigen, rutaDestino) {
          gulp.src(componentes)
          .pipe(concat("clases"))
         .pipe(babel())
-        .pipe(gulp.dest(rutaDestino));
+        .pipe(gulp.dest(rutaDestinoComponentes));
         //gulp.src(pathIn2)
         //.pipe(babel())
         //.pipe(gulp.dest(pathOut2));
@@ -66,7 +64,7 @@ function TareaBabel(componentes,rutaOrigen, rutaDestino) {
     {
         gulp.src(rutaOrigen)         
         .pipe(babel())
-        .pipe(gulp.dest(rutaDestino));
+        .pipe(gulp.dest(rutaDestinoVista));
     }
     gulp.watch(rutaOrigen, compilarComponenetesJs);
     gulp.watch(rutaOrigen, compilarVistaJs);
@@ -76,8 +74,10 @@ function TareaBabel(componentes,rutaOrigen, rutaDestino) {
 gulp.task('default', function () {
     //var rutaComponentes="componentes/"+componentes;
     var rutaOrigen=['proyecto/'+proyecto+'/'+vista];
-    var rutaDestino="public/proyecto/"+proyecto+"/"+vista;
-    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestino);
-    new TareaJade(rutaOrigen+'/*.jade',rutaDestino);
+    var rutaDestinoVista="public/proyecto/"+proyecto+"/"+vista;
+    var rutaDestinoComponentes="public/proyecto/"+proyecto;
+    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/public/js',rutaDestinoVista);
+    new TareaJade(rutaOrigen+'/*.jade',rutaDestinoVista);
+    new TareaCss(rutaOrigen+'/*.styl',rutaDestinoVista);
 
 });
