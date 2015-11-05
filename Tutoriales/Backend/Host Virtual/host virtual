@@ -1,6 +1,6 @@
 cd /etc/apache2/sites-enabled/
 sudo kate local.proy1.com.conf
- en ese archivo pegar esto
+ en ese archivo pegar esto y cambiar esas rutas por la rutadonde esta tu proyecto
  <VirtualHost *:80>
 	  ServerName local.proy1.com
 	  ServerAdmin webmaster@localhost

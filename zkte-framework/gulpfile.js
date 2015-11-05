@@ -6,108 +6,78 @@ var gulp = require('gulp'),
     rename=require('gulp-rename'),
     rupture=require('rupture'),
     babel = require('gulp-babel');
+    concat = require('gulp-concat');
 
 /* rutas de donde leer y donde escribir archivos para la pp*/
-var componentesAUsar=
+var proyecto="asep";
+var vista="inicio";
+var componentes=
     [
-        "header/header-a",
-        "navegacion/navegacion-a",
-        "footer/footer-a"
+        "componentes/header/"+proyecto+"/*.js",
+        "componentes/navegacion/"+proyecto+"/*.js",
+        "componentes/footer/"+proyecto+"/*.js"
     ];
-var rutaComponentes = {
-    styl: ['componentes/**/*.styl'],    
-    css:'../wp-content/themes/asep/componentes',
-    babel: ['componentes/**/*.js'],    
-    js:'../wp-content/themes/asep/componentes'
-};
-var rutaViews = {
-    jade: ['page/**/*.jade'],
-    html: '../wp-content/themes/asep/page',
-    styl: ['page/**/*.styl'],
-    css:'../wp-content/themes/asep/page',
-    babel: ['page/**/*.js'],
-    js:'../wp-content/themes/asep/page'
-    
-    //jade: ['page/noticia-individual/*.jade'],
-    //html: '../wp-content/themes/asep/page/category/noticias/',
-    //styl: ['page/noticia-individual/*.styl'],
-    //css:'../wp-content/themes/asep/page/category/noticias/',
-    //babel: ['page/noticia-individual/*.js'],
-    //js:'../wp-content/themes/asep/page/category/noticias/'
-
-    //jade: ['page/category/**/*.jade'],
-    //html: '../wp-content/themes/asep/category',
-    //styl: ['page/category/**/*.styl'],
-    //css:'../wp-content/themes/asep/category',
-    //babel: ['page/category/**/*.js'],
-    //js:'../wp-content/themes/asep/category'
-    
-};
 
 
 /* Tareas para ejecutar*/
-function TareaJade(pathIn, pathOut,pathIn2,pathOut2) {
+function TareaJade(rutaOrigen,rutaDestino) {
     
-    function TaskPhtml()
+    function compilarVistas()
     {   
-        console.log("html");
-        gulp.src(pathIn)
+        console.log("vistas html");
+        gulp.src(rutaOrigen)
             .pipe(jade({
                 pretty: true
             }))
-            .pipe(rename({extname:'.php'}))
-            .pipe(gulp.dest(pathOut));
-
-        gulp.src(pathIn2)
-            .pipe(jade({
-                pretty: true
-            }))
-            .pipe(rename({extname:'.php'}))
-            .pipe(gulp.dest(pathOut2));
+            .pipe(rename({extname:'.html'}))
+            .pipe(gulp.dest(rutaDestino));
     }
-    gulp.watch(pathIn, TaskPhtml);
-    gulp.watch(pathIn2, TaskPhtml);
+    gulp.watch(rutaOrigen, compilarVistas);
 }
-function TareaCss(pathIn, pathOut,pathIn2,pathOut2) {
+function TareaCss(pathIn, pathOut) {
     
     function Taskstylus()
     {   
          console.log("css");
-         gulp.src(pathIn)
+         gulp.src([pathIn,pathIn2])
         .pipe(stylus({use:[rupture()]}))
         .pipe(gulp.dest(pathOut));
-        gulp.src(pathIn2)
-        .pipe(stylus({use:[rupture()]}))
-        .pipe(gulp.dest(pathOut2));
+       // gulp.src(pathIn2)
+       //.pipe(stylus({use:[rupture()]}))
+       // .pipe(gulp.dest(pathOut2));
     }
     gulp.watch(pathIn, Taskstylus);
-    gulp.watch(pathIn2, Taskstylus);
+    //gulp.watch(pathIn2, Taskstylus);
 }
-function TareaBabel(pathIn, pathOut,pathIn2,pathOut2) {
+function TareaBabel(componentes,rutaOrigen, rutaDestino) {
     
-    function TaskBabel()
+    function compilarComponenetesJs()
     {   
-        console.log("js");
-         gulp.src(pathIn)
+        console.log("componentes js");
+         gulp.src(componentes)
+         .pipe(concat("clases"))
         .pipe(babel())
-        .pipe(gulp.dest(pathOut));
-        gulp.src(pathIn2)
-        .pipe(babel())
-        .pipe(gulp.dest(pathOut2));
+        .pipe(gulp.dest(rutaDestino));
+        //gulp.src(pathIn2)
+        //.pipe(babel())
+        //.pipe(gulp.dest(pathOut2));
     }
-    gulp.watch(pathIn, TaskBabel);
-    gulp.watch(pathIn2, TaskBabel);
+    function compilarVistaJs()
+    {
+        gulp.src(rutaOrigen)         
+        .pipe(babel())
+        .pipe(gulp.dest(rutaDestino));
+    }
+    gulp.watch(rutaOrigen, compilarComponenetesJs);
+    gulp.watch(rutaOrigen, compilarVistaJs);
+    //gulp.watch(pathIn2, TaskBabel);
 }
 
 gulp.task('default', function () {
+    //var rutaComponentes="componentes/"+componentes;
+    var rutaOrigen=['proyecto/'+proyecto+'/'+vista];
+    var rutaDestino="public/proyecto/"+proyecto+"/"+vista;
+    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestino);
+    new TareaJade(rutaOrigen+'/*.jade',rutaDestino);
 
-    new TareaJade(componentes.jade, componentes.html,views.jade,views.html);
-  //  new TareaJade(views.jade, views.html);
-
-    new TareaCss(componentes.styl,componentes.css,views.styl,views.css);
-   // new TareaCss(views.styl,views.css);
-
-    new TareaBabel(componentes.babel,componentes.js,views.babel,views.js);
-    //new TareaBabel(views.babel,views.js);
-    
 });

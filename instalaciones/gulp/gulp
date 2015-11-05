@@ -1,0 +1,10 @@
+sudo npm -g install gulp
+#para crear tu receta por primera ves
+	sudo npm init
+	sudo npm install --save-dev gulp
+	sudo npm install --save-dev gulp-jade
+	sudo npm install --save-dev gulp-stylus
+	sudo npm install --save-dev gulp-rename
+	sudo npm install --save-dev rupture
+	sudo npm install --save-dev gulp-babel
+	sudo npm install --save-dev gulp-concat

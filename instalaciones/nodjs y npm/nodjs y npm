@@ -3,3 +3,14 @@ sudo apt-get install python-software-properties python g++ make
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install nodejs
+
+
+// actualizar version de node
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node
+
+//actualizar npm
+npm install -g npm
+curl https://www.npmjs.org/install.sh | sh
