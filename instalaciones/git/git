@@ -1,0 +1,2 @@
+//La mayoria de Linux ya viene git instalado pero si no esta instalalo con el siguiente comando
+sudo apt-get install git
