@@ -1,0 +1,21 @@
+#clonarlo de bit bucket por ssh: git@bitbucket.org:clicks/asep.git
+#crearun host virtual
+#hacer una copia al archivo wp-config-local.php.dist y ponerle wp-config-local.php
+#dentro editaresta linea esta en dev ponerla en local como esta a conyinuacion:
+
+$environment = 'local';
+
+#poner los datos de tu phpmyadmin
+
+$db = array(
+    'local' => array(
+        'DB_HOST' => 'localhost',
+        'DB_NAME' => 'asep',
+        'DB_USER' => 'root',
+        'DB_PASSWORD' => 'zktita'
+    ),
+
+# En estas lineas ponerlo como esta en tu virtual host
+
+define('WP_HOME',    'http://local.asep.com');
+define('WP_SITEURL', 'http://local.asep.com');
