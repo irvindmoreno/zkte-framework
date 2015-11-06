@@ -8,3 +8,4 @@ sudo npm -g install gulp
 	sudo npm install --save-dev rupture
 	sudo npm install --save-dev gulp-babel
 	sudo npm install --save-dev gulp-concat
+	npm install --save-dev gulp-livereload
