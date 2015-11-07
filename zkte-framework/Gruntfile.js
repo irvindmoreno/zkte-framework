@@ -1,4 +1,4 @@
-odule.exports = function (grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
     connect: {
@@ -11,7 +11,7 @@ odule.exports = function (grunt) {
     },
     watch: {
       project: {
-        files: ['public/**/**/*.*'],
+        files: ['public/proyecto/**/**/*.*'],
         options: {
           livereload: true
         }

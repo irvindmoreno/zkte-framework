@@ -5,20 +5,22 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     rename=require('gulp-rename'),
     rupture=require('rupture'),
-    babel = require('gulp-babel');
-    concat = require('gulp-concat');
-
+    babel = require('gulp-babel'),
+    concat = require('gulp-concat'),
+    livereload = require('gulp-livereload');
 /* rutas de donde leer y donde escribir archivos para la pp*/
 var proyecto="asep";
-var vista="inicio";
+var vista="evento";
 var componentes=
-    [
-        "componentes/header/"+proyecto+"/*.js",
+    [        
         "componentes/navegacion/"+proyecto+"/*.js",
-        "componentes/footer/"+proyecto+"/*.js"
+        "componentes/inscripcion/"+proyecto+"/*.js"
     ];
 
-
+var onError = function (err) {
+    gutil.beep();
+    console.log(err);
+};
 /* Tareas para ejecutar*/
 function TareaJade(rutaOrigen,rutaDestinoVista) {
     
@@ -30,9 +32,13 @@ function TareaJade(rutaOrigen,rutaDestinoVista) {
                 pretty: true
             }))
             .pipe(rename({extname:'.html'}))
-            .pipe(gulp.dest(rutaDestinoVista));
+            .pipe(gulp.dest(rutaDestinoVista))
+            //.pipe(livereload());          
     }
+    //livereload.listen();
     gulp.watch(rutaOrigen, compilarVistas);
+    //var server=livereload();
+    //server.changed();
 }
 function TareaCss(rutaOrigen,rutaDestinoVista) {
     
@@ -76,7 +82,7 @@ gulp.task('default', function () {
     var rutaOrigen=['proyecto/'+proyecto+'/'+vista];
     var rutaDestinoVista="public/proyecto/"+proyecto+"/"+vista;
     var rutaDestinoComponentes="public/proyecto/"+proyecto;
-    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/public/js',rutaDestinoVista);
+    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/js',rutaDestinoVista);
     new TareaJade(rutaOrigen+'/*.jade',rutaDestinoVista);
     new TareaCss(rutaOrigen+'/*.styl',rutaDestinoVista);
 
