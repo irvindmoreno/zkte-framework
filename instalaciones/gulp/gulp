@@ -1,3 +1,4 @@
+# instalar primero nodejs y npm
 sudo npm -g install gulp
 #para crear tu receta por primera ves
 	sudo npm init
