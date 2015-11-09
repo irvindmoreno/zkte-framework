@@ -1,6 +1,7 @@
 #clonarlo de bit bucket por ssh: git@bitbucket.org:clicks/asep.git
 #crear un host virtual
-#bajar la rama en la q trabajaras git fetch origin entregableUno
+#bajar la rama en la q trabajaras git fetch origin entregableUno:entregableUno
+# cd asep
 #ir a la rama donde trabajaras git checkout entregableUno
 #hacer una copia al archivo wp-config-local.php.dist y ponerle wp-config-local.php
 #dentro editaresta linea esta en dev ponerla en local como esta a conyinuacion:
@@ -21,6 +22,10 @@ $db = array(
 
 define('WP_HOME',    'http://local.asep.com');
 define('WP_SITEURL', 'http://local.asep.com');
+
+#sudo  chmod 777 .htacces
+#sudo a2enmod rewrite
+
 
 #instalar workbeanch
 Database -> conect to dataase y llenar los datos del wp-config-local.php
