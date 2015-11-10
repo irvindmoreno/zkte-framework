@@ -5,12 +5,12 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     rename=require('gulp-rename'),
     rupture=require('rupture'),
-    babel = require('gulp-babel'),
-    concat = require('gulp-concat'),
-    livereload = require('gulp-livereload');
+    babel = require('gulp-babel'),    
+    concat = require('gulp-concat');
+    //livereload = require('gulp-livereload');
 /* rutas de donde leer y donde escribir archivos para la pp*/
-var proyecto="asep";
-var vista="evento";
+var proyecto="aqde";
+var vista="inicio";
 var componentes=
     [        
         "componentes/navegacion/"+proyecto+"/*.js",
@@ -35,8 +35,9 @@ function TareaJade(rutaOrigen,rutaDestinoVista) {
             .pipe(gulp.dest(rutaDestinoVista))
             //.pipe(livereload());          
     }
+    compilarVistas();
     //livereload.listen();
-    gulp.watch(rutaOrigen, compilarVistas);
+   // gulp.watch(rutaOrigen, compilarVistas);
     //var server=livereload();
     //server.changed();
 }
@@ -49,8 +50,9 @@ function TareaCss(rutaOrigen,rutaDestinoVista) {
          gulp.src(rutaOrigen)
         .pipe(stylus({use:[rupture()]}))
         .pipe(gulp.dest(rutaDestinoVista));
-    }    
-    gulp.watch(rutaOrigen, compilarVistaCss);
+    }
+    compilarVistaCss();    
+    //gulp.watch(rutaOrigen, compilarVistaCss);
     //gulp.watch(pathIn2, Taskstylus);
 }
 function TareaBabel(componentes,rutaOrigen, rutaDestinoComponentes,rutaDestinoVista) {
@@ -72,8 +74,10 @@ function TareaBabel(componentes,rutaOrigen, rutaDestinoComponentes,rutaDestinoVi
         .pipe(babel())
         .pipe(gulp.dest(rutaDestinoVista));
     }
-    gulp.watch(rutaOrigen, compilarComponenetesJs);
-    gulp.watch(rutaOrigen, compilarVistaJs);
+    compilarComponenetesJs();
+    compilarVistaJs();
+   // gulp.watch(rutaOrigen, compilarComponenetesJs);
+    //gulp.watch(rutaOrigen, compilarVistaJs);
     //gulp.watch(pathIn2, TaskBabel);
 }
 

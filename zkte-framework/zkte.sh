@@ -71,13 +71,27 @@ block navegacion
 block contenido	
 block footer" >> $nombreDeLaVista.jade
 }
+function crearStyl
+{
+	read -p 'Background Header: ' backgroundHeader
+echo "rutaComponentes='../../../componentes'
+rutaImagenes='../../../imagenes'
+
+/************header****************/
+backgroundHeader=$backgroundHeader
+@import(rutaComponentes+'/header/$componenteHeader/header.styl')
+/************header****************/" >> $nombreDeLaVista.styl
+gulp
+grunt
+} 
 function crearModulo
 {	
 	read -p 'Nombre la Primera Vista: ' nombreDeLaVista
 	mkdir $nombreDeLaVista
 	rutaVista="$rutaProyecto/$nombreDeLaVista"	
 	cd $rutaVista
-	crearJade		
+	crearJade
+	crearStyl
 	touch $nombreDeLaVista".styl"
 	touch $nombreDeLaVista".js"	
 }
