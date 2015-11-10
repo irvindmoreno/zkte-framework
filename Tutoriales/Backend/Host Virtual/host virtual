@@ -1,12 +1,12 @@
 cd /etc/apache2/sites-enabled/
-sudo kate local.proy1.com.conf
+sudo kate asep.local.conf
  en ese archivo pegar esto y cambiar esas rutas por la rutadonde esta tu proyecto
  <VirtualHost *:80>
-	  ServerName local.proy1.com
+	  ServerName asep.local
 	  ServerAdmin webmaster@localhost
-	  DocumentRoot /home/daniel/Escritorio/daniel_moreno/proyectos/clicks/proy1
-      php_value include_path "home/daniel/Escritorio/daniel_moreno/proyectos/clicks/proy1"
-	  <Directory /home/daniel/Escritorio/daniel_moreno/proyectos/clicks/proy1>
+	  DocumentRoot /home/zktitos/Escritorio/zkte-framework/proyectos/clicksandbricks/asep/asep
+      php_value include_path "/home/zktitos/Escritorio/zkte-framework/proyectos/clicksandbricks/asep/asep"
+	  <Directory /home/zktitos/Escritorio/zkte-framework/proyectos/clicksandbricks/asep/asep>
 	  AllowOverride All
 	  Require all granted
       </Directory>
@@ -14,7 +14,7 @@ sudo kate local.proy1.com.conf
       CustomLog ${APACHE_LOG_DIR}/access.log combined
   </VirtualHost>
 
- sudo su -c "echo '127.0.0.1 local.proy1.com' >> /etc/hosts"
+ sudo su -c "echo '127.0.0.1 asep.local' >> /etc/hosts"
 sudo service apache2 restart
 dar permisos a los archivos q estan dentro :
 	sudo chmod 777 archivo

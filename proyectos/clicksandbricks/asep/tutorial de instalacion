@@ -1,6 +1,7 @@
+#subir tus llaves a bitbucket
 #clonarlo de bit bucket por ssh: git@bitbucket.org:clicks/asep.git
 #crear un host virtual
-#bajar la rama en la q trabajaras git fetch origin entregableUno
+#bajar la rama en la q trabajaras:  git fetch origin entregableUno:entregableUno 
 #ir a la rama donde trabajaras git checkout entregableUno
 #hacer una copia al archivo wp-config-local.php.dist y ponerle wp-config-local.php
 #dentro editaresta linea esta en dev ponerla en local como esta a conyinuacion:
@@ -22,5 +23,10 @@ $db = array(
 define('WP_HOME',    'http://local.asep.com');
 define('WP_SITEURL', 'http://local.asep.com');
 
+#subir la base de datos al phpmyadmin q esta en el zkteframework/proyecto/asep
+#aumetar espacio en el phpmyadmin si te da error el importar la bd por tyamaño
+
+
+#los diseños puedes descargarlos en este link https://clicksandbricks.slack.com/messages/@renzotejada/
 #instalar workbeanch
 Database -> conect to dataase y llenar los datos del wp-config-local.php

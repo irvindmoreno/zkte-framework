@@ -8,6 +8,7 @@
 6) instalar sublime
 7) instalar lampp
 8) registrarte en git usuario y email
+9) bajar los proyectos q quieras
 
 
 descargar del slack de samuel el node modules porque el package json esta fallado
