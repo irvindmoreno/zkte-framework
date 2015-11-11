@@ -40,7 +40,7 @@ function crearProyecto
 		echo "Layout creado correctamente"
 		echo "Creando Prmiera Vista"
 		cd $rutaProyecto
-		crearModulo
+		crearVista
 		echo "Vista creado correctamente"
 		cd $rutaInicial
 		#cd
@@ -73,23 +73,35 @@ block footer" >> $nombreDeLaVista.jade
 }
 function crearStyl
 {
-	read -p 'Background Header: ' backgroundHeader
 echo "rutaComponentes='../../../componentes'
-rutaImagenes='../../../imagenes'
+rutaImagenes='../../../imagenes'">> $nombreDeLaVista.styl
+	
 
-/************header****************/
-backgroundHeader=$backgroundHeader
-@import(rutaComponentes+'/header/$componenteHeader/header.styl')
-/************header****************/" >> $nombreDeLaVista.styl
-gulp
-grunt
+echo "/************header****************/">> $nombreDeLaVista.styl
+	cd $rutaComponentes
+	while read line
+	do
+		echo "> variable $line:"
+		read componente < /dev/tty
+		cd $rutaVista
+		echo "$line=$componente">> $nombreDeLaVista.styl
+		cd $rutaComponentes
+   		#echo "$line=$varConfiguracionComponente"
+	done < asep-header.conf
+	cd $rutaVista
+
+echo "@import(rutaComponentes+'/header/$componenteHeader/header.styl')
+/************header****************/">> $nombreDeLaVista.styl
+	gulp
+	grunt
+	cd $rutaInicial
 } 
-function crearModulo
+function crearVista
 {	
 	read -p 'Nombre la Primera Vista: ' nombreDeLaVista
 	mkdir $nombreDeLaVista
 	rutaVista="$rutaProyecto/$nombreDeLaVista"	
-	cd $rutaVista
+	cd $rutaVista	
 	crearJade
 	crearStyl
 	touch $nombreDeLaVista".styl"
