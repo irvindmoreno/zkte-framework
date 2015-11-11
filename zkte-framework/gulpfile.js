@@ -1,3 +1,6 @@
+/***********No mover para nada la linea 2 y 3 variableproyecto y vista*************/
+var proyecto="aqde";
+var vista="home";
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),
@@ -9,8 +12,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
     //livereload = require('gulp-livereload');
 /* rutas de donde leer y donde escribir archivos para la pp*/
-var proyecto="aqde";
-var vista="inicio";
 var componentes=
     [        
         "componentes/navegacion/"+proyecto+"/*.js",

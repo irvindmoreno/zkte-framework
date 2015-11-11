@@ -1,111 +1,196 @@
 #!/bin/bash
-function crearLayoutSinAngular
+function LayoutLLenarJade
 {
 echo 'html()
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, user-scalable=no")
-		link(href="../layout/layout.css" rel="stylesheet")
 		script(src="../js/clases.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 		block head
-	body		
+	body
 		block header
 		block navegacion
 		block contenido			
 		block footer' >> layout.jade
 }
-function crearProyecto
+function LayoutLLenarStyl
 {
-	read -p 'Nombre Del Proyecto: ' nombreDelProyecto
-	#read -p 'Escriba su usuario de: ' nombreDelProyecto
-	#pwd
-	rutaInicial=$(pwd)
-	rutaProyecto="$(pwd)/proyecto/$nombreDelProyecto"
-	#echo  $ruta
-	if [ -d $rutaProyecto ];
-	then	
-		echo "Ya Existe un proyecto con este nombre"	
-	else
-		#cd proyecto
-		rutaLayout="$rutaProyecto/layout"
-		mkdir $rutaProyecto
-		mkdir $rutaLayout
-		touch "$rutaLayout/layout.jade"
-		touch "$rutaLayout/layout.styl"
-		cd $rutaLayout
-		echo "Creando Layout"
-		crearLayoutSinAngular
-		echo "Layout creado correctamente"
-		echo "Creando Prmiera Vista"
-		cd $rutaProyecto
-		crearVista
-		echo "Vista creado correctamente"
-		cd $rutaInicial
-		#cd
-		echo "Se creo el proyecto"
-	fi
+echo 'body
+	font-size 16px
+	margin 0
+	font-family Arial'>> layout.styl
 }
-function crearJade
+function LayoutCrear
 {
-	read -p 'Componente Header: ' componenteHeader
-	rutaComponentes="$rutaInicial/componentes/header/$componenteHeader"
-	if [ -d $rutaComponentes ];
-	then
-		echo "si existe este componente"
-		includeHeader="include ../../../componentes/header/$componenteHeader/header.jade"
-	else
-		includeHeader=""
-		echo "no existe este componente"
-	fi
-	touch $nombreDeLaVista".jade"
-echo "extends ../layout/layout.jade
+	#definimos la ruta layout
+		rutaLayout="$rutaProyecto/layout"
+
+	if [ -d $rutaLayout ];
+		then	
+			echo "Ya se tiene un layot, excelente :)"
+		else
+			echo "Creando Layout...."		
+				#creamos la carpeta layout
+					mkdir $rutaLayout
+				#creamos los 2 archivos de layout
+					touch "$rutaLayout/layout.jade"
+					touch "$rutaLayout/layout.styl"	
+				#nos ubicamos dentro de la carpeta layout
+					cd $rutaLayout	
+				#llenamos los archivos
+					LayoutLLenarJade
+					LayoutLLenarStyl
+			echo "Layout creado correctamente"
+		fi
+	
+}
+function ProyectoCrear
+{	
+	#si ya existe el proyecto termoino, caso contrari creo el proyecto
+		if [ -d $rutaProyecto ];
+		then	
+			echo "Ya Existe un proyecto con este nombre"
+		else
+			echo "Creando Proyecto....."
+				#Creo la carpeta del proyecto
+					mkdir $rutaProyecto				
+				#creamos la vista
+					VistaCrear							
+			echo "Se creo el proyecto"
+		fi
+}
+function ComponenteImportar
+{
+	#pedimos el componente header
+		read -p '¿Qué componente desea importar? : ' componenteAImportar
+		read -p "¿Que $componenteAImportar usará? : " componenteNombre
+	#verificamos q el componente header exista
+		rutaComponentes="$rutaInicial/componentes/$componenteAImportar/$componenteNombre"
+		if [ -d $rutaComponentes ];
+		then
+			echo "importando componente $componenteAImportar: $componenteNombre ..."
+				#importando jade
+				echo "		include ../../../componentes/$componenteAImportar/$componenteNombre/$componenteAImportar.jade">> $nombreDeLaVista.jade			
+			
+
+			#importo los styl del componente
+				echo "/************$componenteAImportar****************/">> $nombreDeLaVista.styl
+				cd $rutaComponentes
+				while read line
+				do
+					echo "¿Qué $line usará?:"
+					read varDeComponente < /dev/tty
+					cd $rutaVista
+					echo "$line=$varDeComponente">> $nombreDeLaVista.styl
+					cd $rutaComponentes
+			   		#echo "$line=$varConfiguracionComponente"
+				done < "$componenteNombre-$componenteAImportar.conf"
+				cd $rutaVista
+				echo "@import('$rutaComponentes/$componenteAImportar.styl')
+/************$componenteAImportar****************/">> $nombreDeLaVista.styl
+				
+				
+
+			echo "componente $componenteAImportar: $componenteNombre importado con éxito"
+		else			
+			echo "no existe el componente $componenteAImportar: $componenteNombre"
+		fi
+}
+function VistaLLenarJade
+{
+	#escribimos el head
+		echo "extends ../layout/layout.jade
 block head
 	link(href='./$nombreDeLaVista.css' rel='stylesheet')
 	script(src='./$nombreDeLaVista.js')
 block header
-	- rutaImagenes ='../../../imagenes';
-	$includeHeader
-block navegacion	
+	- rutaImagenes ='../../../imagenes'">> $nombreDeLaVista.jade
+    #importando componente
+		ComponenteImportar
+	
+echo "block navegacion	
 block contenido	
 block footer" >> $nombreDeLaVista.jade
 }
-function crearStyl
+function VistaLLenarStyle
 {
 echo "rutaComponentes='../../../componentes'
-rutaImagenes='../../../imagenes'">> $nombreDeLaVista.styl
-	
+rutaImagenes='../../../imagenes'
 
-echo "/************header****************/">> $nombreDeLaVista.styl
-	cd $rutaComponentes
-	while read line
-	do
-		echo "> variable $line:"
-		read componente < /dev/tty
-		cd $rutaVista
-		echo "$line=$componente">> $nombreDeLaVista.styl
-		cd $rutaComponentes
-   		#echo "$line=$varConfiguracionComponente"
-	done < asep-header.conf
-	cd $rutaVista
 
-echo "@import(rutaComponentes+'/header/$componenteHeader/header.styl')
-/************header****************/">> $nombreDeLaVista.styl
-	gulp
-	grunt
-	cd $rutaInicial
+/************Layout****************/
+@import('$rutaProyecto/layout/layout.styl')
+/************Layout****************/">> $nombreDeLaVista.styl
+			
 } 
-function crearVista
+function VistaCrear
 {	
-	read -p 'Nombre la Primera Vista: ' nombreDeLaVista
-	mkdir $nombreDeLaVista
-	rutaVista="$rutaProyecto/$nombreDeLaVista"	
-	cd $rutaVista	
-	crearJade
-	crearStyl
-	touch $nombreDeLaVista".styl"
-	touch $nombreDeLaVista".js"	
+	if [ -d $rutaProyecto ];
+	then	
+		#crearemos el layout
+			LayoutCrear
+		echo "Creando Vista $nombreDeLaVista"
+			#nos ubicamos en la carpeta del proyecto
+				cd $rutaProyecto
+			#creamos la carpeta de la vista
+				mkdir $nombreDeLaVista
+			#nos ubicamos en la carpeta de la vista	
+				cd $rutaVista
+			#creamos los 3  archivos de la vista
+				touch $nombreDeLaVista".jade"
+				touch $nombreDeLaVista".styl"
+				touch $nombreDeLaVista".js"
+			#llenamos los archivos de la vista
+				VistaLLenarStyle
+				VistaLLenarJade
+			#nos ubicamos en la ruta de donde estuvo al inicio
+				cd $rutaInicial	
+		echo "Vista $nombreDeLaVista creada correctamente"
+	else
+		echo "No existe ninug proyecto con el nombre de $nombreDelProyecto"			
+	fi
 }
-crearProyecto
+function pedirNombreProyectoYVista
+{
+	#ingrsamos el nombre del proyecto
+		read -p 'Nombre Del Proyecto: ' nombreDelProyecto
+	#creamos una url q apunte al proyecto  escrito	
+		rutaProyecto="$(pwd)/proyecto/$nombreDelProyecto"
+
+		read -p 'Nombre de la Vista: ' nombreDeLaVista
+		rutaVista="$rutaProyecto/$nombreDeLaVista"
+}
+function abrirVista
+{
+	#compila los jade,styl and babel
+		gulp
+	#abre el navegador para visualizar lo obtendio
+		chromium-browser "http://localhost:9000/public/proyecto/$nombreDelProyecto/$nombreDeLaVista/$nombreDeLaVista.html"
+}
+function mostrarOpciones
+{
+	echo "1) Crear Nuevo Proyecto"
+	echo "2) Crear Nueva Vista"
+	echo "3) Importar Componente"
+	read -p '¿Qué desea hacer?: ' opcion
+	case  $opcion  in
+		1) pedirNombreProyectoYVista
+		   ProyectoCrear
+		   abrirVista;;
+		2) pedirNombreProyectoYVista
+		   VistaCrear
+		   abrirVista;;
+		3) echo "3e";;
+	esac
+}
+#definimos las variables
+	rutaInicial=$(pwd)
+	rutaProyecto="por llenar aún"
+	rutaLayout="por llenar aún"
+#aqui empieza Todo
+	mostrarOpciones
+#ProyectoCrear
 
