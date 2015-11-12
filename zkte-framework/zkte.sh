@@ -53,13 +53,14 @@ function ProyectoCrear
 		if [ -d $rutaProyecto ];
 		then	
 			echo "Ya Existe un proyecto con este nombre"
+			navegador="cerrado"
 		else
 			echo "Creando Proyecto....."
 				#Creo la carpeta del proyecto
 					mkdir $rutaProyecto				
 				#creamos la vista
 					VistaCrear							
-			echo "Se creo el proyecto"
+			echo "Se creo el proyecto correctamente"
 		fi
 }
 function ComponenteImportar
@@ -72,24 +73,25 @@ function ComponenteImportar
 		if [ -d $rutaComponentes ];
 		then
 			echo "importando componente $componenteAImportar: $componenteNombre ..."
+				
 				#importando jade
-				echo "		include ../../../componentes/$componenteAImportar/$componenteNombre/$componenteAImportar.jade">> $nombreDeLaVista.jade			
+					echo "		include ../../../componentes/$componenteAImportar/$componenteNombre/$componenteAImportar.jade">> $nombreDeLaVista.jade			
 			
 
-			#importo los styl del componente
-				echo "/************$componenteAImportar****************/">> $nombreDeLaVista.styl
-				cd $rutaComponentes
-				while read line
-				do
-					echo "¿Qué $line usará?:"
-					read varDeComponente < /dev/tty
-					cd $rutaVista
-					echo "$line=$varDeComponente">> $nombreDeLaVista.styl
+				#importo los styl del componente
+					echo "/************$componenteAImportar****************/">> $nombreDeLaVista.styl
 					cd $rutaComponentes
-			   		#echo "$line=$varConfiguracionComponente"
-				done < "$componenteNombre-$componenteAImportar.conf"
-				cd $rutaVista
-				echo "@import('$rutaComponentes/$componenteAImportar.styl')
+					while read line
+					do
+						echo "¿Qué $line usará?:"
+						read varDeComponente < /dev/tty
+						cd $rutaVista
+						echo "$line=$varDeComponente">> $nombreDeLaVista.styl
+						cd $rutaComponentes
+			   			#echo "$line=$varConfiguracionComponente"
+					done < "$componenteNombre-$componenteAImportar.conf"
+					cd $rutaVista
+					echo "@import('$rutaComponentes/$componenteAImportar.styl')
 /************$componenteAImportar****************/">> $nombreDeLaVista.styl
 				
 				
@@ -97,6 +99,7 @@ function ComponenteImportar
 			echo "componente $componenteAImportar: $componenteNombre importado con éxito"
 		else			
 			echo "no existe el componente $componenteAImportar: $componenteNombre"
+			navegador="cerrado"
 		fi
 }
 function VistaLLenarJade
@@ -129,28 +132,34 @@ rutaImagenes='../../../imagenes'
 function VistaCrear
 {	
 	if [ -d $rutaProyecto ];
-	then	
-		#crearemos el layout
-			LayoutCrear
-		echo "Creando Vista $nombreDeLaVista"
-			#nos ubicamos en la carpeta del proyecto
-				cd $rutaProyecto
-			#creamos la carpeta de la vista
-				mkdir $nombreDeLaVista
-			#nos ubicamos en la carpeta de la vista	
-				cd $rutaVista
-			#creamos los 3  archivos de la vista
-				touch $nombreDeLaVista".jade"
-				touch $nombreDeLaVista".styl"
-				touch $nombreDeLaVista".js"
-			#llenamos los archivos de la vista
-				VistaLLenarStyle
-				VistaLLenarJade
-			#nos ubicamos en la ruta de donde estuvo al inicio
-				cd $rutaInicial	
-		echo "Vista $nombreDeLaVista creada correctamente"
+	then
+		if [ -d $rutaVista ];
+		then
+			#crearemos el layout
+				LayoutCrear
+			echo "Creando Vista $nombreDeLaVista"
+				#nos ubicamos en la carpeta del proyecto
+					cd $rutaProyecto
+				#creamos la carpeta de la vista
+					mkdir $nombreDeLaVista
+				#nos ubicamos en la carpeta de la vista	
+					cd $rutaVista
+				#creamos los 3  archivos de la vista
+					touch $nombreDeLaVista".jade"
+					touch $nombreDeLaVista".styl"
+					touch $nombreDeLaVista".js"
+				#llenamos los archivos de la vista
+					VistaLLenarStyle
+					VistaLLenarJade
+				#nos ubicamos en la ruta de donde estuvo al inicio
+					cd $rutaInicial	
+			echo "Vista $nombreDeLaVista creada correctamente"
+		else
+			echo "ya existe una vista con este nombre, si continua se perdera la vista anetrior"
+		fi
 	else
-		echo "No existe ninug proyecto con el nombre de $nombreDelProyecto"			
+		echo "No existe ninug proyecto con el nombre de $nombreDelProyecto"
+		navegador="cerrado"
 	fi
 }
 function pedirNombreProyectoYVista
@@ -162,7 +171,7 @@ function pedirNombreProyectoYVista
 
 		read -p 'Nombre de la Vista: ' nombreDeLaVista
 		rutaVista="$rutaProyecto/$nombreDeLaVista"
-		#borrando las lineas de proyecto y vista en el gulpfile
+		#borrando las lineas de las variabkles proyecto y vista en el gulpfile
 		sed -i "1,3d" gulpfile.js
 		sed -i "1i var vista='$nombreDeLaVista';" gulpfile.js
 		sed -i "1i var proyecto='$nombreDelProyecto';" gulpfile.js
@@ -175,27 +184,50 @@ function abrirVista
 	#abre el navegador para visualizar lo obtendio
 		chromium-browser "http://localhost:9000/public/proyecto/$nombreDelProyecto/$nombreDeLaVista/$nombreDeLaVista.html"
 }
+function peticionDeConfirmacion
+{
+	echo "¿Desea continuar?"
+	echo "1) si"
+	echo "2) no"
+	read -p '¿Desea Continuar?: ' opcion
+	case  $opcion  in
+		1) return 1;;
+		2) return 0;;		
+	esac
+}
 function mostrarOpciones
 {
 	echo "1) Crear Nuevo Proyecto"
 	echo "2) Crear Nueva Vista"
 	echo "3) Importar Componente"
+	echo "4) confirmacion"
 	read -p '¿Qué desea hacer?: ' opcion
 	case  $opcion  in
 		1) pedirNombreProyectoYVista
-		   ProyectoCrear
-		   abrirVista;;
+		   ProyectoCrear;;
 		2) pedirNombreProyectoYVista
-		   VistaCrear
-		   abrirVista;;
-		*) echo "opcion no valda";;
+		   VistaCrear;;
+		3) pedirNombreProyectoYVista
+		   ComponenteImportar;;
+		4) peticionDeConfirmacion
+		   echo $confirmacion;;
 	esac
+	#abrirVista
+}
+function abrirNavegador
+{
+	#preguntamos si desea abrir el navegador
+		read -p '¿Desea abrir el navegador?: ' navegador
+}
+function inicio
+{
+	mostrarOpciones
+	#abrirNavegador
 }
 #definimos las variables
 	rutaInicial=$(pwd)
 	rutaProyecto="por llenar aún"
 	rutaLayout="por llenar aún"
 #aqui empieza Todo
-	mostrarOpciones
-#ProyectoCrear
+	inicio
 
