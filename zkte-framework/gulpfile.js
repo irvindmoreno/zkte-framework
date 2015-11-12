@@ -1,6 +1,6 @@
-/***********No mover para nada la linea 2 y 3 variableproyecto y vista*************/
-var proyecto="aqde";
-var vista="home";
+/******no tocar linea 1,2 y 3********/
+var proyecto='aqde';
+var vista='preguntanos';
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

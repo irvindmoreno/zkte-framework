@@ -162,6 +162,11 @@ function pedirNombreProyectoYVista
 
 		read -p 'Nombre de la Vista: ' nombreDeLaVista
 		rutaVista="$rutaProyecto/$nombreDeLaVista"
+		#borrando las lineas de proyecto y vista en el gulpfile
+		sed -i "1,3d" gulpfile.js
+		sed -i "1i var vista='$nombreDeLaVista';" gulpfile.js
+		sed -i "1i var proyecto='$nombreDelProyecto';" gulpfile.js
+		sed -i "1i /******no tocar linea 1,2 y 3********/" gulpfile.js
 }
 function abrirVista
 {
@@ -183,7 +188,7 @@ function mostrarOpciones
 		2) pedirNombreProyectoYVista
 		   VistaCrear
 		   abrirVista;;
-		3) echo "3e";;
+		*) echo "opcion no valda";;
 	esac
 }
 #definimos las variables
