@@ -5,7 +5,7 @@ echo 'html()
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, user-scalable=no")
-		script(src="../js/clases.js")
+		script(src="./clases.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
@@ -37,7 +37,8 @@ function LayoutCrear
 					mkdir $rutaLayout
 				#creamos los 2 archivos de layout
 					touch "$rutaLayout/layout.jade"
-					touch "$rutaLayout/layout.styl"	
+					touch "$rutaLayout/layout.styl"
+					touch "$rutaLayout/layout.js"
 				#nos ubicamos dentro de la carpeta layout
 					cd $rutaLayout	
 				#llenamos los archivos
@@ -57,9 +58,11 @@ function ProyectoCrear
 		else
 			echo "Creando Proyecto....."
 				#Creo la carpeta del proyecto
-					mkdir $rutaProyecto				
+					mkdir $rutaProyecto					
+				#creamos el layout
+					LayoutCrear			
 				#creamos la vista
-					VistaCrear							
+					VistaCrear									
 			echo "Se creo el proyecto correctamente"
 		fi
 }
@@ -69,6 +72,8 @@ function ComponenteImportar
 		read -p '¿Qué componente desea importar? : ' componenteAImportar
 		read -p "¿Que $componenteAImportar usará? : " componenteNombre
 	#verificamos q el componente header exista
+	#me ubico en la vista en donde importare
+		cd $rutaVista
 		rutaComponentes="$rutaInicial/componentes/$componenteAImportar/$componenteNombre"
 		if [ -d $rutaComponentes ];
 		then
@@ -92,9 +97,23 @@ function ComponenteImportar
 					done < "$componenteNombre-$componenteAImportar.conf"
 					cd $rutaVista
 					echo "@import('$rutaComponentes/$componenteAImportar.styl')
-/************$componenteAImportar****************/">> $nombreDeLaVista.styl
+/************$componenteAImportar****************/
+
+">> $nombreDeLaVista.styl
 				
 				
+
+				#importo las clases js
+					cat < "$rutaComponentes/$componenteAImportar.js"  >> "$rutaVista/clases.js"
+				#instancio el objeto js del componente
+					cd $rutaVista
+					echo "la vista es: " $rutaVista
+					echo $nombreDeLaVista
+					sed -i'$d' "$nombreDeLaVista.js"
+					
+					echo $componenteAImportar$(echo $componenteNombre | cut -c1 | tr '[a-z]' '[A-Z]')= new $(echo $componenteAImportar | cut -c1 | tr '[a-z]' '[A-Z]')$(echo $componenteNombre | cut -c1 | tr '[a-z]' '[A-Z]')>> $nombreDeLaVista.js
+					echo "}">> $nombreDeLaVista.js
+
 
 			echo "componente $componenteAImportar: $componenteNombre importado con éxito"
 		else			
@@ -110,11 +129,8 @@ block head
 	link(href='./$nombreDeLaVista.css' rel='stylesheet')
 	script(src='./$nombreDeLaVista.js')
 block header
-	- rutaImagenes ='../../../imagenes'">> $nombreDeLaVista.jade
-    #importando componente
-		ComponenteImportar
-	
-echo "block navegacion	
+	- rutaImagenes ='../../../imagenes'
+block navegacion	
 block contenido	
 block footer" >> $nombreDeLaVista.jade
 }
@@ -128,15 +144,24 @@ rutaImagenes='../../../imagenes'
 @import('$rutaProyecto/layout/layout.styl')
 /************Layout****************/">> $nombreDeLaVista.styl
 			
-} 
+}
+function VistaLLenarJs
+{
+echo '$(document).on("ready",inicio)
+function inicio()
+{	
+}'>> $nombreDeLaVista.js
+}
 function VistaCrear
 {	
 	if [ -d $rutaProyecto ];
 	then
+		echo $rutaVista
 		if [ -d $rutaVista ];
 		then
-			#crearemos el layout
-				LayoutCrear
+			echo "ya existe una vista con este nombre, si continua se perdera la vista anetrior"
+		else			
+			#crearemos el layout				
 			echo "Creando Vista $nombreDeLaVista"
 				#nos ubicamos en la carpeta del proyecto
 					cd $rutaProyecto
@@ -148,14 +173,14 @@ function VistaCrear
 					touch $nombreDeLaVista".jade"
 					touch $nombreDeLaVista".styl"
 					touch $nombreDeLaVista".js"
+					touch "clases.js"
 				#llenamos los archivos de la vista
 					VistaLLenarStyle
 					VistaLLenarJade
+					VistaLLenarJs
 				#nos ubicamos en la ruta de donde estuvo al inicio
-					cd $rutaInicial	
+					#cd $rutaInicial	
 			echo "Vista $nombreDeLaVista creada correctamente"
-		else
-			echo "ya existe una vista con este nombre, si continua se perdera la vista anetrior"
 		fi
 	else
 		echo "No existe ninug proyecto con el nombre de $nombreDelProyecto"
@@ -178,21 +203,64 @@ function pedirNombreProyectoYVista
 		sed -i "1i /******no tocar linea 1,2 y 3********/" gulpfile.js
 }
 function abrirVista
-{
-	#compila los jade,styl and babel
-		gulp
+{	
 	#abre el navegador para visualizar lo obtendio
 		chromium-browser "http://localhost:9000/public/proyecto/$nombreDelProyecto/$nombreDeLaVista/$nombreDeLaVista.html"
 }
-function peticionDeConfirmacion
+function ComponenteCrearArchivos
 {
-	echo "¿Desea continuar?"
+	#pedir nombre del componente llenado anteriormente
+		read -p "¿Qué nombre desea ponerle a este $nombreNuevoComponente?: " nombreNuevoComponenteArchivo
+		rutaComponenteACrearArchivo="$rutaComponenteRaiz/$nombreNuevoComponente/$nombreNuevoComponenteArchivo"
+		if [ -d $rutaComponenteACrearArchivo ];
+		then
+			echo "ya existe un componente $nombreNuevoComponente : $nombreNuevoComponenteArchivo"
+		else
+
+			mkdir $nombreNuevoComponenteArchivo
+			cd $rutaComponenteACrearArchivo
+			#crear los archvos del componente
+				touch $nombreNuevoComponente".jade"
+				touch $nombreNuevoComponente".js"
+				touch $nombreNuevoComponente".styl"
+				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".conf"
+		fi	
+}
+function ComponenteCrear
+{
+	# pedir nombre del componente a crear
+	echo "la ruta es : $rutaInicial"
+		read -p 'Nombre Del Componente a Agregar: ' nombreNuevoComponente
+	# creando la ruta q apunta a componentes
+		rutaComponenteRaiz="$rutaInicial/componentes"
+	# me pocisione en componentes para crea ahi la carpeta
+		cd $rutaComponenteRaiz
+	#verificando si dicho componente ya existe
+	
+		if [ -d $rutaComponenteRaiz"/"$nombreNuevoComponente ];
+		then
+			#me ubicoen la carpeta en donde se van a crear los archivos
+			cd $rutaComponenteRaiz"/"$nombreNuevoComponente
+			ComponenteCrearArchivos
+		else
+			cd $rutaComponenteRaiz
+			#crear carpeta del compenente
+				mkdir $nombreNuevoComponente
+			#me ubicoen la carpeta en donde se van a crear los archivos
+			cd $rutaComponenteRaiz"/"$nombreNuevoComponente
+				ComponenteCrearArchivos			
+		fi	
+
+}
+function ComponentePreguntarSiQuiereImportarlo
+{
+	echo ">¿Desea importar este componente en algun proyecto?"
 	echo "1) si"
 	echo "2) no"
 	read -p '¿Desea Continuar?: ' opcion
 	case  $opcion  in
-		1) return 1;;
-		2) return 0;;		
+		1)  pedirNombreProyectoYVista;;
+		2)  echo "chau";;
 	esac
 }
 function mostrarOpciones
@@ -200,7 +268,7 @@ function mostrarOpciones
 	echo "1) Crear Nuevo Proyecto"
 	echo "2) Crear Nueva Vista"
 	echo "3) Importar Componente"
-	echo "4) confirmacion"
+	echo "4) Crear un nuevo componente"
 	read -p '¿Qué desea hacer?: ' opcion
 	case  $opcion  in
 		1) pedirNombreProyectoYVista
@@ -209,15 +277,30 @@ function mostrarOpciones
 		   VistaCrear;;
 		3) pedirNombreProyectoYVista
 		   ComponenteImportar;;
-		4) peticionDeConfirmacion
-		   echo $confirmacion;;
+		4) ComponenteCrear
+		   cd $rutaInicial
+		   ComponentePreguntarSiQuiereImportarlo
+		   ComponenteImportar;;
+		*) echo "Opcion no valida";;
 	esac
-	#abrirVista
+	cd $rutaInicial
+	abrirNavegador
 }
 function abrirNavegador
 {
+	#compila los jade,styl and babel
+		gulp
 	#preguntamos si desea abrir el navegador
-		read -p '¿Desea abrir el navegador?: ' navegador
+		echo ">¿Desea abrir el Navegador con el proyecto?"
+		echo "1) si"
+		echo "2) no"
+		read -p '¿Desea Continuar?: ' opcion
+		case  $opcion  in
+			1) echo "recuerde correr el comando gunt, de lo contrario no se abrira el navegador correctamente"
+			   abrirVista;;
+			2) echo "la url nonde puede verlo es:"
+			   echo "http://localhost:9000/public/proyecto/$nombreDelProyecto/$nombreDeLaVista/$nombreDeLaVista.html";;		
+		esac
 }
 function inicio
 {

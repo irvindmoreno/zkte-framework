@@ -1,5 +1,5 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='asep';
+var proyecto='aqde';
 var vista='inicio';
 /*librerias requeridas para correr gulp*/
 
@@ -12,16 +12,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
     //livereload = require('gulp-livereload');
 /* rutas de donde leer y donde escribir archivos para la pp*/
-var componentes=
-    [        
-        "componentes/navegacion/"+proyecto+"/*.js",
-        "componentes/inscripcion/"+proyecto+"/*.js"
-    ];
 
-var onError = function (err) {
-    gutil.beep();
-    console.log(err);
-};
 /* Tareas para ejecutar*/
 function TareaJade(rutaOrigen,rutaDestinoVista) {
     
@@ -56,26 +47,15 @@ function TareaCss(rutaOrigen,rutaDestinoVista) {
     //gulp.watch(rutaOrigen, compilarVistaCss);
     //gulp.watch(pathIn2, Taskstylus);
 }
-function TareaBabel(componentes,rutaOrigen, rutaDestinoComponentes,rutaDestinoVista) {
+function TareaBabel(rutaOrigen,rutaDestinoVista) {
     
-    function compilarComponenetesJs()
-    {   
-        console.log("componentes js");
-         gulp.src(componentes)
-         .pipe(concat("clases"))
-        .pipe(babel())
-        .pipe(gulp.dest(rutaDestinoComponentes));
-        //gulp.src(pathIn2)
-        //.pipe(babel())
-        //.pipe(gulp.dest(pathOut2));
-    }
+  
     function compilarVistaJs()
     {
         gulp.src(rutaOrigen)         
         .pipe(babel())
         .pipe(gulp.dest(rutaDestinoVista));
-    }
-    compilarComponenetesJs();
+    }  
     compilarVistaJs();
    // gulp.watch(rutaOrigen, compilarComponenetesJs);
     //gulp.watch(rutaOrigen, compilarVistaJs);
@@ -87,8 +67,9 @@ gulp.task('default', function () {
     var rutaOrigen=['proyecto/'+proyecto+'/'+vista];
     var rutaDestinoVista="public/proyecto/"+proyecto+"/"+vista;
     var rutaDestinoComponentes="public/proyecto/"+proyecto;
-    new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/js',rutaDestinoVista);
+    //new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/js',rutaDestinoVista);
     new TareaJade(rutaOrigen+'/*.jade',rutaDestinoVista);
+    new TareaBabel(rutaOrigen+'/*.js',rutaDestinoVista);
     new TareaCss(rutaOrigen+'/*.styl',rutaDestinoVista);
 
 });

@@ -1,4 +1,4 @@
-class Navegacion{
+class NavegacionAsep{
 	constructor ()
 	{
 		this.estadoMenuMovil=false;		
