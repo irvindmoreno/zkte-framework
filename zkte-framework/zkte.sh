@@ -97,7 +97,7 @@ function ComponenteImportar
 					done < "$componenteNombre-$componenteAImportar.conf"
 					cd $rutaVista
 					echo "@import('$rutaComponentes/$componenteAImportar.styl')
-/************$componenteAImportar****************/
+/************$componenteAImportar-$componenteNombre****************/
 
 ">> $nombreDeLaVista.styl
 				
@@ -107,11 +107,10 @@ function ComponenteImportar
 					cat < "$rutaComponentes/$componenteAImportar.js"  >> "$rutaVista/clases.js"
 				#instancio el objeto js del componente
 					cd $rutaVista
-					echo "la vista es: " $rutaVista
-					echo $nombreDeLaVista
-					sed -i'$d' "$nombreDeLaVista.js"
-					
-					echo $componenteAImportar$(echo $componenteNombre | cut -c1 | tr '[a-z]' '[A-Z]')= new $(echo $componenteAImportar | cut -c1 | tr '[a-z]' '[A-Z]')$(echo $componenteNombre | cut -c1 | tr '[a-z]' '[A-Z]')>> $nombreDeLaVista.js
+					#cat $nombreDeLaVista.js
+					sed -i '$d' "$nombreDeLaVista.js"
+					#cat $nombreDeLaVista.js
+					echo $componenteAImportar$(echo $componenteNombre | sed 's/^./\u&/')= new $(echo $componenteAImportar | sed 's/^./\u&/')$(echo $componenteNombre | sed 's/^./\u&/')>> $nombreDeLaVista.js
 					echo "}">> $nombreDeLaVista.js
 
 
@@ -150,7 +149,7 @@ function VistaLLenarJs
 echo '$(document).on("ready",inicio)
 function inicio()
 {	
-}'>> $nombreDeLaVista.js
+}// ESTA SIEMPRE DEBE SER LA ULTIMA LINEA DEL ARCHVO DE LO CONTRARI DARA ERROR'>> $nombreDeLaVista.js
 }
 function VistaCrear
 {	
@@ -224,12 +223,18 @@ function ComponenteCrearArchivos
 				touch $nombreNuevoComponente".js"
 				touch $nombreNuevoComponente".styl"
 				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".conf"
+			#llenar el archivo js
+				echo "class $(echo $nombreNuevoComponente | sed 's/^./\u&/')$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/'){
+	constructor()
+	{
+
+	}
+}" >> $nombreNuevoComponente".js"
 		fi	
 }
 function ComponenteCrear
 {
-	# pedir nombre del componente a crear
-	echo "la ruta es : $rutaInicial"
+	# pedir nombre del componente a crear	
 		read -p 'Nombre Del Componente a Agregar: ' nombreNuevoComponente
 	# creando la ruta q apunta a componentes
 		rutaComponenteRaiz="$rutaInicial/componentes"
@@ -294,7 +299,7 @@ function abrirNavegador
 		echo ">¿Desea abrir el Navegador con el proyecto?"
 		echo "1) si"
 		echo "2) no"
-		read -p '¿Desea Continuar?: ' opcion
+		read -p 'Digite un número: ' opcion
 		case  $opcion  in
 			1) echo "recuerde correr el comando gunt, de lo contrario no se abrira el navegador correctamente"
 			   abrirVista;;
