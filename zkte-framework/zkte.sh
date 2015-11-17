@@ -110,7 +110,7 @@ function ComponenteImportar
 					#cat $nombreDeLaVista.js
 					sed -i '$d' "$nombreDeLaVista.js"
 					#cat $nombreDeLaVista.js
-					echo $componenteAImportar$(echo $componenteNombre | sed 's/^./\u&/')= new $(echo $componenteAImportar | sed 's/^./\u&/')$(echo $componenteNombre | sed 's/^./\u&/')>> $nombreDeLaVista.js
+					echo "    var "$componenteAImportar$(echo $componenteNombre | sed 's/^./\u&/')= new $(echo $componenteAImportar | sed 's/^./\u&/')$(echo $componenteNombre | sed 's/^./\u&/')"()">> $nombreDeLaVista.js
 					echo "}">> $nombreDeLaVista.js
 
 
@@ -264,9 +264,19 @@ function ComponentePreguntarSiQuiereImportarlo
 	echo "2) no"
 	read -p '¿Desea Continuar?: ' opcion
 	case  $opcion  in
-		1)  pedirNombreProyectoYVista;;
+		1)  pedirNombreProyectoYVista
+			ComponenteImportar;;
 		2)  echo "chau";;
 	esac
+}
+function ComponenteTestear
+{
+	sed -i "1,3d" gulpfile.js
+	sed -i "1i var vista='$nombreNuevoComponente';" gulpfile.js
+	sed -i "1i var proyecto='$nombreNuevoComponenteArchivo';" gulpfile.js
+	sed -i "1i /******no tocar linea 1,2 y 3********/" gulpfile.js
+	gulp cp
+	chromium-browser "http://localhost:9000/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo/$nombreNuevoComponente.html"
 }
 function mostrarOpciones
 {
@@ -285,7 +295,7 @@ function mostrarOpciones
 		4) ComponenteCrear
 		   cd $rutaInicial
 		   ComponentePreguntarSiQuiereImportarlo
-		   ComponenteImportar;;
+		   ComponenteTestear;;
 		*) echo "Opcion no valida";;
 	esac
 	cd $rutaInicial

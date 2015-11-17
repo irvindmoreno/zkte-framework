@@ -73,3 +73,14 @@ gulp.task('default', function () {
     new TareaCss(rutaOrigen+'/*.styl',rutaDestinoVista);
 
 });
+gulp.task('cp', function () {
+    //var rutaComponentes="componentes/"+componentes;
+    var rutaOrigen=['componentes/'+proyecto+'/'+vista];
+    var rutaDestinoVista="public/componentes/"+proyecto+"/"+vista;
+    //var rutaDestinoComponentes="public/proyecto/"+proyecto;
+    //new TareaBabel(componentes,rutaOrigen+'/*.js',rutaDestinoComponentes+'/js',rutaDestinoVista);
+    new TareaJade(rutaOrigen+'/*.jade',rutaDestinoVista);
+    new TareaBabel(rutaOrigen+'/*.js',rutaDestinoVista);
+    new TareaCss(rutaOrigen+'/*.styl',rutaDestinoVista);
+
+});
