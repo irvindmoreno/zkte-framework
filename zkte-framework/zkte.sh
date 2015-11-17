@@ -272,8 +272,8 @@ function ComponentePreguntarSiQuiereImportarlo
 function ComponenteTestear
 {
 	sed -i "1,3d" gulpfile.js
-	sed -i "1i var vista='$nombreNuevoComponente';" gulpfile.js
-	sed -i "1i var proyecto='$nombreNuevoComponenteArchivo';" gulpfile.js
+	sed -i "1i var vista='$nombreNuevoComponenteArchivo';" gulpfile.js
+	sed -i "1i var proyecto='$nombreNuevoComponente';" gulpfile.js
 	sed -i "1i /******no tocar linea 1,2 y 3********/" gulpfile.js
 	gulp cp
 	chromium-browser "http://localhost:9000/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo/$nombreNuevoComponente.html"
