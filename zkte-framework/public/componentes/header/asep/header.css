@@ -1,0 +1,35 @@
+/********solo header***************/
+header {
+  background: background;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2em;
+}
+header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+a:hover {
+  transform: scale(1.1);
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  widht: 5em;
+  margin-left: 1em;
+}
+span {
+  color: #fff;
+}
+img {
+  margin-right: 0.4em;
+}
+.img-header {
+  height: 1.5em;
+}
+/********solo header***************/

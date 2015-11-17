@@ -4,15 +4,19 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Navegacion = (function () {
-	function Navegacion() {
-		_classCallCheck(this, Navegacion);
+var HeaderAsep = function HeaderAsep() {
+	_classCallCheck(this, HeaderAsep);
+};
+
+var NavegacionAsep = (function () {
+	function NavegacionAsep() {
+		_classCallCheck(this, NavegacionAsep);
 
 		this.estadoMenuMovil = false;
 		$(".Boton-Movil i").on("click", this.mostrarMenuMovil);
 	}
 
-	_createClass(Navegacion, [{
+	_createClass(NavegacionAsep, [{
 		key: "mostrarMenuMovil",
 		value: function mostrarMenuMovil() {
 			this.estadoMenuMovil = !this.estadoMenuMovil;
@@ -24,29 +28,9 @@ var Navegacion = (function () {
 		}
 	}]);
 
-	return Navegacion;
+	return NavegacionAsep;
 })();
 
-var Inscripcion = (function () {
-	function Inscripcion(etiqueta) {
-		_classCallCheck(this, Inscripcion);
-
-		this.etiqueta = etiqueta;
-		this.bandera = false;
-		$(this.etiqueta).on("click", this.mostrarFormulario);
-	}
-
-	_createClass(Inscripcion, [{
-		key: "mostrarFormulario",
-		value: function mostrarFormulario() {
-			this.bandera = !this.bandera;
-			if (this.bandera) {
-				$(".FechaConTituloContenido-Derecha-Formulario").css("height", "9em");
-			} else {
-				$(".FechaConTituloContenido-Derecha-Formulario").css("height", "0em");
-			}
-		}
-	}]);
-
-	return Inscripcion;
-})();
+var TituloAsep = function TituloAsep() {
+	_classCallCheck(this, TituloAsep);
+};

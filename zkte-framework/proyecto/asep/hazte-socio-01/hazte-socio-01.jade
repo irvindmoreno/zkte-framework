@@ -1,17 +1,11 @@
 extends ../layout/layout.jade
 block head
-	- vista="hazte-socio-01"
-	link(href="./"+vista+".css" rel="stylesheet")
-	script(src="./"+vista+".js")
+	link(href='./hazte-socio-01.css' rel='stylesheet')
+	script(src='./hazte-socio-01.js')
 block header
-	- rutaImagenes ="../../../imagenes";
 	include ../../../componentes/header/asep/header.jade
 block navegacion
 	include ../../../componentes/navegacion/asep/navegacion.jade
 block contenido
-	- titulo = "¿POR QUÉ EMPRENDER?"
-	include ../../../componentes/titulo/asep/fecha-y-titulo/fecha-y-titulo.jade
-	include ../../../componentes/inscripcion/asep/inscripcion.jade
-	include ../../../componentes/redes-sociales/asep/redes-sociales.jade
-block footer
-	include ../../../componentes/footer/asep/footer.jade
+	include ../../../componentes/titulo/asep/titulo.jade	
+block footer		

@@ -8,6 +8,7 @@ echo 'html()
 		script(src="./clases.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 		block head
 	body
@@ -275,8 +276,26 @@ function ComponenteTestear
 	sed -i "1i var vista='$nombreNuevoComponenteArchivo';" gulpfile.js
 	sed -i "1i var proyecto='$nombreNuevoComponente';" gulpfile.js
 	sed -i "1i /******no tocar linea 1,2 y 3********/" gulpfile.js
+	rutaComponentesPublic="$rutaInicial/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo"	
 	gulp cp
-	chromium-browser "http://localhost:9000/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo/$nombreNuevoComponente.html"
+	cd $rutaComponentesPublic
+	pwd
+	echo "<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'>
+<link rel='stylesheet' type='text/css' href='./$nombreNuevoComponente.css'>
+<style type="text/css">
+	body
+	{
+		margin: 0;
+		font-size: 16px;
+	}
+</style>
+<script src='./$nombreNuevoComponente.js'></script>">> $nombreNuevoComponente.html
+	#chromium-browser "http://localhost:9000/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo/$nombreNuevoComponente.html"
+}
+function ComponentePedirNombres
+{
+	read -p 'Nombre Del Componente a testear: ' nombreNuevoComponente
+	read -p "Nombre de $nombreNuevoComponente a testear: " nombreNuevoComponenteArchivo
 }
 function mostrarOpciones
 {
@@ -284,18 +303,26 @@ function mostrarOpciones
 	echo "2) Crear Nueva Vista"
 	echo "3) Importar Componente"
 	echo "4) Crear un nuevo componente"
+	echo "5) Testear Componente"
 	read -p '¿Qué desea hacer?: ' opcion
 	case  $opcion  in
 		1) pedirNombreProyectoYVista
-		   ProyectoCrear;;
+		   ProyectoCrear
+		   cd rutaInicial;;
 		2) pedirNombreProyectoYVista
-		   VistaCrear;;
+		   VistaCrear
+		   cd rutaInicial;;
 		3) pedirNombreProyectoYVista
-		   ComponenteImportar;;
+		   ComponenteImportar
+		   cd rutaInicial;;
 		4) ComponenteCrear
 		   cd $rutaInicial
 		   ComponentePreguntarSiQuiereImportarlo
-		   ComponenteTestear;;
+		   ComponenteTestear
+		   cd rutaInicial;;
+		5)  ComponentePedirNombres
+			ComponenteTestear
+			cd rutaInicial;;
 		*) echo "Opcion no valida";;
 	esac
 	cd $rutaInicial
