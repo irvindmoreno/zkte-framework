@@ -1,10 +1,15 @@
 - rutaImagenes ="../../../imagenes";
+//
+	- pestaniaUno="Login"
+	- iconoUno="login_icon.png"
+	- pestaniaDos="Hazte Socio"
+	- iconoDos="socio_icon.png"
 header
 	div
 		a
-			img(class="img-header" src=rutaImagenes+"/login_icon.png")
-			span Login
+			img(class="img-header" src=rutaImagenes+"/"+iconoUno)
+			span=pestaniaUno
 	div
 		a
-			img(class="img-header" src=rutaImagenes+"/socio_icon.png")
-			span Hazte Socio
+			img(class="img-header" src=rutaImagenes+"/"+iconoDos)
+			span=pestaniaDos

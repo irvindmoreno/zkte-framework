@@ -81,7 +81,19 @@ function ComponenteImportar
 			echo "importando componente $componenteAImportar: $componenteNombre ..."
 				
 				#importando jade
-					echo "		include ../../../componentes/$componenteAImportar/$componenteNombre/$componenteAImportar.jade">> $nombreDeLaVista.jade			
+					echo "//$componenteAImportar-$componenteNombre">> $nombreDeLaVista.jade
+					cd $rutaComponentes
+					while read line
+					do
+						echo "¿Qué $line usará?:"
+						read varDeComponente < /dev/tty
+						cd $rutaVista
+						echo "- $line='$varDeComponente'">> $nombreDeLaVista.jade
+						cd $rutaComponentes
+					done < "$componenteNombre-$componenteAImportar.confjade"
+					cd $rutaVista										
+        			echo "include ../../../componentes/$componenteAImportar/$componenteNombre/$componenteAImportar.jade">> $nombreDeLaVista.jade
+        			echo "//$componenteAImportar-$componenteNombre">> $nombreDeLaVista.jade
 			
 
 				#importo los styl del componente
@@ -95,7 +107,7 @@ function ComponenteImportar
 						echo "$line=$varDeComponente">> $nombreDeLaVista.styl
 						cd $rutaComponentes
 			   			#echo "$line=$varConfiguracionComponente"
-					done < "$componenteNombre-$componenteAImportar.conf"
+					done < "$componenteNombre-$componenteAImportar.confstyl"
 					cd $rutaVista
 					echo "@import('$rutaComponentes/$componenteAImportar.styl')
 /************$componenteAImportar-$componenteNombre****************/
@@ -223,7 +235,8 @@ function ComponenteCrearArchivos
 				touch $nombreNuevoComponente".jade"
 				touch $nombreNuevoComponente".js"
 				touch $nombreNuevoComponente".styl"
-				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".conf"
+				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confstyl"
+				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"
 			#llenar el archivo js
 				echo "class $(echo $nombreNuevoComponente | sed 's/^./\u&/')$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/'){
 	constructor()

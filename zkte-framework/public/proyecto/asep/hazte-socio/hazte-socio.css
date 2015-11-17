@@ -1,0 +1,56 @@
+/************Layout****************/
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+.Contenedor {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@media screen and (max-width: 900px) {
+  .Contenedor {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+}
+/************Layout****************/
+/************header****************/
+header {
+  background: #2ca7df;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2em;
+  width: 100%;
+}
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  widht: 5em;
+  margin-left: 1em;
+}
+header span {
+  color: #fff;
+}
+header img {
+  margin-right: 0.4em;
+}
+header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  colo: #fff;
+}
+header a:hover {
+  transform: scale(1.1);
+}
+.img-header {
+  height: 1.5em;
+}
+/************header-asep****************/
