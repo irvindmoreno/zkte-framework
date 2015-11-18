@@ -81,14 +81,15 @@ function ComponenteImportar
 			echo "importando componente $componenteAImportar: $componenteNombre ..."
 				
 				#importando jade
-					echo "//$componenteAImportar-$componenteNombre">> $nombreDeLaVista.jade
+					echo "
+	//$componenteAImportar-$componenteNombre">> $nombreDeLaVista.jade
 					cd $rutaComponentes
 					while read line
 					do
 						echo "¿Qué $line usará?:"
-						read varDeComponente < /dev/tty
+						#read varDeComponente < /dev/tty
 						cd $rutaVista
-						echo "- $line='$varDeComponente'">> $nombreDeLaVista.jade
+						echo "$line">> $nombreDeLaVista.jade
 						cd $rutaComponentes
 					done < "$componenteNombre-$componenteAImportar.confjade"
 					cd $rutaVista										
@@ -97,14 +98,14 @@ function ComponenteImportar
 			
 
 				#importo los styl del componente
-					echo "/************$componenteAImportar****************/">> $nombreDeLaVista.styl
+					echo "/************$componenteAImportar-$componenteNombre****************/">> $nombreDeLaVista.styl
 					cd $rutaComponentes
 					while read line
 					do
 						echo "¿Qué $line usará?:"
-						read varDeComponente < /dev/tty
+						#read varDeComponente < /dev/tty
 						cd $rutaVista
-						echo "$line=$varDeComponente">> $nombreDeLaVista.styl
+						echo "$line">> $nombreDeLaVista.styl
 						cd $rutaComponentes
 			   			#echo "$line=$varConfiguracionComponente"
 					done < "$componenteNombre-$componenteAImportar.confstyl"
@@ -141,7 +142,6 @@ block head
 	link(href='./$nombreDeLaVista.css' rel='stylesheet')
 	script(src='./$nombreDeLaVista.js')
 block header
-	- rutaImagenes ='../../../imagenes'
 block navegacion	
 block contenido	
 block footer" >> $nombreDeLaVista.jade
@@ -237,6 +237,9 @@ function ComponenteCrearArchivos
 				touch $nombreNuevoComponente".styl"
 				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confstyl"
 				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"
+				echo "- rutaImagenes ='../../../imagenes'" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"
+				echo "fin" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente.confjade
+				echo "fin" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente.confstyl
 			#llenar el archivo js
 				echo "class $(echo $nombreNuevoComponente | sed 's/^./\u&/')$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/'){
 	constructor()
@@ -294,8 +297,9 @@ function ComponenteTestear
 	cd $rutaComponentesPublic
 	pwd
 	echo "<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <link rel='stylesheet' type='text/css' href='./$nombreNuevoComponente.css'>
-<style type="text/css">
+<style type='text/css'>
 	body
 	{
 		margin: 0;

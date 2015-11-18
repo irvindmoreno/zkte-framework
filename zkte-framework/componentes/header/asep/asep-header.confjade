@@ -1,5 +1,6 @@
-pestaniaUno
-iconoUno
-pestaniaDos
-iconoDos
+- rutaImagenes ='../../../imagenes'
+- pestaniaUno='Login'
+- iconoUno='login_icon.png'
+- pestaniaDos='Hazte Socio'
+- iconoDos='socio_icon.png'
 fin

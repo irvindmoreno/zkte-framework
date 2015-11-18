@@ -1,0 +1,8 @@
+- rutaImagenes ='../../../imagenes'
+- pestaniaUno='Nosotros'
+- pestaniaDos='Directorio'
+- pestaniaTres='Actividades'
+- pestaniaCuatro='Noticias'
+- pestaniaCinco='Beneficios'
+- pestaniaSeis='Pregúntanos'
+fin
