@@ -1,6 +1,9 @@
 .desactivarTab {
   background: #b4b4b4 !important;
 }
+.desactivarTab:hover {
+  background: #dee0e2 !important;
+}
 .activarTab {
   background: #dee0e2 !important;
 }

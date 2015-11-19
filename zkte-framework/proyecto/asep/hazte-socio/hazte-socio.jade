@@ -10,7 +10,8 @@ block header
 	- pestaniaDos='Hazte Socio'
 	- iconoDos='socio_icon.png'
 	include ../../../componentes/header/asep/header.jade
-	//header-asep	
+	//header-asep
+
 block navegacion
 	//navegacion-asep
 	- rutaImagenes ='../../../imagenes'
@@ -28,4 +29,39 @@ block contenido
 	- tituloAsep='ÚNETE A LA ASEP'
 	include ../../../componentes/titulo/asep/titulo.jade
 	//titulo-asep
+
+	//tabs-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno="Sobre ti"
+	- contenidoUno="Queremos conocerte y saber cuáles son tus necesidades para emprender"
+	- pestaniaDos="Sobre tu empresa"
+	- contenidoDos="¿has fundado algún emprendimiento? Cuéntanos lo que haces"
+	- pestaniaTres="Necesitamos de tu ayuda"
+	- contenidoTres="Es la única forma de que hagamos de Perú el mejor lugar para emprender."
+	- pestanias={1:pestaniaUno,2:pestaniaDos,3:pestaniaTres}
+	- pestaniasContenido=[contenidoUno,contenidoDos,contenidoTres]	
+	include ../../../componentes/tabs/asep/tabs.jade
+	div(class="ContenedorDelTab")
+		div(class="pestaniasPadre")
+			div(class="pest")
+				div(class="pest-Titulo").
+					EN LA ASEP TE ENRTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
+					HACER DESPLEGAR TU EMPRENDIMIENTO,
+				- labels=["Nombres: ","Apellidos: ","E-mail: ","Contraseña: ","Confirmar Contraseña: ","Documento De Identidad: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Region: ","Departamento: ","Provincia: ","Distrito: ","Teléfono: ","Area De Interes: ","¿Ya tienes una empresa?"]
+				div(class="labels")
+					each label,index in labels
+						div(class="labels-Cont")
+							div(class="label-texto")=label
+							if index==6
+								div 3 select
+							else
+								div input
+							if index==13
+								div
+							else
+								div *
+			div(class="pest") DOS
+			div(class="pest") TRES
+	//tabs-asep
+
 block footer
