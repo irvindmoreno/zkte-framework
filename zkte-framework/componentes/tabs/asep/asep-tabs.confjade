@@ -7,4 +7,8 @@
 - contenidoTres="Es la única forma de que hagamos de Perú el mejor lugar para emprender."
 - pestanias={1:pestaniaUno,2:pestaniaDos,3:pestaniaTres}
 - pestaniasContenido=[contenidoUno,contenidoDos,contenidoTres]
+div(class="pestaniasPadre")
+	div(class="pest") UNO
+	div(class="pest") DOS
+	div(class="pest") TRES
 fin
