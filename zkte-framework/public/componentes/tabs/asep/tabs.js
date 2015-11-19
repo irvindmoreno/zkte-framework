@@ -4,45 +4,15 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var HeaderAsep = function HeaderAsep() {
-	_classCallCheck(this, HeaderAsep);
-};
-
-var NavegacionAsep = (function () {
-	function NavegacionAsep() {
-		_classCallCheck(this, NavegacionAsep);
-
-		this.estadoMenuMovil = false;
-		$(".Boton-Movil i").on("click", this.mostrarMenuMovil);
-	}
-
-	_createClass(NavegacionAsep, [{
-		key: "mostrarMenuMovil",
-		value: function mostrarMenuMovil() {
-			this.estadoMenuMovil = !this.estadoMenuMovil;
-			if (this.estadoMenuMovil) {
-				$(".Navegacion-Menu-Movil").css("height", "11em");
-			} else {
-				$(".Navegacion-Menu-Movil").css("height", "0px");
-			}
-		}
-	}]);
-
-	return NavegacionAsep;
-})();
-
-var TituloAsep = function TituloAsep() {
-	_classCallCheck(this, TituloAsep);
-};
-
 var TabsAsep = (function () {
 	function TabsAsep(pestanias) {
 		_classCallCheck(this, TabsAsep);
 
+		//$(".pestaniasPadre").children("div:nth-child(3)")
 		//ocultando las pestañas(divs)
-		$(".pest").css("display", "none");
+		$(".pestaniasPadre").children("div").css("display", "none");
 		//dejar por defecto el primero abierto
-		$(".pest:first").css("display", "block");
+		$(".pestaniasPadre").children("div:nth-child(1)").css("display", "block");
 		//llamar a la funcion q muestra el div
 		$(".TabsAsep-Pestania").on("click", this.mostrarDiv);
 		$(".TabsAsepMovil-Pestania").on("click", this.mostrarDiv);
@@ -73,7 +43,7 @@ var TabsAsep = (function () {
 	_createClass(TabsAsep, [{
 		key: "mostrarDiv",
 		value: function mostrarDiv() {
-			var pestania = parseInt($(this).attr("data")) + 2;
+			var pestania = parseInt($(this).attr("data"));
 			// esto es para desktop
 			$(".TabsAsep-Pestania").addClass("desactivarTab");
 			$(".TabsAsep-Pestania").removeClass("activarTab");
@@ -85,8 +55,8 @@ var TabsAsep = (function () {
 			$(this).removeClass("desactivarTab");
 			$(this).addClass("activarTab");
 			console.log(pestania);
-			$(".pest").css("display", "none");
-			$(".pest:nth-child(" + pestania + ")").css("display", "block");
+			$(".pestaniasPadre").children("div").css("display", "none");
+			$(".pestaniasPadre").children("div:nth-child(" + pestania + ")").css("display", "block");
 		}
 	}, {
 		key: "setBackgroundSeleccionadoCirculo",

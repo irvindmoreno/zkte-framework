@@ -12,16 +12,89 @@
   </head>
   <body>
     <div class="Contenedor">
-      <!--
-      - pestaniaUno="Login"
-      - iconoUno="login_icon.png"
-      - pestaniaDos="Hazte Socio"
-      - iconoDos="socio_icon.png"
-      -->
+      <!--header-asep-->
       <header>
         <div><a><img src="../../../imagenes/login_icon.png" class="img-header"/><span>Login</span></a></div>
         <div><a><img src="../../../imagenes/socio_icon.png" class="img-header"/><span>Hazte Socio</span></a></div>
       </header>
+      <!--header-asep	-->
+      <!--navegacion-asep-->
+      <div class="Contenedor-NavegacionMenu"><a href="/"><img src="../../../imagenes/logo.png" class="img-Logo"/></a>
+        <nav class="Navegacion-Menu">
+          <ul>
+            <li class="li-active"><a href="/nosotros" class="active">Nosotros</a></li>
+            <li> <a>Directorio</a></li>
+            <li> <a>Actividades</a></li>
+            <li> <a>Noticias</a></li>
+            <li> <a>Beneficios</a></li>
+            <li> <a>Pregúntanos</a></li>
+          </ul>
+        </nav>
+        <div class="Boton-Movil"><i class="fa fa-angle-double-down"></i></div>
+      </div>
+      <nav class="Navegacion-Menu-Movil">
+        <ul>
+          <li> <a>Nosotros</a></li>
+          <li> <a>Directorio</a></li>
+          <li> <a>Actividades</a></li>
+          <li> <a>Noticias</a></li>
+          <li> <a>Beneficios</a></li>
+          <li> <a>Pregúntanos</a></li>
+        </ul>
+      </nav>
+      <!--navegacion-asep	-->
+      <!--titulo-asep-->
+      <div class="TituloAsep">ÚNETE A LA ASEP</div>
+      <!--titulo-asep-->
+      <!--tabs-asep-->
+      <!--
+      - pestaniaUno="Sobre ti"
+      - contenidoUno="Queremos conocerte y saber cuáles son tus necesidades para emprender"
+      - pestaniaDos="Sobre tu empresa"
+      - contenidoDos="¿has fundado algún emprendimiento? Cuéntanos lo que haces"
+      - pestaniaTres="Necesitamos de tu ayuda"
+      - contenidoTres="Es la única forma de que hagamos de Perú el mejor lugar para emprender."
+      - pestanias={1:pestaniaUno,2:pestaniaDos,3:pestaniaTres}
+      - pestaniasContenido=[contenidoUno,contenidoDos,contenidoTres]
+      -->
+      <div class="TabsAsep">
+        <div data="1" class="TabsAsep-Pestania">
+          <div class="TabsAsep-Pestania-Ttulo">
+            <div class="TabsAsep-Pestania-Ttulo-Numero">1</div>
+            <div class="TabsAsep-Pestania-Bloque2">
+              <div class="TabsAsep-Pestania-Ttulo-Texto">Sobre ti</div>
+              <div class="TabsAsep-Pestania-Contenido">Queremos conocerte y saber cuáles son tus necesidades para emprender</div>
+            </div>
+          </div>
+        </div>
+        <div data="2" class="TabsAsep-Pestania">
+          <div class="TabsAsep-Pestania-Ttulo">
+            <div class="TabsAsep-Pestania-Ttulo-Numero">2</div>
+            <div class="TabsAsep-Pestania-Bloque2">
+              <div class="TabsAsep-Pestania-Ttulo-Texto">Sobre tu empresa</div>
+              <div class="TabsAsep-Pestania-Contenido">¿has fundado algún emprendimiento? Cuéntanos lo que haces</div>
+            </div>
+          </div>
+        </div>
+        <div data="3" class="TabsAsep-Pestania">
+          <div class="TabsAsep-Pestania-Ttulo">
+            <div class="TabsAsep-Pestania-Ttulo-Numero">3</div>
+            <div class="TabsAsep-Pestania-Bloque2">
+              <div class="TabsAsep-Pestania-Ttulo-Texto">Necesitamos de tu ayuda</div>
+              <div class="TabsAsep-Pestania-Contenido">Es la única forma de que hagamos de Perú el mejor lugar para emprender.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="TabsAsepMovil">
+        <div data="1" class="TabsAsepMovil-Pestania"><span class="TabsAsepMovil-Pestania-Numero">1</span><span class="TabsAsepMovil-Pestania-Titulo">Sobre ti</span></div>
+        <div data="2" class="TabsAsepMovil-Pestania"><span class="TabsAsepMovil-Pestania-Numero">2</span><span class="TabsAsepMovil-Pestania-Titulo">Sobre tu empresa</span></div>
+        <div data="3" class="TabsAsepMovil-Pestania"><span class="TabsAsepMovil-Pestania-Numero">3</span><span class="TabsAsepMovil-Pestania-Titulo">Necesitamos de tu ayuda</span></div>
+      </div>
+      <!--tabs-asep-->
+      <div class="pest">UNO</div>
+      <div class="pest">DOS</div>
+      <div class="pest">TRES</div>
     </div>
   </body>
 </html>
