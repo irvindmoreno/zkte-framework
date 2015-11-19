@@ -1,0 +1,33 @@
+.SelectAsep {
+  background: #f7f2f2 url("../../../imagenes/flecha.png") no-repeat right center;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.Dia {
+  font-size: 12px;
+  padding: 8px;
+  width: 5%;
+  border-right-width: 2px;
+  border-top-width: 0.5px;
+  border-right-width: 1px;
+  border-radius: 5px;
+}
+.Mes {
+  font-size: 12px;
+  padding: 8px;
+  width: 8%;
+  border-right-width: 2px;
+  border-top-width: 0.5px;
+  border-right-width: 1px;
+  border-radius: 5px;
+}
+.Anio {
+  font-size: 12px;
+  padding: 8px;
+  width: 5%;
+  border-right-width: 2px;
+  border-top-width: 0.5px;
+  border-right-width: 1px;
+  border-radius: 5px;
+}
