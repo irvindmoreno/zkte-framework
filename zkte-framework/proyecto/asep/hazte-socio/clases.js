@@ -142,3 +142,9 @@ class TabsAsep{
 	}
 }
 //var tabsAsep= new TabsAsep()
+class SelectAsep{
+	constructor()
+	{
+
+	}
+}

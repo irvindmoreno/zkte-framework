@@ -159,3 +159,7 @@ var TabsAsep = (function () {
 
 	return TabsAsep;
 })();
+
+var SelectAsep = function SelectAsep() {
+	_classCallCheck(this, SelectAsep);
+};
