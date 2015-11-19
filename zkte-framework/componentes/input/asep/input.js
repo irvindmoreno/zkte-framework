@@ -1,0 +1,6 @@
+class InputAsep{
+	constructor()
+	{
+
+	}
+}
