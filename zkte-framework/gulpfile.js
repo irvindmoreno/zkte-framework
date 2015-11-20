@@ -1,11 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-<<<<<<< HEAD
-var proyecto='input';
+var proyecto='modal';
 var vista='asep';
-=======
-var proyecto='asep';
-var vista='hazte-socio';
->>>>>>> 126ccbc085cfa7113d5d1b274129d9c52f69fac4
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

@@ -1,3 +1,4 @@
+
 /**********Footer*******************/
 .Fotter
 	&-1
@@ -8,17 +9,16 @@
 		align-items center
 		&-btn-HazteSocio
 			height 4em
-			background url(rutaImagenes+'/btn_hazte_socio_white.png') no-repeat left
+			background url(rutaImagenes+'/'+imagenFooter1) no-repeat left
 			width 14em
 			background-size 13em
 			transition all ease 0.2s
 			cursor pointer
 			&:hover								
-				background url(rutaImagenes+'/btn_hazte_socio_white_selected.png') no-repeat left
+				background url(rutaImagenes+'/'+imagenFooter1Hover) no-repeat left
 				background-size 13em
 	&-2
 		background negro1
-		height 8em;
 		padding-left 8%
 		padding-right 8%
 		padding-top 0.8em
@@ -38,7 +38,6 @@
 					height 3.5em
 					@media screen and (max-width: 763px)
 						height 3em
-						width 3em
 		&-Sponsor			
 			&-Img
 				padding-top 2em
@@ -47,8 +46,7 @@
 				& img
 					height 3.5em
 					@media screen and (max-width: 763px)
-						height 3em
-						width 3em		
+						height 3em	
 	&-3
 		background negro2
 		height 10em
@@ -104,4 +102,16 @@
 		& img
 			height 1.5em
 			margin-left 1em
+@media screen and (max-width: 671px)
+	.Fotter-2
+		display block
+	.Fotter-2-Colaboradores
+		width 100%
+@media screen and (max-width: 451px)
+	.Fotter-2-Colaboradores-Img
+		display block
+	.Fotter-2-Colaboradores-Img img
+		display block
+		margin 0 auto
+		margin-bottom 1em
 /**********Footer*******************/
