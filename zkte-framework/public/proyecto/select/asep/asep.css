@@ -16,9 +16,11 @@ body {
   font-size: 12px;
   padding: 8px;
   width: 5%;
-  border-right-width: 2px;
-  border-top-width: 0.5px;
+  border-top-width: 1px;
+  border-left-width: 1px;
   border-right-width: 1px;
   border-radius: 5px;
+  border-bottom-width: 1px;
+  border-style: solid;
 }
 /************select-asep****************/
