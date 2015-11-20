@@ -20,12 +20,6 @@ class NavegacionAsep{
 	}
 
 }
-class TituloAsep{
-	constructor()
-	{
-
-	}
-}
 
 class HeaderAsep{
 	constructor ()
@@ -143,6 +137,25 @@ class TabsAsep{
 }
 //var tabsAsep= new TabsAsep()
 class SelectAsep{
+	constructor()
+	{
+
+	}
+}
+
+class ButtonAsepAzul{
+	constructor()
+	{
+
+	}
+}
+class TituloAsep{
+	constructor()
+	{
+
+	}
+}
+class RedesSociales{
 	constructor()
 	{
 

@@ -102,32 +102,32 @@
               <div class="labels-Cont">
                 <div class="label-texto">Nombres: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Apellidos: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">E-mail: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Contraseña: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Confirmar Contraseña: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Documento De Identidad: </div>
                 <div class="label-input">input</div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Fecha De Nacimiento: </div>
@@ -142,15 +142,17 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Sexo: </div>
-                <div class="label-input radioButonLinea">
-                  <input type="radio" class="radioSexo"/><span>Hombre</span>
-                  <input type="radio" class="radioSexo"/><span>Mujer</span>
+                <div class="label-input radioButonLinea radioMultipleMovil">
+                  <div>
+                    <input type="radio" class="radioSexo"/><span>Hombre</span>
+                    <input type="radio" class="radioSexo"/><span>Mujer</span>
+                  </div>
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Nacionalidad: </div>
@@ -165,7 +167,7 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Region: </div>
@@ -180,7 +182,7 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Departamento: </div>
@@ -195,7 +197,7 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Provincia: </div>
@@ -210,7 +212,7 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Distrito: </div>
@@ -225,7 +227,7 @@
                   </select>
                   <!--select-asep-->
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Teléfono: </div>
@@ -234,10 +236,10 @@
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Area De Interes: </div>
-                <div class="label-input">
+                <div class="label-input radioMultipleMovil">
                   <div class="RadioContenedor">
                     <div class="RadioContenedorIndividual">
-                      <input type="radio"/><span>Temas legales, Contables, Tributarios     *</span>
+                      <input type="radio"/><span>Temas legales, Contables, Tributarios</span>
                     </div>
                     <div class="RadioContenedorIndividual">
                       <input type="radio"/><span>Marketing, Publicidad, Ventas, Redes Sociales</span>
@@ -256,16 +258,30 @@
                     </div>
                   </div>
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">¿Ya tienes una empresa?</div>
-                <div class="label-input radioButonLinea">
-                  <input type="radio" class="radioSexo"/><span>Si</span>
-                  <input type="radio" class="radioSexo"/><span>No</span>
+                <div class="label-input radioButonLinea radioMultipleMovil">
+                  <div>
+                    <input type="radio" class="radioSexo"/><span>Si</span>
+                    <input type="radio" class="radioSexo"/><span>No</span>
+                  </div>
                 </div>
-                <div>*</div>
+                <div class="asterisco">*</div>
               </div>
+            </div>
+            <div class="UltimoRadio">
+              <div>
+                <input type="radio"/>
+              </div>
+              <div><span>Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolasa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. </span><a href="#">Ver política de privacidad</a></div>
+            </div>
+            <div class="obligatorio">*Obligatorio</div>
+            <div class="botonGuardar">
+              <!--button-asepAzul-->
+              <input type="button" value="GUARDAR" class="btn-asepAzul"/>
+              <!--button-asepAzul-->
             </div>
           </div>
           <div class="pest">DOS</div>
@@ -274,5 +290,42 @@
       </div>
       <!--tabs-asep-->
     </div>
+    <!--redesSociales-asep-->
+    <div class="Redes-Sociales-Finish"><i class="fa fa-facebook-official"></i><i class="fa fa-twitter-square"></i><i class="fa fa-linkedin-square"></i></div>
+    <!--redesSociales-asep-->
+    <!--footer-asep-->
+    <footer class="Fotter">
+      <div class="Fotter-1">
+        <div class="Fotter-1-btn-HazteSocio"></div>
+      </div>
+      <div class="Fotter-2">
+        <div class="Fotter-2-Colaboradores"><span>Colaboradores</span>
+          <div class="Fotter-2-Colaboradores-Img"><img src="../../../imagenes/inkuba.png"/><img src="../../../imagenes/clicksandbricks.png"/><img src="../../../imagenes/labase.png"/><img src="../../../imagenes/mujeres.png"/></div>
+        </div>
+        <div class="Fotter-2-Sponsor"><span>Sponsor</span>
+          <div class="Fotter-2-Sponsor-Img"><img src="../../../imagenes/bid.png"/></div>
+        </div>
+      </div>
+      <div class="Fotter-3">
+        <div><img src="../../../imagenes/asep_footer.png"/></div>
+        <div>
+          <nav class="Fotter-3-Navegacion-Menu">
+            <ul>
+              <li class="li-active"><a class="active">Nosotros</a></li>
+              <li><a class="inactive">Directorio</a></li>
+              <li><a class="inactive">Actividades</a></li>
+              <li><a class="inactive">Noticias</a></li>
+              <li><a class="inactive">Beneficios</a></li>
+              <li><a class="inactive">Pregúntanos</a></li>
+            </ul>
+          </nav>
+          <div class="Fotter-3-Letter"><span class="Fotter-3-Letter-Span">Miguel Dasso 153 - piso A - San Isidro / info@asep.pe </span>
+            <div class="Emprendedor-RedesSociales"><span class="facebook"><i class="fa fa-facebook-official"></i></span><span class="twiter"><i class="fa fa-twitter-square"></i></span><span class="linkedin"><i class="fa fa-linkedin-square"></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="Fotter-4"><span>Powered by La Base</span><img src="../../../imagenes/sombrero.png"/></div>
+    </footer>
+    <!--footer-asep-->
   </body>
 </html>

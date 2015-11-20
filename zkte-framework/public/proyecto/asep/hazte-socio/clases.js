@@ -27,10 +27,6 @@ var NavegacionAsep = (function () {
 	return NavegacionAsep;
 })();
 
-var TituloAsep = function TituloAsep() {
-	_classCallCheck(this, TituloAsep);
-};
-
 var HeaderAsep = function HeaderAsep() {
 	_classCallCheck(this, HeaderAsep);
 }
@@ -162,4 +158,16 @@ var TabsAsep = (function () {
 
 var SelectAsep = function SelectAsep() {
 	_classCallCheck(this, SelectAsep);
+};
+
+var ButtonAsepAzul = function ButtonAsepAzul() {
+	_classCallCheck(this, ButtonAsepAzul);
+};
+
+var TituloAsep = function TituloAsep() {
+	_classCallCheck(this, TituloAsep);
+};
+
+var RedesSociales = function RedesSociales() {
+	_classCallCheck(this, RedesSociales);
 };

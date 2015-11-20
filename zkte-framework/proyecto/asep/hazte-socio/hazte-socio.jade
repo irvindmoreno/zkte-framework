@@ -59,11 +59,12 @@ block contenido
 									include ../../../componentes/select/asep/select.jade
 									//select-asep
 							else if index==7
-								div(class="label-input radioButonLinea")
-									input(type="radio" class="radioSexo")
-									span Hombre
-									input(type="radio" class="radioSexo")
-									span Mujer
+								div(class="label-input radioButonLinea radioMultipleMovil")
+									div
+										input(type="radio" class="radioSexo")
+										span Hombre
+										input(type="radio" class="radioSexo")
+										span Mujer
 							else if index==8 || index==9 || index==10 || index==11 || index==12
 								div(class="label-input")
 									//select-asep
@@ -72,26 +73,56 @@ block contenido
 									//select-asep
 							else if index==14
 								- labelsRadiosButton =["Temas legales, Contables, Tributarios","Marketing, Publicidad, Ventas, Redes Sociales","Financiamiento, inversionistas","Modelo de negocios","Internacionalización","Propiedad Intelectual y patentamiento"]
-								div(class="label-input")
+								div(class="label-input radioMultipleMovil")
 									div(class="RadioContenedor")
 										each labelRadio in labelsRadiosButton
 											div(class="RadioContenedorIndividual")
 												input(type="radio")
 												span=labelRadio
 							else if index==15
-								div(class="label-input radioButonLinea")
-									input(type="radio" class="radioSexo")
-									span Si
-									input(type="radio" class="radioSexo")
-									span No
+								div(class="label-input radioButonLinea radioMultipleMovil")
+									div
+										input(type="radio" class="radioSexo")
+										span Si
+										input(type="radio" class="radioSexo")
+										span No
 							else
 								div(class="label-input") input
 							if index==13
 								div
 							else
-								div *
+								div(class="asterisco") *
+				div(class="UltimoRadio")
+					div
+						input(type="radio")
+					div
+						span.
+							Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolasa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
+						a(href="#") Ver política de privacidad
+				div(class="obligatorio") *Obligatorio
+				div(class="botonGuardar")
+					//button-asepAzul
+					- contenido="GUARDAR"
+					include ../../../componentes/button/asepAzul/button.jade
+					//button-asepAzul
+
 			div(class="pest") DOS
 			div(class="pest") TRES
 	//tabs-asep
 
 block footer
+	//redesSociales-asep
+	include ../../../componentes/redesSociales/asep/redesSociales.jade
+	//redesSociales-asep
+
+	//footer-asep
+	- rutaImagenes ='../../../imagenes'
+	- colaborador1="inkuba.png"
+	- colaborador2="clicksandbricks.png"
+	- colaborador3="labase.png"
+	- colaborador4="mujeres.png"
+	- sponsor1="bid.png"
+	- logoAsep="asep_footer.png"
+	- logoFotterFin1="sombrero.png"
+	include ../../../componentes/footer/asep/footer.jade
+	//footer-asep
