@@ -2,6 +2,7 @@
 var proyecto='input';
 var vista='asep';
 
+
 var gulp = require('gulp'),
     jade = require('gulp-jade'),
     stylus = require('gulp-stylus'),

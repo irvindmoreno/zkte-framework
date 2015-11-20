@@ -26,6 +26,7 @@
   cursor: pointer;
   border-right: 1px solid #8a8a8a;
   transition: all ease 0.3s;
+  width: 33%;
 }
 .TabsAsep-Pestania:hover {
   background: #dee0e2;

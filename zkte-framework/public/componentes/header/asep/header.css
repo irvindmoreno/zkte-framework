@@ -1,33 +1,45 @@
 /********solo header***************/
 header {
-  background: background;
+  background: #2ca7df;
   height: 50px;
   display: flex;
+  display: -ms-flexbox;
   justify-content: flex-end;
+  justify-content: -ms-flex-end;
   align-items: center;
-  padding-right: 2em;
+  align-items: -ms-center;
+  width: 100%;
+}
+header div {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: center;
+  justify-content: -ms-center;
+  align-items: center;
+  align-items: -ms-center;
+  widht: 5em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+}
+header span {
+  color: #fff;
+}
+header img {
+  margin-right: 0.4em;
 }
 header a {
   display: flex;
+  display: -ms-flexbox;
   justify-content: center;
+  justify-content: -ms-center;
   align-items: center;
+  align-items: -ms-center;
   cursor: pointer;
+  text-decoration: none;
+  colo: #fff;
 }
-a:hover {
+header a:hover {
   transform: scale(1.1);
-}
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  widht: 5em;
-  margin-left: 1em;
-}
-span {
-  color: #fff;
-}
-img {
-  margin-right: 0.4em;
 }
 .img-header {
   height: 1.5em;

@@ -1,0 +1,10 @@
+- rutaImagenes ='../../../imagenes'
+a(href='#modal') Modal!
+div#modal.modal(aria-hidden='true')
+    .modal-dialog
+        .modal-header
+            a.btn-close(href='#close', aria-hidden='true') ×
+        .modal-body
+            p One modal example here! :D
+        .modal-footer
+fin
