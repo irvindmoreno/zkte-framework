@@ -1,0 +1,6 @@
+class ModalAsep{
+	constructor()
+	{
+		
+	}
+}
