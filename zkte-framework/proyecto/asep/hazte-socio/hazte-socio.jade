@@ -45,9 +45,9 @@ block contenido
 		div(class="pestaniasPadre")
 			div(class="pest")
 				div(class="pest-Titulo").
-					EN LA ASEP TE ENRTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
-					HACER DESPLEGAR TU EMPRENDIMIENTO,
-				- labels=["Nombres: ","Apellidos: ","E-mail: ","Contraseña: ","Confirmar Contraseña: ","Documento De Identidad: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Region: ","Departamento: ","Provincia: ","Distrito: ","Teléfono: ","Area De Interes: ","¿Ya tienes una empresa?"]
+					EN LA ASEP TE ENTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
+					HACER DESPLEGAR TU EMPRENDIMIENTO.
+				- labels=["Nombres: ","Apellidos: ","E-mail: ","Contraseña: ","Confirmar Contraseña: ","Documento De Identidad: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Departamento: ","Provincia: ","Distrito: ","Teléfono: ","Area De Interes: ","¿Ya tienes una empresa?"]
 				div(class="labels")
 					each label,index in labels
 						div(class="labels-Cont")
@@ -65,13 +65,13 @@ block contenido
 										span Hombre
 										input(type="radio" class="radioSexo")
 										span Mujer
-							else if index==8 || index==9 || index==10 || index==11 || index==12
+							else if index==8 || index==9 || index==10 || index==11
 								div(class="label-input")
 									//select-asep
 									- datoSelectDia=[1,2,3,4]
 									include ../../../componentes/select/asep/select.jade
 									//select-asep
-							else if index==14
+							else if index==13
 								- labelsRadiosButton =["Temas legales, Contables, Tributarios","Marketing, Publicidad, Ventas, Redes Sociales","Financiamiento, inversionistas","Modelo de negocios","Internacionalización","Propiedad Intelectual y patentamiento"]
 								div(class="label-input radioMultipleMovil")
 									div(class="RadioContenedor")
@@ -79,7 +79,7 @@ block contenido
 											div(class="RadioContenedorIndividual")
 												input(type="radio")
 												span=labelRadio
-							else if index==15
+							else if index==14
 								div(class="label-input radioButonLinea radioMultipleMovil")
 									div
 										input(type="radio" class="radioSexo")
@@ -88,7 +88,7 @@ block contenido
 										span No
 							else
 								div(class="label-input") input
-							if index==13
+							if index==12
 								div
 							else
 								div(class="asterisco") *
@@ -97,16 +97,109 @@ block contenido
 						input(type="radio")
 					div
 						span.
-							Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolasa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
+							Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
 						a(href="#") Ver política de privacidad
 				div(class="obligatorio") *Obligatorio
-				div(class="botonGuardar")
-					//button-asepAzul
-					- contenido="GUARDAR"
-					include ../../../componentes/button/asepAzul/button.jade
-					//button-asepAzul
+				div(class="botonGuardar")					
+					//modal-asep					
+					a(href='#guardarConExito')
+						//button-asepAzul
+						- contenido="GUARDAR"
+						include ../../../componentes/button/asepAzul/button.jade
+						//button-asepAzul
+					div#guardarConExito.modal(aria-hidden='true')
+						.modal-dialog
+							.modal-header
+								a.btn-close(href='#close', aria-hidden='true') ×
+							.modal-body
+								p Los Datos se guardaron exitosamente
+							.modal-footer					
+					//modal-asep
 
-			div(class="pest") DOS
+			div(class="pest")
+				div(class="pest-Titulo").
+					ESTAS A UN PASO DE CONVERTIRTE EN SOCIO DE LA ASEP, POR FAVOR CUÉNTANOS PARA HACER HACER DESPLEGAR TU EMPRENDIMIENTO.
+				div(class="ContenedorEmpresasAgregadas")
+				div(class="datosDeLaEmpresa") Datos de empresa
+				div
+					- labels=["Ruc: ","Razón Social: ","Nombre Comercial: ","Página web: ","Correo De Empresa: ","Fanpage: ","Twiter: ","Linkedin: ","Logotipo de tu empresa: ","Tipo de Actividad: ","Rubro: ","Tamaño De La Empresa: ","Número De Trabajadores: ","Inicio de Actividades: ","Descripción de tu empresa: "]
+					div(class="labels")
+						each label,index in labels
+							div(class="labels-Cont")
+								if index==14
+									div(class="label-texto claseEspecial")=label
+								else
+									div(class="label-texto")=label
+								if index==10
+									div(class="label-input")
+										//select-asep
+										- datoSelectDia=[1,2,3,4]
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==11
+									- labelsRadiosButton =["Micro - 0 a 2.400 U.T.","Pequeña - 2.401 a 25.000 U.T.","Mediana - 25.001 a 100.000 U.T","Grande - más de 100.000 U.T"]
+									div(class="label-input radioMultipleMovil")
+										div(class="RadioContenedor")
+											each labelRadio in labelsRadiosButton
+												div(class="RadioContenedorIndividual")
+													input(type="radio")
+													span=labelRadio
+								else if index==12
+									div(class="label-input")
+										input(type="number" min="1" class="inputNumber")
+								else if index==8
+									div(class="label-input")
+										div(class="BrowseFile")
+											//input-fileAsep
+											- contenido="Browse"
+											include ../../../componentes/input/fileAsep/input.jade
+											//input-fileAsep
+											span Min. 300x300 pixeles
+								else if index==9
+									div(class="label-input radioButonLinea radioMultipleMovil")
+										div
+											input(type="radio" class="radioSexo")
+											span Producto
+											input(type="radio" class="radioSexo")
+											span Servicio
+											input(type="radio" class="radioSexo")
+											span Mixto
+								else if index==13
+									div(class="label-input")
+										//select-asep
+										- datoSelectDia=[1,2,3,4]
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==14
+									div(class="label-input")
+										div
+											textarea(class="textareaPaso2")
+										div(class="buttonAgregarOtraEmpresa")
+											//button-asepAzul
+											- contenido="+ Agregar otra Empresa"
+											include ../../../componentes/button/asepAzul/button.jade
+											//button-asepAzul
+								else
+									div(class="label-input") input
+								if index==3 || index==5 || index==6 || index==7 || index==8
+									div
+								else if index==14
+									div(class="asterisco claseEspecial") *
+								else
+									div(class="asterisco") *
+					div(class="UltimoRadio")
+						div
+							input(type="radio")
+						div
+							span.
+								Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
+							a(href="#") Ver política de privacidad
+					div(class="obligatorio") *Obligatorio
+					div(class="botonGuardar")
+						//button-asepAzul
+						- contenido="GUARDAR Y SEGUIR"
+						include ../../../componentes/button/asepAzul/button.jade
+						//button-asepAzul
 			div(class="pest") TRES
 	//tabs-asep
 
@@ -126,3 +219,4 @@ block footer
 	- logoFotterFin1="sombrero.png"
 	include ../../../componentes/footer/asep/footer.jade
 	//footer-asep
+

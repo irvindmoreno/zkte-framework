@@ -29,6 +29,32 @@ class HeaderAsep{
   	
 
 }
+
+class SelectAsep{
+	constructor()
+	{
+
+	}
+}
+
+class ButtonAsepAzul{
+	constructor()
+	{
+
+	}
+}
+class TituloAsep{
+	constructor()
+	{
+
+	}
+}
+class RedesSociales{
+	constructor()
+	{
+
+	}
+}
 //se crean estas varables porque con metodos como el onclick no funciona el this
 var colorDesactivadoNumero;
 var colorDesactivadoTitulo;
@@ -136,26 +162,13 @@ class TabsAsep{
 	}
 }
 //var tabsAsep= new TabsAsep()
-class SelectAsep{
+class ModalAsep{
 	constructor()
 	{
-
+		
 	}
 }
-
-class ButtonAsepAzul{
-	constructor()
-	{
-
-	}
-}
-class TituloAsep{
-	constructor()
-	{
-
-	}
-}
-class RedesSociales{
+class InputFileAsep{
 	constructor()
 	{
 

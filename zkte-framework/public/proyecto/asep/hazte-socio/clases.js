@@ -29,6 +29,22 @@ var NavegacionAsep = (function () {
 
 var HeaderAsep = function HeaderAsep() {
 	_classCallCheck(this, HeaderAsep);
+};
+
+var SelectAsep = function SelectAsep() {
+	_classCallCheck(this, SelectAsep);
+};
+
+var ButtonAsepAzul = function ButtonAsepAzul() {
+	_classCallCheck(this, ButtonAsepAzul);
+};
+
+var TituloAsep = function TituloAsep() {
+	_classCallCheck(this, TituloAsep);
+};
+
+var RedesSociales = function RedesSociales() {
+	_classCallCheck(this, RedesSociales);
 }
 //se crean estas varables porque con metodos como el onclick no funciona el this
 ;
@@ -156,18 +172,10 @@ var TabsAsep = (function () {
 	return TabsAsep;
 })();
 
-var SelectAsep = function SelectAsep() {
-	_classCallCheck(this, SelectAsep);
+var ModalAsep = function ModalAsep() {
+	_classCallCheck(this, ModalAsep);
 };
 
-var ButtonAsepAzul = function ButtonAsepAzul() {
-	_classCallCheck(this, ButtonAsepAzul);
-};
-
-var TituloAsep = function TituloAsep() {
-	_classCallCheck(this, TituloAsep);
-};
-
-var RedesSociales = function RedesSociales() {
-	_classCallCheck(this, RedesSociales);
+var InputFileAsep = function InputFileAsep() {
+	_classCallCheck(this, InputFileAsep);
 };

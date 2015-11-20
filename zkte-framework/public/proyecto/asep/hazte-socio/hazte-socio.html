@@ -47,16 +47,6 @@
       <div class="TituloAsep">ÚNETE A LA ASEP</div>
       <!--titulo-asep-->
       <!--tabs-asep-->
-      <!--
-      - pestaniaUno="Sobre ti"
-      - contenidoUno="Queremos conocerte y saber cuáles son tus necesidades para emprender"
-      - pestaniaDos="Sobre tu empresa"
-      - contenidoDos="¿has fundado algún emprendimiento? Cuéntanos lo que haces"
-      - pestaniaTres="Necesitamos de tu ayuda"
-      - contenidoTres="Es la única forma de que hagamos de Perú el mejor lugar para emprender."
-      - pestanias={1:pestaniaUno,2:pestaniaDos,3:pestaniaTres}
-      - pestaniasContenido=[contenidoUno,contenidoDos,contenidoTres]
-      -->
       <div class="TabsAsep">
         <div data="1" class="TabsAsep-Pestania">
           <div class="TabsAsep-Pestania-Ttulo">
@@ -95,8 +85,8 @@
         <div class="pestaniasPadre">
           <div class="pest">
             <div class="pest-Titulo">
-              EN LA ASEP TE ENRTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
-              HACER DESPLEGAR TU EMPRENDIMIENTO,
+              EN LA ASEP TE ENTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
+              HACER DESPLEGAR TU EMPRENDIMIENTO.
             </div>
             <div class="labels">
               <div class="labels-Cont">
@@ -156,21 +146,6 @@
               </div>
               <div class="labels-Cont">
                 <div class="label-texto">Nacionalidad: </div>
-                <div class="label-input">
-                  <!--select-asep-->
-                  <select class="SelectAsep Dia">
-                    <option>Día</option>
-                    <option value="0">1</option>
-                    <option value="1">2</option>
-                    <option value="2">3</option>
-                    <option value="3">4</option>
-                  </select>
-                  <!--select-asep-->
-                </div>
-                <div class="asterisco">*</div>
-              </div>
-              <div class="labels-Cont">
-                <div class="label-texto">Region: </div>
                 <div class="label-input">
                   <!--select-asep-->
                   <select class="SelectAsep Dia">
@@ -275,16 +250,181 @@
               <div>
                 <input type="radio"/>
               </div>
-              <div><span>Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolasa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. </span><a href="#">Ver política de privacidad</a></div>
+              <div><span>Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. </span><a href="#">Ver política de privacidad</a></div>
             </div>
             <div class="obligatorio">*Obligatorio</div>
-            <div class="botonGuardar">
-              <!--button-asepAzul-->
-              <input type="button" value="GUARDAR" class="btn-asepAzul"/>
-              <!--button-asepAzul-->
+            <div class="botonGuardar">					
+              <!--modal-asep					--><a href="#guardarConExito">
+                <!--button-asepAzul-->
+                <input type="button" value="GUARDAR" class="btn-asepAzul"/>
+                <!--button-asepAzul--></a>
+              <div id="guardarConExito" aria-hidden="true" class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-header"><a href="#close" aria-hidden="true" class="btn-close">×</a></div>
+                  <div class="modal-body">
+                    <p>Los Datos se guardaron exitosamente</p>
+                  </div>
+                  <div class="modal-footer">					</div>
+                </div>
+              </div>
+              <!--modal-asep-->
             </div>
           </div>
-          <div class="pest">DOS</div>
+          <div class="pest">
+            <div class="pest-Titulo">ESTAS A UN PASO DE CONVERTIRTE EN SOCIO DE LA ASEP, POR FAVOR CUÉNTANOS PARA HACER HACER DESPLEGAR TU EMPRENDIMIENTO.</div>
+            <div class="ContenedorEmpresasAgregadas"></div>
+            <div class="datosDeLaEmpresa">Datos de empresa</div>
+            <div>
+              <div class="labels">
+                <div class="labels-Cont">
+                  <div class="label-texto">Ruc: </div>
+                  <div class="label-input">input</div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Razón Social: </div>
+                  <div class="label-input">input</div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Nombre Comercial: </div>
+                  <div class="label-input">input</div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Página web: </div>
+                  <div class="label-input">input</div>
+                  <div></div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Correo De Empresa: </div>
+                  <div class="label-input">input</div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Fanpage: </div>
+                  <div class="label-input">input</div>
+                  <div></div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Twiter: </div>
+                  <div class="label-input">input</div>
+                  <div></div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Linkedin: </div>
+                  <div class="label-input">input</div>
+                  <div></div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Logotipo de tu empresa: </div>
+                  <div class="label-input">
+                    <div class="BrowseFile">
+                      <!--input-fileAsep-->
+                      <label class="cargar"><span>Browse
+                          <input type="file" id="archivo" name="archivo"/></span></label>
+                      <!--input-fileAsep--><span>Min. 300x300 pixeles</span>
+                    </div>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Tipo de Actividad: </div>
+                  <div class="label-input radioButonLinea radioMultipleMovil">
+                    <div>
+                      <input type="radio" class="radioSexo"/><span>Producto</span>
+                      <input type="radio" class="radioSexo"/><span>Servicio</span>
+                      <input type="radio" class="radioSexo"/><span>Mixto</span>
+                    </div>
+                  </div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Rubro: </div>
+                  <div class="label-input">
+                    <!--select-asep-->
+                    <select class="SelectAsep Dia">
+                      <option>Día</option>
+                      <option value="0">1</option>
+                      <option value="1">2</option>
+                      <option value="2">3</option>
+                      <option value="3">4</option>
+                    </select>
+                    <!--select-asep-->
+                  </div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Tamaño De La Empresa: </div>
+                  <div class="label-input radioMultipleMovil">
+                    <div class="RadioContenedor">
+                      <div class="RadioContenedorIndividual">
+                        <input type="radio"/><span>Micro - 0 a 2.400 U.T.</span>
+                      </div>
+                      <div class="RadioContenedorIndividual">
+                        <input type="radio"/><span>Pequeña - 2.401 a 25.000 U.T.</span>
+                      </div>
+                      <div class="RadioContenedorIndividual">
+                        <input type="radio"/><span>Mediana - 25.001 a 100.000 U.T</span>
+                      </div>
+                      <div class="RadioContenedorIndividual">
+                        <input type="radio"/><span>Grande - más de 100.000 U.T</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Número De Trabajadores: </div>
+                  <div class="label-input">
+                    <input type="number" min="1" class="inputNumber"/>
+                  </div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto">Inicio de Actividades: </div>
+                  <div class="label-input">
+                    <!--select-asep-->
+                    <select class="SelectAsep Dia">
+                      <option>Día</option>
+                      <option value="0">1</option>
+                      <option value="1">2</option>
+                      <option value="2">3</option>
+                      <option value="3">4</option>
+                    </select>
+                    <!--select-asep-->
+                  </div>
+                  <div class="asterisco">*</div>
+                </div>
+                <div class="labels-Cont">
+                  <div class="label-texto claseEspecial">Descripción de tu empresa: </div>
+                  <div class="label-input">
+                    <div>
+                      <textarea class="textareaPaso2"></textarea>
+                    </div>
+                    <div class="buttonAgregarOtraEmpresa">
+                      <!--button-asepAzul-->
+                      <input type="button" value="+ Agregar otra Empresa" class="btn-asepAzul"/>
+                      <!--button-asepAzul-->
+                    </div>
+                  </div>
+                  <div class="asterisco claseEspecial">*</div>
+                </div>
+              </div>
+              <div class="UltimoRadio">
+                <div>
+                  <input type="radio"/>
+                </div>
+                <div><span>Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. </span><a href="#">Ver política de privacidad</a></div>
+              </div>
+              <div class="obligatorio">*Obligatorio</div>
+              <div class="botonGuardar">
+                <!--button-asepAzul-->
+                <input type="button" value="GUARDAR Y SEGUIR" class="btn-asepAzul"/>
+                <!--button-asepAzul-->
+              </div>
+            </div>
+          </div>
           <div class="pest">TRES</div>
         </div>
       </div>

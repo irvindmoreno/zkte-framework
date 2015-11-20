@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='modal';
-var vista='asep';
+var proyecto='asep';
+var vista='recuperar-contrasenia';
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

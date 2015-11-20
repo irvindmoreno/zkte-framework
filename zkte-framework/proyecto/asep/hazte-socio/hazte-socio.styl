@@ -29,11 +29,16 @@ rutaImagenes='../../../imagenes'
 	.radioMultipleMovil
 		display flex
 		justify-content center
+	.textareaPaso2
+		width 100% !important
+	.buttonAgregarOtraEmpresa input
+		margin-left 53.5% !important
+		margin-top 1em
 .labels
 	display flex
 	flex-direction column
 	align-items center
-	margin-top 2em	
+	margin-top 1em	
 .label-texto
 	width 12em
 	text-align right
@@ -71,8 +76,37 @@ rutaImagenes='../../../imagenes'
 	display flex
 	justify-content center
 	margin-top 1em
+.datosDeLaEmpresa
+	padding-left 10%
+	font-size 1.5em
+	margin-top 26px
+	font-weight bold
+	color #353232
+.textareaPaso2
+	width 26em
+	height 11em
+	outline none
+.buttonAgregarOtraEmpresa input
+	font-size 1em
+	background #616669
+	color #2F2D2D
+	margin-left 23%
+	margin-top 1em
+.buttonAgregarOtraEmpresa input:hover
+	color white
+.BrowseFile
+	display flex
+	align-items center
+.BrowseFile span
+	margin-left 1em
+.claseEspecial
+	position relative
+	top -2em
+.inputNumber
+	height 2.5em
+	outline none
 /************Layout****************/
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
 /************Layout****************/
 
 
@@ -81,7 +115,7 @@ rutaImagenes='../../../imagenes'
 colorDeLetraHoverDesktop=#2ca7df
 colorDeFondoAlDarleHoverMovil=#f02228
 bordeInferiorMovil=#cacfdc
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/navegacion/asep/navegacion.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/navegacion/asep/navegacion.styl')
 /************navegacion-asep****************/
 
 
@@ -89,24 +123,14 @@ bordeInferiorMovil=#cacfdc
 /************header-asep****************/
 background=#2ca7df
 colorLetra=white
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/header/asep/header.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/header/asep/header.styl')
 /************header-asep****************/
 
-
-/************tabs-asep****************/
-backgroundNumero=#5D5C5C
-colorNumero=white
-backgroundPestania=#b4b4b4
-bordePestania=#8A8A8A
-hoverPestaniaBackground=#DEE0E2
-colorContenido=#777
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/tabs/asep/tabs.styl')
-/************tabs-asep****************/
 
 
 /************select-asep****************/
 tamanioSelectDia=29em
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/select/asep/select.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/select/asep/select.styl')
 /************select-asep****************/
 
 
@@ -118,7 +142,7 @@ color=white
 borde=none
 backgroundHover=#39b44c
 tamanioLetara=1.2em
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/button/asepAzul/button.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/button/asepAzul/button.styl')
 /************button-asepAzul****************/
 
 
@@ -127,14 +151,14 @@ fondoTituloAsep=#2ca7df
 colorDeLetra=white
 tamanioDeLetra=3em
 padding=0.5em 0em
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
 /************titulo-asep****************/
 
 
 
 /************redesSociales-asep****************/
 background=#6b6767
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/redesSociales/asep/redesSociales.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/redesSociales/asep/redesSociales.styl')
 /************redesSociales-asep****************/
 
 
@@ -146,7 +170,41 @@ celeste=#2ca7df
 negro1=#4c4c4c
 negro2=#303030
 negro3=#232323
-@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/footer/asep/footer.styl')
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/footer/asep/footer.styl')
 /************footer-asep****************/
+
+
+/************tabs-asep****************/
+backgroundNumero=#5D5C5C
+colorNumero=white
+backgroundPestania=#b4b4b4
+bordePestania=#8A8A8A
+hoverPestaniaBackground=#DEE0E2
+colorContenido=#777
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/tabs/asep/tabs.styl')
+/************tabs-asep****************/
+
+
+
+
+
+/************modal-asep****************/
+colorFondoModal=#2E2E2E
+colorFondoDetrasModal=rgba(243, 240, 240, 0.84)
+colorLetraModal=#eeee
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/modal/asep/modal.styl')
+/************modal-asep****************/
+
+
+
+/************input-fileAsep****************/
+colorDeLetra=#4e4444
+colorDeBorde=#4e4444
+background=white
+ancho=150px
+alto=30px
+tamanioLetra=18px
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/fileAsep/input.styl')
+/************input-fileAsep****************/
 
 

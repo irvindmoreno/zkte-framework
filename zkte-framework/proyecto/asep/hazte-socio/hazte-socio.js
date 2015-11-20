@@ -9,4 +9,7 @@ function inicio()
     var tituloAsep= new TituloAsep()    
     var redesSocialesAsep= new RedesSocialesAsep()
     var footerAsep= new FooterAsep()
+    var modalAsep= new ModalAsep()
+    var buttonAsepAzul= new ButtonAsepAzul()
+    var inputFileAsep= new InputFileAsep()
 }
