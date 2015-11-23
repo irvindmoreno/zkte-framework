@@ -1,5 +1,6 @@
-//datoMuestra: Dia
-select(class="SelectAsep Dia")
-	option datoMuestra
-	each dia, i in datoSelectDia
-		option(value=i) #{dia}
+div(class="contenedorDeItemAValidar")
+	select(class="SelectAsep Dia "+classSelect)
+		option(value=opcion)=opcionInicial
+		each opcion in opciones
+			option(value=opcion)=opcion
+	span(class='errorInputValidado') X

@@ -47,19 +47,29 @@
       <div class="TituloAsep">LOGIN</div>
       <!--titulo-asep-->
       <div class="formluario">
-        <div> 
+        <div class="elementoCentroLogin">
           <div class="formluarioDiv"><span class="formluario-span">Email:  </span>
-            <input type="text" class="inputAsep"/>
+            <!--input-textAsep-->
+            <!--EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar-->
+            <div class="contenedorDeItemAValidar">
+              <input type="text" placeholder="Ejm: daniel.moreno@hotmail.com.pe" class="zkteInputAsep EmailValidar"/><span class="errorInputValidado">X</span>
+            </div>
+            <!--input-textAsep-->
           </div>
           <div class="formluarioDiv"><span class="formluario-span">Contraseña: 				 </span>
-            <input type="text" class="inputAsep"/>
-          </div>
-          <div class="btn-iniciarSesion">
-            <div>
-              <!--button-asepAzul-->
-              <input type="button" value="INICIAR SESIÓN" class="btn-asepAzul"/>
-              <!--button-asepAzul-->
+            <!--input-textAsep-->
+            <!--EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar-->
+            <div class="contenedorDeItemAValidar">
+              <input type="password" placeholder="Ejm: clave1234" class="zkteInputAsep confirmaContrasenia"/><span class="errorInputValidado">X</span>
             </div>
+            <!--input-textAsep-->
+          </div>
+          <div class="btn-iniciarSesion"><a href="#modal" class="btn-guardarValidar">
+              <div>
+                <!--button-asepAzul-->
+                <input type="button" value="INICIAR SESIÓN" class="btn-asepAzul"/>
+                <!--button-asepAzul-->
+              </div></a>
             <div class="letraSoporte">¿No tienes cuenta? <a href="#">Hazte Socio</a></div>
             <div class="letraSoporte">¿Perdiste tu cuenta? <a href="#">Recupérala</a></div>
           </div>

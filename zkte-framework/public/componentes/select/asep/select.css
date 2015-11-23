@@ -1,33 +1,51 @@
 .SelectAsep {
-  background: #f7f2f2 url("../../../imagenes/flecha.png") no-repeat right center;
+  background: #f7f2f2 url("../../../imagenes//flecha.png") no-repeat right center;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  outline: none;
+  width: 98%;
+  cursor: pointer;
 }
 .Dia {
-  font-size: 12px;
+  font-size: 16px;
   padding: 8px;
-  width: 5%;
-  border-right-width: 2px;
-  border-top-width: 0.5px;
+  width: tamanioSelectDia;
+  border-top-width: 1px;
+  border-left-width: 1px;
   border-right-width: 1px;
   border-radius: 5px;
+  border-bottom-width: 1px;
+  border-style: solid;
 }
-.Mes {
-  font-size: 12px;
-  padding: 8px;
-  width: 8%;
-  border-right-width: 2px;
-  border-top-width: 0.5px;
-  border-right-width: 1px;
-  border-radius: 5px;
+.errorInputValidado {
+  color: #fff;
+  height: 1.5em;
+  width: 2em;
+  background: #2ca7df;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  visibility: hidden;
+  opacity: 0;
+  transition: all ease 0.5s;
+  cursor: pointer;
 }
-.Anio {
-  font-size: 12px;
-  padding: 8px;
-  width: 5%;
-  border-right-width: 2px;
-  border-top-width: 0.5px;
-  border-right-width: 1px;
-  border-radius: 5px;
+.contenedorDeItemAValidar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.InputInvalidado {
+  visibility: hidden;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.inputValido {
+  visibility: visible;
+  opacity: 1;
 }

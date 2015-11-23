@@ -1,3 +1,6 @@
-colorInput=#FFFFFF
-tamanioInput=35%
+colorDeX=white
+backgroundDeX=#2ca7df
+colorBordeInput=gray
+paddingleftInnput=0.5em
+tamanioInput=22em
 fin

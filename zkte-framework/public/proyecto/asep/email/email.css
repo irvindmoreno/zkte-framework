@@ -1,0 +1,62 @@
+.headerEmailAsep {
+  background: #2ca7df;
+  height: 50px;
+}
+.imagenEmailAsep {
+  padding: 3em 2em;
+}
+.imagenEmailAsep img {
+  height: 6em;
+}
+.contenidoLetra {
+  color: #595757;
+  padding: 0em 3em;
+}
+.btn-CambiarCOntra {
+  margin-left: 10%;
+  margin-top: 1.5em;
+}
+@media screen and (max-width: 900px) {
+  .imagenEmailAsep img {
+    height: 5em;
+  }
+  .btn-CambiarCOntra {
+    margin-left: 0%;
+    padding: 9px 10px;
+  }
+}
+/************Layout****************/
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+.Contenedor {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@media screen and (max-width: 900px) {
+  .Contenedor {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+}
+/************Layout****************/
+/************button-asepAzul****************/
+.btn-asepAzul {
+  background: #2ca7df;
+  padding: 9px 30px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  transition: all ease 0.4s;
+  cursor: pointer;
+  font-size: 1em;
+}
+.btn-asepAzul:hover {
+  background: #39b44c;
+}
+/************button-asepAzul****************/

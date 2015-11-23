@@ -53,11 +53,79 @@ block contenido
 						div(class="labels-Cont")
 							div(class="label-texto")=label
 							if index==6
-								div(class="label-input")
+								div(class="label-input fechaNacimientoSlects" )
 									//select-asep
-									- datoSelectDia=[1,2,3,4]
+									- opcionInicial="Día"
+									- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+									- classSelect="classSelect"
 									include ../../../componentes/select/asep/select.jade
 									//select-asep
+									//select-asep
+									- opcionInicial="Mes"
+									- opciones=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octube","Noviembre","Diciembre"]
+									- classSelect="classSelect"
+									include ../../../componentes/select/asep/select.jade
+									//select-asep
+									//select-asep
+									- opcionInicial="Año"
+									- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+									- classSelect="classSelect"
+									include ../../../componentes/select/asep/select.jade
+									//select-asep
+							else if index==0
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="NombreValidar"
+									- placeholder="Ej: Irvin Daniel"
+									- tipo="text"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
+							else if index==1
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="ApellidoValidar"
+									- placeholder="Ej: MorenoChávez"
+									- tipo="text"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
+							else if index==2
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="EmailValidar"
+									- placeholder="Ej: daniel.moreno@clicksandbricks.pe"
+									- tipo="text"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
+							else if index==3
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="ContraseniaValidar"
+									- placeholder="Ej: clave142"
+									- tipo="password"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
+							else if index==4
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="ContraseniaValidar"
+									- placeholder="Ej: clave142"
+									- tipo="password"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
+							else if index==5
+								div(class="label-input")
+									//input-textAsep
+									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+									- tipoDeInput="DniValidar"
+									- placeholder="Ej: 46712716"
+									- tipo="text"
+									include ../../../componentes/input/textAsep/input.jade
+									//input-textAsep
 							else if index==7
 								div(class="label-input radioButonLinea radioMultipleMovil")
 									div
@@ -68,7 +136,9 @@ block contenido
 							else if index==8 || index==9 || index==10 || index==11
 								div(class="label-input")
 									//select-asep
-									- datoSelectDia=[1,2,3,4]
+									- opcionInicial="Día"
+									- opciones=[1,2,3,4]
+									- classSelect="classSelect"
 									include ../../../componentes/select/asep/select.jade
 									//select-asep
 							else if index==13
@@ -102,7 +172,7 @@ block contenido
 				div(class="obligatorio") *Obligatorio
 				div(class="botonGuardar")					
 					//modal-asep					
-					a(href='#guardarConExito')
+					a(href='#guardarConExito' class="btn-guardarValidado")
 						//button-asepAzul
 						- contenido="GUARDAR"
 						include ../../../componentes/button/asepAzul/button.jade
@@ -133,9 +203,11 @@ block contenido
 								if index==10
 									div(class="label-input")
 										//select-asep
-										- datoSelectDia=[1,2,3,4]
+										- opcionInicial="Día"
+										- opciones=[1,2,3,4]
+										- classSelect="classSelect"
 										include ../../../componentes/select/asep/select.jade
-										//select-asep
+										//select-asep								
 								else if index==11
 									- labelsRadiosButton =["Micro - 0 a 2.400 U.T.","Pequeña - 2.401 a 25.000 U.T.","Mediana - 25.001 a 100.000 U.T","Grande - más de 100.000 U.T"]
 									div(class="label-input radioMultipleMovil")
@@ -167,7 +239,9 @@ block contenido
 								else if index==13
 									div(class="label-input")
 										//select-asep
-										- datoSelectDia=[1,2,3,4]
+										- opcionInicial="Día"
+										- opciones=[1,2,3,4]
+										- classSelect="classSelect"
 										include ../../../componentes/select/asep/select.jade
 										//select-asep
 								else if index==14
@@ -219,4 +293,3 @@ block footer
 	- logoFotterFin1="sombrero.png"
 	include ../../../componentes/footer/asep/footer.jade
 	//footer-asep
-

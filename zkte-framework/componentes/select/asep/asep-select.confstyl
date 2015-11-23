@@ -1,2 +1,12 @@
-tamanioSelectDia=5%
+rutaImagen="../../../imagenes/"
+colorDeX=white
+backgroundDeX=#2ca7df
+marginLeftSpanX=0.5em
+colorBordeInput=gray
+imagenFlecha="flecha.png"
+backgroundSelect=#F7F2F2
+tamanioLetraSelect=16px
+paddingSelect=8px
+borderRadiusSelect=5px
+anchoSelect=98%
 fin

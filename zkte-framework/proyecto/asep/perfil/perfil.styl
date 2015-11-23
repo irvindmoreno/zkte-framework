@@ -1,0 +1,128 @@
+rutaComponentes='../../../componentes'
+rutaImagenes='../../../imagenes'
+.contenedorFormularioPerfil
+	background #dee0e2
+	display flex
+	justify-content center
+	flex-direction column
+	align-items center
+	padding-top 4em
+	padding-bottom 2em
+.labels
+	color #353434
+	font-weight bold
+.filaDelFormuaario
+	display flex
+	width 50%
+	height 1.4em
+	border-bottom 1px solid #A9A9A9
+	margin-top 1em
+	align-items center
+.contenedorINputs
+	flex 1
+.contenedorDeBotones
+	width 60%
+	display flex
+	justify-content space-around
+	margin-top 2em
+.btn-HazTuAporte
+	background	#2ca7df !important
+	color white !important
+@media screen and (max-width: 900px)
+	.filaDelFormuaario
+		width 97%
+@media screen and (max-width: 650px)
+	.filaDelFormuaario
+		display block
+		height 2.6em
+	.contenedorDeBotones
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+	.btn-asepAzul
+		width 100%
+		margin-bottom 0.5em
+	.btn-editarPerfilModal
+		width 100%
+/************Layout****************/
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
+/************Layout****************/
+/************header-asep****************/
+background=#2ca7df
+colorLetra=white
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/header/asep/header.styl')
+/************header-asep****************/
+
+
+/************navegacion-asep****************/
+colorDeLetraHoverDesktop=#2ca7df
+colorDeFondoAlDarleHoverMovil=#f02228
+bordeInferiorMovil=#cacfdc
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/navegacion/asep/navegacion.styl')
+/************navegacion-asep****************/
+
+
+/************titulo-asep****************/
+fondoTituloAsep=#2ca7df
+colorDeLetra=white
+tamanioDeLetra=3em
+padding=0.5em 0em
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
+/************titulo-asep****************/
+
+
+/************input-textAsep****************/
+colorDeX=white
+backgroundDeX=#2ca7df
+marginLeftSpanX=0.5em
+colorBordeInput=gray
+paddingleftInnput=1em
+anchoInput=98%
+altoInput=2em
+backgroundInput=none
+borderRadiusInput=3px
+.zkteInputAsep
+	border none !important
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/input/textAsep/input.styl')
+/************input-textAsep****************/
+
+
+/************button-asepAzul****************/
+//#2ca7df
+background=white
+padding=9px 15px
+color=#353434
+borde=none
+backgroundHover=#2ca7df
+tamanioLetara=0.9em
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/button/asepAzul/button.styl')
+/************button-asepAzul****************/
+
+
+/************redesSociales-asep****************/
+background=#6b6767
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/redesSociales/asep/redesSociales.styl')
+/************redesSociales-asep****************/
+
+
+/************footer-asep****************/
+rutaImagenes="../../../imagenes"
+imagenFooter1="btn_hazte_socio_white.png"
+imagenFooter1Hover="btn_hazte_socio_white_selected.png"
+celeste=#2ca7df
+negro1=#4c4c4c
+negro2=#303030
+negro3=#232323
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/footer/asep/footer.styl')
+/************footer-asep****************/
+
+
+/************modal-asep****************/
+colorFondoModal=#2E2E2E
+colorFondoDetrasModal=rgba(243, 240, 240, 0.84)
+colorLetraModal=#eeee
+@import('/home/zktitos/Escritorio/zkte-framework/zkte-framework/componentes/modal/asep/modal.styl')
+/************modal-asep****************/
+
+

@@ -1,0 +1,7 @@
+- rutaImagenes ='../../../imagenes'
+- imagen="beneficio_politicas.png"
+- titulo= "POLÍTICAS PÚBLICAS"
+- contenido="Promovemos el desarrollo de políticas públicas, somos el articulador entre los emprendedores, las instituciones y el gobierno."
+- colorBorde="bordeRojo"
+- colorLetra="letraRoja"
+fin

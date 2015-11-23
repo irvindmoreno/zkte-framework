@@ -1,3 +1,4 @@
 - rutaImagenes ='../../../imagenes'
 - contenido="GUARDAR"
+- claseBtn="GUARDAR"
 fin

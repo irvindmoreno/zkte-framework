@@ -1,0 +1,192 @@
+extends ../layout/layout.jade
+block head
+	link(href='./registrate.css' rel='stylesheet')
+	script(src='./registrate.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Login'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Hazte Socio'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+block navegacion
+	//navegacion-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Nosotros'
+	- pestaniaDos='Directorio'
+	- pestaniaTres='Actividades'
+	- pestaniaCuatro='Noticias'
+	- pestaniaCinco='Beneficios'
+	- pestaniaSeis='Pregúntanos'
+	include ../../../componentes/navegacion/asep/navegacion.jade
+	//navegacion-asep
+block contenido
+	//modal-asep
+	- rutaImagenes ='../../../imagenes'
+	div#modal.modal(aria-hidden='true')
+		.modal-dialog
+			.modal-header
+				a.btn-close(href='#close', aria-hidden='true') ×
+			.modal-body
+				div(class="bodyMOdal")
+					div(class="tituloModal") GRACIAS
+					div Ahora queremos conocerte un poco
+			.modal-footer
+	//modal-asep
+	//titulo-asep
+	- rutaImagenes ='../../../imagenes'
+	- tituloAsep='REGÍSTRATE'
+	include ../../../componentes/titulo/asep/titulo.jade
+	//titulo-asep
+	div(class="contenedorRegistrate")
+		div(class="rgtratTile") REGÍSTRATE EN ASEP Y ACCEDE A ESTOS BENEFICIOS:
+		div(class="vinietasContenedor")
+			//vinietas-asep
+			- rutaImagenes ='../../../imagenes'
+			- imagen="beneficio_informacion.png"
+			- titulo= "INFORMACIÓN"
+			- contenido="Los miembros de la ASEP constituyen una valiosa red de mentoría donde podrás encontrar aliados dispuestos a orientarte en la consolidación de un emprendimiento de éxito."
+			- colorBorde="bordeRojo"
+			- colorLetra="letraRoja"
+			include ../../../componentes/vinietas/asep/vinietas.jade
+			//vinietas-asep	
+			//vinietas-asep
+			- rutaImagenes ='../../../imagenes'
+			- imagen="beneficio_redes.png"
+			- titulo= "REDES"
+			- contenido="El valor más grande de la ASEP son sus socios. Siendo parte de la comunidad podrás conectarte con emprendedores líderes en todas las industrias."
+			- colorBorde="bordeVerde"
+			- colorLetra="letraVerde"
+			include ../../../componentes/vinietas/asep/vinietas.jade
+			//vinietas-asep
+			//vinietas-asep
+			- rutaImagenes ='../../../imagenes'
+			- imagen="beneficio_formacion.png"
+			- titulo= "CAPACITACIÓN"
+			- contenido="Organizamos eventos y conferencias para compartir experiencias y conocimientos de emprendedores para emprendedores."
+			- colorBorde="bordeMorado"
+			- colorLetra="letraMorado"
+			include ../../../componentes/vinietas/asep/vinietas.jade
+			//vinietas-asep
+			//vinietas-asep
+			- rutaImagenes ='../../../imagenes'
+			- imagen="beneficio_defensa.png"
+			- titulo= "DEFENSA"
+			- contenido="Luchamos para defender los derechos del emprendedor y consolidar un ecosistema que trabaje en beneficio de todos."
+			- colorBorde="bordeCeleste0"
+			- colorLetra="letraCeleste0"
+			include ../../../componentes/vinietas/asep/vinietas.jade
+			//vinietas-asep
+			//vinietas-asep
+			- rutaImagenes ='../../../imagenes'
+			- imagen="beneficio_politicas.png"
+			- titulo= "POLÍTICAS PÚBLICAS"
+			- contenido="Promovemos el desarrollo de políticas públicas, somos el articulador entre los emprendedores, las instituciones y el gobierno."
+			- colorBorde="bordeMostaza"
+			- colorLetra="letraMostaza"
+			include ../../../componentes/vinietas/asep/vinietas.jade
+			//vinietas-asep
+	div(class="contenedorFormulario")
+		div
+			div(class="contenedorPc")
+				i(class="fa fa-desktop")
+				div(class="PcTexto").
+					Hola, te invitamos a formar parte de ASEP, la red de emprendedores más grande e influyente del Perú.
+		div
+			- labels = ["Nombres: ","Apellidos: ","E-mail: ","Teléfono: ","Contraseña: ","Confirmar Contraseña: "]
+			each label,index in labels
+				if index==0
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="NombreValidar"
+							- placeholder="Ejm: Irvin Daniel"
+							- tipo="text"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+				else if index==1
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="ApellidoValidar"
+							- placeholder="Ejm: Moreno Chávez"
+							- tipo="text"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+				else if index==2
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="EmailValidar"
+							- placeholder="Ejm: daniel.moreno@clicksandbricks.pe"
+							- tipo="text"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+				else if index==3
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="TelefonoValidar"
+							- placeholder="Ejm: 044990258814"
+							- tipo="text"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+				else if index==4
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="ContraseniaValidar"
+							- placeholder="Ejm: clave1234"
+							- tipo="password"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+				else if index==5
+					div(class="contenedorDeLabels")
+						div(class="labelsTexto")=label
+						div(class="contenedorINput")
+							//input-textAsep
+							//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+							- tipoDeInput="confirmarContrasenia"
+							- placeholder="Ejm: clave1234"
+							- tipo="password"
+							include ../../../componentes/input/textAsep/input.jade
+							//input-textAsep
+		div(class="contenedorBoton")
+			div
+				a(href="#modal" class="btn-validar")
+					//button-asepAzul
+					- rutaImagenes ='../../../imagenes'
+					- contenido="REGÍSTRATE"
+					- claseBtn="validar"
+					include ../../../componentes/button/asepAzul/button.jade
+					//button-asepAzul
+			div
+				span(class="linkCuenta linkCuentaSapn") ¿Ya tienes cuenta?
+				a(href="#" class="linkCuenta linkCuentahref") Inicia Sesión
+block footer
+	//redesSociales-asep
+	include ../../../componentes/redesSociales/asep/redesSociales.jade
+	//redesSociales-asep
+	//footer-asep
+	- rutaImagenes ='../../../imagenes'
+	- colaborador1="inkuba.png"
+	- colaborador2="clicksandbricks.png"
+	- colaborador3="labase.png"
+	- colaborador4="mujeres.png"
+	- sponsor1="bid.png"
+	- logoAsep="asep_footer.png"
+	- logoFotterFin1="sombrero.png"
+	include ../../../componentes/footer/asep/footer.jade
+	//footer-asep

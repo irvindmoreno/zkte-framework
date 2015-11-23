@@ -1,0 +1,5 @@
+//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+- tipoDeInput="EmailValidar"
+- placeholder="Email"
+- tipo="text"
+fin

@@ -1,2 +1,4 @@
-- datoSelectDia=[1,2,3,4]
+- opcionInicial="Día"
+- opciones=[1,2,3,4]
+- classSelect="idSelect"
 fin

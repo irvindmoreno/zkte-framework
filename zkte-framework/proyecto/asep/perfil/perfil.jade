@@ -1,0 +1,192 @@
+extends ../layout/layout.jade
+block head
+	link(href='./perfil.css' rel='stylesheet')
+	script(src='./perfil.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Mi Perfil'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Haz tu aporte'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+block navegacion
+	//navegacion-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Nosotros'
+	- pestaniaDos='Directorio'
+	- pestaniaTres='Actividades'
+	- pestaniaCuatro='Noticias'
+	- pestaniaCinco='Beneficios'
+	- pestaniaSeis='Pregúntanos'
+	include ../../../componentes/navegacion/asep/navegacion.jade
+	//navegacion-asep
+block contenido
+	//modal-asep
+	- rutaImagenes ='../../../imagenes'
+	div#modal.modal(aria-hidden='true')
+		.modal-dialog
+			.modal-header
+				a.btn-close(href='#close', aria-hidden='true') ×
+			.modal-body
+				p Perdil Editado Con Éxito
+			.modal-footer
+	//modal-asep
+	//titulo-asep
+	- rutaImagenes ='../../../imagenes'
+	- tituloAsep='MI PERFIL'
+	include ../../../componentes/titulo/asep/titulo.jade
+	//titulo-asep
+	div(class="contenedorFormularioPerfil")
+		- labels = ["Nombres: ","Apellidos","Email: ","Teléfono: ","Ruc: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Región: ","Departamento: ","Provincia: ","Distrito: ","Áras de interés: "]
+		each label,index in labels
+			div(class="filaDelFormuaario")
+				span(class="labels")=label
+				span(class="contenedorINputs")
+					if index==0
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+						- tipoDeInput="NombreValidar"
+						- placeholder="Ejm: Irvin Daniel"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==1
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+						- tipoDeInput="ApellidoValidar"
+						- placeholder="Ejm: Moreno Chávez"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==2
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+						- tipoDeInput="EmailValidar"
+						- placeholder="Ejm: daniel.moreno@clicksandbricks.pe"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==3
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+						- tipoDeInput="TelefonoValidar"
+						- placeholder="Ejm: 044990258814"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==4
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: 044965102410"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==5
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: 19-12-90"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==6
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: Masculino/Femenino"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==7
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: Peruano"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==8
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: Region"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==9
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: La Libertad"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==10
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: Trujillo"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==11
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: La Esperanza"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==12
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="RucValidar"
+						- placeholder="Ejm: Música, Informática"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+		div(class="contenedorDeBotones")
+			a(href="#modal" class="btn-editarPerfilModal")
+				//button-asepAzul
+				- rutaImagenes ='../../../imagenes'
+				- contenido="EDITAR PERFIL"
+				- claseBtn="btn-editarPerfil"
+				include ../../../componentes/button/asepAzul/button.jade
+				//button-asepAzul
+				//button-asepAzul
+			- rutaImagenes ='../../../imagenes'
+			- contenido="EDITAR EMPRESAS"
+			- claseBtn="btn-editarEmpresas"
+			include ../../../componentes/button/asepAzul/button.jade
+			//button-asepAzul
+			//button-asepAzul
+			- rutaImagenes ='../../../imagenes'
+			- contenido="HAZ TU APORTE"
+			- claseBtn="btn-HazTuAporte"
+			include ../../../componentes/button/asepAzul/button.jade
+			//button-asepAzul
+			//button-asepAzul
+			- rutaImagenes ='../../../imagenes'
+			- contenido="LOGOUT"
+			- claseBtn="btn-logut"
+			include ../../../componentes/button/asepAzul/button.jade
+			//button-asepAzul
+block footer
+	//redesSociales-asep
+	include ../../../componentes/redesSociales/asep/redesSociales.jade
+	//redesSociales-asep
+	//footer-asep
+	- rutaImagenes ='../../../imagenes'
+	- colaborador1="inkuba.png"
+	- colaborador2="clicksandbricks.png"
+	- colaborador3="labase.png"
+	- colaborador4="mujeres.png"
+	- sponsor1="bid.png"
+	- logoAsep="asep_footer.png"
+	- logoFotterFin1="sombrero.png"
+	include ../../../componentes/footer/asep/footer.jade
+	//footer-asep
+	

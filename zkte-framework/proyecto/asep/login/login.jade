@@ -30,21 +30,34 @@ block contenido
 	include ../../../componentes/titulo/asep/titulo.jade
 	//titulo-asep
 	div(class="formluario")
-		div 
+		div(class="elementoCentroLogin")
 			div(class="formluarioDiv")
 				span(class="formluario-span") Email:  
-				input(type="text" class="inputAsep")
+				//input-textAsep
+				//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+				- tipoDeInput="EmailValidar"
+				- placeholder="Ejm: daniel.moreno@hotmail.com.pe"
+				- tipo="text"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
 			
 			div(class="formluarioDiv")
 				span(class="formluario-span") Contraseña: 				 
-				input(type="text" class="inputAsep")
+				//input-textAsep
+				//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+				- tipoDeInput="confirmaContrasenia"
+				- placeholder="Ejm: clave1234"
+				- tipo="password"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
 			div(class="btn-iniciarSesion")
-				div
-					//button-asepAzul
-					- rutaImagenes ='../../../imagenes'
-					- contenido="INICIAR SESIÓN"
-					include ../../../componentes/button/asepAzul/button.jade
-					//button-asepAzul
+				a(href="#modal" class="btn-guardarValidar")
+					div
+						//button-asepAzul
+						- rutaImagenes ='../../../imagenes'
+						- contenido="INICIAR SESIÓN"
+						include ../../../componentes/button/asepAzul/button.jade
+						//button-asepAzul
 				div(class="letraSoporte") ¿No tienes cuenta? 
 					a(href="#") Hazte Socio
 				div(class="letraSoporte") ¿Perdiste tu cuenta? 
@@ -66,3 +79,4 @@ block footer
 	- logoFotterFin1="sombrero.png"
 	include ../../../componentes/footer/asep/footer.jade
 	//footer-asep
+

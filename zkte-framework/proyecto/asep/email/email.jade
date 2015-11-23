@@ -1,0 +1,25 @@
+extends ../layout/layout.jade
+block head
+	link(href='./email.css' rel='stylesheet')
+	script(src='./email.js')
+block header
+block navegacion	
+block contenido
+	- rutaImagenes ='../../../imagenes'
+	- imagen='logo.png'
+	div(class="headerEmailAsep")
+	div(class="imagenEmailAsep")
+		img(src=rutaImagenes+"/"+imagen)
+	div(class="contenidoLetra")
+		p.
+			Este correo se ha enviado para Ud. pueda cambiar la contraseña que utiliza en nuestro sistema, si Ud. no ha pedido el cambio de contraseña. por favor omitir este correo electrónico
+		p Haz click en el siguiente boton para configurar su nueva contraseña.
+			div(class="btn-CambiarCOntra")
+				//button-asepAzul
+				- rutaImagenes ='../../../imagenes'
+				- contenido="CAMBIAR CONTRASEÑA"
+				include ../../../componentes/button/asepAzul/button.jade
+				//button-asepAzul
+block footer
+
+	

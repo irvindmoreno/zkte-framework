@@ -9,6 +9,12 @@
     font-size: 1.2em;
   }
 }
+.asterisco {
+  margin-left: 0.3em;
+}
+.btn-guardarValidado {
+  text-decoration: none;
+}
 .labels-Cont {
   display: flex;
   color: #4e4444;
@@ -70,7 +76,7 @@
   padding-bottom: 3em;
 }
 .label-input {
-  width: 23em;
+  width: 24em;
 }
 @media screen and (max-width: 680px) {
   .label-input {
@@ -138,6 +144,9 @@
 .inputNumber {
   height: 2.5em;
   outline: none;
+}
+.fechaNacimientoSlects {
+  display: flex;
 }
 /************Layout****************/
 body {
@@ -297,23 +306,6 @@ header a:hover {
   height: 1.5em;
 }
 /************header-asep****************/
-/************select-asep****************/
-.SelectAsep {
-  background: #f7f2f2 url("../../../imagenes/flecha.png") no-repeat right center;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.Dia {
-  font-size: 12px;
-  padding: 8px;
-  width: 29em;
-  border-right-width: 2px;
-  border-top-width: 0.5px;
-  border-right-width: 1px;
-  border-radius: 5px;
-}
-/************select-asep****************/
 /************button-asepAzul****************/
 .btn-asepAzul {
   background: #2ca7df;
@@ -715,3 +707,97 @@ input[type="text"] {
   height: 26px;
 }
 /************input-fileAsep****************/
+/************input-textAsep****************/
+.errorInputValidado {
+  color: #fff;
+  height: 1.5em;
+  width: 2em;
+  background: #2ca7df;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  display: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.contenedorDeItemAValidar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.InputInvalidado {
+  display: none;
+  transition: all ease 0.5s;
+}
+.inputValido {
+  display: block;
+}
+.zkteInputAsep {
+  height: 2em;
+  border-radius: 3px !important;
+  border: 1px solid #808080 !important;
+  padding-left: 0.5em !important;
+  width: 98% !important;
+  height: 2.5em !important;
+  outline: none;
+  background: #f7f2f2 !important;
+}
+/************input-textAsep****************/
+/************select-asep****************/
+.SelectAsep {
+  background: #f7f2f2 url("../../../imagenes//flecha.png") no-repeat right center;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 98%;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 2.2em;
+  padding-left: 1em;
+  text-align: center;
+}
+.Dia {
+  font-size: 16px;
+  padding: 0px;
+  width: tamanioSelectDia;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-radius: 5px;
+  border-bottom-width: 1px;
+  border-style: solid;
+}
+.errorInputValidado {
+  color: #fff;
+  height: 1.5em;
+  width: 2em;
+  background: #2ca7df;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  display: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.contenedorDeItemAValidar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.InputInvalidado {
+  display: none;
+  transition: all ease 0.5s;
+}
+.inputValido {
+  display: block;
+}
+/************select-asep****************/

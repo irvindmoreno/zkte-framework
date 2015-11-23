@@ -1,0 +1,81 @@
+extends ../layout/layout.jade
+block head
+	link(href='./recuperar-contrasenia.css' rel='stylesheet')
+	script(src='./recuperar-contrasenia.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Login'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Hazte Socio'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+
+block navegacion
+	//navegacion-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Nosotros'
+	- pestaniaDos='Directorio'
+	- pestaniaTres='Actividades'
+	- pestaniaCuatro='Noticias'
+	- pestaniaCinco='Beneficios'
+	- pestaniaSeis='Pregúntanos'
+	include ../../../componentes/navegacion/asep/navegacion.jade
+	//navegacion-asep
+block contenido
+	//modal-asep	
+	div#modal.modal(aria-hidden='true')
+		.modal-dialog
+			.modal-header
+				a.btn-close(href='#close', aria-hidden='true') ×
+			.modal-body
+				p Contraseña Cambiada con éxito
+			.modal-footer	        
+	//modal-asep
+	//titulo-asep
+	- rutaImagenes ='../../../imagenes'
+	- tituloAsep='RECUPERAR CONTRASEÑA'
+	include ../../../componentes/titulo/asep/titulo.jade
+	//titulo-asep
+	div(class="formluario")
+		div(class="elementoCentroLogin")
+			div(class="formluarioDiv")
+				span(class="formluario-span") Email:  
+				//input-textAsep
+				//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar
+				- tipoDeInput="EmailValidar"
+				- placeholder="Ejm: daniel.moreno@clicksandbricks.pe"
+				- tipo="text"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+			div(class="btn-iniciarSesion")
+				a(href="#modal" class="btn-guardarValidar")
+					div
+						//button-asepAzul
+						- rutaImagenes ='../../../imagenes'
+						- contenido="RECUPÉRAR CONTRASEÑA"
+						include ../../../componentes/button/asepAzul/button.jade
+						//button-asepAzul
+				div(class="letraSoporte") ¿Ya tienes cuenta? 
+					a(href="#") Inicia Sesións
+				div(class="letraSoporte") No tienes cuenta? 
+					a(href="#") Regístrate
+
+block footer
+	//redesSociales-asep
+	include ../../../componentes/redesSociales/asep/redesSociales.jade
+	//redesSociales-asep
+
+	//footer-asep
+	- rutaImagenes ='../../../imagenes'
+	- colaborador1="inkuba.png"
+	- colaborador2="clicksandbricks.png"
+	- colaborador3="labase.png"
+	- colaborador4="mujeres.png"
+	- sponsor1="bid.png"
+	- logoAsep="asep_footer.png"
+	- logoFotterFin1="sombrero.png"
+	include ../../../componentes/footer/asep/footer.jade
+	//footer-asep
+
