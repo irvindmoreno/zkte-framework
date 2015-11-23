@@ -128,11 +128,12 @@ block contenido
 									//input-textAsep
 							else if index==7
 								div(class="label-input radioButonLinea radioMultipleMovil")
-									div
+									div(class="radioSexoValidate")
 										input(type="radio" class="radioSexo" name="sexo")
 										span Hombre
 										input(type="radio" class="radioSexo" name="sexo")
 										span Mujer
+									span(class='errorInputValidado') X
 							else if index==8 || index==9 || index==10 || index==11
 								div(class="label-input")
 									//select-asep
@@ -151,11 +152,12 @@ block contenido
 												span=labelRadio
 							else if index==14
 								div(class="label-input radioButonLinea radioMultipleMovil")
-									div
-										input(type="radio" class="radioSexo")
+									div(class="radioEmpresaGroup")
+										input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
 										span Si
-										input(type="radio" class="radioSexo")
+										input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
 										span No
+									span(class='errorInputValidado') X
 							else
 								div(class="label-input") input
 							if index==12
@@ -293,3 +295,5 @@ block footer
 	- logoFotterFin1="sombrero.png"
 	include ../../../componentes/footer/asep/footer.jade
 	//footer-asep
+
+

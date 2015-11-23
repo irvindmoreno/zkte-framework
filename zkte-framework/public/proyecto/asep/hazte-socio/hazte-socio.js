@@ -20,8 +20,32 @@ function confirmarContraseniaClick(event) {
     //console.log(confirmaCOntrasenia)
     //alert("hola")
     //console.log("entro a la funcion")
+
+    var validado = 0;
     if (contrasenia != confirmaCOntrasenia) {
         //console.log("desabilita el a")
+        validado = 0;
+    }
+    if ($('input[name="sexo"]').is(':checked')) {
+        $(".radioSexoValidate").siblings("span").addClass("InputInvalidado");
+        $(".radioSexoValidate").siblings("span").removeClass("inputValido");
+        validado = 1;
+    } else {
+        $(".radioSexoValidate").siblings("span").removeClass("InputInvalidado");
+        $(".radioSexoValidate").siblings("span").addClass("inputValido");
+        validado = 0;
+    }
+    if ($('input[name="radioEmpresaGroup"]').is(':checked')) {
+
+        $(".radioEmpresaGroup").siblings("span").addClass("InputInvalidado");
+        $(".radioEmpresaGroup").siblings("span").removeClass("inputValido");
+        validado = 1;
+    } else {
+        $(".radioEmpresaGroup").siblings("span").removeClass("InputInvalidado");
+        $(".radioEmpresaGroup").siblings("span").addClass("inputValido");
+        validado = 0;
+    }
+    if (validado == 0) {
         event.preventDefault();
     }
 }
@@ -43,4 +67,7 @@ function inicio() {
     var selectAsep = new SelectAsep("btn-guardarValidado", "classSelect", true);
     $(".confirmaContrasenia").on("keyup", verificarContrasenia);
     $(".btn-guardarValidado").on("click", confirmarContraseniaClick);
+    var inputTextAsep = new InputTextAsep();
+    var inputTextAsep = new InputTextAsep();
+    var inputTextAsep = new InputTextAsep();
 }

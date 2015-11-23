@@ -10,8 +10,7 @@
   text-align: center;
   padding-top: 0.5em;
   margin-left: 0.5em;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: all ease 0.5s;
   cursor: pointer;
 }
@@ -21,13 +20,11 @@
   width: 100%;
 }
 .InputInvalidado {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: all ease 0.5s;
 }
 .inputValido {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }
 .zkteInputAsep {
   height: 2em;

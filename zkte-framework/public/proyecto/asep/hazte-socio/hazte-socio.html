@@ -265,10 +265,10 @@
               <div class="labels-Cont">
                 <div class="label-texto">Sexo: </div>
                 <div class="label-input radioButonLinea radioMultipleMovil">
-                  <div>
+                  <div class="radioSexoValidate">
                     <input type="radio" name="sexo" class="radioSexo"/><span>Hombre</span>
                     <input type="radio" name="sexo" class="radioSexo"/><span>Mujer</span>
-                  </div>
+                  </div><span class="errorInputValidado">X</span>
                 </div>
                 <div class="asterisco">*</div>
               </div>
@@ -374,10 +374,10 @@
               <div class="labels-Cont">
                 <div class="label-texto">¿Ya tienes una empresa?</div>
                 <div class="label-input radioButonLinea radioMultipleMovil">
-                  <div>
-                    <input type="radio" class="radioSexo"/><span>Si</span>
-                    <input type="radio" class="radioSexo"/><span>No</span>
-                  </div>
+                  <div class="radioEmpresaGroup">
+                    <input type="radio" name="radioEmpresaGroup" class="radioSexo radioEmpresaGroup"/><span>Si</span>
+                    <input type="radio" name="radioEmpresaGroup" class="radioSexo radioEmpresaGroup"/><span>No</span>
+                  </div><span class="errorInputValidado">X</span>
                 </div>
                 <div class="asterisco">*</div>
               </div>
@@ -607,5 +607,6 @@
       <div class="Fotter-4"><span>Powered by La Base</span><img src="../../../imagenes/sombrero.png"/></div>
     </footer>
     <!--footer-asep-->
+    
   </body>
 </html>
