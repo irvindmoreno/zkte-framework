@@ -1,7 +1,7 @@
 /******no tocar linea 1,2 y 3********/
 var proyecto='asep';
-var vista='registrate';
-
+var vista='hazte-socio';
+/*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),
     jade = require('gulp-jade'),

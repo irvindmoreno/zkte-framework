@@ -8,5 +8,6 @@ function inicio()
     var buttonAsepAzul= new ButtonAsepAzul()
 
     var inputTextAsep= new InputTextAsep("btn-guardarValidar","EmailValidar")
+    var inputTextAsep= new InputTextAsep("btn-guardarValidar","ContraseniaValidar")
  
 }

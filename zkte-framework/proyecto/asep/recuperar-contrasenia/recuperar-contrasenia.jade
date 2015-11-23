@@ -30,7 +30,7 @@ block contenido
 			.modal-header
 				a.btn-close(href='#close', aria-hidden='true') ×
 			.modal-body
-				p Contraseña Cambiada con éxito
+				div(class="textoModal") Contraseña Cambiada con éxito
 			.modal-footer	        
 	//modal-asep
 	//titulo-asep
@@ -54,11 +54,11 @@ block contenido
 					div
 						//button-asepAzul
 						- rutaImagenes ='../../../imagenes'
-						- contenido="RECUPÉRAR CONTRASEÑA"
+						- contenido="RECUPERAR CONTRASEÑA"
 						include ../../../componentes/button/asepAzul/button.jade
 						//button-asepAzul
 				div(class="letraSoporte") ¿Ya tienes cuenta? 
-					a(href="#") Inicia Sesións
+					a(href="#") Inicia Sesión
 				div(class="letraSoporte") No tienes cuenta? 
 					a(href="#") Regístrate
 

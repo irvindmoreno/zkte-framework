@@ -3,7 +3,7 @@ function verificarContrasenia()
 {
 	var contrasenia=$(".ContraseniaValidar").val()
 	var contraseniaRepetida=$(".confirmarContrasenia").val();
-	console.log(contraseniaRepetida);
+	//console.log(contraseniaRepetida);
 	if(contrasenia==contraseniaRepetida)
 	{		
 		$(this).siblings("span").addClass("InputInvalidado")
@@ -16,10 +16,13 @@ function verificarContrasenia()
 	}
 
 }
-function confirmarContraseniaClick () 
+function confirmarContraseniaClick (event) 
 {
 	var contrasenia=$(".ContraseniaValidar").val();
 	var confirmaCOntrasenia=$(".confirmarContrasenia").val();
+	//console.log(contrasenia)
+	//console.log(confirmaCOntrasenia)
+	//alert("hola")
 	//console.log("entro a la funcion")
 	if(contrasenia!=confirmaCOntrasenia)
 	{
@@ -42,6 +45,4 @@ function inicio()
    $(".confirmarContrasenia").on("keyup",verificarContrasenia)
    $(".btn-validar").on("click",confirmarContraseniaClick)
     var modalAsep= new ModalAsep()
-    var redesSocialesAsep= new RedesSocialesAsep()
-    var footerAsep= new FooterAsep()
 }

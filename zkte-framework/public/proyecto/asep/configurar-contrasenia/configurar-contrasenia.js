@@ -12,7 +12,7 @@ function confirmarContrasenia() {
 		$(this).siblings("span").removeClass("InputInvalidado");
 	}
 }
-function confirmarContraseniaClick() {
+function confirmarContraseniaClick(event) {
 	var contrasenia = $(".ContraseniaValidar").val();
 	var confirmaCOntrasenia = $(".confirmaContrasenia").val();
 	//console.log("entro a la funcion")
