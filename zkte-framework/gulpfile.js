@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
 var proyecto='asep';
-var vista='hazte-socio';
+var vista='perfil';
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

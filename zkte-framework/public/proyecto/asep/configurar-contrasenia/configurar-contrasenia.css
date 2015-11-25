@@ -48,6 +48,9 @@
 .letraSoporte a {
   color: #d6d6d6;
 }
+.btn-guardarValidar {
+  border: none !important;
+}
 @media screen and (max-width: 650px) {
   .formluarioDiv {
     display: block;
@@ -78,20 +81,17 @@ body {
 header {
   background: #2ca7df;
   height: 50px;
-  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
-  -ms-align-content: flex-end;
-  -webkit-justify-content: flex-end;
+  display: -ms-flexbox;
   justify-content: flex-end;
+  justify-content: -ms-flex-end;
   align-items: center;
   align-items: -ms-center;
   width: 100%;
 }
 header div {
-  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
+  display: -ms-flexbox;
   justify-content: center;
   justify-content: -ms-center;
   align-items: center;
@@ -107,9 +107,8 @@ header img {
   margin-right: 0.4em;
 }
 header a {
-  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
+  display: -ms-flexbox;
   justify-content: center;
   justify-content: -ms-center;
   align-items: center;
@@ -135,24 +134,17 @@ header a:hover {
   }
 }
 .Contenedor-NavegacionMenu {
+  display: flex;
   padding: 1.5em;
   justify-content: space-between;
   align-items: center;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-flex;
 }
 .Navegacion-Menu {
-  height: inherit;
-  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
 }
 .Navegacion-Menu ul {
   list-style: none;
-  display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
 }
 .Navegacion-Menu a {
   padding-left: 0.4em;

@@ -32,7 +32,9 @@ function inicio()
     var buttonAsepAzul= new ButtonAsepAzul()
 
     var inputTextAsep= new InputTextAsep("btn-guardarValidar","ContraseniaValidar")
+    var inputTextAsep= new InputTextAsep("btn-guardarValidar","ContraseniaValidarAntigua")
      var modalAsep= new ModalAsep()
      $(".confirmaContrasenia").on("keyup",confirmarContrasenia)     
      $(".btn-guardarValidar").on("click",confirmarContraseniaClick)
+    var inputTextAsep= new InputTextAsep()
 }

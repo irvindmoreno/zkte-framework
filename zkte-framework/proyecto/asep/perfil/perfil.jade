@@ -39,7 +39,7 @@ block contenido
 	include ../../../componentes/titulo/asep/titulo.jade
 	//titulo-asep
 	div(class="contenedorFormularioPerfil")
-		- labels = ["Nombres: ","Apellidos","Email: ","Teléfono: ","Ruc: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Región: ","Departamento: ","Provincia: ","Distrito: ","Áras de interés: "]
+		- labels = ["Nombres: ","Apellidos","Email: ","Teléfono: ","Nro De Documento:","Documento De Identidad: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Región: ","Departamento: ","Provincia: ","Distrito: ","Áras de interés: "]
 		each label,index in labels
 			div(class="filaDelFormuaario")
 				span(class="labels")=label
@@ -77,79 +77,87 @@ block contenido
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==4
-						//input-textAsep
-						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: 044965102410"
-						- tipo="text"
-						include ../../../componentes/input/textAsep/input.jade
-						//input-textAsep
+						div(class="contenedorDeRadioBottons")
+							div(class="contenedorDeRadioBottons-Individual")
+								input(type="radio" class="radioDocumento" value="RUC" name="DePruebaBorralo")
+								span RUC
+							div(class="contenedorDeRadioBottons-Individual")
+								input(type="radio" class="radioDocumento" value="DNI" name="DePruebaBorralo")
+								span DNI
 					else if index==5
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: 19-12-90"
+						- tipoDeInput="tipoDocumento"
+						- placeholder="Ejm: 044965102410"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==6
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: Masculino/Femenino"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: 19-12-90"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==7
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: Peruano"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: Masculino/Femenino"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==8
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: Region"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: Peruano"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==9
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: La Libertad"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: Region"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==10
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: Trujillo"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: La Libertad"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==11
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
-						- placeholder="Ejm: La Esperanza"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: Trujillo"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					else if index==12
 						//input-textAsep
 						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-						- tipoDeInput="RucValidar"
+						- tipoDeInput="nada"
+						- placeholder="Ejm: La Esperanza"
+						- tipo="text"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					else if index==13
+						//input-textAsep
+						//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+						- tipoDeInput="nada"
 						- placeholder="Ejm: Música, Informática"
 						- tipo="text"
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 		div(class="contenedorDeBotones")
-			a(href="#modal" class="btn-editarPerfilModal")
+			a(class="btn-editarPerfilModal")
 				//button-asepAzul
 				- rutaImagenes ='../../../imagenes'
 				- contenido="EDITAR PERFIL"
@@ -190,3 +198,5 @@ block footer
 	include ../../../componentes/footer/asep/footer.jade
 	//footer-asep
 	
+
+

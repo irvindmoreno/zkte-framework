@@ -38,6 +38,16 @@
   background: #2ca7df !important;
   color: #fff !important;
 }
+.contenedorDeRadioBottons {
+  display: flex;
+  justify-content: center;
+}
+.contenedorDeRadioBottons-Individual {
+  width: 6em;
+}
+.btn-editarPerfilModal {
+  border: none !important;
+}
 @media screen and (max-width: 900px) {
   .filaDelFormuaario {
     width: 97%;

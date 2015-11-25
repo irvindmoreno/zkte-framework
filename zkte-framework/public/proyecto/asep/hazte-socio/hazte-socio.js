@@ -63,11 +63,15 @@ function inicio() {
     var inputTextAsep = new InputTextAsep("btn-guardarValidado", "EmailValidar");
     var inputTextAsep = new InputTextAsep("btn-guardarValidado", "ContraseniaValidar");
     var inputTextAsep = new InputTextAsep("btn-guardarValidado", "DniValidar");
+    var inputTextAsep = new InputTextAsep("btn-guardarValidado", "TelefonoValidar");
 
-    var selectAsep = new SelectAsep("btn-guardarValidado", "classSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "diaSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "mesSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "anioSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "nacionalidadSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "departamentoSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "provinciaSelect", true);
+    var selectAsep = new SelectAsep("btn-guardarValidado", "distritoSelect", true);
     $(".confirmaContrasenia").on("keyup", verificarContrasenia);
     $(".btn-guardarValidado").on("click", confirmarContraseniaClick);
-    var inputTextAsep = new InputTextAsep();
-    var inputTextAsep = new InputTextAsep();
-    var inputTextAsep = new InputTextAsep();
 }

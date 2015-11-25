@@ -35,6 +35,18 @@ var TituloAsep = function TituloAsep() {
 	_classCallCheck(this, TituloAsep);
 };
 
+var ButtonAsepAzul = function ButtonAsepAzul() {
+	_classCallCheck(this, ButtonAsepAzul);
+};
+
+var RedesSociales = function RedesSociales() {
+	_classCallCheck(this, RedesSociales);
+};
+
+var ModalAsep = function ModalAsep() {
+	_classCallCheck(this, ModalAsep);
+};
+
 var InputTextAsep = (function () {
 	function InputTextAsep(boton, input) {
 		_classCallCheck(this, InputTextAsep);
@@ -44,8 +56,12 @@ var InputTextAsep = (function () {
 		this.comprobarInput();
 	}
 
-	//var inputTextAsep = new InputTextAsep("btn-submit","TelefonoValidar");
+	//var inputTextAsep = new InputTextAsep("btn-submit","DniValidar");
+	//var inputTextAsep = new InputTextAsep("btn-submit","RucValidar");
 	/*
+ var inputTextAsep = new InputTextAsep("btn-submit","EmailValidar");
+ //var inputTextAsep = new InputTextAsep("btn-submit","TelefonoValidar");
+ 
  var inputTextAsep = new InputTextAsep("btn-submit","EmailValidar");
  var inputTextAsep = new InputTextAsep("btn-submit","NombreValidar");
  var inputTextAsep = new InputTextAsep("btn-submit","ApellidoValidar");
@@ -57,16 +73,25 @@ var InputTextAsep = (function () {
 		key: "comprobarInput",
 		value: function comprobarInput() {
 			if (this.input == "EmailValidar") {
+				$(".EmailValidar").on("keyup", { input: this.input }, this.validarEmail);
 				$("." + this.boton).on("click", { input: this.input }, this.validarEmail);
 			} else if (this.input == "NombreValidar") {
+				$(".NombreValidar").on("keyup", { input: this.input }, this.validarNombre);
 				$("." + this.boton).on("click", { input: this.input }, this.validarNombre);
 			} else if (this.input == "ApellidoValidar") {
+				$(".ApellidoValidar").on("keyup", { input: this.input }, this.validarNombre);
 				$("." + this.boton).on("click", { input: this.input }, this.validarNombre);
 			} else if (this.input == "ContraseniaValidar") {
+				$(".ContraseniaValidar").on("keyup", { input: this.input }, this.validarContrasenia);
 				$("." + this.boton).on("click", { input: this.input }, this.validarContrasenia);
 			} else if (this.input == "DniValidar") {
+				$(".DniValidar").on("keyup", { input: this.input }, this.validarDNI);
 				$("." + this.boton).on("click", { input: this.input }, this.validarDNI);
+			} else if (this.input == "RucValidar") {
+				$(".RucValidar").on("keyup", { input: this.input }, this.validarRUC);
+				$("." + this.boton).on("click", { input: this.input }, this.validarRUC);
 			} else if (this.input == "TelefonoValidar") {
+				$(".TelefonoValidar").on("keyup", { input: this.input }, this.validarTelefono);
 				$("." + this.boton).on("click", { input: this.input }, this.validarTelefono);
 			}
 		}
@@ -75,21 +100,48 @@ var InputTextAsep = (function () {
 		value: function validarTelefono(event) {
 			var input = event.data.input;
 			var tamanioInput = $('.' + input).val().length;
-			console.log(tamanioInput);
 			if (tamanioInput == 12) {
 				var expresion = $('.' + input).val().match(/^[0-9]+$/);
 				//Se utiliza la funcion test() nativa de JavaScript
 				if (expresion) {
-
+					$(this).css("border", "1px solid #808080");
 					$('.' + input).siblings('span').removeClass("inputValido");
 					$('.' + input).siblings('span').addClass("InputInvalidado");
 				} else {
 					event.preventDefault();
+					$(this).css("border", "2px solid #2ca7df");
 					$('.' + input).siblings('span').removeClass("InputInvalidado");
 					$('.' + input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
+				$('.' + input).siblings('span').removeClass("InputInvalidado");
+				$('.' + input).siblings('span').addClass("inputValido");
+			}
+		}
+	}, {
+		key: "validarRUC",
+		value: function validarRUC(event) {
+			var input = event.data.input;
+			var tamanioInput = $('.' + input).val().length;
+
+			if (tamanioInput == 11) {
+				var expresion = $('.' + input).val().match(/^[0-9]+$/);
+				//Se utiliza la funcion test() nativa de JavaScript
+				if (expresion) {
+					$(this).css("border", "1px solid #808080");
+					$('.' + input).siblings('span').removeClass("inputValido");
+					$('.' + input).siblings('span').addClass("InputInvalidado");
+				} else {
+					event.preventDefault();
+					$(this).css("border", "2px solid #2ca7df");
+					$('.' + input).siblings('span').removeClass("InputInvalidado");
+					$('.' + input).siblings('span').addClass("inputValido");
+				}
+			} else {
+				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
 				$('.' + input).siblings('span').removeClass("InputInvalidado");
 				$('.' + input).siblings('span').addClass("inputValido");
 			}
@@ -104,15 +156,18 @@ var InputTextAsep = (function () {
 				var expresion = $('.' + input).val().match(/^[0-9]+$/);
 				//Se utiliza la funcion test() nativa de JavaScript
 				if (expresion) {
+					$(this).css("border", "1px solid #808080");
 					$('.' + input).siblings('span').removeClass("inputValido");
 					$('.' + input).siblings('span').addClass("InputInvalidado");
 				} else {
 					event.preventDefault();
+					$(this).css("border", "2px solid #2ca7df");
 					$('.' + input).siblings('span').removeClass("InputInvalidado");
 					$('.' + input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
 				$('.' + input).siblings('span').removeClass("InputInvalidado");
 				$('.' + input).siblings('span').addClass("inputValido");
 			}
@@ -122,20 +177,23 @@ var InputTextAsep = (function () {
 		value: function validarContrasenia(event) {
 			var input = event.data.input;
 			var tamanioInput = $('.' + input).val().length;
-			console.log(tamanioInput);
+
 			if (tamanioInput > 0 && tamanioInput < 9) {
 				var expresion = $('.' + input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i);
 				//Se utiliza la funcion test() nativa de JavaScript
 				if (expresion) {
+					$(this).css("border", "1px solid #808080");
 					$('.' + input).siblings('span').removeClass("inputValido");
 					$('.' + input).siblings('span').addClass("InputInvalidado");
 				} else {
 					event.preventDefault();
+					$(this).css("border", "2px solid #2ca7df");
 					$('.' + input).siblings('span').removeClass("InputInvalidado");
 					$('.' + input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
 				$('.' + input).siblings('span').removeClass("InputInvalidado");
 				$('.' + input).siblings('span').addClass("inputValido");
 			}
@@ -148,11 +206,12 @@ var InputTextAsep = (function () {
 			var expresionaEvaluar = regex.test($('.' + input).val().trim());
 			//Se utiliza la funcion test() nativa de JavaScript
 			if (expresionaEvaluar) {
-
+				$(this).css("border", "1px solid #808080");
 				$('.' + input).siblings('span').removeClass("inputValido");
 				$('.' + input).siblings('span').addClass("InputInvalidado");
 			} else {
 				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
 				$('.' + input).siblings('span').removeClass("InputInvalidado");
 				$('.' + input).siblings('span').addClass("inputValido");
 			}
@@ -166,16 +225,18 @@ var InputTextAsep = (function () {
 				var expresion = $('.' + input).val().match('^[a-zA-Z_áéíóúñ\s]*$');
 				//Se utiliza la funcion test() nativa de JavaScript
 				if (expresion) {
-
+					$(this).css("border", "1px solid #808080");
 					$('.' + input).siblings('span').removeClass("inputValido");
 					$('.' + input).siblings('span').addClass("InputInvalidado");
 				} else {
 					event.preventDefault();
+					$(this).css("border", "2px solid #2ca7df");
 					$('.' + input).siblings('span').removeClass("InputInvalidado");
 					$('.' + input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
+				$(this).css("border", "2px solid #2ca7df");
 				$('.' + input).siblings('span').removeClass("InputInvalidado");
 				$('.' + input).siblings('span').addClass("inputValido");
 			}
@@ -184,15 +245,3 @@ var InputTextAsep = (function () {
 
 	return InputTextAsep;
 })();
-
-var ButtonAsepAzul = function ButtonAsepAzul() {
-	_classCallCheck(this, ButtonAsepAzul);
-};
-
-var RedesSociales = function RedesSociales() {
-	_classCallCheck(this, RedesSociales);
-};
-
-var ModalAsep = function ModalAsep() {
-	_classCallCheck(this, ModalAsep);
-};

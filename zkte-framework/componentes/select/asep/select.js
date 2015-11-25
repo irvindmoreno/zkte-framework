@@ -2,13 +2,14 @@ class SelectAsep{
 	constructor(boton,idSelect,required)
 	{		
 		this.idSelect=idSelect;
+		$('.'+this.idSelect).on("change",{idSelect: this.idSelect},this.validarSelect)
 		if(required)
 		{
 			$("."+boton).on("click",{idSelect: this.idSelect},this.validarSelect)
 		}
 	}
 	validarSelect(event)
-	{
+	{		
 		var idSelect=event.data.idSelect
 		var optionInicial=$("."+idSelect).children('option').val()
 		var optionSeleccionado=$("."+idSelect).val()	

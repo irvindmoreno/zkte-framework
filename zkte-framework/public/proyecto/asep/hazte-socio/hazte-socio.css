@@ -775,13 +775,13 @@ input[type="text"] {
   width: 98%;
   cursor: pointer;
   border-radius: 5px;
-  height: 2.2em;
-  padding-left: 1em;
+  height: alturaSelect;
+  padding-left: paddingLeftSelect;
   text-align: center;
 }
 .Dia {
   font-size: 16px;
-  padding: 0px;
+  padding: 8px;
   width: tamanioSelectDia;
   border-top-width: 1px;
   border-left-width: 1px;

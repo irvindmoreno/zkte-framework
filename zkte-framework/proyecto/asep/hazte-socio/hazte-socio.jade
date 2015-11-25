@@ -48,145 +48,179 @@ block contenido
 					EN LA ASEP TE ENTREGAMOS HERRAMIENTAS ÚNICAS E INNOVADORAS PARA
 					HACER DESPLEGAR TU EMPRENDIMIENTO.
 				- labels=["Nombres: ","Apellidos: ","E-mail: ","Contraseña: ","Confirmar Contraseña: ","Documento De Identidad: ","Fecha De Nacimiento: ","Sexo: ","Nacionalidad: ","Departamento: ","Provincia: ","Distrito: ","Teléfono: ","Area De Interes: ","¿Ya tienes una empresa?"]
-				div(class="labels")
-					each label,index in labels
-						div(class="labels-Cont")
-							div(class="label-texto")=label
-							if index==6
-								div(class="label-input fechaNacimientoSlects" )
-									//select-asep
-									- opcionInicial="Día"
-									- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-									- classSelect="classSelect"
-									include ../../../componentes/select/asep/select.jade
-									//select-asep
-									//select-asep
-									- opcionInicial="Mes"
-									- opciones=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octube","Noviembre","Diciembre"]
-									- classSelect="classSelect"
-									include ../../../componentes/select/asep/select.jade
-									//select-asep
-									//select-asep
-									- opcionInicial="Año"
-									- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-									- classSelect="classSelect"
-									include ../../../componentes/select/asep/select.jade
-									//select-asep
-							else if index==0
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="NombreValidar"
-									- placeholder="Ej: Irvin Daniel"
-									- tipo="text"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==1
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="ApellidoValidar"
-									- placeholder="Ej: MorenoChávez"
-									- tipo="text"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==2
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="EmailValidar"
-									- placeholder="Ej: daniel.moreno@clicksandbricks.pe"
-									- tipo="text"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==3
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="ContraseniaValidar"
-									- placeholder="Ej: clave142"
-									- tipo="password"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==4
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="confirmaContrasenia"
-									- placeholder="Ej: clave142"
-									- tipo="password"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==5
-								div(class="label-input")
-									//input-textAsep
-									//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
-									- tipoDeInput="DniValidar"
-									- placeholder="Ej: 46712716"
-									- tipo="text"
-									include ../../../componentes/input/textAsep/input.jade
-									//input-textAsep
-							else if index==7
-								div(class="label-input radioButonLinea radioMultipleMovil")
-									div(class="radioSexoValidate")
-										input(type="radio" class="radioSexo" name="sexo")
-										span Hombre
-										input(type="radio" class="radioSexo" name="sexo")
-										span Mujer
-									span(class='errorInputValidado') X
-							else if index==8 || index==9 || index==10 || index==11
-								div(class="label-input")
-									//select-asep
-									- opcionInicial="Día"
-									- opciones=[1,2,3,4]
-									- classSelect="classSelect"
-									include ../../../componentes/select/asep/select.jade
-									//select-asep
-							else if index==13
-								- labelsRadiosButton =["Temas legales, Contables, Tributarios","Marketing, Publicidad, Ventas, Redes Sociales","Financiamiento, inversionistas","Modelo de negocios","Internacionalización","Propiedad Intelectual y patentamiento"]
-								div(class="label-input radioMultipleMovil")
-									div(class="RadioContenedor")
-										each labelRadio in labelsRadiosButton
-											div(class="RadioContenedorIndividual")
-												input(type="radio")
-												span=labelRadio
-							else if index==14
-								div(class="label-input radioButonLinea radioMultipleMovil")
-									div(class="radioEmpresaGroup")
-										input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
-										span Si
-										input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
-										span No
-									span(class='errorInputValidado') X
-							else
-								div(class="label-input") input
-							if index==12
-								div
-							else
-								div(class="asterisco") *
-				div(class="UltimoRadio")
-					div
-						input(type="radio")
-					div
-						span.
-							Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
-						a(href="#") Ver política de privacidad
-				div(class="obligatorio") *Obligatorio
-				div(class="botonGuardar")					
-					//modal-asep					
-					a(href='#guardarConExito' class="btn-guardarValidado")
-						//button-asepAzul
-						- contenido="GUARDAR"
-						include ../../../componentes/button/asepAzul/button.jade
-						//button-asepAzul
-					div#guardarConExito.modal(aria-hidden='true')
-						.modal-dialog
-							.modal-header
-								a.btn-close(href='#close', aria-hidden='true') ×
-							.modal-body
-								p Los Datos se guardaron exitosamente
-							.modal-footer					
-					//modal-asep
+				form(action="demo_form.asp" method="get")
+					div(class="labels")
+						each label,index in labels
+							div(class="labels-Cont")
+								div(class="label-texto")=label
+								if index==6
+									div(class="label-input fechaNacimientoSlects" )
+										//select-asep
+										- opcionInicial="Día"
+										- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+										- classSelect="diaSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+										//select-asep
+										- opcionInicial="Mes"
+										- opciones=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octube","Noviembre","Diciembre"]
+										- classSelect="mesSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+										//select-asep
+										- opcionInicial="Año"
+										- opciones=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+										- classSelect="anioSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==0
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="NombreValidar"
+										- placeholder="Ej: Irvin Daniel"
+										- tipo="text"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==1
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="ApellidoValidar"
+										- placeholder="Ej: MorenoChávez"
+										- tipo="text"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==2
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="EmailValidar"
+										- placeholder="Ej: daniel.moreno@clicksandbricks.pe"
+										- tipo="text"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==3
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="ContraseniaValidar"
+										- placeholder="Ej: clave142"
+										- tipo="password"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==4
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="confirmaContrasenia"
+										- placeholder="Ej: clave142"
+										- tipo="password"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==5
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="DniValidar"
+										- placeholder="Ej: 46712716"
+										- tipo="text"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==7
+									div(class="label-input radioButonLinea radioMultipleMovil")
+										div(class="radioSexoValidate")
+											input(type="radio" class="radioSexo" name="sexo")
+											span Hombre
+											input(type="radio" class="radioSexo" name="sexo")
+											span Mujer
+										span(class='errorInputValidado') X
+								else if index==8
+									div(class="label-input")
+										//select-asep
+										- opcionInicial="Nacionalidad"
+										- opciones=[1,2,3,4]
+										- classSelect="nacionalidadSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==9
+									div(class="label-input")
+										//select-asep
+										- opcionInicial="Departamento"
+										- opciones=[1,2,3,4]
+										- classSelect="departamentoSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==10
+									div(class="label-input")
+										//select-asep
+										- opcionInicial="Provincia"
+										- opciones=[1,2,3,4]
+										- classSelect="provinciaSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==11
+									div(class="label-input")
+										//select-asep
+										- opcionInicial="Distrito"
+										- opciones=[1,2,3,4]
+										- classSelect="distritoSelect"
+										include ../../../componentes/select/asep/select.jade
+										//select-asep
+								else if index==12
+									div(class="label-input")
+										//input-textAsep
+										//EmailValidar,NombreValidar,ApellidoValidar,contraseniaValidar,DniValidar,TelefonoValidar
+										- tipoDeInput="TelefonoValidar"
+										- placeholder="Ej: 044990258814"
+										- tipo="text"
+										include ../../../componentes/input/textAsep/input.jade
+										//input-textAsep
+								else if index==13						
+									- labelsRadiosButton =["Temas legales, Contables, Tributarios","Marketing, Publicidad, Ventas, Redes Sociales","Financiamiento, inversionistas","Modelo de negocios","Internacionalización","Propiedad Intelectual y patentamiento"]
+									div(class="label-input radioMultipleMovil")
+										div(class="RadioContenedor")
+											each labelRadio in labelsRadiosButton
+												div(class="RadioContenedorIndividual")
+													input(type="radio")
+													span=labelRadio
+								else if index==14
+									div(class="label-input radioButonLinea radioMultipleMovil")
+										div(class="radioEmpresaGroup")
+											input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
+											span Si
+											input(type="radio" class="radioSexo radioEmpresaGroup" name="radioEmpresaGroup")
+											span No
+										span(class='errorInputValidado') X
+								else
+									div(class="label-input") input
+								if index==15
+									div
+								else
+									div(class="asterisco") *
+					div(class="UltimoRadio")
+						div
+							input(type="radio")
+						div
+							span.
+								Autorizo a la ASEP a conservar mis datos y utilizarlos para mantenerme informado acerca de sus actividades para que me inviten a colaborar y que me incluyan en su bolsa de oportunidades; conforme a lo establecido en la política de privacidad contenida en la página web. 
+							a(href="#") Ver política de privacidad
+					div(class="obligatorio") *Obligatorio
+					div(class="botonGuardar")					
+						//modal-asep					
+						a(href='#guardarConExito' class="btn-guardarValidado")
+							//button-asepAzul
+							- contenido="GUARDAR"
+							include ../../../componentes/button/asepAzul/button.jade
+							//button-asepAzul
+						div#guardarConExito.modal(aria-hidden='true')
+							.modal-dialog
+								.modal-header
+									a.btn-close(href='#close', aria-hidden='true') ×
+								.modal-body
+									p Los Datos se guardaron exitosamente
+								.modal-footer					
+						//modal-asep
 
 			div(class="pest")
 				div(class="pest-Titulo").
@@ -297,3 +331,10 @@ block footer
 	//footer-asep
 
 
+
+	//select-asep
+- opcionInicial="Día"
+- opciones=[1,2,3,4]
+- classSelect="idSelect"
+include ../../../componentes/select/asep/select.jade
+//select-asep

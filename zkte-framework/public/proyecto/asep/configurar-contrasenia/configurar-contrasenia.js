@@ -31,4 +31,5 @@ function inicio() {
 	var modalAsep = new ModalAsep();
 	$(".confirmaContrasenia").on("keyup", confirmarContrasenia);
 	$(".btn-guardarValidar").on("click", confirmarContraseniaClick);
+	var inputTextAsep = new InputTextAsep();
 }

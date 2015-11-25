@@ -176,38 +176,6 @@ var InputFileAsep = function InputFileAsep() {
 	_classCallCheck(this, InputFileAsep);
 };
 
-var SelectAsep = (function () {
-	function SelectAsep(boton, idSelect, required) {
-		_classCallCheck(this, SelectAsep);
-
-		this.idSelect = idSelect;
-		if (required) {
-			$("." + boton).on("click", { idSelect: this.idSelect }, this.validarSelect);
-		}
-	}
-
-	//var selectAsep=new SelectAsep("btn","idSelect",true)
-
-	_createClass(SelectAsep, [{
-		key: "validarSelect",
-		value: function validarSelect(event) {
-			var idSelect = event.data.idSelect;
-			var optionInicial = $("." + idSelect).children('option').val();
-			var optionSeleccionado = $("." + idSelect).val();
-			if (optionInicial == optionSeleccionado) {
-				event.preventDefault();
-				$('.' + idSelect).siblings('span').removeClass("InputInvalidado");
-				$('.' + idSelect).siblings('span').addClass("inputValido");
-			} else {
-				$('.' + idSelect).siblings('span').removeClass("inputValido");
-				$('.' + idSelect).siblings('span').addClass("InputInvalidado");
-			}
-		}
-	}]);
-
-	return SelectAsep;
-})();
-
 var InputTextAsep = (function () {
 	function InputTextAsep(boton, input) {
 		_classCallCheck(this, InputTextAsep);
@@ -366,12 +334,35 @@ var InputTextAsep = (function () {
 	return InputTextAsep;
 })();
 
-var inputTextAsep = new InputTextAsep("btn-submit", "EmailValidar");
-//var inputTextAsep = new InputTextAsep("btn-submit","TelefonoValidar");
+var SelectAsep = (function () {
+	function SelectAsep(boton, idSelect, required) {
+		_classCallCheck(this, SelectAsep);
 
-var inputTextAsep = new InputTextAsep("btn-submit", "EmailValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "NombreValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "ApellidoValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "ContraseniaValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "DniValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "TelefonoValidar");
+		this.idSelect = idSelect;
+		$('.' + this.idSelect).on("change", { idSelect: this.idSelect }, this.validarSelect);
+		if (required) {
+			$("." + boton).on("click", { idSelect: this.idSelect }, this.validarSelect);
+		}
+	}
+
+	//var selectAsep=new SelectAsep("btn","idSelect",true)
+
+	_createClass(SelectAsep, [{
+		key: "validarSelect",
+		value: function validarSelect(event) {
+			var idSelect = event.data.idSelect;
+			var optionInicial = $("." + idSelect).children('option').val();
+			var optionSeleccionado = $("." + idSelect).val();
+			if (optionInicial == optionSeleccionado) {
+				event.preventDefault();
+				$('.' + idSelect).siblings('span').removeClass("InputInvalidado");
+				$('.' + idSelect).siblings('span').addClass("inputValido");
+			} else {
+				$('.' + idSelect).siblings('span').removeClass("inputValido");
+				$('.' + idSelect).siblings('span').addClass("InputInvalidado");
+			}
+		}
+	}]);
+
+	return SelectAsep;
+})();
