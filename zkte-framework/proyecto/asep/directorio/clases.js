@@ -28,3 +28,9 @@ class NavegacionAsep{
 	}
 
 }
+class TituloAsepA{
+	constructor()
+	{
+
+	}
+}

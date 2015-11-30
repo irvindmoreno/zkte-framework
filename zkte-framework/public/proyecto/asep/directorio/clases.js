@@ -30,3 +30,7 @@ var NavegacionAsep = (function () {
 
 	return NavegacionAsep;
 })();
+
+var TituloAsepA = function TituloAsepA() {
+	_classCallCheck(this, TituloAsepA);
+};

@@ -1,13 +1,24 @@
+fondoTituloAsep=#fcaf14
+colorDeLetra=#2aa6df
+tamanioDeLetra=2.5em
+padding=1.5em 0em
+tamanioImagen=3em
 .TituloAsep
 	background fondoTituloAsep
 	width 100%
-	padding padding
-	display flex
-	justify-content center
-	align-items center
-	font-size tamanioDeLetra
+	padding padding	
 	color colorDeLetra
 	font-weight bold
 	text-align center
-	@media screen and (max-width: 453px)
-		font-size 2em
+	&-texto
+		font-size tamanioDeLetra
+		@media screen and (max-width: 453px)
+			font-size 1.5em
+	&-img img
+		height tamanioImagen
+		@media screen and (max-width: 453px)
+			height 2em
+	&-img,&-texto
+		display inline-block
+		vertical-align middle
+		margin-left 1em

@@ -1,2 +1,7 @@
-//- tituloAsep="El Titulo"
-div(class="TituloAsep")=tituloAsep
+- rutaImagenes ='../../../imagenes'
+- tituloAsep="DIRECTORIO DE EMPRENDEDORES"
+- logo="book.png"
+div(class="TituloAsep")
+	div(class="TituloAsep-img")
+		img(src=rutaImagenes+"/"+logo)
+	div(class="TituloAsep-texto")=tituloAsep

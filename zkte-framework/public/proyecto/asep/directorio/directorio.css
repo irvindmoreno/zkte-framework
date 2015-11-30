@@ -162,3 +162,17 @@ header a:hover {
   }
 }
 /************navegacion-asep****************/
+/************titulo-asepA****************/
+.titulo-Asep-A {
+  color: #444343;
+  border-bottom: 4px solid #fcaf14;
+  padding-bottom: 5px;
+  font-size: 3em;
+  padding-left: 10px;
+}
+@media screen and (max-width: 600px) {
+  .titulo-Asep-A {
+    font-size: 2em !important;
+  }
+}
+/************titulo-asepA****************/
