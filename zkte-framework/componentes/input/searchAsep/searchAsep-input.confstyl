@@ -1,1 +1,10 @@
+rutaImagen='../../../imagenes/'
+lupaImg="lupa.png"
+borderInput=1px solid gray
+alturaInput=1.5em
+anchoInput=12em
+borderRadiusInput=5px
+alturaLupa=2em
+anchoLupa=2em
+backgroundSizeLupa=1.7em
 fin

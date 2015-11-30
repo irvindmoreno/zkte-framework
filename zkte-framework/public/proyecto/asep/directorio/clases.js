@@ -38,3 +38,7 @@ var TituloAsepA = function TituloAsepA() {
 var TituloAsep = function TituloAsep() {
 	_classCallCheck(this, TituloAsep);
 };
+
+var InputSearchAsep = function InputSearchAsep() {
+	_classCallCheck(this, InputSearchAsep);
+};

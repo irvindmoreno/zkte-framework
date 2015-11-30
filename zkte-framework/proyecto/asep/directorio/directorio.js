@@ -5,4 +5,5 @@ function inicio()
     var navegacionAsep= new NavegacionAsep()
     var tituloAsepA= new TituloAsepA()
     var tituloAsep= new TituloAsep()
+    var inputSearchAsep= new InputSearchAsep()
 }

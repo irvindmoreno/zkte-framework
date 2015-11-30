@@ -40,3 +40,9 @@ class TituloAsep{
 
 	}
 }
+class InputSearchAsep{
+	constructor()
+	{
+
+	}
+}
