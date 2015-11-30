@@ -1,0 +1,82 @@
+/**********Emprendedor**************/
+.Emprendedor-Img,
+.Emprendedor-Contenido,
+.Emprendedor-RedesSociales {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -4px;
+}
+.Emprendedor {
+  border-bottom: 1px solid #b1adad;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #6b6767;
+}
+.Emprendedor-Nombre {
+  font-weight: bold;
+  color: #2ca7df;
+}
+@media screen and (max-width: 663px) {
+  .Emprendedor-Nombre {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 663px) {
+  .Emprendedor-Cargo {
+    text-align: center;
+  }
+}
+.Emprendedor-Img {
+  width: 20%;
+  text-align: center;
+}
+@media screen and (max-width: 663px) {
+  .Emprendedor-Img {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 6%;
+  }
+}
+.Emprendedor-Img img {
+  height: 8em;
+  border-radius: 50%;
+}
+.Emprendedor-Contenido {
+  width: 65%;
+}
+@media screen and (max-width: 663px) {
+  .Emprendedor-Contenido {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 6%;
+  }
+}
+.Emprendedor-RedesSociales {
+  width: 15%;
+}
+@media screen and (max-width: 663px) {
+  .Emprendedor-RedesSociales {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 6%;
+  }
+}
+.Emprendedor-RedesSociales i {
+  font-size: 2.5em;
+  margin-left: 0.5em;
+  color: #6b6767;
+}
+.estrellitas {
+  margin-bottom: 1em;
+}
+.estrellitas,
+.redes {
+  text-align: center;
+}
+.fa-star {
+  font-size: 1em !important;
+}
+.starActivada {
+  color: #2ca7df !important;
+}
+/**********Emprendedor**************/

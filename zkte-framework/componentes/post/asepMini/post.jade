@@ -1,0 +1,25 @@
+- rutaImagenes ='../../../imagenes'
+- imagen="emprendedor.jpg"
+- titulo="Irina Rymshina"
+- contenido = "Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope."
+div(class="Emprendedor")
+	div(class="Emprendedor-Img")
+		img(src=rutaImagenes+"/"+imagen)
+	div(class="Emprendedor-Contenido")
+		div(class="Emprendedor-Nombre")=titulo
+		div(class="Emprendedor-Cargo") Socio Fundador
+		p=contenido
+	div(class="Emprendedor-RedesSociales")
+		div(class="estrellitas")
+			i(class="fa fa-star starActivada")
+			i(class="fa fa-star starActivada")
+			i(class="fa fa-star starActivada")
+			i(class="fa fa-star")
+			i(class="fa fa-star")			
+		div(class="redes")
+			span(class="facebook")
+				i(class="fa fa-facebook-official")
+			span(class="twiter")
+				i(class="fa fa-twitter-square")
+			span(class="linkedin")
+				i(class="fa fa-linkedin-square")

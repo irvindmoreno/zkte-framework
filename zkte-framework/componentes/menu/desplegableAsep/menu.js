@@ -8,4 +8,4 @@ class MenuDesplegableAsep{
 		$(".contenedorDeLabels").slideToggle( "slow" );
 	}
 }
-var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
+//var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
