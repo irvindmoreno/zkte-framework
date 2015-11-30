@@ -1,5 +1,5 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='header';
+var proyecto='navegacion';
 var vista='asep';
 /*librerias requeridas para correr gulp*/
 

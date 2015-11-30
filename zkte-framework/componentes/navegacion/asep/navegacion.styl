@@ -1,18 +1,19 @@
+colorDeLetraHoverDesktop=#2ca7df
+colorDeFondoAlDarleHoverMovil=#f02228
+bordeInferiorMovil=#cacfdc
 /********Navegaciom****************/
 .img-Logo
 	height 4em
 	@media screen and (max-width: 412px)	
 		height 3em
-.Contenedor-NavegacionMenu
-	display flex
+.Contenedor-NavegacionMenu	
 	padding 1.5em
-	justify-content space-between
-	align-items center
+	& a, & nav
+		display inline-block
+		vertical-align middle
 .Navegacion-Menu
-	display flex
 	& ul
-		list-style none
-		display flex
+		list-style none		
 	& a
 		padding-left 0.4em
 		padding-right 0.4em
