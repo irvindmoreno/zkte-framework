@@ -1,6 +1,31 @@
 rutaComponentes='../../../componentes'
 rutaImagenes='../../../imagenes'
 
+.tituloAsep-2
+	margin-top 2em
+.bloqueIzquierda,.bloqueDerecha
+	display inline-block
+	vertical-align top
+	margin 0
+	height 3em
+.bloqueIzquierda
+	width 23%
+	//background red
+	min-width 15em
+	&-Lupa
+		text-align center
+		padding-top 1em
+		padding-bottom 1em
+.bloqueDerecha
+	width 77%
+	background green
+	margin-left -5px
+@media screen and (max-width: 1330px)
+	.bloqueIzquierda
+		width 100%
+	.bloqueDerecha
+		width 100%
+		margin-left 0px
 
 /************Layout****************/
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
@@ -34,20 +59,15 @@ padding=1.5em 0em
 tamanioImagen=3em
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
 /************titulo-asep****************/
-.tituloAsep-2
-	margin-top 2em
-.bloqueIzquierda,.bloqueDerecha
-	display inline-block
-	vertical-align top
 
 /************input-searchAsep****************/
 rutaImagen='../../../imagenes/'
 lupaImg="lupa.png"
 borderInput=1px solid gray
-alturaInput=1.5em
+alturaInput=2.5em
 anchoInput=12em
 borderRadiusInput=5px
-alturaLupa=2em
+alturaLupa=3em
 anchoLupa=2em
 backgroundSizeLupa=1.7em
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/searchAsep/input.styl')

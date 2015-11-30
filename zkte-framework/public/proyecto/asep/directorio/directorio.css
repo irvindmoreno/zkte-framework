@@ -1,3 +1,36 @@
+.tituloAsep-2 {
+  margin-top: 2em;
+}
+.bloqueIzquierda,
+.bloqueDerecha {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  height: 3em;
+}
+.bloqueIzquierda {
+  width: 23%;
+  min-width: 15em;
+}
+.bloqueIzquierda-Lupa {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.bloqueDerecha {
+  width: 77%;
+  background: #008000;
+  margin-left: -5px;
+}
+@media screen and (max-width: 1330px) {
+  .bloqueIzquierda {
+    width: 100%;
+  }
+  .bloqueDerecha {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
 /************Layout****************/
 body {
   font-size: 16px;
@@ -208,22 +241,16 @@ header a:hover {
   margin-left: 1em;
 }
 /************titulo-asep****************/
-.tituloAsep-2 {
-  margin-top: 2em;
-}
-.bloqueIzquierda,
-.bloqueDerecha {
-  display: inline-block;
-  vertical-align: top;
-}
 /************input-searchAsep****************/
 .searchAsep-Lupa {
   background: url("../../../imagenes/lupa.png") no-repeat scroll 0 0 transparent;
-  height: 2em;
+  height: 3em;
   background-size: 1.7em;
   width: 2em;
   border: none;
   transition: all ease 0.2s;
+  cursor: pointer;
+  margin-left: 0.5em;
 }
 .searchAsep-Lupa:hover {
   transform: scale(1.1);
@@ -237,7 +264,7 @@ header a:hover {
 .searchAsep-Input {
   border-radius: 5px;
   border: 1px solid #808080;
-  height: 1.5em;
+  height: 2.5em;
   width: 12em;
   padding-left: 1em;
   outline: none;
