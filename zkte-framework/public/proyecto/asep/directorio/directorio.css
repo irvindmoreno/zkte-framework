@@ -58,6 +58,7 @@ header a:hover {
 /************navegacion-asep****************/
 .img-Logo {
   height: 4em;
+  border: none;
 }
 @media screen and (max-width: 412px) {
   .img-Logo {
