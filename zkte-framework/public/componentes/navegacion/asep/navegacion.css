@@ -11,12 +11,21 @@
   padding: 1.5em;
 }
 .Contenedor-NavegacionMenu a,
-.Contenedor-NavegacionMenu nav {
+.Contenedor-NavegacionMenu nav,
+.Contenedor-NavegacionMenu Boton-Movil {
   display: inline-block;
   vertical-align: middle;
 }
+.Navegacion-Menu {
+  position: absolute;
+  right: 14px;
+}
 .Navegacion-Menu ul {
   list-style: none;
+}
+.Navegacion-Menu ul li {
+  display: inline-block;
+  vertical-align: top;
 }
 .Navegacion-Menu a {
   padding-left: 0.4em;
@@ -35,15 +44,18 @@
 }
 @media screen and (max-width: 1137px) {
   .Navegacion-Menu {
-    display: none;
+    display: none !important;
   }
 }
 .Boton-Movil {
   display: none;
+  position: absolute;
+  right: 30px;
+  top: 38px;
 }
 @media screen and (max-width: 1137px) {
   .Boton-Movil {
-    display: block;
+    display: inline-block;
   }
 }
 .fa-angle-double-down {

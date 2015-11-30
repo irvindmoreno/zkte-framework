@@ -298,6 +298,7 @@ function ComponenteTestear
 	pwd
 	echo "<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'/>
 <link rel='stylesheet' type='text/css' href='./$nombreNuevoComponente.css'>
 <style type='text/css'>
 	body
@@ -306,8 +307,14 @@ function ComponenteTestear
 		font-size: 16px;
 	}
 </style>
-<script src='./$nombreNuevoComponente.js'></script>">> $nombreNuevoComponente.html
+<script src='./$nombreNuevoComponente.js'>
+</script>
+<script>
+var $nombreNuevoComponente$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/')= new $(echo $nombreNuevoComponente | sed 's/^./\u&/')$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/')()
+</script>">> $nombreNuevoComponente.html
 	#chromium-browser "http://localhost:9000/public/componentes/$nombreNuevoComponente/$nombreNuevoComponenteArchivo/$nombreNuevoComponente.html"
+
+  
 }
 function ComponentePedirNombres
 {

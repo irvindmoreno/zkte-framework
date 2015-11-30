@@ -8,12 +8,17 @@ bordeInferiorMovil=#cacfdc
 		height 3em
 .Contenedor-NavegacionMenu	
 	padding 1.5em
-	& a, & nav
+	& a, & nav,& Boton-Movil
 		display inline-block
 		vertical-align middle
 .Navegacion-Menu
+	position absolute
+	right 14px
 	& ul
-		list-style none		
+		list-style none
+		& li
+			display inline-block
+			vertical-align top	
 	& a
 		padding-left 0.4em
 		padding-right 0.4em
@@ -27,11 +32,14 @@ bordeInferiorMovil=#cacfdc
 		color colorDeLetraHoverDesktop
 		text-decoration underline
 	@media screen and (max-width: 1137px)		
-		display none
+		display none !important
 .Boton-Movil
 	display none
+	position absolute
+	right 30px
+	top 38px
 	@media screen and (max-width: 1137px)
-		display block
+		display inline-block
 .fa-angle-double-down
 	cursor pointer
 	font-size 2em !important

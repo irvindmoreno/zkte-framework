@@ -5,7 +5,7 @@ class NavegacionAsep{
 		$(".Boton-Movil i").on("click",this.mostrarMenuMovil);
   	} 
   	mostrarMenuMovil()
-	{
+	{		
 		this.estadoMenuMovil=!this.estadoMenuMovil
 		if(this.estadoMenuMovil)
 		{
