@@ -1,0 +1,36 @@
+.contenedorMenu {
+  width: 100%;
+  background: #dee0e2;
+  padding: 2em 1em;
+  max-width: 23em;
+  display: none;
+}
+.menu-numero,
+.menu-label {
+  display: inline-block;
+  vertical-align: top;
+  background: #dee0e2;
+}
+.contenedorLabel {
+  position: relative;
+  padding: 0.5em 0em;
+  color: #5d5d5d;
+}
+.menu-numero {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.label-a {
+  text-decoration: none;
+  color: #5d5d5d;
+}
+.label-a-selected {
+  color: #2ca7df;
+  text-decoration: underline;
+}
+.btnDesplegable {
+  background: #f00;
+  height: 2em;
+  width: 2em;
+}
