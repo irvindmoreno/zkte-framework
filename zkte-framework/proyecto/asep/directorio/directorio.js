@@ -6,4 +6,6 @@ function inicio()
     var tituloAsepA= new TituloAsepA()
     var tituloAsep= new TituloAsep()
     var inputSearchAsep= new InputSearchAsep()
+    var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
+    var menuDesplegableAsep= new MenuDesplegableAsep()
 }

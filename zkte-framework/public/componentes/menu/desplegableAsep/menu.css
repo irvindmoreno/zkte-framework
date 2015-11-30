@@ -3,7 +3,6 @@
   background: #dee0e2;
   padding: 2em 1em;
   max-width: 23em;
-  display: none;
 }
 .menu-numero,
 .menu-label {
@@ -30,7 +29,16 @@
   text-decoration: underline;
 }
 .btnDesplegable {
-  background: #f00;
-  height: 2em;
-  width: 2em;
+  padding: 0.5em;
+  cursor: pointer;
+  background: #1b1e24;
+  margin-left: -5px;
+  display: none;
+}
+@media screen and (max-width: 1330px) {
+  .btnDesplegable,
+  .contenedorMenu {
+    display: inline-block;
+    vertical-align: top;
+  }
 }

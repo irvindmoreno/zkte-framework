@@ -1,14 +1,15 @@
--labels=["Todos","Notaria","Arquitectura","Abogados","Publicidad","Viajes y Turismo","Insumos","Salud","Belleza","E-comerce","Eventos","Soporte Técnico","Catering"]
-div(class="btnDesplegable") Boton
 div(class="contenedorMenu")
-	each label,index in labels
-		if index==0
-			div(class="contenedorLabel")
-				div(class="menu-label contenedorMenu-label-selected")
-					a(href="#" class="label-a label-a-selected")=label
-				div(class="menu-numero label-a-selected") 23
-		else
-			div(class="contenedorLabel")
-				div(class="menu-label")
-					a(href="#" class="label-a")=label
-				div(class="menu-numero") 23
+	div(class="btnDesplegable") 
+		img(src=rutaImagenes+'/menuCelular.png')
+	div(class="contenedorDeLabels")
+		each label,index in labels
+			if index==0
+				div(class="contenedorLabel")
+					div(class="menu-label contenedorMenu-label-selected")
+						a(href="#" class="label-a label-a-selected")=label
+					div(class="menu-numero label-a-selected") 23
+			else
+				div(class="contenedorLabel")
+					div(class="menu-label")
+						a(href="#" class="label-a")=label
+					div(class="menu-numero") 23	

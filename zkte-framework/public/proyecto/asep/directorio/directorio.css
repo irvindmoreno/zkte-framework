@@ -6,7 +6,7 @@
   display: inline-block;
   vertical-align: top;
   margin: 0;
-  height: 3em;
+  height: inherit;
 }
 .bloqueIzquierda {
   width: 23%;
@@ -29,6 +29,12 @@
   .bloqueDerecha {
     width: 100%;
     margin-left: 0px;
+  }
+  .bloqueIzquierda-Lupa {
+    text-align: right;
+  }
+  .searchAsep-Input {
+    width: 92%;
   }
 }
 /************Layout****************/
@@ -245,7 +251,7 @@ header a:hover {
 .searchAsep-Lupa {
   background: url("../../../imagenes/lupa.png") no-repeat scroll 0 0 transparent;
   height: 3em;
-  background-size: 1.7em;
+  background-size: 1.9em;
   width: 2em;
   border: none;
   transition: all ease 0.2s;
@@ -265,8 +271,70 @@ header a:hover {
   border-radius: 5px;
   border: 1px solid #808080;
   height: 2.5em;
-  width: 12em;
+  width: 15em;
   padding-left: 1em;
   outline: none;
 }
 /************input-searchAsep****************/
+/************menu-desplegableAsep****************/
+.contenedorMenu {
+  width: 100%;
+  background: #dee0e2;
+  padding: 2em 1em;
+  min-width: 12em;
+  text-align: center;
+}
+.menu-numero,
+.menu-label {
+  display: inline-block;
+  vertical-align: top;
+  background: #dee0e2;
+}
+.contenedorLabel {
+  position: relative;
+  padding: 0.5em 0em;
+  color: #5d5d5d;
+  text-align: left;
+  width: 93%;
+  margin: 0 auto;
+}
+.menu-numero {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.label-a {
+  text-decoration: none;
+  color: #5d5d5d;
+}
+.label-a-selected {
+  color: #2ca7df;
+  text-decoration: underline;
+}
+.btnDesplegable {
+  padding: 0.5em 0em;
+  cursor: pointer;
+  background: #1b1e24;
+  margin-left: -5px;
+  display: none;
+  text-align: right;
+  width: 95%;
+  margin: 0 auto;
+  padding-right: 0.5em;
+}
+@media screen and (max-width: 1330px) {
+  .contenedorDeLabels {
+    display: none;
+  }
+  .btnDesplegable {
+    display: block;
+    margin-left: 0 auto;
+  }
+  .contenedorMenu {
+    padding-top: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-bottom: 0em;
+  }
+}
+/************menu-desplegableAsep****************/

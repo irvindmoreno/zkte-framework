@@ -1,15 +1,10 @@
-maximoAncho=23em
-padding= 2em 1em
-background=#dee0e2
-paddingDeTextos=0.5em 0em
-colorLetra=#5D5D5D
-colorLetraSeleccionada=#2ca7df
+
 .contenedorMenu
 	width 100%
 	background #dee0e2
-	padding padding
-	max-width maximoAncho
-	display none
+	padding padding	
+	min-width minimoAncho
+	text-align center
 .menu-numero,.menu-label
 	display inline-block
 	vertical-align top		
@@ -18,6 +13,9 @@ colorLetraSeleccionada=#2ca7df
 	position relative
 	padding paddingDeTextos
 	color colorLetra
+	text-align left
+	width 93%
+	margin 0 auto
 .menu-numero
 	position absolute
 	right 0
@@ -29,7 +27,23 @@ colorLetraSeleccionada=#2ca7df
 	color colorLetraSeleccionada
 	text-decoration underline
 .btnDesplegable
-	background red
-	height 2em
-	width 2em
+	padding paddingBoton
 	cursor pointer
+	background backgroundBoton
+	margin-left -5px
+	display none
+	text-align right
+	width 95%
+	margin 0 auto
+	padding-right 0.5em
+@media screen and (max-width: 1330px)
+	.contenedorDeLabels
+		display none
+	.btnDesplegable
+		display block
+		margin-left 0 auto
+	.contenedorMenu
+		padding-top 1em
+		padding-left 0em
+		padding-right 0em
+		padding-bottom 0em

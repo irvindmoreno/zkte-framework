@@ -42,7 +42,11 @@ block contenido
 			- placeholder="Buscar...."
 			include ../../../componentes/input/searchAsep/input.jade
 			//input-searchAsep
-		div(class="")
+		div(class="contenedorMenuDesplegable")
+			//menu-desplegableAsep
+			- rutaImagenes ='../../../imagenes'
+			-labels=["Todos","Notaria","Arquitectura","Abogados","Publicidad","Viajes y Turismo","Insumos","Salud","Belleza","E-comerce","Eventos","Soporte Técnico","Catering"]
+			include ../../../componentes/menu/desplegableAsep/menu.jade
+			//menu-desplegableAsep
 	div(class="bloqueDerecha")
-block footer	
-
+block footer

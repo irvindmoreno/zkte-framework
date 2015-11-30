@@ -7,7 +7,7 @@ rutaImagenes='../../../imagenes'
 	display inline-block
 	vertical-align top
 	margin 0
-	height 3em
+	height inherit
 .bloqueIzquierda
 	width 23%
 	//background red
@@ -26,6 +26,10 @@ rutaImagenes='../../../imagenes'
 	.bloqueDerecha
 		width 100%
 		margin-left 0px
+	.bloqueIzquierda-Lupa
+		text-align right
+	.searchAsep-Input
+		width 92%
 
 /************Layout****************/
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
@@ -65,12 +69,28 @@ rutaImagen='../../../imagenes/'
 lupaImg="lupa.png"
 borderInput=1px solid gray
 alturaInput=2.5em
-anchoInput=12em
+anchoInput=15em
 borderRadiusInput=5px
 alturaLupa=3em
 anchoLupa=2em
 backgroundSizeLupa=1.9em
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/searchAsep/input.styl')
 /************input-searchAsep****************/
+
+
+
+/************menu-desplegableAsep****************/
+rutaImagen='../../../imagenes/'
+maximoAncho=23em
+padding= 2em 1em
+background=#dee0e2
+paddingDeTextos=0.5em 0em
+colorLetra=#5D5D5D
+colorLetraSeleccionada=#2ca7df
+paddingBoton=0.5em 0em
+backgroundBoton=#1b1e24
+minimoAncho=12em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/menu/desplegableAsep/menu.styl')
+/************menu-desplegableAsep****************/
 
 

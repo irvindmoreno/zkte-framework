@@ -5,7 +5,7 @@ class MenuDesplegableAsep{
 	}
 	desplegarMenu()
 	{
-		$(".contenedorMenu").animate({width: 'toggle'});
+		$(".contenedorDeLabels").slideToggle( "slow" );
 	}
 }
 var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");

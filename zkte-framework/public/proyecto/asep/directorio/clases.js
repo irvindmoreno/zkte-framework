@@ -42,3 +42,22 @@ var TituloAsep = function TituloAsep() {
 var InputSearchAsep = function InputSearchAsep() {
 	_classCallCheck(this, InputSearchAsep);
 };
+
+var MenuDesplegableAsep = (function () {
+	function MenuDesplegableAsep(btn) {
+		_classCallCheck(this, MenuDesplegableAsep);
+
+		$("." + btn).on("click", this.desplegarMenu);
+	}
+
+	_createClass(MenuDesplegableAsep, [{
+		key: "desplegarMenu",
+		value: function desplegarMenu() {
+			$(".contenedorDeLabels").slideToggle("slow");
+		}
+	}]);
+
+	return MenuDesplegableAsep;
+})();
+
+var menuDesplegableAsep = new MenuDesplegableAsep("btnDesplegable");
