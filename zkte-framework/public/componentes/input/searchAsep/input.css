@@ -1,0 +1,25 @@
+.searchAsep-Lupa {
+  background: url("../../../imagenes/lupa.png") no-repeat scroll 0 0 transparent;
+  height: 2em;
+  background-size: 1.7em;
+  width: 2em;
+  border: none;
+  transition: all ease 0.2s;
+}
+.searchAsep-Lupa:hover {
+  transform: scale(1.1);
+  transform: rotate(270deg);
+}
+.searchAsep-Input,
+.searchAsep-Lupa {
+  display: inline-block;
+  vertical-align: top;
+}
+.searchAsep-Input {
+  border-radius: 5px;
+  border: 1px solid #808080;
+  height: 1.5em;
+  width: 95.9%;
+  padding-left: 1em;
+  outline: none;
+}

@@ -34,3 +34,7 @@ var NavegacionAsep = (function () {
 var TituloAsepA = function TituloAsepA() {
 	_classCallCheck(this, TituloAsepA);
 };
+
+var TituloAsep = function TituloAsep() {
+	_classCallCheck(this, TituloAsep);
+};

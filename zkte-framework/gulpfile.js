@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='titulo';
-var vista='asep';
+var proyecto='input';
+var vista='searchAsep';
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

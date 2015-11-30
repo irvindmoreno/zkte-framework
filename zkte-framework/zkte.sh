@@ -237,8 +237,9 @@ function ComponenteCrearArchivos
 				touch $nombreNuevoComponente".styl"
 				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confstyl"
 				touch $nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"
-				echo "- rutaImagenes ='../../../imagenes'" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"
+				echo "- rutaImagenes ='../../../imagenes'" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente".confjade"				
 				echo "fin" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente.confjade
+				echo "rutaImagen='../../../imagenes/'">>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente.confstyl
 				echo "fin" >>$nombreNuevoComponenteArchivo"-"$nombreNuevoComponente.confstyl
 			#llenar el archivo js
 				echo "class $(echo $nombreNuevoComponente | sed 's/^./\u&/')$(echo $nombreNuevoComponenteArchivo | sed 's/^./\u&/'){

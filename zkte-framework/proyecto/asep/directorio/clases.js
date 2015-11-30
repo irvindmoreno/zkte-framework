@@ -34,3 +34,9 @@ class TituloAsepA{
 
 	}
 }
+class TituloAsep{
+	constructor()
+	{
+
+	}
+}

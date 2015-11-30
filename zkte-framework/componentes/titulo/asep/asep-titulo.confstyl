@@ -1,5 +1,6 @@
-fondoTituloAsep=#2ca7df
-colorDeLetra=white
-tamanioDeLetra=3em
-padding=0.5em 0em
+fondoTituloAsep=#fcaf14
+colorDeLetra=#2aa6df
+tamanioDeLetra=2.5em
+padding=1.5em 0em
+tamanioImagen=3em
 fin

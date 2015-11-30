@@ -1,0 +1,29 @@
+rutaImagen='../../../imagenes/'
+lupaImg="lupa.png"
+borderInput=1px solid gray
+alturaInput=1.5em
+anchoInput=95.9%
+borderRadiusInput=5px
+alturaLupa=2em
+anchoLupa=2em
+backgroundSizeLupa=1.7em
+.searchAsep-Lupa
+	background url(rutaImagen+lupaImg) no-repeat scroll 0 0 transparent
+	height alturaLupa
+	background-size backgroundSizeLupa
+	width anchoLupa
+	border none
+	transition all ease 0.2s
+.searchAsep-Lupa:hover
+	transform scale(1.1)
+	transform rotate(270deg)
+.searchAsep-Input,.searchAsep-Lupa
+	display inline-block
+	vertical-align top
+.searchAsep-Input
+	border-radius borderRadiusInput
+	border borderInput
+	height alturaInput
+	width anchoInput
+	padding-left 1em
+	outline none
