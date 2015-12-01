@@ -1,5 +1,6 @@
-//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-- tipoDeInput="EmailValidar"
-- placeholder="Email"
+//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+- idInput="myId"
+- placeholder="prueba"
 - tipo="text"
+- label="Número de telefono"
 fin

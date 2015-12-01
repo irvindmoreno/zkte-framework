@@ -1,14 +1,3 @@
-colorDeX=white
-backgroundDeX=#2ca7df
-marginLeftSpanX=0.5em
-colorBordeInput=gray
-paddingleftInnput=0.5em
-anchoInput=77%
-altoInput=2em
-backgroundInput=#f7f2f2
-borderRadiusInput=3px
-anchoDeLabel= 9%
-colorLetrInput=#4a4949
 .label-Input,.zkteInputAsep,.errorInputValidado
 	display inline-block
 	vertical-align middle
@@ -40,13 +29,19 @@ colorLetrInput=#4a4949
 	//display flex
 	//align-items center
 	width 100%
+	margin 0 auto !important
 .InputInvalidado
 	display none
 	transition all ease 0.5s
 .inputValido
 	display inline-block
-.zkteInputAsep
-	height 2em
+.zkteTextAreaAsep	
+	resize: none;
+	height tamanioTextArea !important
+.zkteTextAreaAsep,.label-Input
+	display inline-block
+	vertical-align middle
+.zkteInputAsep,.zkteTextAreaAsep
 	border-radius borderRadiusInput
 	border 1px solid colorBordeInput
 	padding-left paddingleftInnput
@@ -58,5 +53,7 @@ colorLetrInput=#4a4949
 	.label-Input
 		display block
 		text-align left
-	.zkteInputAsep
-		width 89%;
+	.zkteInputAsep,.zkteTextAreaAsep
+		width 100% !important
+	.errorInputValidado
+		display none

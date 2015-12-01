@@ -1,9 +1,69 @@
+class HeaderAsep{
+	constructor ()
+	{
+
+  	} 
+  	
+
+}
+
+class NavegacionAsep{
+	constructor ()
+	{
+		this.estadoMenuMovil=false;		
+		$(".Boton-Movil i").on("click",this.mostrarMenuMovil);
+  	} 
+  	mostrarMenuMovil()
+	{		
+		this.estadoMenuMovil=!this.estadoMenuMovil
+		if(this.estadoMenuMovil)
+		{
+			$(".Navegacion-Menu-Movil").css("height","11em")
+		}
+		else
+		{
+			$(".Navegacion-Menu-Movil").css("height","0px")
+		}
+								
+	}
+
+}
+class TituloAsepA{
+	constructor()
+	{
+
+	}
+}
+class TituloAsep{
+	constructor()
+	{
+
+	}
+}
+class InputSearchAsep{
+	constructor()
+	{
+
+	}
+}
+
+class MenuDesplegableAsep{
+	constructor(btn)
+	{
+		$("."+btn).on("click",this.desplegarMenu)
+	}
+	desplegarMenu()
+	{
+		$(".contenedorDeLabels").slideToggle( "slow" );
+	}
+}
+
 class InputTextAsep{
 	constructor(boton,input)
 	{
 		this.input=input;
 		this.boton=boton;
-		
+		//this.requerido="si"
 		//this.comprobarInput()		
 	}
 	validar(campo,nroCaracteresInicial,nroCaracteresFinal)
@@ -49,6 +109,7 @@ class InputTextAsep{
 	}
 	validarNoRequerido(event,nroCaracteresInicial,nroCaracteresFinal)
 	{
+		
 		var tamanioInput=$('#'+this.input).val().length
 		if(tamanioInput==0)
 		{
@@ -73,14 +134,14 @@ class InputTextAsep{
 		if(tamanioInput<nroCaracteresInicial || tamanioInput>nroCaracteresFinal)
 		{
 			event.preventDefault();			
-			//console.log("error fuera de rango")
+			console.log("error fuera de rango")
 		    $('#'+this.input).css("border","2px solid #2ca7df")
 		    $('#'+this.input).siblings('span').removeClass("InputInvalidado")
 	        $('#'+this.input).siblings('span').addClass("inputValido")
 		}
 		else
 		{
-			//console.log("coorecto dentro de rango")
+			console.log("coorecto dentro de rango")
 			$('#'+this.input).css("border","1px solid #808080")
 		    $('#'+this.input).siblings('span').removeClass("inputValido")
 	        $('#'+this.input).siblings('span').addClass("InputInvalidado");
@@ -125,49 +186,9 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(this.requerido=="no" && tamanioInput==0)
-		{
-
-		}
-		else
-		{
-			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
-			{
-				var expresion=$('#'+this.input).val().match(/^[0-9]+$/) 
-			    //Se utiliza la funcion test() nativa de JavaScript
-			    if (expresion) 
-			    {
-			    	$('#'+this.input).css("border","1px solid #808080")
-			        $('#'+this.input).siblings('span').removeClass("inputValido")
-		        	$('#'+this.input).siblings('span').addClass("InputInvalidado");
-			    }
-			    else 
-			    {
-			    	event.preventDefault();
-			    	$('#'+this.input).css("border","2px solid #2ca7df")	
-			    	$('#'+this.input).siblings('span').removeClass("InputInvalidado")
-		        	$('#'+this.input).siblings('span').addClass("inputValido")   	        
-			    }
-			}
-			else
-			{
-				event.preventDefault();
-			    //console.log("fuera de rango")
-			    $('#'+this.input).css("border","2px solid #2ca7df")
-			    $('#'+this.input).siblings('span').removeClass("InputInvalidado")
-		        $('#'+this.input).siblings('span').addClass("inputValido") 
-			}
-		}
-		
-		
-	}
-	validarAlfaNumerico(event,nroCaracteresInicial,nroCaracteresFinal)
-	{
-		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
-		var tamanioInput=$('#'+this.input).val().length
 		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
 		{
-			var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
+			var expresion=$('#'+this.input).val().match(/^[0-9]+$/) 
 		    //Se utiliza la funcion test() nativa de JavaScript
 		    if (expresion) 
 		    {
@@ -178,10 +199,10 @@ class InputTextAsep{
 		    else 
 		    {
 		    	event.preventDefault();
-		    	$('#'+this.input).css("border","2px solid #2ca7df")
+		    	$('#'+this.input).css("border","2px solid #2ca7df")	
 		    	$('#'+this.input).siblings('span').removeClass("InputInvalidado")
-	        	$('#'+this.input).siblings('span').addClass("inputValido")  
-	        }
+	        	$('#'+this.input).siblings('span').addClass("inputValido")   	        
+		    }
 		}
 		else
 		{
@@ -190,6 +211,46 @@ class InputTextAsep{
 		    $('#'+this.input).css("border","2px solid #2ca7df")
 		    $('#'+this.input).siblings('span').removeClass("InputInvalidado")
 	        $('#'+this.input).siblings('span').addClass("inputValido") 
+		}
+		
+	}
+	validarAlfaNumerico(event,nroCaracteresInicial,nroCaracteresFinal)
+	{
+		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
+		var tamanioInput=$('#'+this.input).val().length		
+		if(this.requerido=="no" && tamanioInput==0)
+		{
+
+		}
+		else
+		{
+			
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresion) 
+			    {
+			    	$('#'+this.input).css("border","1px solid #808080")
+			        $('#'+this.input).siblings('span').removeClass("inputValido")
+		        	$('#'+this.input).siblings('span').addClass("InputInvalidado");
+			    }
+			    else 
+			    {
+			    	event.preventDefault();
+			    	$('#'+this.input).css("border","2px solid #2ca7df")
+			    	$('#'+this.input).siblings('span').removeClass("InputInvalidado")
+		        	$('#'+this.input).siblings('span').addClass("inputValido")  
+		        }
+			}
+			else
+			{
+				event.preventDefault();
+			    //console.log("fuera de rango")
+			    $('#'+this.input).css("border","2px solid #2ca7df")
+			    $('#'+this.input).siblings('span').removeClass("InputInvalidado")
+		        $('#'+this.input).siblings('span').addClass("inputValido") 
+			}
 		}
 		
 	}	
@@ -238,3 +299,15 @@ var inputTextAsep = new InputTextAsep("btn-submit","myId");
 
 
 
+class ButtonAsepAzul{
+	constructor()
+	{
+
+	}
+}
+class ModalAsep{
+	constructor()
+	{
+		
+	}
+}

@@ -1,7 +1,7 @@
 extends ../layout/layout.jade
 block head
-	link(href='./deirectorio-info.css' rel='stylesheet')
-	script(src='./deirectorio-info.js')
+	link(href='./directorio-info.css' rel='stylesheet')
+	script(src='./directorio-info.js')
 block header
 	//header-asep
 	- rutaImagenes ='../../../imagenes'
@@ -23,6 +23,17 @@ block navegacion
 	include ../../../componentes/navegacion/asep/navegacion.jade
 	//navegacion-asep
 block contenido	
+	//modal-asep
+	- rutaImagenes ='../../../imagenes'
+	a(href='#modal') Modal!
+	div#modal.modal(aria-hidden='true')
+		.modal-dialog
+			.modal-header
+				a.btn-close(href='#close', aria-hidden='true') ×
+			.modal-body
+				div() Su mensaje se ah enviado con éxtio
+			.modal-footer
+	//modal-asep
 	//titulo-asepA
 	- rutaImagenes ='../../../imagenes'
 	- titulo="DIRECTORIO"
@@ -62,10 +73,83 @@ block contenido
 				Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope
 		div(class="DirecotrioInfo-btnMegusta") Aca pon el boton me gusta de facebook
 		div(class="DirecotrioInfo-Formulario")
+			div(class="contenedorInputs")
+				//input-textAsep
+				//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+				- idInput="nombreInput"
+				- placeholder=""
+				- tipo="text"
+				- label="Nombres: (*)"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+			div(class="contenedorInputs")
+				//input-textAsep
+				//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+				- idInput="apellidosInput"
+				- placeholder=""
+				- tipo="text"
+				- label="Apellidos: (*)"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+			div(class="contenedorInputs")
+				//input-textAsep
+				//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+				- idInput="emailInput"
+				- placeholder=""
+				- tipo="text"
+				- label="E-mail: (*)"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+			div(class="contenedorInputs")
+				//input-textAsep
+				//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+				- idInput="telefonoInput"
+				- placeholder=""
+				- tipo="text"
+				- label="Telefono:"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+			div(class="contenedorInputs")
+				//input-textAsep
+				//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+				- idInput="mensajeTextArea"
+				- placeholder=""
+				- tipo="text-area"
+				- label="Mensaje: (*)"
+				include ../../../componentes/input/textAsep/input.jade
+				//input-textAsep
+		div(class="ContenedorObligatorio") (*) Obligatorio
+		a(href="#modal")
+			div(class="ContenedorBotonObligatorio")
+				//button-asepAzul
+				- rutaImagenes ='../../../imagenes'
+				- contenido="ENVIAR"
+				- claseBtn="btn-Enviar"
+				include ../../../componentes/button/asepAzul/button.jade
+				//button-asepAzul
 	div(class="bloqueDerecha")
+		div(class="Emprendedor-RedesSociales")
+			div(class="estrellitas")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+			div(class="redes")
+				span(class="facebook")
+					i(class="fa fa-facebook-official")
+				span(class="twiter")
+					i(class="fa fa-twitter-square")
+				span(class="linkedin")
+					i(class="fa fa-linkedin-square")
+			div(class="contenedorCalificanos") Califícanos
+			div(class="estrellitas")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star starActivada")
+				i(class="fa fa-star")
+				i(class="fa fa-star")
 		
 block footer
-
-	
 
 

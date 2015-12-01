@@ -1,10 +1,7 @@
-//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
-- idInput="myId"
-- placeholder="prueba"
-- tipo="text"
-- label="Número de telefono"
 div(class="contenedorDeItemAValidar")
 	div(class="label-Input")=label
-	input(type=tipo placeholder=placeholder class="zkteInputAsep " id=idInput)
+	if tipo=="text-area"
+		textarea(placeholder=placeholder class="zkteTextAreaAsep " id=idInput)
+	else if tipo=="text"
+		input(type=tipo placeholder=placeholder class="zkteInputAsep " id=idInput)
 	span(class='errorInputValidado' id="spanError-"+idInput) X
-div(class="btn-submit") bton
