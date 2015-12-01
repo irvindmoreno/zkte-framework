@@ -33,6 +33,7 @@
   .bloqueDerecha {
     width: 100%;
     margin-left: 0px;
+    padding-left: 0em;
   }
   .bloqueIzquierda-Lupa {
     text-align: center;
@@ -355,6 +356,13 @@ header a:hover {
   vertical-align: middle;
   margin-left: -4px;
 }
+@media screen and (max-width: 663px) {
+  .Emprendedor-Img,
+  .Emprendedor-Contenido,
+  .Emprendedor-RedesSociales {
+    margin-left: 0px;
+  }
+}
 .Emprendedor {
   border-bottom: 1px solid #b1adad;
   padding-top: 1em;
@@ -382,8 +390,6 @@ header a:hover {
 @media screen and (max-width: 663px) {
   .Emprendedor-Img {
     width: 100%;
-    padding-left: 5%;
-    padding-right: 6%;
   }
 }
 .Emprendedor-Img img {
@@ -396,8 +402,7 @@ header a:hover {
 @media screen and (max-width: 663px) {
   .Emprendedor-Contenido {
     width: 100%;
-    padding-left: 5%;
-    padding-right: 6%;
+    text-align: center;
   }
 }
 .Emprendedor-RedesSociales {
@@ -406,8 +411,6 @@ header a:hover {
 @media screen and (max-width: 663px) {
   .Emprendedor-RedesSociales {
     width: 100%;
-    padding-left: 5%;
-    padding-right: 6%;
   }
 }
 .Emprendedor-RedesSociales i {
