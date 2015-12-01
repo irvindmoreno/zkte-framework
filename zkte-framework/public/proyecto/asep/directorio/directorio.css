@@ -390,7 +390,6 @@ header a:hover {
 .Emprendedor-Img {
   width: 20%;
   text-align: center;
-  border: none;
   text-decoration: none;
 }
 @media screen and (max-width: 663px) {
@@ -401,6 +400,7 @@ header a:hover {
 .Emprendedor-Img img {
   height: 8em;
   border-radius: 50%;
+  border: none;
 }
 .Emprendedor-Contenido {
   width: 65%;
