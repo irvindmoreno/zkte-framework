@@ -10,10 +10,43 @@ var InputTextAsep = (function () {
 
 		this.input = input;
 		this.boton = boton;
-		this.comprobarInput();
+
+		//this.comprobarInput()		
 	}
 
 	_createClass(InputTextAsep, [{
+		key: "validar",
+		value: function validar(campo) {
+			//console.log(campo)
+			$("#" + this.input).on("keyup", { objeto: this, campo: campo }, this.validando);
+			$("." + this.boton).on("click", { objeto: this, campo: campo }, this.validando);
+		}
+	}, {
+		key: "validando",
+		value: function validando(event) {
+			//var input=event.data.input;
+			var objeto = event.data.objeto;
+			var campo = event.data.campo;
+			//console.log(campo)
+			switch (campo) {
+				case "email":
+					//console.log("es un email")
+					objeto.validarEmail();
+					break;
+				case "alfanumerico":
+					console.log("es un alfanumerico");
+					break;
+				case "numerico":
+					console.log("es un numero");
+					break;
+				case "longitud":
+					console.log("es de longitud");
+					break;
+			}
+
+			//var tamanioInput=$('.'+input).val().length
+		}
+	}, {
 		key: "comprobarInput",
 		value: function comprobarInput() {
 			if (this.input == "EmailValidar") {
@@ -144,21 +177,24 @@ var InputTextAsep = (function () {
 		}
 	}, {
 		key: "validarEmail",
-		value: function validarEmail(event) {
-			var input = event.data.input;
+		value: function validarEmail() {
+
 			var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-			var expresionaEvaluar = regex.test($('.' + input).val().trim());
+			var expresionaEvaluar = regex.test($('#' + this.input).val().trim());
 			//Se utiliza la funcion test() nativa de JavaScript
 			if (expresionaEvaluar) {
-				$(this).css("border", "1px solid #808080");
-				$('.' + input).siblings('span').removeClass("inputValido");
-				$('.' + input).siblings('span').addClass("InputInvalidado");
+				//console.log("cumple")
+				$('#' + this.input).css("border", "1px solid #808080");
+				$('#' + this.input).siblings('span').removeClass("inputValido");
+				$('#' + this.input).siblings('span').addClass("InputInvalidado");
 			} else {
+				//console.log("no cumple")
 				event.preventDefault();
-				$(this).css("border", "2px solid #2ca7df");
-				$('.' + input).siblings('span').removeClass("InputInvalidado");
-				$('.' + input).siblings('span').addClass("inputValido");
+				$('#' + this.input).css("border", "2px solid #2ca7df");
+				$('#' + this.input).siblings('span').removeClass("InputInvalidado");
+				$('#' + this.input).siblings('span').addClass("inputValido");
 			}
+			//console.log("validando el email con id: "+this.input);
 		}
 	}, {
 		key: "validarNombre",
@@ -190,8 +226,11 @@ var InputTextAsep = (function () {
 	return InputTextAsep;
 })();
 
-var inputTextAsep = new InputTextAsep("btn-submit", "DniValidar");
-var inputTextAsep = new InputTextAsep("btn-submit", "RucValidar");
+var inputTextAsep = new InputTextAsep("btn-submit", "myId");
+inputTextAsep.validar("email");
+inputTextAsep.validar("alfanumerico");
+//var inputTextAsep = new InputTextAsep("btn-submit","DniValidar");
+//var inputTextAsep = new InputTextAsep("btn-submit","RucValidar");
 /*
 var inputTextAsep = new InputTextAsep("btn-submit","EmailValidar");
 //var inputTextAsep = new InputTextAsep("btn-submit","TelefonoValidar");

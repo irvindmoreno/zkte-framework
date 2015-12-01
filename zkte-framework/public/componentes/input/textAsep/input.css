@@ -1,3 +1,16 @@
+.label-Input,
+.zkteInputAsep,
+.errorInputValidado {
+  display: inline-block;
+  vertical-align: middle;
+}
+.label-Input {
+  width: 9%;
+  max-width: 15em;
+  min-width: 8em;
+  text-align: right;
+  margin-right: 1em;
+}
 .errorInputValidado {
   color: #fff;
   height: 1.5em;
@@ -13,11 +26,10 @@
   display: none;
   transition: all ease 0.5s;
   cursor: pointer;
+  max-width: 2em;
   min-width: 2em;
 }
 .contenedorDeItemAValidar {
-  display: flex;
-  align-items: center;
   width: 100%;
 }
 .InputInvalidado {
@@ -25,14 +37,14 @@
   transition: all ease 0.5s;
 }
 .inputValido {
-  display: block;
+  display: inline-block;
 }
 .zkteInputAsep {
   height: 2em;
   border-radius: 3px;
   border: 1px solid #808080;
   padding-left: 0.5em;
-  width: 98%;
+  width: 77%;
   height: 2em;
   outline: none;
   background: #f7f2f2;

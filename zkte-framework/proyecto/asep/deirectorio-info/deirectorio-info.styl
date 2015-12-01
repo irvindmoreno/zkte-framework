@@ -1,0 +1,128 @@
+rutaComponentes='../../../componentes'
+rutaImagenes='../../../imagenes'
+
+.tituloAsep-2
+	margin-top 2em
+.bloqueIzquierda,.bloqueDerecha,.bloqueCentro
+	display inline-block
+	vertical-align top
+	margin 0
+	height inherit
+.bloqueIzquierda
+	width 23%
+	//background red
+	min-width 15em
+	&-Lupa
+		text-align center
+		padding-top 1em
+		padding-bottom 1em
+.DirecotrioInfo-Header-Titulo
+	margin-left 2em
+.DirecotrioInfo-Texto
+	text-align justify
+	color #4a4949
+	margin-top 2em
+.DirecotrioInfo-btnMegusta
+	padding 1em 0em
+	text-align center
+.bloqueCentro
+	width 65%
+	padding-left 1em
+	//background green
+	margin-left -5px
+	padding-top 2em
+.ContenedorPaginacion
+	text-align center
+	padding 4em 0em
+.DirecotrioInfo-Header img,.DirecotrioInfo-Header-Titulo
+	display inline-block
+	vertical-align bottom
+.Emprendedor-Img img
+	height 8em
+	border-radius 50%
+	border none
+.Emprendedor-Nombre
+	font-weight bold
+	color #2ca7df
+	@media screen and (max-width: 663px)
+		text-align center
+.Emprendedor-Cargo
+	color #6b6767
+	@media screen and (max-width: 663px)
+			text-align center
+@media screen and (max-width: 1330px)
+	.bloqueIzquierda
+		width 100%
+	.bloqueCentro
+		width 100%
+		margin-left 0px
+		padding-left 0em
+	.bloqueIzquierda-Lupa
+		text-align center
+	.searchAsep-Input
+		width 86% !important
+
+/************Layout****************/
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
+/************Layout****************/
+/************header-asep****************/
+background=#2ca7df
+colorLetra=white
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/header/asep/header.styl')
+/************header-asep****************/
+
+/************navegacion-asep****************/
+colorDeLetraHoverDesktop=#2ca7df
+colorDeFondoAlDarleHoverMovil=#f02228
+bordeInferiorMovil=#cacfdc
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/navegacion/asep/navegacion.styl')
+/************navegacion-asep****************/
+
+
+/************titulo-asepA****************/
+colorDeLetra=#444343
+colorDeBorde=4px solid #fcaf14
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asepA/titulo.styl')
+/************titulo-asepA****************/
+
+
+/************titulo-asep****************/
+fondoTituloAsep=#fcaf14
+colorDeLetra=#2aa6df
+tamanioDeLetra=2.5em
+padding=1.5em 0em
+tamanioImagen=3em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
+/************titulo-asep****************/
+
+/************input-searchAsep****************/
+rutaImagen='../../../imagenes/'
+lupaImg="lupa.png"
+borderInput=1px solid gray
+alturaInput=2.5em
+anchoInput=15em
+borderRadiusInput=5px
+alturaLupa=3em
+anchoLupa=2em
+backgroundSizeLupa=1.9em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/searchAsep/input.styl')
+/************input-searchAsep****************/
+
+
+
+/************menu-desplegableAsep****************/
+rutaImagen='../../../imagenes/'
+maximoAncho=23em
+padding= 2em 1em
+background=#dee0e2
+paddingDeTextos=0.5em 0em
+colorLetra=#5D5D5D
+colorLetraSeleccionada=#2ca7df
+paddingBoton=0.5em 0em
+backgroundBoton=#1b1e24
+minimoAncho=12em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/menu/desplegableAsep/menu.styl')
+/************menu-desplegableAsep****************/
+
+
+

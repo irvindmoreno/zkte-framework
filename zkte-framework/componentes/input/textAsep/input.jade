@@ -1,4 +1,10 @@
-
+//EmailValidar,NombreValidar,ApellidoValidar,ContraseniaValidar,DniValidar,TelefonoValidar,RucValidar
+- idInput="myId"
+- placeholder="prueba"
+- tipo="text"
+- label="Nombre"
 div(class="contenedorDeItemAValidar")
-	input(type=tipo placeholder=placeholder class="zkteInputAsep "+tipoDeInput)
+	div(class="label-Input")=label
+	input(type=tipo placeholder=placeholder class="zkteInputAsep " id=idInput)
 	span(class='errorInputValidado') X
+div(class="btn-submit") bton

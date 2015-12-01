@@ -1,0 +1,71 @@
+extends ../layout/layout.jade
+block head
+	link(href='./deirectorio-info.css' rel='stylesheet')
+	script(src='./deirectorio-info.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Mi Perfil'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Haz tu aporte'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+block navegacion
+	//navegacion-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Nosotros'
+	- pestaniaDos='Directorio'
+	- pestaniaTres='Actividades'
+	- pestaniaCuatro='Noticias'
+	- pestaniaCinco='Beneficios'
+	- pestaniaSeis='Pregúntanos'
+	include ../../../componentes/navegacion/asep/navegacion.jade
+	//navegacion-asep
+block contenido	
+	//titulo-asepA
+	- rutaImagenes ='../../../imagenes'
+	- titulo="DIRECTORIO"
+	include ../../../componentes/titulo/asepA/titulo.jade
+	//titulo-asepA
+	div(class="tituloAsep-2")
+		//titulo-asep
+		- rutaImagenes ='../../../imagenes'
+		- tituloAsep="DIRECTORIO DE EMPRENDEDORES"
+		- logo="book.png"
+		include ../../../componentes/titulo/asep/titulo.jade
+		//titulo-asep
+	div(class="bloqueIzquierda")
+		div(class="bloqueIzquierda-Lupa")
+			//input-searchAsep
+			- rutaImagenes ='../../../imagenes'
+			- placeholder="Buscar...."
+			include ../../../componentes/input/searchAsep/input.jade
+			//input-searchAsep
+		div(class="contenedorMenuDesplegable")
+			//menu-desplegableAsep
+			- rutaImagenes ='../../../imagenes'
+			-labels=["Todos","Notaria","Arquitectura","Abogados","Publicidad","Viajes y Turismo","Insumos","Salud","Belleza","E-comerce","Eventos","Soporte Técnico","Catering"]
+			include ../../../componentes/menu/desplegableAsep/menu.jade
+			//menu-desplegableAsep
+	div(class="bloqueCentro")
+		div(class="DirecotrioInfo-Header Emprendedor-Img")
+			img(src=rutaImagenes+"/"+"emprendedor.jpg")
+			div(class="DirecotrioInfo-Header-Titulo")
+				div(class="Emprendedor-Nombre") Daniel Moreno
+				div(class="Emprendedor-Cargo") Front end de Asep
+		div(class="DirecotrioInfo-Texto")
+			p.
+				Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope.
+			p.
+				Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope
+				Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope
+		div(class="DirecotrioInfo-btnMegusta") Aca pon el boton me gusta de facebook
+		div(class="DirecotrioInfo-Formulario")
+	div(class="bloqueDerecha")
+		
+block footer
+
+	
+
+
