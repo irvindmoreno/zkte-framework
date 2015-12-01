@@ -63,3 +63,9 @@ class PostAsepMini{
 
 	}
 }
+class PaginacionAsep{
+	constructor()
+	{
+
+	}
+}

@@ -22,6 +22,10 @@
   padding-left: 1em;
   margin-left: -5px;
 }
+.ContenedorPaginacion {
+  text-align: center;
+  padding: 4em 0em;
+}
 @media screen and (max-width: 1330px) {
   .bloqueIzquierda {
     width: 100%;
@@ -31,10 +35,10 @@
     margin-left: 0px;
   }
   .bloqueIzquierda-Lupa {
-    text-align: right;
+    text-align: center;
   }
   .searchAsep-Input {
-    width: 92%;
+    width: 86% !important;
   }
 }
 /************Layout****************/
@@ -425,3 +429,29 @@ header a:hover {
   color: #2ca7df !important;
 }
 /************post-asepMini****************/
+/************paginacion-asep****************/
+.Paginacion {
+  width: 100%;
+}
+.Paginacion-Cuadro {
+  background-color: #f2f2f2;
+  border-radius: 0.2em;
+  display: inline-block;
+  padding: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  color: #a09a9a;
+  border: 1px solid #cecbcb;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+.Paginacion-Cuadro:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.3);
+  -ms-transform: scale(1.3);
+}
+.Paginacion-Cuadro:first-child {
+  background-color: ea2227;
+  color: #fff;
+}
+/************paginacion-asep****************/

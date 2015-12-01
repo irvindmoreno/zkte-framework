@@ -1,2 +1,7 @@
 rutaImagen='../../../imagenes/'
+colorCuadroPaginacion=#f2f2f2
+colorNumerosPaginacion=#A09A9A
+borderCuadritoPaginacion=1px solid #CECBCB
+backgroundCuadroSeleccionado=ea2227
+colorNumeroSeleccionado=white
 fin

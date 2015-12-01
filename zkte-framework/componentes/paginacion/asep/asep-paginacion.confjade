@@ -1,2 +1,3 @@
 - rutaImagenes ='../../../imagenes'
+- paginas =["1","2","3","...","15","Siguiente>>"]
 fin

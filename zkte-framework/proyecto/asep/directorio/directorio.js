@@ -9,4 +9,6 @@ function inicio()
     var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
     var menuDesplegableAsep= new MenuDesplegableAsep()    
     var postAsepMini= new PostAsepMini()
+    var paginacionAsep= new PaginacionAsep()
+    var paginacionAsep= new PaginacionAsep()
 }

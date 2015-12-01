@@ -21,6 +21,9 @@ rutaImagenes='../../../imagenes'
 	padding-left 1em
 	//background green
 	margin-left -5px
+.ContenedorPaginacion
+	text-align center
+	padding 4em 0em
 @media screen and (max-width: 1330px)
 	.bloqueIzquierda
 		width 100%
@@ -28,9 +31,9 @@ rutaImagenes='../../../imagenes'
 		width 100%
 		margin-left 0px
 	.bloqueIzquierda-Lupa
-		text-align right
+		text-align center
 	.searchAsep-Input
-		width 92%
+		width 86% !important
 
 /************Layout****************/
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
@@ -108,5 +111,16 @@ tamanioRedesSociales=2em
 marginRedesSociales=0.2em
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/post/asepMini/post.styl')
 /************post-asepMini****************/
+
+
+/************paginacion-asep****************/
+rutaImagen='../../../imagenes/'
+colorCuadroPaginacion=#f2f2f2
+colorNumerosPaginacion=#A09A9A
+borderCuadritoPaginacion=1px solid #CECBCB
+backgroundCuadroSeleccionado=ea2227
+colorNumeroSeleccionado=white
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/paginacion/asep/paginacion.styl')
+/************paginacion-asep****************/
 
 

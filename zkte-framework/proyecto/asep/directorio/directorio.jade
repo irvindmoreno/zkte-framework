@@ -89,6 +89,15 @@ block contenido
 		- contenido = "Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope."
 		include ../../../componentes/post/asepMini/post.jade
 		//post-asepMini
+	div(class="ContenedorPaginacion")
+		//paginacion-asep
+		- rutaImagenes ='../../../imagenes'
+		- paginas =["1","2","3","...","15","Siguiente>>"]
+		include ../../../componentes/paginacion/asep/paginacion.jade
+		//paginacion-asep
+
 block footer
 
 	
+
+

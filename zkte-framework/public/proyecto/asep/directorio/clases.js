@@ -63,3 +63,7 @@ var MenuDesplegableAsep = (function () {
 var PostAsepMini = function PostAsepMini() {
 	_classCallCheck(this, PostAsepMini);
 };
+
+var PaginacionAsep = function PaginacionAsep() {
+	_classCallCheck(this, PaginacionAsep);
+};
