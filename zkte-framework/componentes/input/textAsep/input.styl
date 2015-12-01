@@ -8,15 +8,17 @@ altoInput=2em
 backgroundInput=#f7f2f2
 borderRadiusInput=3px
 anchoDeLabel= 9%
+colorLetrInput=#4a4949
 .label-Input,.zkteInputAsep,.errorInputValidado
 	display inline-block
 	vertical-align middle
 .label-Input
 	width anchoDeLabel
 	max-width 15em
-	min-width 8em
+	min-width 9em
 	text-align right
 	margin-right 1em
+	color colorLetrInput
 .errorInputValidado
 	color colorDeX
 	height 1.5em
@@ -52,3 +54,9 @@ anchoDeLabel= 9%
 	height altoInput
 	outline none
 	background backgroundInput
+@media screen and (max-width: 830px)
+	.label-Input
+		display block
+		text-align left
+	.zkteInputAsep
+		width 89%;
