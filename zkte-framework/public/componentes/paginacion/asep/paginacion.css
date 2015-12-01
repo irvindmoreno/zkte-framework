@@ -1,0 +1,23 @@
+.Paginacion {
+  width: 100%;
+}
+.Paginacion-Cuadro {
+  background-color: #f2f2f2;
+  border-radius: 0.2em;
+  display: inline-block;
+  padding: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  color: #a09a9a;
+  border: 1px solid #cecbcb;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+.Paginacion-Cuadro:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.3);
+}
+.Paginacion-Cuadro:first-child {
+  background-color: ea2227;
+  color: #fff;
+}

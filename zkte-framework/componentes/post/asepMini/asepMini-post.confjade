@@ -1,2 +1,6 @@
 - rutaImagenes ='../../../imagenes'
+- rutaImagenes ='../../../imagenes'
+- imagen="emprendedor.jpg"
+- titulo="Irina Rymshina"
+- contenido = "Economista y MBA de ESAN con especialización en Gerencia de Tecnologías de la Información. Fundadora y Directora del capítulo de Perú de Women@TheFrontier, promoviendo igualdad de género y Startups en tecnologías exponenciales. Ganadora de la 2da generación de Start-up Perú con su extraordinario proyecto Hoope."
 fin

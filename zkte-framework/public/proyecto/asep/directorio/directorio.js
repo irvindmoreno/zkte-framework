@@ -9,4 +9,5 @@ function inicio() {
     var inputSearchAsep = new InputSearchAsep();
     var menuDesplegableAsep = new MenuDesplegableAsep("btnDesplegable");
     var menuDesplegableAsep = new MenuDesplegableAsep();
+    var postAsepMini = new PostAsepMini();
 }

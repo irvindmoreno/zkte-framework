@@ -57,4 +57,9 @@ class MenuDesplegableAsep{
 		$(".contenedorDeLabels").slideToggle( "slow" );
 	}
 }
-var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
+class PostAsepMini{
+	constructor()
+	{
+
+	}
+}

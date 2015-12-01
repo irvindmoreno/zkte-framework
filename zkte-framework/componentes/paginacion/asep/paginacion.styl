@@ -1,0 +1,24 @@
+colorCuadroPaginacion=#f2f2f2
+colorNumerosPaginacion=#A09A9A
+borderCuadritoPaginacion=1px solid #CECBCB
+backgroundCuadroSeleccionado=ea2227
+colorNumeroSeleccionado=white
+.Paginacion
+	width 100%
+	&-Cuadro
+		background-color colorCuadroPaginacion
+		border-radius 0.2em		
+		display inline-block
+		padding 0.2em
+		padding-left 0.4em
+		padding-right 0.4em
+		color colorNumerosPaginacion
+		border borderCuadritoPaginacion
+		cursor pointer
+		transition all ease 0.4s
+		&:hover
+			background-color colorCuadroPaginacion
+			transform scale(1.3)
+		&:first-child
+			background-color backgroundCuadroSeleccionado
+			color colorNumeroSeleccionado

@@ -7,5 +7,6 @@ function inicio()
     var tituloAsep= new TituloAsep()
     var inputSearchAsep= new InputSearchAsep()
     var menuDesplegableAsep=new MenuDesplegableAsep("btnDesplegable");
-    var menuDesplegableAsep= new MenuDesplegableAsep()
+    var menuDesplegableAsep= new MenuDesplegableAsep()    
+    var postAsepMini= new PostAsepMini()
 }

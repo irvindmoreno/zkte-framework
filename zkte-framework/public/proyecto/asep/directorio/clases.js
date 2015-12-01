@@ -60,4 +60,6 @@ var MenuDesplegableAsep = (function () {
 	return MenuDesplegableAsep;
 })();
 
-var menuDesplegableAsep = new MenuDesplegableAsep("btnDesplegable");
+var PostAsepMini = function PostAsepMini() {
+	_classCallCheck(this, PostAsepMini);
+};

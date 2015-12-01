@@ -1,2 +1,9 @@
 rutaImagen='../../../imagenes/'
+colorLetra=#6b6767
+colorRedesSociales=#6b6767
+colorLetraTitulo=#2ca7df
+colorEstrella=#2ca7df
+bordePost=1px solid #B1ADAD
+tamanioRedesSociales=2em
+marginRedesSociales=0.2em
 fin
