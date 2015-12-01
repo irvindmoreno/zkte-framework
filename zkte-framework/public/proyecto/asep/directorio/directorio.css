@@ -368,6 +368,10 @@ header a:hover {
   padding-top: 1em;
   padding-bottom: 1em;
   color: #6b6767;
+  transition: all ease 0.3s;
+}
+.Emprendedor:hover {
+  background: #bfbebe;
 }
 .Emprendedor-Nombre {
   font-weight: bold;
@@ -386,6 +390,8 @@ header a:hover {
 .Emprendedor-Img {
   width: 20%;
   text-align: center;
+  border: none;
+  text-decoration: none;
 }
 @media screen and (max-width: 663px) {
   .Emprendedor-Img {
@@ -398,6 +404,8 @@ header a:hover {
 }
 .Emprendedor-Contenido {
   width: 65%;
+  text-decoration: none;
+  color: #6b6767;
 }
 @media screen and (max-width: 663px) {
   .Emprendedor-Contenido {

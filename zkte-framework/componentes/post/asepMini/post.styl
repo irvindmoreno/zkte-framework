@@ -11,8 +11,11 @@
 	padding-top 1em
 	padding-bottom 1em
 	color colorLetra
+	transition all ease 0.3s
 	@media screen and (max-width: 663px)
 		//flex-direction column
+	&:hover
+		background backgroundHover
 	&-Nombre
 		font-weight bold
 		color colorLetraTitulo
@@ -23,7 +26,9 @@
 			text-align center
 	&-Img
 		width 20%
-		text-align center	
+		text-align center
+		border none
+		text-decoration none	
 		@media screen and (max-width: 663px)
 			width 100%
 			//padding-left 5%
@@ -33,6 +38,8 @@
 			border-radius 50%
 	&-Contenido
 		width 65%
+		text-decoration none
+		color colorLetra
 		@media screen and (max-width: 663px)
 			width 100%
 			text-align center
