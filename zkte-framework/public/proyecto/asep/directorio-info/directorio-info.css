@@ -90,12 +90,6 @@
   .searchAsep-Input {
     width: 86% !important;
   }
-}
-.ContenedorBotonObligatorio {
-  text-align: center;
-  padding: 1em 0em;
-}
-@media screen and (max-width: 663px) {
   .bloqueDerecha {
     width: 100% !important;
   }
@@ -103,6 +97,10 @@
     width: 100% !important;
     text-align: center !important;
   }
+}
+.ContenedorBotonObligatorio {
+  text-align: center;
+  padding: 1em 0em;
 }
 .Emprendedor-RedesSociales {
   margin-top: 3em;
