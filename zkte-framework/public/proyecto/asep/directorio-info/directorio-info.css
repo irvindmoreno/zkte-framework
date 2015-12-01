@@ -30,6 +30,9 @@
   padding: 1em 0em;
   text-align: center;
 }
+.sinSUbrayado {
+  text-decoration: none;
+}
 .bloqueCentro {
   width: 62%;
   padding-left: 1em;
