@@ -31,7 +31,7 @@ var InputTextAsep = (function () {
 			switch (campo) {
 				case "email":
 					//console.log("es un email")
-					objeto.validarEmail();
+					objeto.validarEmail(event);
 					break;
 				case "alfanumerico":
 					console.log("es un alfanumerico");
@@ -177,8 +177,8 @@ var InputTextAsep = (function () {
 		}
 	}, {
 		key: "validarEmail",
-		value: function validarEmail() {
-
+		value: function validarEmail(event) {
+			console.log(this.input);
 			var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
 			var expresionaEvaluar = regex.test($('#' + this.input).val().trim());
 			//Se utiliza la funcion test() nativa de JavaScript
@@ -191,8 +191,8 @@ var InputTextAsep = (function () {
 				//console.log("no cumple")
 				event.preventDefault();
 				$('#' + this.input).css("border", "2px solid #2ca7df");
-				$('#' + this.input).siblings('span').removeClass("InputInvalidado");
-				$('#' + this.input).siblings('span').addClass("inputValido");
+				$('#spanError-' + this.input).removeClass("InputInvalidado");
+				$('#spanError-' + this.input).addClass("inputValido");
 			}
 			//console.log("validando el email con id: "+this.input);
 		}
