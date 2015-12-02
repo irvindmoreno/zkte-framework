@@ -4,12 +4,28 @@
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  width: 98%;
+  width: 92%;
   cursor: pointer;
   border-radius: 5px;
   height: alturaSelect;
   padding-left: paddingLeftSelect;
   text-align: center;
+  border: 1px solid #808080;
+}
+@media screen and (max-width: 830px) {
+  .errorInputValidado {
+    display: none !important;
+  }
+  .SelectAsep {
+    width: 100%;
+  }
+}
+.selectCorrecto {
+  border: inline-block;
+  border: 1px solid #808080;
+}
+.selectError {
+  border: 2px solid #a94442;
 }
 .Dia {
   font-size: 16px;
@@ -26,7 +42,7 @@
   color: #fff;
   height: 1.5em;
   width: 2em;
-  background: #2ca7df;
+  background: #a94442;
   display: inline-block;
   vertical-align: top;
   border-radius: 50%;
@@ -37,11 +53,10 @@
   display: none;
   transition: all ease 0.5s;
   cursor: pointer;
-  min-width: 2em;
 }
 .contenedorDeItemAValidar {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   width: 100%;
 }
 .InputInvalidado {
@@ -49,5 +64,18 @@
   transition: all ease 0.5s;
 }
 .inputValido {
+  display: inline-block;
+}
+.mensajeErrorActivo {
   display: block;
+  background: #f2dede;
+  color: #a94442;
+  padding: 1em 1em;
+  text-align: center;
+}
+.mensajeErrorActivo i {
+  margin-right: 1em;
+}
+.mensajeErrorInactivo {
+  display: none;
 }

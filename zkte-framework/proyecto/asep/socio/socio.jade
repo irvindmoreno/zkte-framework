@@ -1,0 +1,133 @@
+extends ../layout/layout.jade
+block head
+	link(href='./socio.css' rel='stylesheet')
+	script(src='./socio.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Login'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Hazte Socio'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+block navegacion
+	//navegacion-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Nosotros'
+	- pestaniaDos='Directorio'
+	- pestaniaTres='Actividades'
+	- pestaniaCuatro='Noticias'
+	- pestaniaCinco='Beneficios'
+	- pestaniaSeis='Pregúntanos'
+	include ../../../componentes/navegacion/asep/navegacion.jade
+	//navegacion-asep
+block contenido
+	//titulo-asep
+	- rutaImagenes ='../../../imagenes'
+	- tituloAsep="ÚNETE A LA ASEP"
+	- logo="book.png"
+	include ../../../componentes/titulo/asep/titulo.jade
+	//titulo-asep
+	//tabs-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno="Sobre ti"
+	- contenidoUno="Queremos conocerte y saber cuáles son tus necesidades para emprender"
+	- pestaniaDos="Sobre tu empresa"
+	- contenidoDos="¿has fundado algún emprendimiento? Cuéntanos lo que haces"
+	- pestaniaTres="Necesitamos de tu ayuda"
+	- contenidoTres="Es la única forma de que hagamos de Perú el mejor lugar para emprender."
+	- pestanias={1:pestaniaUno,2:pestaniaDos,3:pestaniaTres}
+	- pestaniasContenido=[contenidoUno,contenidoDos,contenidoTres]	
+	include ../../../componentes/tabs/asep/tabs.jade
+	div(class="ContenedorDelTab")
+		div(class="pestaniasPadre")
+			div(class="pest") UNO
+			div(class="pest")
+				div(class="pest-Titulo").
+					ESTÁS A UN PASO DE CONVERTIRTE EN SOCIO DE LA ASEP. POR FAVOR, CUÉNTANOS PARA HACER DESPLEGAR TU EMPRENDIMIENTO.
+				div(class="contenedorFormulario-Paso2")
+					div(class="datosDeLaEmpresa") Datos de empresa
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="rucInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Ruc: (*)"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep					
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Nombre Comercial: (*)"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Página web"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Corre de empresa: (*)"
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Fanpage: "
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="twiter: "
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="razonSocialInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Linkedin: "
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						div(class="contenedorDeItemAValidar")
+							div(class="label-Input") Logotipo de tu empresa
+							//input-fileAsep
+							- contenido="Browse"
+							include ../../../componentes/input/fileAsep/input.jade
+							//input-fileAsep
+							div(class="descinputFile") Min 300x300 pixeles
+
+
+
+
+					div(id="mensajeErrorForm") Debe completar los campos requeridos
+			div(class="pest") TRES
+	//tabs-asep
+	
+block footer
+
+
+	

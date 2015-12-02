@@ -1,3 +1,4 @@
+
 .label-Input,.zkteInputAsep,.errorInputValidado
 	display inline-block
 	vertical-align middle
@@ -34,7 +35,7 @@
 	display none
 	transition all ease 0.5s
 .inputValido
-	display inline-block
+	display activado
 .zkteTextAreaAsep	
 	resize: none;
 	height tamanioTextArea !important
@@ -57,3 +58,16 @@
 		width 100% !important
 	.errorInputValidado
 		display none
+.bordeErrorInput
+	border colorBordeErrorInput
+	
+.mensajeErrorActivo
+	display activadoMensajeError
+	background backgroundMensajeEror
+	color colorMensajeError
+	padding 1em 1em
+	text-align center
+.mensajeErrorActivo i
+	margin-right 1em
+.mensajeErrorInactivo
+	display none

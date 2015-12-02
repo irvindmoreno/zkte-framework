@@ -11,6 +11,17 @@
 	height alturaSelect
 	padding-left paddingLeftSelect
 	text-align center
+	border bordeSelectCorrecto
+@media screen and (max-width: 830px)
+	.errorInputValidado
+		display none !important
+	.SelectAsep
+		width 100%;
+.selectCorrecto
+	border inline-block
+	border bordeSelectCorrecto
+.selectError
+	border borderSelectError
 .Dia 
 	font-size: tamanioLetraSelect
 	padding: paddingSelect
@@ -37,11 +48,23 @@
 	transition all ease 0.5s
 	cursor pointer
 .contenedorDeItemAValidar
-	display flex
-	align-items center
+	display inline-block
+	vertical-align middle
+	//display flex
+	//align-items center
 	width 100%
 .InputInvalidado
 	display none
 	transition all ease 0.5s
 .inputValido
-	display block
+	display activado
+.mensajeErrorActivo
+	display activadoMensajeError
+	background backgroundMensajeEror
+	color colorMensajeError
+	padding 1em 1em
+	text-align center
+.mensajeErrorActivo i
+	margin-right 1em
+.mensajeErrorInactivo
+	display none

@@ -1,6 +1,6 @@
 rutaImagen="../../../imagenes/"
 colorDeX=white
-backgroundDeX=#2ca7df
+backgroundDeX=#a94442
 marginLeftSpanX=0.5em
 colorBordeInput=gray
 imagenFlecha="flecha.png"
@@ -8,5 +8,19 @@ backgroundSelect=#F7F2F2
 tamanioLetraSelect=16px
 paddingSelect=8px
 borderRadiusSelect=5px
-anchoSelect=98%
+anchoSelect=92%
+colorMensajeError=#a94442
+backgroundMensajeEror=#f2dede 
+borderSelectError=2px solid #a94442
+bordeSelectCorrecto=1px solid gray
+iconox="true"
+if iconox=="true"
+	activado=inline-block
+if iconox=="false"
+	activado=none
+mensajeError="true"
+if mensajeError=="true"
+	activadoMensajeError=block
+if mensajeError=="false"
+	activadoMensajeError=none
 fin

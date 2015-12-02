@@ -5,25 +5,25 @@
   vertical-align: middle;
 }
 .label-Input {
-  width: 9%;
+  width: anchoDeLabel;
   max-width: 15em;
   min-width: 9em;
   text-align: right;
   margin-right: 1em;
-  color: #4a4949;
+  color: colorLetrInput;
 }
 .errorInputValidado {
-  color: #fff;
+  color: colorDeX;
   height: 1.5em;
   width: 2em;
-  background: #2ca7df;
+  background: backgroundDeX;
   display: inline-block;
   vertical-align: top;
   border-radius: 50%;
   font-weight: bold;
   text-align: center;
   padding-top: 0.5em;
-  margin-left: 0.5em;
+  margin-left: marginLeftSpanX;
   display: none;
   transition: all ease 0.5s;
   cursor: pointer;
@@ -32,30 +32,60 @@
 }
 .contenedorDeItemAValidar {
   width: 100%;
+  margin: 0 auto !important;
 }
 .InputInvalidado {
   display: none;
   transition: all ease 0.5s;
 }
 .inputValido {
-  display: inline-block;
+  display: activado;
 }
-.zkteInputAsep {
-  height: 2em;
-  border-radius: 3px;
-  border: 1px solid #808080;
-  padding-left: 0.5em;
-  width: 77%;
-  height: 2em;
+.zkteTextAreaAsep {
+  resize: none;
+  height: tamanioTextArea !important;
+}
+.zkteTextAreaAsep,
+.label-Input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.zkteInputAsep,
+.zkteTextAreaAsep {
+  border-radius: borderRadiusInput;
+  border: 1px solid colorBordeInput;
+  padding-left: paddingleftInnput;
+  width: anchoInput;
+  height: altoInput;
   outline: none;
-  background: #f7f2f2;
+  background: backgroundInput;
 }
 @media screen and (max-width: 830px) {
   .label-Input {
     display: block;
     text-align: left;
   }
-  .zkteInputAsep {
-    width: 89%;
+  .zkteInputAsep,
+  .zkteTextAreaAsep {
+    width: 100% !important;
   }
+  .errorInputValidado {
+    display: none;
+  }
+}
+.bordeErrorInput {
+  border: colorBordeErrorInput;
+}
+.mensajeErrorActivo {
+  display: activadoMensajeError;
+  background: backgroundMensajeEror;
+  color: colorMensajeError;
+  padding: 1em 1em;
+  text-align: center;
+}
+.mensajeErrorActivo i {
+  margin-right: 1em;
+}
+.mensajeErrorInactivo {
+  display: none;
 }

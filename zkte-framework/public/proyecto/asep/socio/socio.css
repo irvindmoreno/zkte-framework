@@ -1,0 +1,457 @@
+.pest-Titulo {
+  padding: 0.2em 2em;
+  font-size: 1.6em;
+  text-align: center;
+  color: #2f2b2b;
+}
+.ContenedorDelTab {
+  padding-top: 3em;
+  background: #dee0e2;
+  padding-bottom: 3em;
+}
+.TabsAsep {
+  margin-left: 4px;
+}
+.contenedorFormulario-Paso2 {
+  width: 68%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1250px) {
+  .contenedorFormulario-Paso2 {
+    width: 95%;
+  }
+}
+.datosDeLaEmpresa {
+  padding: 2em 0em 1em 0em;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #3a3838;
+}
+.contenedorDeInputsPaso2 {
+  padding: 0.5em 0em;
+}
+.cargar,
+.label-Input,
+.descinputFile {
+  display: inline-block;
+  vertical-align: middle;
+  color: #4a4949;
+}
+/************Layout****************/
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+.Contenedor {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@media screen and (max-width: 900px) {
+  .Contenedor {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+}
+/************Layout****************/
+/************header-asep****************/
+header {
+  background: #2ca7df;
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+header div {
+  display: inline-block;
+  widht: 5em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  float: right;
+  margin-top: 0.7em;
+}
+header span {
+  color: #fff;
+}
+header img {
+  margin-right: 0.4em;
+}
+header a {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: center;
+  justify-content: -ms-center;
+  align-items: center;
+  align-items: -ms-center;
+  cursor: pointer;
+  text-decoration: none;
+  colo: #fff;
+}
+header a:hover {
+  transform: scale(1.1);
+}
+.img-header {
+  height: 1.5em;
+}
+/************header-asep****************/
+/************navegacion-asep****************/
+.img-Logo {
+  height: 4em;
+  border: none;
+}
+@media screen and (max-width: 412px) {
+  .img-Logo {
+    height: 3em;
+  }
+}
+.Contenedor-NavegacionMenu {
+  padding: 1.5em;
+  position: relative;
+}
+.Contenedor-NavegacionMenu a,
+.Contenedor-NavegacionMenu nav,
+.Contenedor-NavegacionMenu Boton-Movil {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+}
+.Navegacion-Menu {
+  position: absolute;
+  right: 14px;
+}
+.Navegacion-Menu ul {
+  list-style: none;
+}
+.Navegacion-Menu ul li {
+  display: inline-block;
+  vertical-align: top;
+}
+.Navegacion-Menu a {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  color: #595757;
+  transition: all ease 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Navegacion-Menu a:hover {
+  color: #2ca7df;
+}
+.Navegacion-Menu .active {
+  color: #2ca7df;
+  text-decoration: underline;
+}
+@media screen and (max-width: 1137px) {
+  .Navegacion-Menu {
+    display: none !important;
+  }
+}
+.Boton-Movil {
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 38px;
+}
+@media screen and (max-width: 1137px) {
+  .Boton-Movil {
+    display: inline-block;
+  }
+}
+.fa-angle-double-down {
+  cursor: pointer;
+  font-size: 2em !important;
+  color: #808080;
+  transition: all ease 0.3s;
+}
+.fa-angle-double-down:hover {
+  color: #2ca7df;
+}
+.Navegacion-Menu-Movil {
+  height: 0px;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+.Navegacion-Menu-Movil ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  border-bottom: 1px solid #2ca7df;
+}
+.Navegacion-Menu-Movil li {
+  background: #2ca7df;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.Navegacion-Menu-Movil li:hover {
+  background: #f02228;
+}
+.Navegacion-Menu-Movil li a {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #cacfdc;
+  width: 100%;
+  display: inline-block;
+  color: #fff;
+}
+@media screen and (max-width: 1137px) {
+  .Navegacion-Menu-Movil {
+    height: 0px;
+  }
+}
+/************navegacion-asep****************/
+/************titulo-asep****************/
+.TituloAsep {
+  background: #2ca7df;
+  width: 100%;
+  padding: 1.5em 0em;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.TituloAsep-texto {
+  font-size: 2.5em;
+}
+@media screen and (max-width: 453px) {
+  .TituloAsep-texto {
+    font-size: 1.5em;
+  }
+}
+.TituloAsep-img img {
+  height: 0em;
+}
+@media screen and (max-width: 453px) {
+  .TituloAsep-img img {
+    height: 2em;
+  }
+}
+.TituloAsep-img,
+.TituloAsep-texto {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1em;
+}
+/************titulo-asep****************/
+/************tabs-asep****************/
+.desactivarTab {
+  background: #b4b4b4 !important;
+}
+.desactivarTab:hover {
+  background: #dee0e2 !important;
+}
+.activarTab {
+  background: #dee0e2 !important;
+}
+@media screen and (max-width: 1030px) {
+  .TabsAsep {
+    display: none;
+  }
+}
+.TabsAsep a {
+  text-decoration: none;
+}
+.TabsAsep-Pestania {
+  height: inherit;
+  background: #b4b4b4;
+  cursor: pointer;
+  border-right: 1px solid #8a8a8a;
+  transition: all ease 0.3s;
+  width: 33.3%;
+  margin-left: -4px;
+  display: inline-block;
+  padding: 1em 0em;
+}
+.TabsAsep-Pestania:hover {
+  background: #dee0e2;
+}
+.TabsAsep-Pestania-Bloque2 {
+  margin-top: 0.4em;
+  text-align: left;
+  width: 77%;
+}
+.TabsAsep-Pestania-Ttulo {
+  color: #5d5c5c;
+  text-align: center;
+}
+.TabsAsep-Pestania-Ttulo-Numero {
+  background: #5d5c5c;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  width: 1em;
+  max-width: 1em;
+  min-width: 1em;
+  color: #fff;
+  margin-right: 0.5em;
+}
+.TabsAsep-Pestania-Contenido {
+  color: #777;
+  margin-top: 0.4em;
+}
+.TabsAsep-Pestania-Ttulo-Numero,
+.TabsAsep-Pestania-Bloque2 {
+  display: inline-block;
+  vertical-align: top;
+}
+.TabsAsepMovil {
+  display: none;
+}
+@media screen and (max-width: 1030px) {
+  .TabsAsepMovil {
+    display: block;
+  }
+}
+.TabsAsepMovil a {
+  text-decoration: none;
+}
+.TabsAsepMovil-Pestania {
+  background: #b4b4b4;
+  transition: all ease 0.3s;
+  text-align: center;
+  border-bottom: 1px solid #8a8a8a;
+  cursor: pointer;
+  padding: 0.9em 0em;
+}
+.TabsAsepMovil-Pestania:hover {
+  background: #dee0e2;
+}
+.TabsAsepMovil-Pestania-Numero {
+  color: #fff;
+  background: #777;
+  border-radius: 50%;
+  margin-right: 1em;
+  padding: 0.4em 0.8em;
+  min-width: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  min-height: 2em;
+}
+.TabsAsepMovil-Pestania-Titulo {
+  color: #5d5c5c;
+}
+/************tabs-asep****************/
+/************input-textAsep****************/
+.label-Input,
+.zkteInputAsep,
+.errorInputValidado {
+  display: inline-block;
+  vertical-align: middle;
+}
+.label-Input {
+  width: 9%;
+  max-width: 15em;
+  min-width: 9em;
+  text-align: right;
+  margin-right: 1em;
+  color: #4a4949;
+}
+.errorInputValidado {
+  color: #fff;
+  height: 1.5em;
+  width: 2em;
+  background: #a94442;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  display: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  max-width: 2em;
+  min-width: 2em;
+}
+.contenedorDeItemAValidar {
+  width: 100%;
+  margin: 0 auto !important;
+}
+.InputInvalidado {
+  display: none;
+  transition: all ease 0.5s;
+}
+.inputValido {
+  display: inline-block;
+}
+.zkteTextAreaAsep {
+  resize: none;
+  height: 5em !important;
+}
+.zkteTextAreaAsep,
+.label-Input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.zkteInputAsep,
+.zkteTextAreaAsep {
+  border-radius: 3px;
+  border: 1px solid #808080;
+  padding-left: 0.5em;
+  width: 77%;
+  height: 2.5em;
+  outline: none;
+  background: #f7f2f2;
+}
+@media screen and (max-width: 830px) {
+  .label-Input {
+    display: block;
+    text-align: left;
+  }
+  .zkteInputAsep,
+  .zkteTextAreaAsep {
+    width: 100% !important;
+  }
+  .errorInputValidado {
+    display: none;
+  }
+}
+.bordeErrorInput {
+  border: 2px solid #a94442;
+}
+.mensajeErrorActivo {
+  display: block;
+  background: #f2dede;
+  color: #a94442;
+  padding: 1em 1em;
+  text-align: center;
+}
+.mensajeErrorActivo i {
+  margin-right: 1em;
+}
+.mensajeErrorInactivo {
+  display: none;
+}
+.zkteInputAsep,
+.zkteTextAreaAsep {
+  width: 67%;
+}
+.label-Input {
+  min-width: 11em;
+}
+/************input-textAsep****************/
+/************input-fileAsep****************/
+input[type="file"] {
+  z-index: 999;
+  line-height: 0;
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  cursor: pointer;
+}
+.cargar {
+  text-align: center;
+  background-color: #fff;
+  color: #4e4444;
+  border: 1px solid #808080;
+  border-radius: 3px;
+  width: 150px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 1.6em;
+  cursor: pointer;
+}
+/************input-fileAsep****************/

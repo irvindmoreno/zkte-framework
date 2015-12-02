@@ -1,9 +1,4 @@
-backgroundNumero=#5D5C5C
-colorNumero=white
-backgroundPestania=#b4b4b4
-bordePestania=#8A8A8A
-hoverPestaniaBackground=#DEE0E2
-colorContenido=#777
+
 .desactivarTab
 	background backgroundPestania !important// backgroundPestania
 	&:hover
@@ -13,7 +8,7 @@ colorContenido=#777
 .TabsAsep
 	//display flex
 	//justify-content flex-start
-	@media screen and (max-width: 750px)
+	@media screen and (max-width: 1030px)
 		display none
 	& a
 		text-decoration none
@@ -33,7 +28,7 @@ colorContenido=#777
 		&-Bloque2
 			margin-top 0.4em
 			text-align left
-			width 77%
+			width 77%			
 		&-Ttulo
 			//display flex
 			color backgroundNumero //backgroundNumero
@@ -57,11 +52,10 @@ colorContenido=#777
 .TabsAsep-Pestania-Ttulo-Numero,.TabsAsep-Pestania-Bloque2
 	display inline-block
 	vertical-align top
-.pest-3
-	margin-left -5px
+
 .TabsAsepMovil
 	display none
-	@media screen and (max-width: 750px)
+	@media screen and (max-width: 1030px)
 		display block
 	& a
 		text-decoration none

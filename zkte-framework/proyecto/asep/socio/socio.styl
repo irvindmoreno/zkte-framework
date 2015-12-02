@@ -1,0 +1,119 @@
+rutaComponentes='../../../componentes'
+rutaImagenes='../../../imagenes'
+
+.pest-Titulo
+	padding 0.2em 2em
+	font-size 1.6em
+	text-align center
+	color #2f2b2b
+.ContenedorDelTab
+	padding-top 3em
+	background #dee0e2
+	padding-bottom 3em
+.TabsAsep
+	margin-left 4px
+.contenedorFormulario-Paso2
+	width 68%
+	margin 0 auto
+@media screen and (max-width: 1250px)
+	.contenedorFormulario-Paso2
+		width 95%
+
+.datosDeLaEmpresa
+	padding 2em 0em 1em 0em
+	font-weight bold
+	font-size 1.4em
+	color #3A3838
+.contenedorDeInputsPaso2
+	padding 0.5em 0em
+.cargar,.label-Input,.descinputFile
+	display inline-block
+	vertical-align middle
+	color #4a4949
+/************Layout****************/
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
+/************Layout****************/
+/************header-asep****************/
+background=#2ca7df
+colorLetra=white
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/header/asep/header.styl')
+/************header-asep****************/
+
+
+/************navegacion-asep****************/
+colorDeLetraHoverDesktop=#2ca7df
+colorDeFondoAlDarleHoverMovil=#f02228
+bordeInferiorMovil=#cacfdc
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/navegacion/asep/navegacion.styl')
+/************navegacion-asep****************/
+
+
+/************titulo-asep****************/
+fondoTituloAsep=#2ca7df
+colorDeLetra=white
+tamanioDeLetra=2.5em
+padding=1.5em 0em
+tamanioImagen=0em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/asep/titulo.styl')
+/************titulo-asep****************/
+
+/************tabs-asep****************/
+backgroundNumero=#5D5C5C
+colorNumero=white
+backgroundPestania=#b4b4b4
+bordePestania=#8A8A8A
+hoverPestaniaBackground=#DEE0E2
+colorContenido=#777
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/tabs/asep/tabs.styl')
+/************tabs-asep****************/
+
+
+
+
+
+/************input-textAsep****************/
+colorDeX=white
+marginLeftSpanX=0.5em
+colorBordeInput=gray
+paddingleftInnput=0.5em
+anchoInput=77%
+altoInput=2.5em
+backgroundInput=#f7f2f2
+borderRadiusInput=3px
+anchoDeLabel= 9%
+colorLetrInput=#4a4949
+tamanioTextArea=5em
+colorBordeErrorInput=2px solid #a94442
+backgroundDeX=#a94442
+colorMensajeError=#a94442
+backgroundMensajeEror=#f2dede
+iconox="true"
+if iconox=="true"
+	activado=inline-block
+if iconox=="false"
+	activado=none
+
+mensajeError="true"
+if mensajeError=="true"
+	activadoMensajeError=block
+if mensajeError=="false"
+	activadoMensajeError=none
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/textAsep/input.styl')
+.zkteInputAsep, .zkteTextAreaAsep
+	width 67%
+.label-Input
+	min-width 11em
+/************input-textAsep****************/
+
+
+/************input-fileAsep****************/
+colorDeLetra=#4e4444
+colorDeBorde=gray
+background=white
+ancho=150px
+alto=30px
+tamanioLetra=18px
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/fileAsep/input.styl')
+/************input-fileAsep****************/
+
+

@@ -1,13 +1,26 @@
 colorDeX=white
-backgroundDeX=#2ca7df
 marginLeftSpanX=0.5em
 colorBordeInput=gray
 paddingleftInnput=0.5em
 anchoInput=77%
-altoInput=2em
+altoInput=2.5em
 backgroundInput=#f7f2f2
 borderRadiusInput=3px
 anchoDeLabel= 9%
 colorLetrInput=#4a4949
 tamanioTextArea=5em
+colorBordeErrorInput=2px solid #a94442
+backgroundDeX=#a94442
+colorMensajeError=#a94442
+backgroundMensajeEror=#f2dede
+iconox="true"
+if iconox=="true"
+	activado=inline-block
+if iconox=="false"
+	activado=none
+mensajeError="true"
+if mensajeError=="true"
+	activadoMensajeError=block
+if mensajeError=="false"
+	activadoMensajeError=none
 fin
