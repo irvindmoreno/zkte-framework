@@ -1,3 +1,65 @@
+.errorInputValidado {
+  color: #fff;
+  height: 1.5em;
+  width: 2em;
+  background: #a94442;
+  vertical-align: top;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  display: none;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  max-width: 2em;
+  min-width: 2em;
+}
+.contenedorDeItemAValidar {
+  width: 100%;
+  margin: 0 auto !important;
+}
+.label-Input {
+  width: 9%;
+  max-width: 15em;
+  min-width: 11em;
+  text-align: right;
+  margin-right: 1em;
+  color: #4a4949;
+}
+.textoRadio {
+  color: #4a4949;
+}
+.contenedorDeRadioButtonsAsep,
+.label-Input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.InputInvalidado {
+  display: none;
+  transition: all ease 0.5s;
+}
+.inputValido {
+  display: inline-block;
+}
+.mensajeErrorActivo {
+  display: block;
+  background: #f2dede;
+  color: #a94442;
+  padding: 1em 1em;
+  text-align: center;
+}
+.mensajeErrorActivo i {
+  margin-right: 1em;
+}
+.mensajeErrorInactivo {
+  display: none;
+}
+.spanRadioHermano,
+.textoRadio {
+  display: inline-block;
+  vertical-align: top;
+}
 input[type=checkbox]:not(old),
 input[type=radio ]:not(old) {
   width: 2em;
@@ -5,6 +67,7 @@ input[type=radio ]:not(old) {
   padding: 0;
   font-size: 1em;
   opacity: 0;
+  cursor: pointer;
 }
 input[type=checkbox]:not(old) + label,
 input[type=radio ]:not(old) + label {

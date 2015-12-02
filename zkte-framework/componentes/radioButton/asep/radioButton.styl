@@ -1,3 +1,71 @@
+colorDeX=white
+marginLeftSpanX=0.5em
+anchoDeLabel= 9%
+colorLetrInput=#4a4949
+backgroundDeX=#a94442
+colorMensajeError=#a94442
+backgroundMensajeEror=#f2dede
+iconox="true"
+if iconox=="true"
+    activado=inline-block
+if iconox=="false"
+    activado=none
+mensajeError="true"
+if mensajeError=="true"
+    activadoMensajeError=block
+if mensajeError=="false"
+    activadoMensajeError=none
+.errorInputValidado
+    color colorDeX
+    height 1.5em
+    width 2em
+    background backgroundDeX
+    vertical-align top
+    border-radius 50%
+    font-weight bold
+    text-align center
+    padding-top 0.5em
+    margin-left marginLeftSpanX
+    display none
+    transition all ease 0.5s
+    cursor pointer
+    max-width 2em
+    min-width 2em
+.contenedorDeItemAValidar
+    //display flex
+    //align-items center
+    width 100%
+    margin 0 auto !important
+.label-Input
+    width anchoDeLabel
+    max-width 15em
+    min-width 11em
+    text-align right
+    margin-right 1em
+    color colorLetrInput
+.textoRadio
+    color colorLetrInput
+.contenedorDeRadioButtonsAsep,.label-Input
+    display inline-block
+    vertical-align middle
+.InputInvalidado
+    display none
+    transition all ease 0.5s
+.inputValido
+    display activado
+.mensajeErrorActivo
+    display activadoMensajeError
+    background backgroundMensajeEror
+    color colorMensajeError
+    padding 1em 1em
+    text-align center
+.mensajeErrorActivo i
+    margin-right 1em
+.mensajeErrorInactivo
+    display none
+.spanRadioHermano,.textoRadio
+    display inline-block
+    vertical-align top
 input[type=checkbox]:not(old),
 input[type=radio   ]:not(old)
     width 2em
@@ -5,6 +73,7 @@ input[type=radio   ]:not(old)
     padding 0
     font-size 1em
     opacity 0
+    cursor pointer
 
 input[type=checkbox]:not(old) + label,
 input[type=radio   ]:not(old) + label

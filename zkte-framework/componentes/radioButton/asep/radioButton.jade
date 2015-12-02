@@ -1,5 +1,15 @@
-input(id="radio1" type='radio' value='1' checked='checked')
-label(for='radio1')
-  span
-    span
-  | Option 1
+- radios=["Producto","Servicio","Mixto"]
+- label="Tipo de actividad: (*)"
+- claseRadio="miClaseDeRadio"
+div(class="contenedorDeItemAValidar")
+	div(class="label-Input")=label
+	div(class="contenedorDeRadioButtonsAsep")
+		each radio in radios
+			input(id="radio1" type='radio' value='1' class="radiobuttonAsep "+claseRadio)
+			label(for='radio1')
+				span(class="spanRadioHermano")
+					span
+				div(class="textoRadio")=radio
+	span(class='errorInputValidado' id="sapan"+claseRadio) X
+
+div(class="botonAValidar") boton  	
