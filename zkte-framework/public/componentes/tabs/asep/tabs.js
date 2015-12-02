@@ -51,6 +51,8 @@ var TabsAsep = (function () {
 		$(".TabsAsep-Pestania").on("click", this.mostrarDiv);
 	}
 
+	//var tabsAsep= new TabsAsep()
+
 	_createClass(TabsAsep, [{
 		key: "mostrarDiv",
 		value: function mostrarDiv(color) {
@@ -125,5 +127,3 @@ var TabsAsep = (function () {
 
 	return TabsAsep;
 })();
-
-var tabsAsep = new TabsAsep();
