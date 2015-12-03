@@ -1,11 +1,12 @@
 class InputTextAsep{
-	constructor(boton,input,divMensjaeError)
+	constructor(boton,input,divMensjaeError,conteniDoMensajeError)
 	{
 		this.input=input;
 		this.boton=boton;
 		this.divMensjaeError=divMensjaeError;
+		this.conteniDoMensajeError=conteniDoMensajeError
 		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-		$("#"+this.divMensjaeError).prepend('<i class="fa fa-exclamation-circle"></i>');
+		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
 		
 		//this.comprobarInput()		
 	}
@@ -50,23 +51,29 @@ class InputTextAsep{
 			
 		//var tamanioInput=$('.'+input).val().length
 	}
+	mostrarMensajeError()
+	{
+		$("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
+	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
+		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
+	}
 	marcarComoError()
 	{
 		event.preventDefault();			
 		//console.log("error fuera de rango")
 		$('#'+this.input).addClass("bordeErrorInput")
 		$('#'+this.input).siblings('span').removeClass("InputInvalidado")
-	    $('#'+this.input).siblings('span').addClass("inputValido")
-	    $("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
-	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
+	    $('#'+this.input).siblings('span').addClass("inputValido")	    
+		this.estadoValidado=false
 	}
 	marcarComoCorrecto()
 	{
 		$('#'+this.input).removeClass("bordeErrorInput")
 		$('#'+this.input).siblings('span').removeClass("inputValido")
 	    $('#'+this.input).siblings('span').addClass("InputInvalidado");
-	    $("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-	    $("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+	    //$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+	    //$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+	    this.estadoValidado=true
 
 	}
 	validarNoRequerido(event,nroCaracteresInicial,nroCaracteresFinal)
@@ -103,23 +110,30 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			//console.log("esta dentro del rango");
-			var expresion=$('#'+this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$') 
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresion) 
-		    {
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {
-		    	this.marcarComoError()   	        
-		    }
+
 		}
 		else
 		{
-			this.marcarComoError()
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				//console.log("esta dentro del rango");
+				var expresion=$('#'+this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$') 
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresion) 
+			    {
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {
+			    	this.marcarComoError()   	        
+			    }
+			}
+			else
+			{
+				this.marcarComoError()
+			}
 		}
 		
 	}
@@ -158,22 +172,29 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresion) 
-		    {
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {
-		    	this.marcarComoError() 
-	        }
+
 		}
 		else
 		{
-			this.marcarComoError() 
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresion) 
+			    {
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {
+			    	this.marcarComoError() 
+		        }
+			}
+			else
+			{
+				this.marcarComoError() 
+			}
 		}
 		
 	}	
@@ -181,34 +202,71 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			//console.log(this.input);
-			var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-	 		var expresionaEvaluar=regex.test($('#'+this.input).val().trim())
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresionaEvaluar) 
-		    {
-		    	//console.log("cumple")
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {	
-		    	this.marcarComoError()    
-		    }
-		    //console.log("validando el email con id: "+this.input);
+
 		}
 		else
 		{
-			this.marcarComoError()
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				//console.log(this.input);
+				var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+		 		var expresionaEvaluar=regex.test($('#'+this.input).val().trim())
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresionaEvaluar) 
+			    {
+			    	//console.log("cumple")
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {	
+			    	this.marcarComoError()    
+			    }
+			    //console.log("validando el email con id: "+this.input);
+			}
+			else
+			{
+				this.marcarComoError()
+			}
 		}
 		
 	}
 
 }
-/*
-var inputTextAsep = new InputTextAsep("btn-submit","myId","idDivDondeMUestroElError");
-	inputTextAsep.validar("email",0,8);*/
+/* Ejemplo:
+var rucInput= new InputTextAsep("guardarPasoDos","rucInput","mensajeErrorForm","Debe completar los campos requeridos");
+    	rucInput.validar("numerico",11,11)
+    var nombreComercialInput= new InputTextAsep("guardarPasoDos","nombreComercialInput","mensajeErrorForm","Debe completar los campos requeridos");
+        nombreComercialInput.validar("alfanumerico",1,100)
+    var paginaWebInput= new InputTextAsep("guardarPasoDos","paginaWebInput","mensajeErrorForm","Debe completar los campos requeridos");
+        paginaWebInput.validar("alfanumerico",0,200)
+        paginaWebInput.validar("no-requerido",0,200)
+    var facebookInput= new InputTextAsep("guardarPasoDos","facebookInput","mensajeErrorForm","Debe completar los campos requeridos");
+        facebookInput.validar("alfanumerico",0,200)
+        facebookInput.validar("no-requerido",0,200)    
+    var twiterInput= new InputTextAsep("guardarPasoDos","twiterInput","mensajeErrorForm","Debe completar los campos requeridos");
+        twiterInput.validar("alfanumerico",0,200)
+        twiterInput.validar("no-requerido",0,200)
+    var linkedinInput= new InputTextAsep("guardarPasoDos","linkedinInput","mensajeErrorForm","Debe completar los campos requeridos");
+        linkedinInput.validar("alfanumerico",0,200)
+        linkedinInput.validar("no-requerido",0,200)
+    var emailDeContactoInput=new InputTextAsep("guardarPasoDos","emailDeContactoInput","mensajeErrorForm","Debe completar los campos requeridos");
+        emailDeContactoInput.validar("email",1,100)
 
-
-
+    // mostrando el mensaje de error para ello verificamos que todos los inputs hayan retornado true
+    $(".guardarPasoDos").click(function(){
+        if(emailDeContactoInput.estadoValidado && rucInput.estadoValidado && nombreComercialInput.estadoValidado && paginaWebInput.estadoValidado && facebookInput.estadoValidado && twiterInput.estadoValidado && linkedinInput.estadoValidado)
+            {
+            }
+            else
+            {
+                rucInput.mostrarMensajeError();
+                nombreComercialInput.mostrarMensajeError();
+                paginaWebInput.mostrarMensajeError();
+                facebookInput.mostrarMensajeError();
+                twiterInput.mostrarMensajeError();
+                linkedinInput.mostrarMensajeError();
+                emailDeContactoInput.mostrarMensajeError();
+            }
+    })*/

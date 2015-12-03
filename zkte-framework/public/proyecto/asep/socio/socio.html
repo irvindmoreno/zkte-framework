@@ -43,6 +43,17 @@
         </ul>
       </nav>
       <!--navegacion-asep-->
+      <!--modal-asep-->
+      <div id="pestPaso2" aria-hidden="true" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-header"><a href="#close" aria-hidden="true" class="btn-close">×</a></div>
+          <div class="modal-body">
+            <div style="text-align:center">Guardado Con éxito </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+      <!--modal-asep-->
       <!--titulo-asep-->
       <div class="TituloAsep">
         <div class="TituloAsep-img"><img src="../../../imagenes/book.png"/></div>
@@ -105,7 +116,7 @@
                 <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
                 <div class="contenedorDeItemAValidar">
                   <div class="label-Input">Nombre Comercial: (*)</div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
+                  <input type="text" placeholder="" id="nombreComercialInput" class="zkteInputAsep "/><span id="spanError-nombreComercialInput" class="errorInputValidado">X</span>
                 </div>
                 <!--input-textAsep-->
               </div>
@@ -114,7 +125,16 @@
                 <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
                 <div class="contenedorDeItemAValidar">
                   <div class="label-Input">Página web</div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
+                  <input type="text" placeholder="" id="paginaWebInput" class="zkteInputAsep "/><span id="spanError-paginaWebInput" class="errorInputValidado">X</span>
+                </div>
+                <!--input-textAsep					-->
+              </div>
+              <div class="contenedorDeInputsPaso2">
+                <!--input-textAsep-->
+                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
+                <div class="contenedorDeItemAValidar">
+                  <div class="label-Input">Facebook: </div>
+                  <input type="text" placeholder="" id="facebookInput" class="zkteInputAsep "/><span id="spanError-facebookInput" class="errorInputValidado">X</span>
                 </div>
                 <!--input-textAsep-->
               </div>
@@ -122,26 +142,8 @@
                 <!--input-textAsep-->
                 <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
                 <div class="contenedorDeItemAValidar">
-                  <div class="label-Input">Corre de empresa: (*)</div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
-                </div>
-                <!--input-textAsep-->
-              </div>
-              <div class="contenedorDeInputsPaso2">
-                <!--input-textAsep-->
-                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
-                <div class="contenedorDeItemAValidar">
-                  <div class="label-Input">Fanpage: </div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
-                </div>
-                <!--input-textAsep-->
-              </div>
-              <div class="contenedorDeInputsPaso2">
-                <!--input-textAsep-->
-                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
-                <div class="contenedorDeItemAValidar">
-                  <div class="label-Input">twiter: </div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
+                  <div class="label-Input">Twiter: </div>
+                  <input type="text" placeholder="" id="twiterInput" class="zkteInputAsep "/><span id="spanError-twiterInput" class="errorInputValidado">X</span>
                 </div>
                 <!--input-textAsep-->
               </div>
@@ -150,13 +152,22 @@
                 <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
                 <div class="contenedorDeItemAValidar">
                   <div class="label-Input">Linkedin: </div>
-                  <input type="text" placeholder="" id="razonSocialInput" class="zkteInputAsep "/><span id="spanError-razonSocialInput" class="errorInputValidado">X</span>
+                  <input type="text" placeholder="" id="linkedinInput" class="zkteInputAsep "/><span id="spanError-linkedinInput" class="errorInputValidado">X</span>
+                </div>
+                <!--input-textAsep-->
+              </div>
+              <div class="contenedorDeInputsPaso2">
+                <!--input-textAsep-->
+                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
+                <div class="contenedorDeItemAValidar">
+                  <div class="label-Input">E-mail de contacto: </div>
+                  <input type="text" placeholder="" id="emailDeContactoInput" class="zkteInputAsep "/><span id="spanError-emailDeContactoInput" class="errorInputValidado">X</span>
                 </div>
                 <!--input-textAsep-->
               </div>
               <div class="contenedorDeInputsPaso2">
                 <div class="contenedorDeItemAValidar">
-                  <div class="label-Input">Logotipo de tu empresa</div>
+                  <div class="label-Input">Logotipo de tu empresa:</div>
                   <!--input-fileAsep-->
                   <label class="cargar"><span>Browse
                       <input type="file" id="archivo" name="archivo"/></span></label>
@@ -164,13 +175,104 @@
                   <div class="descinputFile">Min 300x300 pixeles</div>
                 </div>
               </div>
-              <div id="mensajeErrorForm">Debe completar los campos requeridos</div>
+              <div class="contenedorDeInputsPaso2">						
+                <div class="label-Input">Número de trabajadores: (*)</div>
+                <!--select-asep-->
+                <div class="contenedorDeSelectAValidar">
+                  <select class="SelectAsep Dia nroTrabajadores">
+                    <option>Seleccione</option>
+                    <option value="De 1 a 5 trabajadores">De 1 a 5 trabajadores</option>
+                    <option value="De 6 a 10 trabajadores">De 6 a 10 trabajadores</option>
+                    <option value="De 11 a 20 trabajadores">De 11 a 20 trabajadores</option>
+                    <option value="De 21 a 50 trabajadores">De 21 a 50 trabajadores</option>
+                    <option value="De 51 a 100 trabajadores">De 51 a 100 trabajadores</option>
+                    <option value="Más de 100 trabajadores">Más de 100 trabajadores</option>
+                  </select><span class="errorInputValidado">X</span>
+                </div>
+                <!--select-asep-->
+              </div>
+              <div class="contenedorDeInputsPaso2">						
+                <!--input-textAsep-->
+                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
+                <div class="contenedorDeItemAValidar">
+                  <div class="label-Input">Inicio de actividades(*): </div>
+                  <input type="text" placeholder="" id="inicioActividadesInput" class="zkteInputAsep "/><span id="spanError-inicioActividadesInput" class="errorInputValidado">X</span>
+                </div>
+                <!--input-textAsep-->
+              </div>
+              <div class="contenedorDeInputsPaso2">
+                <!--input-textAsep-->
+                <!--email,alfanumerico,numerico,alfabeto,rangoCaracteres-->
+                <div class="contenedorDeItemAValidar">
+                  <div class="label-Input">¿A qué se dedica tu empresa?,¿Qué tipo de productos ofrece?: (*)</div>
+                  <textarea placeholder="" id="dedicaProductoInput" class="zkteTextAreaAsep "></textarea><span id="spanError-dedicaProductoInput" class="errorInputValidado">X</span>
+                </div>
+              </div>
+              <div class="contenedorDeInputsPaso2">						
+                <div class="label-Input">Tipo de Empresa: (*)</div>
+                <!--select-asep-->
+                <div class="contenedorDeSelectAValidar">
+                  <select class="SelectAsep Dia tipoEmpresa">
+                    <option>Seleccione</option>
+                    <option value="Micro Empresa (ventas anuales hasta S/. 577,500 al año) ">Micro Empresa (ventas anuales hasta S/. 577,500 al año) </option>
+                    <option value="Pequeña Empresa (ventas anuales superiores de S/. 577,500 a S/. 6´545,000 al año)">Pequeña Empresa (ventas anuales superiores de S/. 577,500 a S/. 6´545,000 al año)</option>
+                    <option value="Mediana Empresa (ventas anuales superiores de S/. 6´545,000 a S/. 8´855,000 al año)">Mediana Empresa (ventas anuales superiores de S/. 6´545,000 a S/. 8´855,000 al año)</option>
+                    <option value="Gran Empresa (ventas anuales superiores a S/. 8´855,000 al año)">Gran Empresa (ventas anuales superiores a S/. 8´855,000 al año)</option>
+                  </select><span class="errorInputValidado">X</span>
+                </div>
+                <!--select-asep-->
+              </div>
+              <div class="contenedorDeInputsPaso2">						
+                <div class="label-Input">Rubro al que pertenece tu empresa: (*)</div>
+                <!--select-asep-->
+                <div class="contenedorDeSelectAValidar">
+                  <select class="SelectAsep Dia rubroEmpresa">
+                    <option>Seleccione</option>
+                    <option value="Agricultura, ganadería, pesca">Agricultura, ganadería, pesca</option>
+                    <option value="Actividades del sector minero">Actividades del sector minero</option>
+                    <option value="Industria manufacturera">Industria manufacturera</option>
+                    <option value="Construcción e inmobiliarias">Construcción e inmobiliarias</option>
+                    <option value="Comercio al por mayor y al por menor">Comercio al por mayor y al por menor</option>
+                    <option value="Hoteles y restaurantes">Hoteles y restaurantes</option>
+                    <option value="Transporte, almacenamiento y comunicaciones">Transporte, almacenamiento y comunicaciones</option>
+                    <option value="Actividades financieras">Actividades financieras</option>
+                    <option value="Administración Pública">Administración Pública</option>
+                    <option value="Actividades de Educación y arte">Actividades de Educación y arte</option>
+                    <option value="Comercio Electrónico">Comercio Electrónico</option>
+                    <option value="Otras (especificar)">Otras (especificar)</option>
+                  </select><span class="errorInputValidado">X</span>
+                </div>
+                <!--select-asep-->
+              </div>
+              <div class="contenedorDeInputsPaso2">						
+                <div class="label-Input">¿En qué etapa de desarrollo se encuentra tu empresa? (*)</div>
+                <!--select-asep-->
+                <div class="contenedorDeSelectAValidar">
+                  <select class="SelectAsep Dia etapaEmpresa">
+                    <option>Seleccione</option>
+                    <option value="Idea de negocio">Idea de negocio</option>
+                    <option value="Periodo de lanzamiento">Periodo de lanzamiento</option>
+                    <option value="Vendiendo">Vendiendo</option>
+                    <option value="Expansión">Expansión</option>
+                  </select><span class="errorInputValidado">X</span>
+                </div>
+                <!--select-asep-->
+              </div>
+              <div class="obligatorioAsterisco">(*) Obligatorio</div>
+              <div class="contenedorBotonSocioPaso2"><a href="#pestPaso2">
+                  <!--button-asepAzul-->
+                  <input type="button" value="GUARDAR Y SEGUIR" class="btn-asepAzul guardarPasoDos"/>
+                  <!--button-asepAzul--></a></div>
+              <div id="mensajeErrorForm">					</div>
             </div>
           </div>
           <div class="pest">TRES</div>
         </div>
       </div>
       <!--tabs-asep-->
+      <!--redesSociales-asep-->
+      <div class="Redes-Sociales-Finish"><i class="fa fa-facebook-official"></i><i class="fa fa-twitter-square"></i><i class="fa fa-linkedin-square"></i></div>
+      <!--redesSociales-asep-->
     </div>
   </body>
 </html>

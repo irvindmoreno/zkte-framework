@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='radioButton';
-var vista='asep';
+var proyecto='asep';
+var vista='socio';
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),

@@ -161,14 +161,15 @@ var TabsAsep = (function () {
 })();
 
 var InputTextAsep = (function () {
-	function InputTextAsep(boton, input, divMensjaeError) {
+	function InputTextAsep(boton, input, divMensjaeError, conteniDoMensajeError) {
 		_classCallCheck(this, InputTextAsep);
 
 		this.input = input;
 		this.boton = boton;
 		this.divMensjaeError = divMensjaeError;
+		this.conteniDoMensajeError = conteniDoMensajeError;
 		$("#" + this.divMensjaeError).addClass("mensajeErrorInactivo");
-		$("#" + this.divMensjaeError).prepend('<i class="fa fa-exclamation-circle"></i>');
+		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
 
 		//this.comprobarInput()		
 	}
@@ -220,6 +221,39 @@ var InputTextAsep = (function () {
 			//var tamanioInput=$('.'+input).val().length
 		}
 	}, {
+		key: "validarRangoCaracteres",
+		value: function validarRangoCaracteres(event) {
+			var objeto = event.data.objeto;
+			var nroCaracteresInicial = event.data.nroCaracteresInicial;
+			var valorInput = parseInt($('#' + objeto.input).val());
+			var nroCaracteresFinal = event.data.nroCaracteresFinal;
+
+			//console.log($('#'+this.input).val().length)
+			if (objeto.requerido == "no" && tamanioInput == 0) {} else {
+
+				if (valorInput >= nroCaracteresInicial && valorInput <= nroCaracteresFinal) {
+					objeto.marcarComoCorrecto();
+				} else {
+					objeto.marcarComoError();
+				}
+			}
+		}
+	}, {
+		key: "rangoCaracteres",
+		value: function rangoCaracteres(nroCaracteresInicial, nroCaracteresFinal) {
+			$("#" + this.input).on("keyup", { objeto: this, nroCaracteresInicial: nroCaracteresInicial, nroCaracteresFinal: nroCaracteresFinal }, this.validarRangoCaracteres);
+			//$('#'+this.input).attr("maxlength",nroCaracteresFinal)
+			//console.log(nroCaracteresInicial)
+			//console.log(nroCaracteresFinal)
+		}
+	}, {
+		key: "mostrarMensajeError",
+		value: function mostrarMensajeError() {
+			$("#" + this.divMensjaeError).removeClass("mensajeErrorInactivo");
+			$("#" + this.divMensjaeError).addClass("mensajeErrorActivo");
+			$("#" + this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>' + this.conteniDoMensajeError);
+		}
+	}, {
 		key: "marcarComoError",
 		value: function marcarComoError() {
 			event.preventDefault();
@@ -227,8 +261,7 @@ var InputTextAsep = (function () {
 			$('#' + this.input).addClass("bordeErrorInput");
 			$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 			$('#' + this.input).siblings('span').addClass("inputValido");
-			$("#" + this.divMensjaeError).removeClass("mensajeErrorInactivo");
-			$("#" + this.divMensjaeError).addClass("mensajeErrorActivo");
+			this.estadoValidado = false;
 		}
 	}, {
 		key: "marcarComoCorrecto",
@@ -236,8 +269,9 @@ var InputTextAsep = (function () {
 			$('#' + this.input).removeClass("bordeErrorInput");
 			$('#' + this.input).siblings('span').removeClass("inputValido");
 			$('#' + this.input).siblings('span').addClass("InputInvalidado");
-			$("#" + this.divMensjaeError).addClass("mensajeErrorInactivo");
-			$("#" + this.divMensjaeError).removeClass("mensajeErrorActivo");
+			//$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+			//$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+			this.estadoValidado = true;
 		}
 	}, {
 		key: "validarNoRequerido",
@@ -250,37 +284,48 @@ var InputTextAsep = (function () {
 				this.requerido = "si";
 			}
 		}
-	}, {
-		key: "validarRangoCaracteres",
-		value: function validarRangoCaracteres(event, nroCaracteresInicial, nroCaracteresFinal) {
-
-			$('#' + this.input).attr("maxlength", nroCaracteresFinal);
-			//console.log(nroCaracteresInicial)
-			//console.log(nroCaracteresFinal)
-			var tamanioInput = $('#' + this.input).val().length;
-			//console.log($('#'+this.input).val().length)
-			if (tamanioInput < nroCaracteresInicial || tamanioInput > nroCaracteresFinal) {
-				this.marcarComoError();
-			} else {
-				this.marcarComoCorrecto();
-			}
-		}
+		/*
+  validarRangoCaracteres(event,nroCaracteresInicial,nroCaracteresFinal)
+  {
+  
+  $('#'+this.input).attr("maxlength",nroCaracteresFinal)
+  //console.log(nroCaracteresInicial)
+  //console.log(nroCaracteresFinal)
+  var valorInput=$('#'+this.input).val();
+  //console.log($('#'+this.input).val().length)
+  if(this.requerido=="no" && tamanioInput==0)
+  {
+  	}
+  else
+  {
+  	if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
+  	{			
+  		this.marcarComoCorrecto()
+  	}
+  	else
+  	{
+  		this.marcarComoError()
+  	}
+  }
+  }*/
 	}, {
 		key: "validarAlfabeto",
 		value: function validarAlfabeto(event, nroCaracteresInicial, nroCaracteresFinal) {
 			$('#' + this.input).attr("maxlength", nroCaracteresFinal);
 			var tamanioInput = $('#' + this.input).val().length;
-			if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
-				//console.log("esta dentro del rango");
-				var expresion = $('#' + this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$');
-				//Se utiliza la funcion test() nativa de JavaScript
-				if (expresion) {
-					this.marcarComoCorrecto();
+			if (this.requerido == "no" && tamanioInput == 0) {} else {
+				if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
+					//console.log("esta dentro del rango");
+					var expresion = $('#' + this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$');
+					//Se utiliza la funcion test() nativa de JavaScript
+					if (expresion) {
+						this.marcarComoCorrecto();
+					} else {
+						this.marcarComoError();
+					}
 				} else {
 					this.marcarComoError();
 				}
-			} else {
-				this.marcarComoError();
 			}
 		}
 	}, {
@@ -307,16 +352,18 @@ var InputTextAsep = (function () {
 		value: function validarAlfaNumerico(event, nroCaracteresInicial, nroCaracteresFinal) {
 			$('#' + this.input).attr("maxlength", nroCaracteresFinal);
 			var tamanioInput = $('#' + this.input).val().length;
-			if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
-				var expresion = $('#' + this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i);
-				//Se utiliza la funcion test() nativa de JavaScript
-				if (expresion) {
-					this.marcarComoCorrecto();
+			if (this.requerido == "no" && tamanioInput == 0) {} else {
+				if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
+					var expresion = $('#' + this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i);
+					//Se utiliza la funcion test() nativa de JavaScript
+					if (expresion) {
+						this.marcarComoCorrecto();
+					} else {
+						this.marcarComoError();
+					}
 				} else {
 					this.marcarComoError();
 				}
-			} else {
-				this.marcarComoError();
 			}
 		}
 	}, {
@@ -324,21 +371,23 @@ var InputTextAsep = (function () {
 		value: function validarEmail(event, nroCaracteresInicial, nroCaracteresFinal) {
 			$('#' + this.input).attr("maxlength", nroCaracteresFinal);
 			var tamanioInput = $('#' + this.input).val().length;
-			if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
-				//console.log(this.input);
-				var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-				var expresionaEvaluar = regex.test($('#' + this.input).val().trim());
-				//Se utiliza la funcion test() nativa de JavaScript
-				if (expresionaEvaluar) {
-					//console.log("cumple")
-					this.marcarComoCorrecto();
+			if (this.requerido == "no" && tamanioInput == 0) {} else {
+				if (tamanioInput >= nroCaracteresInicial && tamanioInput <= nroCaracteresFinal) {
+					//console.log(this.input);
+					var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+					var expresionaEvaluar = regex.test($('#' + this.input).val().trim());
+					//Se utiliza la funcion test() nativa de JavaScript
+					if (expresionaEvaluar) {
+						//console.log("cumple")
+						this.marcarComoCorrecto();
+					} else {
+						this.marcarComoError();
+					}
+					//console.log("validando el email con id: "+this.input);
 				} else {
-					this.marcarComoError();
-				}
-				//console.log("validando el email con id: "+this.input);
-			} else {
-					this.marcarComoError();
-				}
+						this.marcarComoError();
+					}
+			}
 		}
 	}]);
 
@@ -347,4 +396,94 @@ var InputTextAsep = (function () {
 
 var InputFileAsep = function InputFileAsep() {
 	_classCallCheck(this, InputFileAsep);
+};
+
+var SelectAsep = (function () {
+	function SelectAsep(boton, idSelect, required, divMensjaeError, conteniDoMensajeError) {
+		_classCallCheck(this, SelectAsep);
+
+		this.idSelect = idSelect;
+		this.divMensjaeError = divMensjaeError;
+		this.conteniDoMensajeError = conteniDoMensajeError;
+		$("#" + this.divMensjaeError).addClass("mensajeErrorInactivo");
+		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+conteniDoMensajeError);
+		$('.' + this.idSelect).on("change", { objeto: this, idSelect: this.idSelect, divMensjaeError: this.divMensjaeError }, this.validarSelect);
+		if (required) {
+			$("." + boton).on("click", { objeto: this, idSelect: this.idSelect, divMensjaeError: this.divMensjaeError }, this.validarSelect);
+		}
+	}
+
+	//var selectAsep=new SelectAsep("btn","idSelect",true,"divMensjaeError")
+
+	_createClass(SelectAsep, [{
+		key: "mostrarMensajeError",
+		value: function mostrarMensajeError() {
+			$("#" + this.divMensjaeError).removeClass("mensajeErrorInactivo");
+			$("#" + this.divMensjaeError).addClass("mensajeErrorActivo");
+			$("#" + this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>' + this.conteniDoMensajeError);
+		}
+	}, {
+		key: "marcarComoError",
+		value: function marcarComoError() {
+			event.preventDefault();
+			//console.log("error fuera de rango")
+			//$('#'+this.input).addClass("bordeErrorInput")
+			//$('#'+this.input).siblings('span').removeClass("InputInvalidado")
+			//$('#'+this.input).siblings('span').addClass("inputValido")	   
+			this.estadoValidado = false;
+
+			event.preventDefault();
+			$('.' + this.idSelect).siblings('span').removeClass("InputInvalidado");
+			$('.' + this.idSelect).siblings('span').addClass("inputValido");
+			$('.' + this.idSelect).parent().addClass('selectError');
+			$('.' + this.idSelect).parent().removeClass('selectCorrecto');
+			//console.log("quitando mensajeErrorInactivo")
+			//$("#"+divMensjaeError).removeClass("mensajeErrorInactivo")
+			//$("#"+divMensjaeError).addClass("mensajeErrorActivo")
+		}
+	}, {
+		key: "marcarComoCorrecto",
+		value: function marcarComoCorrecto() {
+			//$('#'+this.input).removeClass("bordeErrorInput")
+			//$('#'+this.input).siblings('span').removeClass("inputValido")
+			//$('#'+this.input).siblings('span').addClass("InputInvalidado");
+			//$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+			//$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+			this.estadoValidado = true;
+
+			$('.' + this.idSelect).siblings('span').removeClass("inputValido");
+			$('.' + this.idSelect).siblings('span').addClass("InputInvalidado");
+			$('.' + this.idSelect).parent().removeClass('selectError');
+			$('.' + this.idSelect).parent().addClass('selectCorrecto');
+		}
+	}, {
+		key: "validarSelect",
+		value: function validarSelect(event) {
+			var idSelect = event.data.idSelect;
+			var objeto = event.data.objeto;
+			var divMensjaeError = event.data.divMensjaeError;
+			var optionInicial = $("." + idSelect).children('option').val();
+			var optionSeleccionado = $("." + idSelect).val();
+			if (optionInicial == optionSeleccionado) {
+
+				objeto.marcarComoError();
+			} else {
+				objeto.marcarComoCorrecto();
+			}
+		}
+	}]);
+
+	return SelectAsep;
+})();
+
+var ButtonAsepAzul = function ButtonAsepAzul() {
+	_classCallCheck(this, ButtonAsepAzul);
+};
+
+var RedesSociales = function RedesSociales() {
+	_classCallCheck(this, RedesSociales);
+};
+
+var ModalAsep = function ModalAsep() {
+	_classCallCheck(this, ModalAsep);
 };

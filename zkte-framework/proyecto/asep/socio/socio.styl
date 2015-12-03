@@ -18,7 +18,11 @@ rutaImagenes='../../../imagenes'
 @media screen and (max-width: 1250px)
 	.contenedorFormulario-Paso2
 		width 95%
-
+@media screen and (max-width: 830px)
+	.contenedorDeSelectAValidar
+		width 100% !important
+	.pest-Titulo
+		font-size 1.4em !important
 .datosDeLaEmpresa
 	padding 2em 0em 1em 0em
 	font-weight bold
@@ -30,6 +34,25 @@ rutaImagenes='../../../imagenes'
 	display inline-block
 	vertical-align middle
 	color #4a4949
+.label-Input,.contenedorDeSelectAValidar
+	display inline-block
+	vertical-align middle
+.obligatorioAsterisco
+	text-align center
+	color #4a4949
+	padding 1em 0em
+.contenedorBotonSocioPaso2
+	padding 1em 0em
+	text-align center
+.contenedorBotonSocioPaso2 a
+	text-decoration none
+.mensajeErrorActivo
+	position absolute
+	width 100%
+	left 0
+.pestaniasPadre
+	position relative
+	padding-bottom 3em
 /************Layout****************/
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/asep/layout/layout.styl')
 /************Layout****************/
@@ -87,7 +110,7 @@ colorBordeErrorInput=2px solid #a94442
 backgroundDeX=#a94442
 colorMensajeError=#a94442
 backgroundMensajeEror=#f2dede
-iconox="true"
+iconox="false"
 if iconox=="true"
 	activado=inline-block
 if iconox=="false"
@@ -102,7 +125,9 @@ if mensajeError=="false"
 .zkteInputAsep, .zkteTextAreaAsep
 	width 67%
 .label-Input
-	min-width 11em
+	min-width 13em
+.zkteTextAreaAsep
+	height 11em !important
 /************input-textAsep****************/
 
 
@@ -115,5 +140,65 @@ alto=30px
 tamanioLetra=18px
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/input/fileAsep/input.styl')
 /************input-fileAsep****************/
+
+
+/************select-asep****************/
+rutaImagen="../../../imagenes/"
+colorLetraSelect=#4a4949
+colorDeX=white
+backgroundDeX=#a94442
+marginLeftSpanX=0.5em
+colorBordeInput=gray
+imagenFlecha="flecha.png"
+backgroundSelect=#F7F2F2
+tamanioLetraSelect=16px
+paddingSelect=8px
+borderRadiusSelect=5px
+anchoSelect=100%
+colorMensajeError=#a94442
+backgroundMensajeEror=#f2dede
+borderSelectError=2px solid #a94442
+bordeSelectCorrecto=0px solid gray
+iconox="false"
+if iconox=="true"
+	activado=inline-block
+if iconox=="false"
+	activado=none
+mensajeError="true"
+if mensajeError=="true"
+	activadoMensajeError=block
+if mensajeError=="false"
+	activadoMensajeError=none
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/select/asep/select.styl')
+.contenedorDeSelectAValidar
+	width 66.9%
+.SelectAsep
+	border-radius 2px;
+/************select-asep****************/
+
+
+/************button-asepAzul****************/
+background=#2ca7df
+padding=9px 40px
+color=white
+borde=none
+backgroundHover=#39b44c
+tamanioLetara=1em
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/button/asepAzul/button.styl')
+/************button-asepAzul****************/
+
+
+/************redesSociales-asep****************/
+background=#6b6767
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/redesSociales/asep/redesSociales.styl')
+/************redesSociales-asep****************/
+
+
+/************modal-asep****************/
+colorFondoModal=#2E2E2E
+colorFondoDetrasModal=rgba(243, 240, 240, 0.84)
+colorLetraModal=#eeee
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/modal/asep/modal.styl')
+/************modal-asep****************/
 
 

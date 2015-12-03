@@ -7,11 +7,11 @@
 	outline none
 	width anchoSelect
 	cursor pointer
-	border-radius borderRadiusSelect
 	height alturaSelect
 	padding-left paddingLeftSelect
 	text-align center
 	border bordeSelectCorrecto
+	border-radius borderRadiusSelect
 @media screen and (max-width: 830px)
 	.errorInputValidado
 		display none !important
@@ -29,9 +29,9 @@
 	border-top-width: 1px
 	border-left-width: 1px
 	border-right-width: 1px
-	border-radius: borderRadiusSelect
 	border-bottom-width: 1px
 	border-style: solid
+	color colorLetraSelect
 .errorInputValidado
 	color colorDeX
 	height 1.5em
@@ -47,9 +47,10 @@
 	display none
 	transition all ease 0.5s
 	cursor pointer
-.contenedorDeItemAValidar
+.contenedorDeSelectAValidar
 	display inline-block
 	vertical-align middle
+	border-radius borderRadiusSelect
 	//display flex
 	//align-items center
 	width 100%
@@ -57,12 +58,12 @@
 	display none
 	transition all ease 0.5s
 .inputValido
-	display activado
+	display activado !important
 .mensajeErrorActivo
 	display activadoMensajeError
 	background backgroundMensajeEror
 	color colorMensajeError
-	padding 1em 1em
+	padding 1em 0em
 	text-align center
 .mensajeErrorActivo i
 	margin-right 1em

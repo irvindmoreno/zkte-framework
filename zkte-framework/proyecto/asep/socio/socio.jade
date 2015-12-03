@@ -23,6 +23,17 @@ block navegacion
 	include ../../../componentes/navegacion/asep/navegacion.jade
 	//navegacion-asep
 block contenido
+	//modal-asep
+	- rutaImagenes ='../../../imagenes'
+	
+	div#pestPaso2.modal(aria-hidden='true')
+		.modal-dialog
+			.modal-header
+				a.btn-close(href='#close', aria-hidden='true') ×
+			.modal-body
+				div(style="text-align:center") Guardado Con éxito 
+			.modal-footer
+	//modal-asep
 	//titulo-asep
 	- rutaImagenes ='../../../imagenes'
 	- tituloAsep="ÚNETE A LA ASEP"
@@ -60,7 +71,7 @@ block contenido
 					div(class="contenedorDeInputsPaso2")
 						//input-textAsep
 						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
+						- idInput="nombreComercialInput"
 						- placeholder=""
 						- tipo="text"
 						- label="Nombre Comercial: (*)"
@@ -69,65 +80,122 @@ block contenido
 					div(class="contenedorDeInputsPaso2")
 						//input-textAsep
 						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
+						- idInput="paginaWebInput"
 						- placeholder=""
 						- tipo="text"
 						- label="Página web"
 						include ../../../componentes/input/textAsep/input.jade
-						//input-textAsep
+						//input-textAsep					
 					div(class="contenedorDeInputsPaso2")
 						//input-textAsep
 						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
+						- idInput="facebookInput"
 						- placeholder=""
 						- tipo="text"
-						- label="Corre de empresa: (*)"
+						- label="Facebook: "
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					div(class="contenedorDeInputsPaso2")
 						//input-textAsep
 						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
+						- idInput="twiterInput"
 						- placeholder=""
 						- tipo="text"
-						- label="Fanpage: "
+						- label="Twiter: "
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					div(class="contenedorDeInputsPaso2")
 						//input-textAsep
 						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
-						- placeholder=""
-						- tipo="text"
-						- label="twiter: "
-						include ../../../componentes/input/textAsep/input.jade
-						//input-textAsep
-					div(class="contenedorDeInputsPaso2")
-						//input-textAsep
-						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
-						- idInput="razonSocialInput"
+						- idInput="linkedinInput"
 						- placeholder=""
 						- tipo="text"
 						- label="Linkedin: "
 						include ../../../componentes/input/textAsep/input.jade
 						//input-textAsep
 					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="emailDeContactoInput"
+						- placeholder=""
+						- tipo="text"
+						- label="E-mail de contacto: "
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
 						div(class="contenedorDeItemAValidar")
-							div(class="label-Input") Logotipo de tu empresa
+							div(class="label-Input") Logotipo de tu empresa:
 							//input-fileAsep
 							- contenido="Browse"
 							include ../../../componentes/input/fileAsep/input.jade
 							//input-fileAsep
 							div(class="descinputFile") Min 300x300 pixeles
 
-
-
-
-					div(id="mensajeErrorForm") Debe completar los campos requeridos
+					div(class="contenedorDeInputsPaso2")						
+						div(class="label-Input") Número de trabajadores: (*)
+						//select-asep
+						- opcionInicial="Seleccione"
+						- opciones=["De 1 a 5 trabajadores","De 6 a 10 trabajadores","De 11 a 20 trabajadores","De 21 a 50 trabajadores","De 51 a 100 trabajadores","Más de 100 trabajadores"]
+						- classSelect="nroTrabajadores"
+						include ../../../componentes/select/asep/select.jade
+						//select-asep
+					div(class="contenedorDeInputsPaso2")						
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="inicioActividadesInput"
+						- placeholder=""
+						- tipo="text"
+						- label="Inicio de actividades(*): "
+						include ../../../componentes/input/textAsep/input.jade
+						//input-textAsep
+					div(class="contenedorDeInputsPaso2")
+						//input-textAsep
+						//email,alfanumerico,numerico,alfabeto,rangoCaracteres
+						- idInput="dedicaProductoInput"
+						- placeholder=""
+						- tipo="text-area"
+						- label="¿A qué se dedica tu empresa?,¿Qué tipo de productos ofrece?: (*)"
+						include ../../../componentes/input/textAsep/input.jade				
+					div(class="contenedorDeInputsPaso2")						
+						div(class="label-Input") Tipo de Empresa: (*)
+						//select-asep
+						- opcionInicial="Seleccione"
+						- opciones=["Micro Empresa (ventas anuales hasta S/. 577,500 al año) ","Pequeña Empresa (ventas anuales superiores de S/. 577,500 a S/. 6´545,000 al año)","Mediana Empresa (ventas anuales superiores de S/. 6´545,000 a S/. 8´855,000 al año)","Gran Empresa (ventas anuales superiores a S/. 8´855,000 al año)"]
+						- classSelect="tipoEmpresa"
+						include ../../../componentes/select/asep/select.jade
+						//select-asep
+					div(class="contenedorDeInputsPaso2")						
+						div(class="label-Input") Rubro al que pertenece tu empresa: (*)
+						//select-asep
+						- opcionInicial="Seleccione"
+						- opciones=["Agricultura, ganadería, pesca","Actividades del sector minero","Industria manufacturera","Construcción e inmobiliarias","Comercio al por mayor y al por menor","Hoteles y restaurantes","Transporte, almacenamiento y comunicaciones","Actividades financieras","Administración Pública","Actividades de Educación y arte","Comercio Electrónico","Otras (especificar)"]
+						- classSelect="rubroEmpresa"
+						include ../../../componentes/select/asep/select.jade
+						//select-asep
+					div(class="contenedorDeInputsPaso2")						
+						div(class="label-Input") ¿En qué etapa de desarrollo se encuentra tu empresa? (*)
+						//select-asep
+						- opcionInicial="Seleccione"
+						- opciones=["Idea de negocio","Periodo de lanzamiento","Vendiendo","Expansión"]
+						- classSelect="etapaEmpresa"
+						include ../../../componentes/select/asep/select.jade
+						//select-asep
+					div(class="obligatorioAsterisco") (*) Obligatorio
+					div(class="contenedorBotonSocioPaso2")
+						a(href="#pestPaso2")
+							//button-asepAzul
+							- rutaImagenes ='../../../imagenes'
+							- contenido="GUARDAR Y SEGUIR"
+							- claseBtn="guardarPasoDos"
+							include ../../../componentes/button/asepAzul/button.jade
+							//button-asepAzul
+					div(id="mensajeErrorForm")					
 			div(class="pest") TRES
 	//tabs-asep
+	//redesSociales-asep
+	include ../../../componentes/redesSociales/asep/redesSociales.jade
+	//redesSociales-asep
 	
 block footer
 
 
-	

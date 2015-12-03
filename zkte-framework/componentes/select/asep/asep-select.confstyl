@@ -1,4 +1,5 @@
 rutaImagen="../../../imagenes/"
+colorLetraSelect=#4a4949
 colorDeX=white
 backgroundDeX=#a94442
 marginLeftSpanX=0.5em

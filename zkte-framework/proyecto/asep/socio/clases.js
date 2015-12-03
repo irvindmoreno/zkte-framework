@@ -145,13 +145,14 @@ class TabsAsep{
 
 
 class InputTextAsep{
-	constructor(boton,input,divMensjaeError)
+	constructor(boton,input,divMensjaeError,conteniDoMensajeError)
 	{
 		this.input=input;
 		this.boton=boton;
 		this.divMensjaeError=divMensjaeError;
+		this.conteniDoMensajeError=conteniDoMensajeError
 		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-		$("#"+this.divMensjaeError).prepend('<i class="fa fa-exclamation-circle"></i>');
+		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
 		
 		//this.comprobarInput()		
 	}
@@ -196,23 +197,62 @@ class InputTextAsep{
 			
 		//var tamanioInput=$('.'+input).val().length
 	}
+	validarRangoCaracteres(event)
+	{
+		var objeto=	event.data.objeto;
+		var nroCaracteresInicial=event.data.nroCaracteresInicial;
+		var valorInput=parseInt($('#'+objeto.input).val());
+		var nroCaracteresFinal=event.data.nroCaracteresFinal;	
+		
+		//console.log($('#'+this.input).val().length)
+		if(objeto.requerido=="no" && tamanioInput==0)
+		{
+
+		}
+		else
+		{
+
+			if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
+			{			
+				objeto.marcarComoCorrecto()
+			}
+			else
+			{
+				objeto.marcarComoError()
+			}
+		}
+	}
+	rangoCaracteres(nroCaracteresInicial,nroCaracteresFinal)
+	{
+		$("#"+this.input).on("keyup",{objeto:this,nroCaracteresInicial:nroCaracteresInicial,nroCaracteresFinal:nroCaracteresFinal},this.validarRangoCaracteres)
+		//$('#'+this.input).attr("maxlength",nroCaracteresFinal)
+		//console.log(nroCaracteresInicial)
+		//console.log(nroCaracteresFinal)
+		
+	}
+	mostrarMensajeError()
+	{
+		$("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
+	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
+		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
+	}
 	marcarComoError()
 	{
 		event.preventDefault();			
 		//console.log("error fuera de rango")
 		$('#'+this.input).addClass("bordeErrorInput")
 		$('#'+this.input).siblings('span').removeClass("InputInvalidado")
-	    $('#'+this.input).siblings('span').addClass("inputValido")
-	    $("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
-	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
+	    $('#'+this.input).siblings('span').addClass("inputValido")	    
+		this.estadoValidado=false
 	}
 	marcarComoCorrecto()
 	{
 		$('#'+this.input).removeClass("bordeErrorInput")
 		$('#'+this.input).siblings('span').removeClass("inputValido")
 	    $('#'+this.input).siblings('span').addClass("InputInvalidado");
-	    $("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-	    $("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+	    //$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+	    //$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+	    this.estadoValidado=true
 
 	}
 	validarNoRequerido(event,nroCaracteresInicial,nroCaracteresFinal)
@@ -227,45 +267,59 @@ class InputTextAsep{
 		{
 			this.requerido="si";
 		}
-	}
+	}/*
 	validarRangoCaracteres(event,nroCaracteresInicial,nroCaracteresFinal)
 	{
 		
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		//console.log(nroCaracteresInicial)
 		//console.log(nroCaracteresFinal)
-		var tamanioInput=$('#'+this.input).val().length
+		var valorInput=$('#'+this.input).val();
 		//console.log($('#'+this.input).val().length)
-		if(tamanioInput<nroCaracteresInicial || tamanioInput>nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			this.marcarComoError()
+
 		}
 		else
 		{
-			this.marcarComoCorrecto()
+			if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
+			{			
+				this.marcarComoCorrecto()
+			}
+			else
+			{
+				this.marcarComoError()
+			}
 		}
-	}
+	}*/
 	validarAlfabeto(event,nroCaracteresInicial,nroCaracteresFinal)
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			//console.log("esta dentro del rango");
-			var expresion=$('#'+this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$') 
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresion) 
-		    {
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {
-		    	this.marcarComoError()   	        
-		    }
+
 		}
 		else
 		{
-			this.marcarComoError()
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				//console.log("esta dentro del rango");
+				var expresion=$('#'+this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$') 
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresion) 
+			    {
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {
+			    	this.marcarComoError()   	        
+			    }
+			}
+			else
+			{
+				this.marcarComoError()
+			}
 		}
 		
 	}
@@ -304,22 +358,29 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresion) 
-		    {
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {
-		    	this.marcarComoError() 
-	        }
+
 		}
 		else
 		{
-			this.marcarComoError() 
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				var expresion=$('#'+this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i)
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresion) 
+			    {
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {
+			    	this.marcarComoError() 
+		        }
+			}
+			else
+			{
+				this.marcarComoError() 
+			}
 		}
 		
 	}	
@@ -327,26 +388,33 @@ class InputTextAsep{
 	{
 		$('#'+this.input).attr("maxlength",nroCaracteresFinal)
 		var tamanioInput=$('#'+this.input).val().length
-		if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+		if(this.requerido=="no" && tamanioInput==0)
 		{
-			//console.log(this.input);
-			var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-	 		var expresionaEvaluar=regex.test($('#'+this.input).val().trim())
-		    //Se utiliza la funcion test() nativa de JavaScript
-		    if (expresionaEvaluar) 
-		    {
-		    	//console.log("cumple")
-		    	this.marcarComoCorrecto()
-		    }
-		    else 
-		    {	
-		    	this.marcarComoError()    
-		    }
-		    //console.log("validando el email con id: "+this.input);
+
 		}
 		else
 		{
-			this.marcarComoError()
+			if(tamanioInput>=nroCaracteresInicial && tamanioInput<=nroCaracteresFinal)
+			{
+				//console.log(this.input);
+				var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+		 		var expresionaEvaluar=regex.test($('#'+this.input).val().trim())
+			    //Se utiliza la funcion test() nativa de JavaScript
+			    if (expresionaEvaluar) 
+			    {
+			    	//console.log("cumple")
+			    	this.marcarComoCorrecto()
+			    }
+			    else 
+			    {	
+			    	this.marcarComoError()    
+			    }
+			    //console.log("validando el email con id: "+this.input);
+			}
+			else
+			{
+				this.marcarComoError()
+			}
 		}
 		
 	}
@@ -361,5 +429,96 @@ class InputFileAsep{
 	constructor()
 	{
 
+	}
+}
+class SelectAsep{
+	constructor(boton,idSelect,required,divMensjaeError,conteniDoMensajeError)
+	{		
+		this.idSelect=idSelect;
+		this.divMensjaeError=divMensjaeError;
+		this.conteniDoMensajeError=conteniDoMensajeError;
+		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+conteniDoMensajeError);
+		$('.'+this.idSelect).on("change",{objeto:this,idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
+		if(required)
+		{
+			$("."+boton).on("click",{objeto:this,idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
+		}
+	}
+	mostrarMensajeError()
+	{
+		$("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
+	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
+		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
+	}
+	marcarComoError()
+	{
+		event.preventDefault();			
+		//console.log("error fuera de rango")
+		//$('#'+this.input).addClass("bordeErrorInput")
+		//$('#'+this.input).siblings('span').removeClass("InputInvalidado")
+	    //$('#'+this.input).siblings('span').addClass("inputValido")	    
+		this.estadoValidado=false
+
+		event.preventDefault();			
+	    $('.'+this.idSelect).siblings('span').removeClass("InputInvalidado")
+	    $('.'+this.idSelect).siblings('span').addClass("inputValido");
+	    $('.'+this.idSelect).parent().addClass('selectError');
+	    $('.'+this.idSelect).parent().removeClass('selectCorrecto');
+	    //console.log("quitando mensajeErrorInactivo")
+	    //$("#"+divMensjaeError).removeClass("mensajeErrorInactivo")
+	 	//$("#"+divMensjaeError).addClass("mensajeErrorActivo")
+	}
+	marcarComoCorrecto()
+	{
+		//$('#'+this.input).removeClass("bordeErrorInput")
+		//$('#'+this.input).siblings('span').removeClass("inputValido")
+	    //$('#'+this.input).siblings('span').addClass("InputInvalidado");
+	    //$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+	    //$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
+	    this.estadoValidado=true
+
+	    $('.'+this.idSelect).siblings('span').removeClass("inputValido")
+	    $('.'+this.idSelect).siblings('span').addClass("InputInvalidado");
+	    $('.'+this.idSelect).parent().removeClass('selectError');
+	    $('.'+this.idSelect).parent().addClass('selectCorrecto');
+
+	}
+	validarSelect(event)
+	{		
+		var idSelect=event.data.idSelect
+		var objeto=event.data.objeto
+		var divMensjaeError=event.data.divMensjaeError
+		var optionInicial=$("."+idSelect).children('option').val()
+		var optionSeleccionado=$("."+idSelect).val()	
+		if(optionInicial==optionSeleccionado)
+		{
+			
+	    	objeto.marcarComoError()
+		}
+		else
+		{
+			objeto.marcarComoCorrecto()
+	    	
+		}
+	}
+}
+//var selectAsep=new SelectAsep("btn","idSelect",true,"divMensjaeError")
+class ButtonAsepAzul{
+	constructor()
+	{
+
+	}
+}
+class RedesSociales{
+	constructor()
+	{
+
+	}
+}
+class ModalAsep{
+	constructor()
+	{
+		
 	}
 }

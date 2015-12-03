@@ -1,10 +1,10 @@
 class SelectAsep{
-	constructor(boton,idSelect,required,divMensjaeError)
+	constructor(boton,idSelect,required,divMensjaeError,conteniDoMensajeError)
 	{		
 		this.idSelect=idSelect;
 		this.divMensjaeError=divMensjaeError;
 		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-		$("#"+this.divMensjaeError).prepend('<i class="fa fa-exclamation-circle"></i>');
+		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+conteniDoMensajeError);
 		$('.'+this.idSelect).on("change",{idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
 		if(required)
 		{
