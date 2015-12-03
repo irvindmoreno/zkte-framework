@@ -232,9 +232,9 @@ var InputTextAsep = (function () {
 			if (objeto.requerido == "no" && tamanioInput == 0) {} else {
 
 				if (valorInput >= nroCaracteresInicial && valorInput <= nroCaracteresFinal) {
-					objeto.marcarComoCorrecto();
+					objeto.marcarComoCorrecto(event);
 				} else {
-					objeto.marcarComoError();
+					objeto.marcarComoError(event);
 				}
 			}
 		}
@@ -255,7 +255,7 @@ var InputTextAsep = (function () {
 		}
 	}, {
 		key: "marcarComoError",
-		value: function marcarComoError() {
+		value: function marcarComoError(event) {
 			event.preventDefault();
 			//console.log("error fuera de rango")
 			$('#' + this.input).addClass("bordeErrorInput");
@@ -265,7 +265,7 @@ var InputTextAsep = (function () {
 		}
 	}, {
 		key: "marcarComoCorrecto",
-		value: function marcarComoCorrecto() {
+		value: function marcarComoCorrecto(event) {
 			$('#' + this.input).removeClass("bordeErrorInput");
 			$('#' + this.input).siblings('span').removeClass("inputValido");
 			$('#' + this.input).siblings('span').addClass("InputInvalidado");
@@ -279,7 +279,7 @@ var InputTextAsep = (function () {
 			var tamanioInput = $('#' + this.input).val().length;
 			if (tamanioInput == 0) {
 				this.requerido = "no";
-				this.marcarComoCorrecto();
+				this.marcarComoCorrecto(event);
 			} else {
 				this.requerido = "si";
 			}
@@ -300,11 +300,11 @@ var InputTextAsep = (function () {
   {
   	if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
   	{			
-  		this.marcarComoCorrecto()
+  		this.marcarComoCorrecto(event)
   	}
   	else
   	{
-  		this.marcarComoError()
+  		this.marcarComoError(event)
   	}
   }
   }*/
@@ -319,12 +319,12 @@ var InputTextAsep = (function () {
 					var expresion = $('#' + this.input).val().match('^[a-zA-Z_áéíóúñ \s]*$');
 					//Se utiliza la funcion test() nativa de JavaScript
 					if (expresion) {
-						this.marcarComoCorrecto();
+						this.marcarComoCorrecto(event);
 					} else {
-						this.marcarComoError();
+						this.marcarComoError(event);
 					}
 				} else {
-					this.marcarComoError();
+					this.marcarComoError(event);
 				}
 			}
 		}
@@ -338,12 +338,12 @@ var InputTextAsep = (function () {
 					var expresion = $('#' + this.input).val().match(/^[0-9]+$/);
 					//Se utiliza la funcion test() nativa de JavaScript
 					if (expresion) {
-						this.marcarComoCorrecto();
+						this.marcarComoCorrecto(event);
 					} else {
-						this.marcarComoError();
+						this.marcarComoError(event);
 					}
 				} else {
-					this.marcarComoError();
+					this.marcarComoError(event);
 				}
 			}
 		}
@@ -357,12 +357,12 @@ var InputTextAsep = (function () {
 					var expresion = $('#' + this.input).val().match(/^[a-z0-9\sáéíóúñ.,_\-\&\/]+$/i);
 					//Se utiliza la funcion test() nativa de JavaScript
 					if (expresion) {
-						this.marcarComoCorrecto();
+						this.marcarComoCorrecto(event);
 					} else {
-						this.marcarComoError();
+						this.marcarComoError(event);
 					}
 				} else {
-					this.marcarComoError();
+					this.marcarComoError(event);
 				}
 			}
 		}
@@ -379,13 +379,13 @@ var InputTextAsep = (function () {
 					//Se utiliza la funcion test() nativa de JavaScript
 					if (expresionaEvaluar) {
 						//console.log("cumple")
-						this.marcarComoCorrecto();
+						this.marcarComoCorrecto(event);
 					} else {
-						this.marcarComoError();
+						this.marcarComoError(event);
 					}
 					//console.log("validando el email con id: "+this.input);
 				} else {
-						this.marcarComoError();
+						this.marcarComoError(event);
 					}
 			}
 		}
@@ -424,7 +424,7 @@ var SelectAsep = (function () {
 		}
 	}, {
 		key: "marcarComoError",
-		value: function marcarComoError() {
+		value: function marcarComoError(event) {
 			event.preventDefault();
 			//console.log("error fuera de rango")
 			//$('#'+this.input).addClass("bordeErrorInput")
@@ -443,7 +443,7 @@ var SelectAsep = (function () {
 		}
 	}, {
 		key: "marcarComoCorrecto",
-		value: function marcarComoCorrecto() {
+		value: function marcarComoCorrecto(event) {
 			//$('#'+this.input).removeClass("bordeErrorInput")
 			//$('#'+this.input).siblings('span').removeClass("inputValido")
 			//$('#'+this.input).siblings('span').addClass("InputInvalidado");
@@ -466,9 +466,9 @@ var SelectAsep = (function () {
 			var optionSeleccionado = $("." + idSelect).val();
 			if (optionInicial == optionSeleccionado) {
 
-				objeto.marcarComoError();
+				objeto.marcarComoError(event);
 			} else {
-				objeto.marcarComoCorrecto();
+				objeto.marcarComoCorrecto(event);
 			}
 		}
 	}]);

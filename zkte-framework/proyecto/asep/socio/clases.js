@@ -214,11 +214,11 @@ class InputTextAsep{
 
 			if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
 			{			
-				objeto.marcarComoCorrecto()
+				objeto.marcarComoCorrecto(event)
 			}
 			else
 			{
-				objeto.marcarComoError()
+				objeto.marcarComoError(event)
 			}
 		}
 	}
@@ -236,7 +236,7 @@ class InputTextAsep{
 	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
 		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
 	}
-	marcarComoError()
+	marcarComoError(event)
 	{
 		event.preventDefault();			
 		//console.log("error fuera de rango")
@@ -245,7 +245,7 @@ class InputTextAsep{
 	    $('#'+this.input).siblings('span').addClass("inputValido")	    
 		this.estadoValidado=false
 	}
-	marcarComoCorrecto()
+	marcarComoCorrecto(event)
 	{
 		$('#'+this.input).removeClass("bordeErrorInput")
 		$('#'+this.input).siblings('span').removeClass("inputValido")
@@ -261,7 +261,7 @@ class InputTextAsep{
 		if(tamanioInput==0)
 		{
 			this.requerido="no";			
-			this.marcarComoCorrecto();
+			this.marcarComoCorrecto(event);
 		}
 		else
 		{
@@ -284,11 +284,11 @@ class InputTextAsep{
 		{
 			if(valorInput>=nroCaracteresInicial && valorInput<=nroCaracteresFinal)
 			{			
-				this.marcarComoCorrecto()
+				this.marcarComoCorrecto(event)
 			}
 			else
 			{
-				this.marcarComoError()
+				this.marcarComoError(event)
 			}
 		}
 	}*/
@@ -309,16 +309,16 @@ class InputTextAsep{
 			    //Se utiliza la funcion test() nativa de JavaScript
 			    if (expresion) 
 			    {
-			    	this.marcarComoCorrecto()
+			    	this.marcarComoCorrecto(event)
 			    }
 			    else 
 			    {
-			    	this.marcarComoError()   	        
+			    	this.marcarComoError(event)  	        
 			    }
 			}
 			else
 			{
-				this.marcarComoError()
+				this.marcarComoError(event)
 			}
 		}
 		
@@ -339,16 +339,16 @@ class InputTextAsep{
 			    //Se utiliza la funcion test() nativa de JavaScript
 			    if (expresion) 
 			    {
-			    	this.marcarComoCorrecto()
+			    	this.marcarComoCorrecto(event)
 			    }
 			    else 
 			    {
-			    	this.marcarComoError()  	        
+			    	this.marcarComoError(event) 	        
 			    }
 			}
 			else
 			{
-				this.marcarComoError()
+				this.marcarComoError(event)
 			}
 		}
 		
@@ -370,16 +370,16 @@ class InputTextAsep{
 			    //Se utiliza la funcion test() nativa de JavaScript
 			    if (expresion) 
 			    {
-			    	this.marcarComoCorrecto()
+			    	this.marcarComoCorrecto(event)
 			    }
 			    else 
 			    {
-			    	this.marcarComoError() 
+			    	this.marcarComoError(event)
 		        }
 			}
 			else
 			{
-				this.marcarComoError() 
+				this.marcarComoError(event)
 			}
 		}
 		
@@ -403,17 +403,17 @@ class InputTextAsep{
 			    if (expresionaEvaluar) 
 			    {
 			    	//console.log("cumple")
-			    	this.marcarComoCorrecto()
+			    	this.marcarComoCorrecto(event)
 			    }
 			    else 
 			    {	
-			    	this.marcarComoError()    
+			    	this.marcarComoError(event)   
 			    }
 			    //console.log("validando el email con id: "+this.input);
 			}
 			else
 			{
-				this.marcarComoError()
+				this.marcarComoError(event)
 			}
 		}
 		
@@ -451,7 +451,7 @@ class SelectAsep{
 	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
 		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
 	}
-	marcarComoError()
+	marcarComoError(event)
 	{
 		event.preventDefault();			
 		//console.log("error fuera de rango")
@@ -469,7 +469,7 @@ class SelectAsep{
 	    //$("#"+divMensjaeError).removeClass("mensajeErrorInactivo")
 	 	//$("#"+divMensjaeError).addClass("mensajeErrorActivo")
 	}
-	marcarComoCorrecto()
+	marcarComoCorrecto(event)
 	{
 		//$('#'+this.input).removeClass("bordeErrorInput")
 		//$('#'+this.input).siblings('span').removeClass("inputValido")
@@ -494,11 +494,11 @@ class SelectAsep{
 		if(optionInicial==optionSeleccionado)
 		{
 			
-	    	objeto.marcarComoError()
+	    	objeto.marcarComoError(event)
 		}
 		else
 		{
-			objeto.marcarComoCorrecto()
+			objeto.marcarComoCorrecto(event)
 	    	
 		}
 	}
