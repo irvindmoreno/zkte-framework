@@ -28,6 +28,10 @@
   .pest-Titulo {
     font-size: 1.4em !important;
   }
+  .label-Input {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 .datosDeLaEmpresa {
   padding: 2em 0em 1em 0em;
