@@ -22,6 +22,7 @@ class SelectAsep{
 			event.preventDefault();			
 	        $('.'+idSelect).siblings('span').removeClass("InputInvalidado")
 	        $('.'+idSelect).siblings('span').addClass("inputValido");
+	        console.log('.'+idSelect);
 	        $('.'+idSelect).addClass('selectError');
 	        $('.'+idSelect).removeClass('selectCorrecto');
 	        //console.log("quitando mensajeErrorInactivo")
@@ -34,6 +35,7 @@ class SelectAsep{
 			//alert("si pe")
 			$('.'+idSelect).siblings('span').removeClass("inputValido")
 	        $('.'+idSelect).siblings('span').addClass("InputInvalidado");
+	        console.log('.'+idSelect);
 	        $('.'+idSelect).removeClass('selectError');
 	        $('.'+idSelect).addClass('selectCorrecto');
 	        console.log("quitando mensajeErrorActivo")

@@ -446,7 +446,7 @@ header a:hover {
   }
 }
 .bordeErrorInput {
-  border: 2px solid #a94442;
+  border: 3px solid #ee565a;
 }
 .mensajeErrorActivo {
   display: block;
@@ -524,16 +524,12 @@ input[type="file"] {
   border: 0px solid #808080;
 }
 .selectError {
-  border: 2px solid #a94442;
+  border: 3px solid #ee565a;
 }
 .Dia {
   font-size: 16px;
   padding: 8px;
   width: tamanioSelectDia;
-  border-top-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
   border-style: solid;
   color: #4a4949;
 }

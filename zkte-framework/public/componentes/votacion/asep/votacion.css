@@ -1,0 +1,19 @@
+.contenedorCalificanos {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  color: #4a4949;
+}
+.estrellitas {
+  text-align: center;
+  display: inline;
+}
+.fa-star {
+  font-size: 1em !important;
+  cursor: pointer;
+}
+.starActivada {
+  color: #2ca7df !important;
+}
+.starActivadaForever {
+  color: #2ca7df !important;
+}

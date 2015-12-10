@@ -155,7 +155,7 @@ body {
   padding-left: 10%;
   padding-right: 10%;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 930px) {
   .Contenedor {
     padding-right: 0%;
     padding-left: 0%;
@@ -489,7 +489,7 @@ header a:hover {
   transition: all ease 0.5s;
 }
 .inputValido {
-  display: inline-block;
+  display: activado !important;
 }
 .zkteTextAreaAsep {
   resize: none;
@@ -523,9 +523,29 @@ header a:hover {
     display: none;
   }
 }
+.bordeErrorInput {
+  border: colorBordeErrorInput;
+}
+.mensajeErrorActivo {
+  display: activadoMensajeError;
+  background: backgroundMensajeEror;
+  color: colorMensajeError;
+  padding: 1em 0em;
+  text-align: center;
+}
+.mensajeErrorActivo i {
+  margin-right: 1em;
+}
+.mensajeErrorInactivo {
+  display: none;
+}
 .zkteInputAsep,
 .zkteTextAreaAsep {
   width: 60%;
+}
+.errorInputValidado,
+.inputValido {
+  display: none;
 }
 /************input-textAsep****************/
 /************button-asepAzul****************/

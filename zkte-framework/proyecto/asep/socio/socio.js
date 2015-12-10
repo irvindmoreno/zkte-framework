@@ -68,4 +68,5 @@ function inicio()
     var selectAsep= new SelectAsep()
     var buttonAsepAzul= new ButtonAsepAzul()    
     var modalAsep= new ModalAsep()
+    var selectAsep= new SelectAsep()
 }
