@@ -1,6 +1,7 @@
 /******no tocar linea 1,2 y 3********/
 var proyecto='footer';
 var vista='asep';
+
 /*librerias requeridas para correr gulp*/
 
 var gulp = require('gulp'),
