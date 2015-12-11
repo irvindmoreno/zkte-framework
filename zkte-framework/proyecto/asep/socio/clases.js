@@ -431,79 +431,7 @@ class InputFileAsep{
 
 	}
 }
-class SelectAsep{
-	constructor(boton,idSelect,required,divMensjaeError,conteniDoMensajeError)
-	{		
-		this.idSelect=idSelect;
-		this.divMensjaeError=divMensjaeError;
-		this.conteniDoMensajeError=conteniDoMensajeError;
-		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-		//$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+conteniDoMensajeError);
-		$('.'+this.idSelect).on("change",{objeto:this,idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
-		if(required)
-		{
-			$("."+boton).on("click",{objeto:this,idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
-		}
-	}
-	mostrarMensajeError()
-	{
-		$("#"+this.divMensjaeError).removeClass("mensajeErrorInactivo")
-	    $("#"+this.divMensjaeError).addClass("mensajeErrorActivo")
-		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+this.conteniDoMensajeError);
-	}
-	marcarComoError(event)
-	{
-		event.preventDefault();			
-		//console.log("error fuera de rango")
-		//$('#'+this.input).addClass("bordeErrorInput")
-		//$('#'+this.input).siblings('span').removeClass("InputInvalidado")
-	    //$('#'+this.input).siblings('span').addClass("inputValido")	    
-		this.estadoValidado=false
 
-		event.preventDefault();			
-	    $('.'+this.idSelect).siblings('span').removeClass("InputInvalidado")
-	    $('.'+this.idSelect).siblings('span').addClass("inputValido");
-	    $('.'+this.idSelect).parent().addClass('selectError');
-	    $('.'+this.idSelect).parent().removeClass('selectCorrecto');
-	    //console.log("quitando mensajeErrorInactivo")
-	    //$("#"+divMensjaeError).removeClass("mensajeErrorInactivo")
-	 	//$("#"+divMensjaeError).addClass("mensajeErrorActivo")
-	}
-	marcarComoCorrecto(event)
-	{
-		//$('#'+this.input).removeClass("bordeErrorInput")
-		//$('#'+this.input).siblings('span').removeClass("inputValido")
-	    //$('#'+this.input).siblings('span').addClass("InputInvalidado");
-	    //$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
-	    //$("#"+this.divMensjaeError).removeClass("mensajeErrorActivo")
-	    this.estadoValidado=true
-
-	    $('.'+this.idSelect).siblings('span').removeClass("inputValido")
-	    $('.'+this.idSelect).siblings('span').addClass("InputInvalidado");
-	    $('.'+this.idSelect).parent().removeClass('selectError');
-	    $('.'+this.idSelect).parent().addClass('selectCorrecto');
-
-	}
-	validarSelect(event)
-	{		
-		var idSelect=event.data.idSelect
-		var objeto=event.data.objeto
-		var divMensjaeError=event.data.divMensjaeError
-		var optionInicial=$("."+idSelect).children('option').val()
-		var optionSeleccionado=$("."+idSelect).val()	
-		if(optionInicial==optionSeleccionado)
-		{
-			
-	    	objeto.marcarComoError(event)
-		}
-		else
-		{
-			objeto.marcarComoCorrecto(event)
-	    	
-		}
-	}
-}
-//var selectAsep=new SelectAsep("btn","idSelect",true,"divMensjaeError")
 class ButtonAsepAzul{
 	constructor()
 	{
@@ -522,3 +450,51 @@ class ModalAsep{
 		
 	}
 }
+class SelectAsep{
+	constructor(boton,idSelect,required,divMensjaeError,conteniDoMensajeError)
+	{		
+		this.idSelect=idSelect;
+		this.divMensjaeError=divMensjaeError;
+		$("#"+this.divMensjaeError).addClass("mensajeErrorInactivo")
+		$("#"+this.divMensjaeError).html('<i class="fa fa-exclamation-circle"></i>'+conteniDoMensajeError);
+		$('.'+this.idSelect).on("change",{idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
+		if(required)
+		{
+			$("."+boton).on("click",{idSelect: this.idSelect,divMensjaeError: this.divMensjaeError},this.validarSelect)
+		}
+	}
+	validarSelect(event)
+	{		
+		var idSelect=event.data.idSelect
+		var divMensjaeError=event.data.divMensjaeError
+		var optionInicial=$("."+idSelect).children('option').val()
+		var optionSeleccionado=$("."+idSelect).val()	
+		if(optionInicial==optionSeleccionado)
+		{
+			event.preventDefault();			
+	        $('.'+idSelect).siblings('span').removeClass("InputInvalidado")
+	        $('.'+idSelect).siblings('span').addClass("inputValido");
+	        //console.log('.'+idSelect);
+	        $('.'+idSelect).addClass('selectError');
+	        $('.'+idSelect).removeClass('selectCorrecto');
+	        //console.log("quitando mensajeErrorInactivo")
+	        $("#"+divMensjaeError).removeClass("mensajeErrorInactivo")
+	    	$("#"+divMensjaeError).addClass("mensajeErrorActivo")
+	    	
+		}
+		else
+		{
+			//alert("si pe")
+			$('.'+idSelect).siblings('span').removeClass("inputValido")
+	        $('.'+idSelect).siblings('span').addClass("InputInvalidado");
+	        //console.log('.'+idSelect);
+	        $('.'+idSelect).removeClass('selectError');
+	        $('.'+idSelect).addClass('selectCorrecto');
+	        //console.log("quitando mensajeErrorActivo")
+	        $("#"+divMensjaeError).removeClass("mensajeErrorActivo")
+	    	$("#"+divMensjaeError).addClass("mensajeErrorInactivo")
+	    	
+		}
+	}
+}
+//var selectAsep=new SelectAsep("btn","idSelect",true,"divMensjaeError")

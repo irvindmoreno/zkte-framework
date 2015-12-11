@@ -142,7 +142,7 @@ var InputTextAsep = (function () {
 			if (tamanioInput < nroCaracteresInicial || tamanioInput > nroCaracteresFinal) {
 				event.preventDefault();
 				console.log("error fuera de rango");
-				$('#' + this.input).css("border", "2px solid #2ca7df");
+				$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 				$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 				$('#' + this.input).siblings('span').addClass("inputValido");
 			} else {
@@ -169,14 +169,14 @@ var InputTextAsep = (function () {
 				} else {
 					event.preventDefault();
 					//console.log("error alfabeto")
-					$('#' + this.input).css("border", "2px solid #2ca7df");
+					$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 					$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 					$('#' + this.input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
 				//console.log("fuera de rango")
-				$('#' + this.input).css("border", "2px solid #2ca7df");
+				$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 				$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 				$('#' + this.input).siblings('span').addClass("inputValido");
 			}
@@ -195,14 +195,14 @@ var InputTextAsep = (function () {
 					$('#' + this.input).siblings('span').addClass("InputInvalidado");
 				} else {
 					event.preventDefault();
-					$('#' + this.input).css("border", "2px solid #2ca7df");
+					$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 					$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 					$('#' + this.input).siblings('span').addClass("inputValido");
 				}
 			} else {
 				event.preventDefault();
 				//console.log("fuera de rango")
-				$('#' + this.input).css("border", "2px solid #2ca7df");
+				$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 				$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 				$('#' + this.input).siblings('span').addClass("inputValido");
 			}
@@ -223,14 +223,14 @@ var InputTextAsep = (function () {
 						$('#' + this.input).siblings('span').addClass("InputInvalidado");
 					} else {
 						event.preventDefault();
-						$('#' + this.input).css("border", "2px solid #2ca7df");
+						$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 						$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 						$('#' + this.input).siblings('span').addClass("inputValido");
 					}
 				} else {
 					event.preventDefault();
 					//console.log("fuera de rango")
-					$('#' + this.input).css("border", "2px solid #2ca7df");
+					$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 					$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 					$('#' + this.input).siblings('span').addClass("inputValido");
 				}
@@ -254,7 +254,7 @@ var InputTextAsep = (function () {
 				} else {
 					//console.log("no cumple")
 					event.preventDefault();
-					$('#' + this.input).css("border", "2px solid #2ca7df");
+					$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 					$('#spanError-' + this.input).removeClass("InputInvalidado");
 					$('#spanError-' + this.input).addClass("inputValido");
 				}
@@ -262,7 +262,7 @@ var InputTextAsep = (function () {
 			} else {
 					event.preventDefault();
 					//console.log("fuera de rango")
-					$('#' + this.input).css("border", "2px solid #2ca7df");
+					$('#' + this.input).css("border", "3px solid rgb(238, 86, 90)");
 					$('#' + this.input).siblings('span').removeClass("InputInvalidado");
 					$('#' + this.input).siblings('span').addClass("inputValido");
 				}
