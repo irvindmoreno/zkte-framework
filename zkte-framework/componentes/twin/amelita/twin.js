@@ -1,4 +1,4 @@
-class InputAsep{
+class TwinAmelita{
 	constructor()
 	{
 

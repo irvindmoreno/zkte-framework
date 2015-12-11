@@ -31,6 +31,10 @@ var NavegacionAsep = (function () {
 	return NavegacionAsep;
 })();
 
-var SelectAsep = function SelectAsep() {
-	_classCallCheck(this, SelectAsep);
+var PaginacionAsep = function PaginacionAsep() {
+	_classCallCheck(this, PaginacionAsep);
+};
+
+var RedesSociales = function RedesSociales() {
+	_classCallCheck(this, RedesSociales);
 };
