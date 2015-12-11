@@ -1,12 +1,18 @@
-
+rutaImagenes="../../../imagenes"
+imagenFooter1="btn_hazte_socio_white.png"
+imagenFooter1Hover="btn_hazte_socio_white_selected.png"
+celeste=#2ca7df
+negro1=#4c4c4c
+negro2=#303030
+negro3=#232323
 /**********Footer*******************/
 .Fotter
 	&-1
 		background celeste;
 		height 7em
-		display flex
-		justify-content center
-		align-items center
+		//display flex
+		//justify-content center
+		//align-items center
 		&-btn-HazteSocio
 			height 5em
 			background url(rutaImagenes+'/'+imagenFooter1) no-repeat left
@@ -14,6 +20,7 @@
 			background-size 13em
 			transition all ease 0.2s
 			cursor pointer
+			margin 0 auto
 			&:hover								
 				background url(rutaImagenes+'/'+imagenFooter1Hover) no-repeat left
 				background-size 13em
@@ -22,36 +29,38 @@
 		padding-left 8%
 		padding-right 8%
 		padding-top 0.8em
-		padding-bottom 0.5em	
-		display flex
-		justify-content space-between
+		padding-bottom 3em	
+		//display flex
+		//justify-content space-between
 		color white
 		font-size 1.3em
 		&-Colaboradores
 			width 60%			
 			&-Img
 				padding-top 2em
-				display flex
-				justify-content space-around
+				//display flex
+				//justify-content space-around
 				
 				& img
 					height 3.5em
+					margin-left 4%
 					@media screen and (max-width: 763px)
 						height 3em
 		&-Sponsor			
 			&-Img
 				padding-top 2em
-				display flex
-				justify-content space-around
+				//display flex
+				//justify-content space-around
 				& img
 					height 3.5em
 					@media screen and (max-width: 763px)
 						height 3em	
 	&-3
 		background negro2
-		height 10em
-		display flex
-		justify-content space-around
+		padding-bottom 4em
+		position relative
+		//display flex
+		//justify-content space-around
 		padding-top 4em
 		padding-right 5%
 		padding-left 5%
@@ -60,14 +69,14 @@
 			height 6em
 		& img
 			@media screen and (max-width: 997px)
-				display none
+				display none				
 		&-Navegacion-Menu
-			display flex
+			//display flex
 			@media screen and (max-width: 609px)
 				display none
 			& ul
 				list-style none
-				display flex
+				//display flex
 			& a
 				padding-left 0.4em
 				padding-right 0.4em
@@ -82,9 +91,9 @@
 		&-Letter
 			color white
 			font-size 0.8em
-			display flex
-			align-items center
-			justify-content center
+			//display flex
+			//align-items center
+			//justify-content center
 			& i
 				color white
 			&-Span
@@ -95,10 +104,12 @@
 	&-4
 		background negro3
 		height 3em
-		display flex
-		justify-content center
-		align-items center
+		//display flex
+		//justify-content center
+		//align-items center
 		color white
+		text-align center
+		padding-top 1em
 		& img
 			height 1.5em
 			margin-left 1em
@@ -114,4 +125,20 @@
 		display block
 		margin 0 auto
 		margin-bottom 1em
+@media screen and (max-width: 997px)
+	.fot-3-Menu
+		width 100%
+.Fotter-2-Colaboradores,.Fotter-2-Sponsor
+	display inline-block
+	vertical-align top
+.Fotter-3 div
+	display inline-block
+	vertical-align middle
+	text-align center
+nav.Fotter-3-Navegacion-Menu ul li
+	display inline-block
+.fot-3-Menu
+	position absolute
+	right 35px
+	top 58px
 /**********Footer*******************/
