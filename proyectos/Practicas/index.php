@@ -2,9 +2,6 @@
 
 echo "twins";
 
-/**
-* 
-*/
 class Persona
 {
 	//Atributos 

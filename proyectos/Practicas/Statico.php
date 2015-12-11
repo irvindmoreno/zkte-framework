@@ -8,7 +8,7 @@ a llamar.
 ****Las Propiedades STATIC no pueden ser accedidas a traves del obj utilizando el operador(->)
 */
 	
-	class Pagina
+	class Statico
 	{
 		//Atributos
 		public $nombre="codigo facilito";
@@ -17,11 +17,11 @@ a llamar.
 		//Metodos
 		public static function bienvenida()
 		{
-			echo "Bienvenidos a <b>"."<br> La pagina es".Pagina::$url;
+			echo "Bienvenidos a <b>"."<br> La pagina es".Statico::$url;
 		}
 	}
 	/*$pag = new Pagina ();
 	$pag->bienvenida();*/
-	 Pagina::bienvenida();
+	 //Pagina::bienvenida();
 
  ?>
