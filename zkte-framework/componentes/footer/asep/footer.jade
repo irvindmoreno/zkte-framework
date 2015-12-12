@@ -1,4 +1,11 @@
-
+- rutaImagenes ='../../../imagenes'
+- colaborador1="inkuba.png"
+- colaborador2="clicksandbricks.png"
+- colaborador3="labase.png"
+- colaborador4="mujeres.png"
+- sponsor1="bid.png"
+- logoAsep="asep_footer.png"
+- logoFotterFin1="sombrero.png"
 footer(class="Fotter")
 	div(class="Fotter-1")
 		div(class="Fotter-1-btn-HazteSocio")
@@ -15,33 +22,34 @@ footer(class="Fotter")
 			div(class="Fotter-2-Sponsor-Img")
 				img(src=rutaImagenes+"/"+sponsor1)
 	div(class="Fotter-3")
-		div
+		div(class="fot-3")
 			img(src=rutaImagenes+"/"+logoAsep)
-		div
-			nav(class="Fotter-3-Navegacion-Menu")
-				ul
-					li(class="li-active")
-						a(class="active") Nosotros
-					li
-						a(class="inactive") Directorio
-					li
-						a(class="inactive") Actividades
-					li
-						a(class="inactive") Noticias
-					li
-						a(class="inactive") Beneficios
-					li
-						a(class="inactive") Pregúntanos
-			div(class="Fotter-3-Letter")
-				span(class="Fotter-3-Letter-Span").
-					Miguel Dasso 153 - piso A - San Isidro / info@asep.pe 
-				div(class="Emprendedor-RedesSociales")
-					span(class="facebook")
-						i(class="fa fa-facebook-official")
-					span(class="twiter")
-						i(class="fa fa-twitter-square")
-					span(class="linkedin")
-						i(class="fa fa-linkedin-square")
+		div(class="fot-3-Menu")
+			div(class="contenedorDeFooter3")
+				nav(class="Fotter-3-Navegacion-Menu")
+					ul
+						li(class="li-active")
+							a(class="active") Nosotros
+						li
+							a(class="inactive") Directorio
+						li
+							a(class="inactive") Actividades
+						li
+							a(class="inactive") Noticias
+						li
+							a(class="inactive") Beneficios
+						li
+							a(class="inactive") Pregúntanos
+				div(class="Fotter-3-Letter")
+					span(class="Fotter-3-Letter-Span").
+						Miguel Dasso 153 - piso A - San Isidro / info@asep.pe 
+					div(class="Emprendedor-RedesSociales")
+						span(class="facebook")
+							i(class="fa fa-facebook-official")
+						span(class="twiter")
+							i(class="fa fa-twitter-square")
+						span(class="linkedin")
+							i(class="fa fa-linkedin-square")
 	div(class="Fotter-4")
 		span Powered by La Base
 		img(src=rutaImagenes+"/"+logoFotterFin1)
