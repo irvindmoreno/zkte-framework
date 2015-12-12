@@ -1,3 +1,3 @@
 1) crear un Virtual Host que se llame "estudios.local"
 2) acceder a la ruta con el navegador: http://estudios.local/pruebas
-3) con COMPOSER descargar el framework phpunit/phpunit (libreria para las pruebas)
+3) descargar las librerias del composer.json  (con el comando composer install, despues de ubicarme en la carpeta que quiero q se instale)
