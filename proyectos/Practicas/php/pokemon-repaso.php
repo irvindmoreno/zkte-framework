@@ -7,6 +7,7 @@
 		public $vida;
 		public $estado="Libre";
 		public $salud="sano";
+		public $vidaOriginal;
 		
 		public function __construct($nombre, $tipo, $ataque, $vida)
 		{
@@ -14,11 +15,12 @@
 			$this->tipo=$tipo;
 			$this->ataque=$ataque;
 			$this->vida=$vida;
+			$this->vidaOriginal=$vida;
 		}
 		public function atacar($pokemonRival)
 		{
 			$pokemonRival->vida=$pokemonRival->vida-$this->ataque;
-			if ($pokemonRival->vida<=80) 
+			if ($pokemonRival->vida<$pokemonRival->vidaOriginal) 
 			{
 				$pokemonRival->salud="enfermo";
 			}
@@ -27,7 +29,7 @@
 	class Persona
 	{
 		public $nombre;
-		public $pokemon;
+		
 
 		public function __construct($nombre)
 		{
@@ -36,7 +38,7 @@
 	}
 	class Entrenador extends Persona
 	{
-		
+		public $pokemon;
 
 		public function capturarPokemon($pokemon)
 		{
@@ -54,20 +56,29 @@
 		{
 			$this->pokemon->atacar($pokemonDelRival);
 		}
-		/*public function llevarAlMedico ($pokemonEnfermo)
+		public function llamarAlMedico($medico)
 		{
-			$this->pokemon->curarPokemon($pokemonEnfermo);
-		}*/
+			$medico->curarPokemon($this->pokemon);
+		}
 	}
 	class Medico extends Persona
 	{
-		public $pokemon;
+		//public $pokemon;
 
-		public function curarPokemon($pokemonEnfermo)
+		/*/public function curarPokemon($pokemonEnfermo)
 		{
-			if ($pokemon->salud="enfermo") 
+			if ($pokemonEnfermo->salud=="enfermo") 
 			{
 				$pokemonEnfermo->vida=$pokemonEnfermo->vida+50;
+				$pokemonEnfermo->salud="sano";
+			}
+		}*/
+		public function curarPokemon($pokemonEnfermo)
+		{
+			if ($pokemonEnfermo->salud=="enfermo") 
+			{
+				$pokemonEnfermo->vida=$pokemonEnfermo->vidaOriginal;
+				$pokemonEnfermo->salud="sano";
 			}
 		}
 
@@ -81,7 +92,7 @@
 	echo $charmander->vida."<br>";
 	echo $charmander->estado."<br><br>";
 
-	$rapidash=new Pokemon("rapidash","fuego",14, 120);
+	$rapidash=new Pokemon("rapidash","fuego",14, 180);
 	echo $rapidash->nombre."<br>";
 	echo $rapidash->tipo."<br>";
 	echo $rapidash->ataque."<br>";
@@ -134,7 +145,13 @@
 
 
 	$drtv=new Medico("Dr. TV");
-	echo $drtv->nombre
-	$drtv->curarPokemon($rapidash);
+	echo $drtv->nombre."<br>";
+	echo $rapidash->salud."<br>";
+	//$drtv->curarPokemon($rapidash);
+	//echo $rapidash->salud."</br>";
+
+	//echo "POkemon de yesenia: ".$yesenia->pokemon->nombre;
+	$yesenia->llamarAlMedico($drtv);
+	echo $rapidash->salud."<br>";
 
  ?>
