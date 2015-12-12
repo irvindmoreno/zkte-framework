@@ -79,7 +79,7 @@
 	echo $irvin->pokemon->ataque."<br>";
 	echo $irvin->pokemon->vida."<br>";
 	echo $irvin->pokemon->estado."<br>"."<br>";
-	//echo $saiduck->estado."<br>"."<br>" -->
+	//echo $saiduck->estado."<br>"."<br>" --> como en php poo se accede por referencia por eso el estado de saiduck seria domesticado
 
 	$yess = new Entrenador("Yess");
 	echo $yess->nombre."<br>";
