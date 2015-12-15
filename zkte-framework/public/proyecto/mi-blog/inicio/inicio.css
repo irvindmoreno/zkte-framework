@@ -1,0 +1,143 @@
+/************Layout****************/
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Arial;
+}
+/************Layout****************/
+/************header-miBlog****************/
+header {
+  background: #fff;
+  height: 5em;
+  width: 100%;
+  position: relative;
+}
+header div {
+  display: inline-block;
+  widht: 5em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  margin-top: 0.7em;
+}
+header span {
+  color: #a7a7a7;
+  transition: all ease 0.2s;
+  width: 100%;
+  padding: 0.5em 0em;
+}
+header img {
+  margin-right: 0.4em;
+}
+header a {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: center;
+  justify-content: -ms-center;
+  align-items: center;
+  align-items: -ms-center;
+  cursor: pointer;
+  text-decoration: none;
+  colo: #a7a7a7;
+}
+header span:hover {
+  color: #a89574;
+}
+.img-header {
+  height: 1.5em;
+}
+.header-contenedor-Nombres {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+}
+.header-contenedor-Nombres-Nombre {
+  color: #c2c2c2;
+  font-size: 2.5em;
+}
+.header-contenedor-Nombres-Apellido {
+  color: #a89574;
+  font-size: 1.5em;
+}
+.ContenedorMiBlog-izquierda {
+  margin-top: 1em;
+  font-size: 1em;
+  float: right;
+}
+.header-contenedor-Nombres i {
+  color: #a89574;
+  position: absolute;
+  right: 21px;
+  top: 18px;
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 930px) {
+  .header-contenedor-Nombres {
+    display: block;
+    text-align: center;
+    width: 100%;
+    position: inherit;
+    left: 0;
+    margin: 0;
+  }
+  .header-contenedor-Menu {
+    width: 100%;
+    float: none;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    height: 0em;
+    overflow: hidden;
+    transition: all ease 0.2s;
+    margin: 0 !important;
+    padding: 0.3em 0em !important;
+  }
+  .contenedorDeOpcion-Header {
+    float: none;
+    display: block;
+    transition: all ease 0.2s;
+    margin-top: 0em;
+    margin: 0;
+  }
+  header span:hover {
+    background: #a89574;
+    color: #fff;
+  }
+  .header-contenedor-Nombres i {
+    display: inline;
+  }
+}
+/************header-miBlog****************/
+/************redesSociales-miBlog****************/
+.Contenedor-RedesSociales-miBLog-circle {
+  border-radius: 50%;
+  margin: 0;
+  text-align: center;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.Contenedor-RedesSociales-miBLog-circle:hover {
+  transform: scale(1.1);
+}
+.Contenedor-RedesSociales-miBLog-circle i {
+  font-size: 2em;
+}
+.miBLog-blue {
+  border: 2px solid #39599f;
+}
+.miBLog-celeste {
+  border: 2px solid #45b0e3;
+}
+.miBLog-plomon {
+  border: 2px solid #626262;
+}
+.icono-face {
+  color: #39599f;
+}
+.icono-twiter {
+  color: #45b0e3;
+}
+.icono-linkedin {
+  color: #1b86bc;
+}
+/************redesSociales-miBlog****************/

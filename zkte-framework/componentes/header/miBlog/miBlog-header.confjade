@@ -1,0 +1,8 @@
+- nombre= "Daniel"
+- apellido= "Moreno"
+- rutaImagenes ='../../../imagenes'
+- pestaniaUno='Mis Tecnologías'
+- pestaniaDos='Mis Proyectos'
+- pestaniaTres='Mi Experiencia Laboral'
+- pestaniaCuatro='Mis Recomendaciones'
+fin
