@@ -1,5 +1,5 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='mi-blog';
+var proyecto='capacitacionfront';
 var vista='inicio';
 
 /*librerias requeridas para correr gulp*/

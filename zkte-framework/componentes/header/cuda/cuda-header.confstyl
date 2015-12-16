@@ -1,0 +1,8 @@
+rutaImagen='../../../imagenes/'
+background=#87509C
+colorLetra=white
+backgroundMenu=#643A79
+colorNombre=#EB7D4B
+backgroundBoton=#EB7D4B
+backgroundBotonHover=#2B2A29
+fin

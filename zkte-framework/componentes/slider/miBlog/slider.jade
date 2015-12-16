@@ -1,12 +1,26 @@
 ul.pgwSlider
+    //
+        li
+            img(src=imagen1, alt=titulo1, data-description='Eiffel Tower and Champ de Mars')        
+        li
+            img(src=imagen2, alt=titulo2, data-large-src=src2)
     li
-        img(src='paris.jpg', alt='Paris, France', data-description='Eiffel Tower and Champ de Mars')        
+        a(href=href1, target='_blank')
+            img(src=imagen1)
+            span=span1
     li
-        img(src='montreal_mini.jpg', alt='Montréal, QC, Canada', data-large-src='montreal.jpg')
+        a(href=href2, target='_blank')
+            img(src=imagen2)
+            span=span2
     li
-        img(src='shanghai.jpg')                 
-        span Shanghai, China    
+        a(href=href3, target='_blank')
+            img(src=imagen3)
+            span=span3
     li
-        a(href='http://www.nyc.gov', target='_blank')
-          img(src='new-york.jpg')              
-          span New York, NY, USA
+        a(href=href4, target='_blank')
+            img(src=imagen4)
+            span=span4
+    li
+        a(href=href5, target='_blank')
+          img(src=imagen5)              
+          span=span5 

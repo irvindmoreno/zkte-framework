@@ -10,7 +10,7 @@ class HeaderMiBlog{
 		this.estadoMenuMovil=!this.estadoMenuMovil
 		if(this.estadoMenuMovil)
 		{
-			$(".header-contenedor-Menu").css("height","8em")
+			$(".header-contenedor-Menu").css("height","9em")
 		}
 		else
 		{

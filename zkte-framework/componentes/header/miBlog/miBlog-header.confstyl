@@ -3,4 +3,7 @@ colorLetra=#A7A7A7
 colorNombre=#C2C2C2
 colorApellido=#A89574
 tamanioHeader=5em
+backgroundMovilMenu=#2196F3
+backgroundHoverMovil=#FF5722
+colorHoverMovil=white
 fin

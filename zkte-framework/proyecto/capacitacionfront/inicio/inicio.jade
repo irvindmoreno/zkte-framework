@@ -1,0 +1,83 @@
+extends ../layout/layout.jade
+block head
+	link(href='./inicio.css' rel='stylesheet')
+	script(src='./inicio.js')
+block header
+	//header-cuda
+	- rutaImagenes ='../../../imagenes'
+	- imagen="daniel_moreno.jpg"
+	- nombre="Daniel"
+	- apellido="Moreno"
+	- menu=['Tecnologías','Proyectos','Recomendaciones','Experiencia Laboral']
+	- descripcion='"Bachiller en ciencias de la computacón con experiencia en tecnologías web tanto front como back end"'
+	include ../../../componentes/header/cuda/header.jade
+	//header-cuda
+
+block navegacion	
+block contenido
+	div(class="Contenedor-Verde")
+		div(class="contenedorTituloService")
+			//titulo-service
+			- titulo="ESTAS SON MIS ÁREAS"
+			- descripcion="Mi interes en aprender nuevas tecnologías me han llevado a tener las siguientes especialidades"
+			include ../../../componentes/titulo/service/titulo.jade
+			//titulo-service
+		div(class="ContenedorDeCudas")
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="ciencias-deLacomputacion.png"
+			- titulo="BACHILLER EN CIENCIAS DE LA COMPUTACIÓN"
+			- descripcion="Grado de bachhiller en ciencias de la computación en la universidad Nacional De Trujillo 2010-2014"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="ciencias-deLacomputacion.png"
+			- titulo="BACHILLER EN CIENCIAS DE LA COMPUTACIÓN"
+			- descripcion="Grado de bachhiller en ciencias de la computación en la universidad Nacional De Trujillo 2010-2014"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="ciencias-deLacomputacion.png"
+			- titulo="BACHILLER EN CIENCIAS DE LA COMPUTACIÓN"
+			- descripcion="Grado de bachhiller en ciencias de la computación en la universidad Nacional De Trujillo 2010-2014"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="ciencias-deLacomputacion.png"
+			- titulo="BACHILLER EN CIENCIAS DE LA COMPUTACIÓN"
+			- descripcion="Grado de bachhiller en ciencias de la computación en la universidad Nacional De Trujillo 2010-2014"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+
+	div(class="ContenedorDeSlider")
+		//slider-miBlog
+		- rutaImagenes ='../../../imagenes'
+
+		- imagen1=rutaImagenes+"/html5css3js.jpg"
+		- span1='2 años de experiencia en html5, css3, js'
+		- href1='http://www.nyc.gov'
+
+		- imagen2=rutaImagenes+"/php.jpg"
+		- span2='1 año de experiencia en php'
+		- href2='http://www.nyc.gov'
+
+		- imagen3=rutaImagenes+"/gitygithub.jpg"
+		- span3='4 meses de experiancia en git y github'
+		- href3='http://www.nyc.gov'
+
+		- imagen4=rutaImagenes+"/laravel.jpg"
+		- span4='3 meses de experiancia en laravel'
+		- href4='http://www.nyc.gov'
+
+		- imagen5=rutaImagenes+"/gulp.jpg"
+		- span5='4 meses de experiancia en laravel'
+		- href5='http://www.nyc.gov'
+		include ../../../componentes/slider/miBlog/slider.jade
+		//slider-miBlog
+block footer
+
+
+	

@@ -1,3 +1,7 @@
+.ContenedorSlider {
+  margin-top: 1em;
+  padding: 0 3em;
+}
 /************Layout****************/
 body {
   font-size: 16px;
@@ -7,7 +11,7 @@ body {
 /************Layout****************/
 /************header-miBlog****************/
 header {
-  background: #fff;
+  background: #1976d2;
   height: 5em;
   width: 100%;
   position: relative;
@@ -20,7 +24,7 @@ header div {
   margin-top: 0.7em;
 }
 header span {
-  color: #a7a7a7;
+  color: #fff;
   transition: all ease 0.2s;
   width: 100%;
   padding: 0.5em 0em;
@@ -37,10 +41,10 @@ header a {
   align-items: -ms-center;
   cursor: pointer;
   text-decoration: none;
-  colo: #a7a7a7;
+  colo: #fff;
 }
 header span:hover {
-  color: #a89574;
+  color: #2d2827;
 }
 .img-header {
   height: 1.5em;
@@ -51,11 +55,11 @@ header span:hover {
   left: 9px;
 }
 .header-contenedor-Nombres-Nombre {
-  color: #c2c2c2;
+  color: #fff;
   font-size: 2.5em;
 }
 .header-contenedor-Nombres-Apellido {
-  color: #a89574;
+  color: #2d2827;
   font-size: 1.5em;
 }
 .ContenedorMiBlog-izquierda {
@@ -64,7 +68,7 @@ header span:hover {
   float: right;
 }
 .header-contenedor-Nombres i {
-  color: #a89574;
+  color: #2d2827;
   position: absolute;
   right: 21px;
   top: 18px;
@@ -72,6 +76,11 @@ header span:hover {
   cursor: pointer;
 }
 @media screen and (max-width: 930px) {
+  .ContenedorMiBlog-izquierda {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0;
+  }
   .header-contenedor-Nombres {
     display: block;
     text-align: center;
@@ -88,56 +97,207 @@ header span:hover {
     margin-left: 0;
     height: 0em;
     overflow: hidden;
-    transition: all ease 0.2s;
+    transition: all ease 0.1s;
     margin: 0 !important;
-    padding: 0.3em 0em !important;
+    padding: 0;
   }
   .contenedorDeOpcion-Header {
     float: none;
     display: block;
-    transition: all ease 0.2s;
-    margin-top: 0em;
+    transition: all ease 0.1s;
+    margin-top: 1em;
     margin: 0;
+    background: #2196f3;
   }
   header span:hover {
-    background: #a89574;
+    background: #ff5722;
     color: #fff;
   }
   .header-contenedor-Nombres i {
     display: inline;
   }
 }
+.header-contenedor-Nombres {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
 /************header-miBlog****************/
-/************redesSociales-miBlog****************/
-.Contenedor-RedesSociales-miBLog-circle {
-  border-radius: 50%;
-  margin: 0;
-  text-align: center;
-  padding: 0.5em;
+/************slider-miBlog****************/
+.pgwSlider {
+  width: 100%;
+  color: #fff;
+}
+.pgwSlider a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+.pgwSlider .ps-current {
+  float: left;
+  width: 74%;
+  overflow: hidden;
+  height: inherit;
+  position: relative;
+  font-size: 1rem;
+}
+.pgwSlider .ps-current ul {
+  width: 100%;
+}
+.pgwSlider .ps-current li {
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  display: none;
+}
+.pgwSlider .ps-current img {
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+  display: block;
+  transition: margin-top 250ms linear;
+}
+.pgwSlider .ps-current .ps-prev {
+  background: rgba(0,0,0,0.5);
+  filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000', endColorstr='#99000000')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000',  endColorstr='#99000000')";
+  border: 1px solid #777;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  padding: 20px 20px 20px 17px;
+  left: 0;
+  top: 45%;
   cursor: pointer;
 }
-.Contenedor-RedesSociales-miBLog-circle:hover {
-  transform: scale(1.1);
+.pgwSlider .ps-current .ps-next {
+  background: rgba(0,0,0,0.5);
+  filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000', endColorstr='#99000000')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000',  endColorstr='#99000000')";
+  border: 1px solid #777;
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  padding: 20px 17px 20px 20px;
+  right: 0;
+  top: 45%;
+  cursor: pointer;
 }
-.Contenedor-RedesSociales-miBLog-circle i {
-  font-size: 2em;
+.pgwSlider.listOnTheLeft .ps-current {
+  float: right;
 }
-.miBLog-blue {
-  border: 2px solid #39599f;
+.pgwSlider .ps-caption {
+  position: absolute;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0,0,0,0.7);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  left: 0;
+  bottom: 0;
+  display: none;
+  z-index: 3;
 }
-.miBLog-celeste {
-  border: 2px solid #45b0e3;
+.pgwSlider .ps-prevIcon {
+  border-color: transparent #fff transparent;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  display: block;
 }
-.miBLog-plomon {
-  border: 2px solid #626262;
+.pgwSlider .ps-nextIcon {
+  border-color: transparent #fff transparent;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  display: block;
 }
-.icono-face {
-  color: #39599f;
+.pgwSlider.narrow .ps-current {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
 }
-.icono-twiter {
-  color: #45b0e3;
+.pgwSlider.narrow .ps-current img {
+  width: 100%;
+  min-height: inherit;
 }
-.icono-linkedin {
-  color: #1b86bc;
+.pgwSlider.narrow .ps-current .ps-prev {
+  padding: 15px 15px 15px 12px;
+  top: 40%;
 }
-/************redesSociales-miBlog****************/
+.pgwSlider.narrow .ps-current .ps-next {
+  padding: 15px 12px 15px 15px;
+  top: 40%;
+}
+.pgwSlider.narrow .ps-caption {
+  padding: 8px;
+}
+ul.pgwSlider,
+.pgwSlider ul {
+  float: right;
+  width: 25%;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+ul.pgwSlider.listOnTheLeft,
+.pgwSlider.listOnTheLeft>ul {
+  float: left;
+}
+ul.pgwSlider>li,
+.pgwSlider>.ps-list>li {
+  height: 50px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.6;
+  filter: "alpha(opacity=60)";
+  font-size: 0.8rem;
+  transition: opacity 200ms linear;
+}
+ul.pgwSlider>li:last-child,
+.pgwSlider>ul>li:last-child {
+  margin-bottom: 0;
+}
+ul.pgwSlider>li span,
+.pgwSlider>.ps-list>li span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  background: rgba(0,0,0,0.7);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ul.pgwSlider>li:hover,
+.pgwSlider>ul>li:hover {
+  opacity: 1 !important;
+}
+ul.pgwSlider>li img,
+.pgwSlider>ul>li img {
+  width: 100%;
+  min-height: 100%;
+  display: block;
+  transition: margin-top 250ms linear;
+}
+ul.pgwSlider.wide>li,
+.pgwSlider.wide>ul>li {
+  width: 100% !important;
+}
+.pgwSlider.narrow .ps-current,
+ul.pgwSlider.narrow,
+.pgwSlider.narrow>ul {
+  width: 100%;
+}
+ul.pgwSlider.narrow>li,
+.pgwSlider.narrow>.ps-list>li {
+  float: left;
+  min-height: 50px;
+  max-height: 70px;
+  min-width: 15%;
+  font-size: 0.7rem;
+  margin-bottom: 0;
+}
+ul.pgwSlider.narrow.listOnTheLeft>li,
+.pgwSlider.narrow.listOnTheLeft>ul>li {
+  float: right;
+}
+/************slider-miBlog****************/

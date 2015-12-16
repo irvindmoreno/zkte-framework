@@ -53,7 +53,11 @@ header span:hover
 	top 18px
 	display none
 	cursor pointer
-@media screen and (max-width: 930px)
+@media screen and (max-width: 930px)	
+	.ContenedorMiBlog-izquierda
+		width 100%
+		margin-right 0
+		margin-top 0
 	.header-contenedor-Nombres
 		display block
 		text-align center
@@ -69,18 +73,19 @@ header span:hover
 		margin-left 0
 		height 0em
 		overflow hidden
-		transition all ease 0.2s
+		transition all ease 0.1s
 		margin 0 !important
-		padding 0.3em 0em !important
+		padding 0
 	.contenedorDeOpcion-Header
 		float none
 		display	block
-		transition all ease 0.2s
-		margin-top 0em
+		transition all ease 0.1s
+		margin-top 1em
 		margin 0
+		background backgroundMovilMenu
 	header span:hover
-		background colorApellido
-		color white
+		background backgroundHoverMovil
+		color colorHoverMovil
 	.header-contenedor-Nombres i
 		display inline
 /********header mi blog***************/

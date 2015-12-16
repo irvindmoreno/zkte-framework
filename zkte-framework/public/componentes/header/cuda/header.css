@@ -1,0 +1,126 @@
+.header-Cuda {
+  background: #87509c;
+  color: #fff;
+  padding: 3em 6em;
+  padding-bottom: 9em;
+}
+.header-Cuda-Nav {
+  position: relative;
+}
+.header-Cuda-Nav-Titulo {
+  font-weight: bold;
+}
+.header-Cuda-Nav-Titulo-Nombre {
+  font-size: 2em;
+  text-decoration: overline;
+  color: #eb7d4b;
+}
+.header-Cuda-Nav-Titulo-Apellido {
+  font-size: 2.5em;
+  font-style: italic;
+}
+.header-Cuda-Nav-Titulo i {
+  display: none;
+}
+.header-Cuda-Nav-Menu {
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.header-Cuda-Nav-Menu ul {
+  margin: 0;
+  padding: 0;
+}
+.header-Cuda-Nav-Menu ul li {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+.header-Cuda-Nav-Menu ul li a {
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+.header-Cuda-Nav-Menu ul li a:hover {
+  background: #643a79;
+}
+.header-Cuda-Nav-Titulo,
+.header-Cuda-Nav-Menu {
+  display: inline-block;
+  vertical-align: top;
+}
+.header-Cuda-Descripcion {
+  text-align: center;
+  padding: 4em 3em;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+.header-Cuda-Boton {
+  text-align: center;
+}
+.header-Cuda-Boton button {
+  background: #eb7d4b;
+  border: none;
+  padding: 1em 3em;
+  font-size: 1em;
+  outline: none;
+  border-radius: 0.2em;
+  transition: all ease 0.3s;
+}
+.header-Cuda-Boton button:hover {
+  background: #2b2a29;
+}
+@media screen and (max-width: 1030px) {
+  .header-Cuda-Descripcion {
+    display: none;
+  }
+  .header-Cuda-Nav {
+    text-align: center;
+  }
+  .header-Cuda {
+    padding-bottom: 3em;
+  }
+  .header-Cuda-Nav-Titulo i {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 17px;
+    cursor: pointer;
+  }
+  .header-Cuda-Nav-Menu {
+    display: none;
+    width: 100%;
+    position: initial;
+  }
+  .header-Cuda-Nav-Menu ul li {
+    display: block;
+  }
+  .header-Cuda-Nav-Menu ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .header-Cuda {
+    padding: 1em 0em;
+  }
+  .header-Cuda-Nav-Menu a {
+    padding: 0.5em 0em;
+  }
+  .header-Cuda-Nav-Titulo i {
+    right: 18px;
+    top: 17px;
+  }
+  .header-Cuda-Nav-Titulo-Nombre {
+    font-size: 1.5em;
+  }
+  .header-Cuda-Nav-Titulo-Apellido {
+    font-size: 2em;
+  }
+}

@@ -1,7 +1,11 @@
 class SliderMiBlog{
+	//documentacion:http://pgwjs.com/pgwslider/
 	constructor()
 	{
 		this.empezar()
+		$('.pgwSlider').pgwSlider({
+			displayControls:true
+		});
 	}
 	empezar()
 	{
@@ -759,5 +763,6 @@ class SliderMiBlog{
 		        return this;
 		    }
 		})(window.Zepto || window.jQuery);
+
 	}
 }

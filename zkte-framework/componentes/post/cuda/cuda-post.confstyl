@@ -1,0 +1,7 @@
+rutaImagen='../../../imagenes/'
+anchoContenedor=18em
+background=#17C2A4
+colorLetra=white
+colorTitulo=#192530
+tamanioPost= 23em
+fin

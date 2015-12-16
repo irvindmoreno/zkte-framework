@@ -1,0 +1,15 @@
+div(class="header-Cuda")
+	div(class="header-Cuda-Nav")
+		div(class="header-Cuda-Nav-Titulo")
+			span(class="header-Cuda-Nav-Titulo-Nombre")=nombre
+			span(class="header-Cuda-Nav-Titulo-Apellido")=apellido
+			i(class="fa fa-align-justify")
+		div(class="header-Cuda-Nav-Menu")
+			nav
+				ul
+					each opcion in menu
+						li
+							a(href="#")=opcion
+	div(class="header-Cuda-Descripcion")=descripcion
+	div(class="header-Cuda-Boton")
+		button CONTÁCTAME
