@@ -9,31 +9,39 @@ body
 	background #17c2a4
 	padding 3em 0em
 	text-align center
+
 /************Layout****************/
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/capacitacionfront/layout/layout.styl')
 /************Layout****************/
 /************header-cuda****************/
 rutaImagen='../../../imagenes/'
 background=#87509C
-colorLetra=white
+colorLetra=#504545
 backgroundMenu=#643A79
-colorNombre=#EB7D4B
-backgroundBoton=#EB7D4B
+colorNombre=#504545
+backgroundBoton=#17C2A4
 backgroundBotonHover=#2B2A29
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/header/cuda/header.styl')
+.header-Cuda-Boton button
+	color white
 .header-Cuda-Descripcion
 	font-weight normal
 	font-family 'Shadows Into Light', cursive
 .header-Cuda-Nav-Menu
 	font-family 'Open Sans Condensed', sans-serif;
+.header-Cuda-Nav-Menu ul li a:hover
+	background #17C2A4
+	color white
+.header-Cuda
+	    background-image: url(https://designcontest-com-designcontest.netdna-ssl.com/blog/wp-content/uploads/2013/07/flat-design-office-desk-02-preview-o.jpg);
+.certificaciones-titulo	    
+	color #594545
+	font-family 'Shadows Into Light', cursivesans-serif
+	font-size 3em
+@media screen and (max-width: 1030px)
+	.header-Cuda
+		background-size 100%;
 /************header-cuda****************/
-
-
-/************slider-miBlog****************/
-rutaImagen='../../../imagenes/'
-@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/slider/miBlog/slider.styl')
-/************slider-miBlog****************/
-
 
 /************titulo-service****************/
 background=#17C2A4
@@ -42,6 +50,8 @@ borde=4px solid #14A58C
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/service/titulo.styl')
 .Titulo-Service-Titulo
 	font-family 'Shadows Into Light', cursive
+.Titulo-Service
+	color white
 /************titulo-service****************/
 
 
@@ -51,11 +61,13 @@ anchoContenedor=18em
 background=#17C2A4
 colorLetra=white
 colorTitulo=#192530
-tamanioPost= 23em
+tamanioPost= inherit
 @import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/post/cuda/post.styl')
 .Contenedor-Post-Cuda
 	display inline-block
 	vertical-align top
+.Contenedor-Post-CudaSpan img
+	top 46%
 /************post-cuda****************/
 
 
