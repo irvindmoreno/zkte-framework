@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='capacitacionfront';
-var vista='inicio';
+var proyecto='dibujos';
+var vista='estante';
 
 /*librerias requeridas para correr gulp*/
 
