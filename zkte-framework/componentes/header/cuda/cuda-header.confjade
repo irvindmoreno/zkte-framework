@@ -1,0 +1,7 @@
+- rutaImagenes ='../../../imagenes'
+- imagen="daniel_moreno.jpg"
+- nombre="Daniel"
+- apellido="Moreno"
+- menu=['Tecnologías','Proyectos','Recomendaciones','Experiencia Laboral']
+- descripcion='"Bachiller en ciencias de la computacón con experiencia en tecnologías web tanto front como back end"'
+fin

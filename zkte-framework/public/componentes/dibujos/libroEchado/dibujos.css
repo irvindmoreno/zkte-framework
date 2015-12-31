@@ -1,0 +1,30 @@
+.Tapa-Lateral-Izquierda,
+.Paginas {
+  display: inline-block;
+  vertical-align: top;
+}
+.Tapa-Superior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 3px;
+}
+.Tapa-Lateral-Izquierda {
+  height: 1.5em;
+  width: 0.4em;
+  background: #f6b71c;
+}
+.Paginas {
+  width: 7.64em;
+  height: 1.5em;
+  background: #fff;
+  margin-left: -5px;
+}
+.Tapa-Inferior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+}

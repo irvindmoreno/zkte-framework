@@ -1,0 +1,26 @@
+.Contenedor-Post-Cuda {
+  width: 18em;
+  max-width: 18em;
+  min-width: 18em;
+  text-align: center;
+  background: #17c2a4;
+  color: #fff;
+  height: 23em;
+  border-radius: 1em;
+}
+.Contenedor-Post-Cuda-Img {
+  padding: 3em 0em;
+}
+.Contenedor-Post-Cuda-Img img {
+  width: 12em;
+}
+.Contenedor-Post-Cuda-Titulo {
+  font-weight: bold;
+  padding-bottom: 0em 1em 1em 1em;
+  font-size: 1em;
+  color: #192530;
+}
+.Contenedor-Post-Cuda-Descripcion {
+padding
+  color: #fff;
+}

@@ -1,0 +1,190 @@
+/**********Libros Echados***********/
+.Dibujo-Libro {
+  display: inline-block;
+  transform: rotate(0deg);
+}
+.Tapa-Lateral-Izquierda,
+.Paginas {
+  display: inline-block;
+  vertical-align: top;
+}
+.Tapa-Superior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 3px;
+}
+.Tapa-Lateral-Izquierda {
+  height: 1.5em;
+  width: 0.4em;
+  background: #f6b71c;
+}
+.Paginas {
+  width: 7.56em;
+  height: 1.5em;
+  background: #fff;
+  margin-left: -5px;
+}
+.Tapa-Inferior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+}
+.ContenedorDeLibrosEchados {
+  width: 11em;
+}
+.Libros-Echados-Amarillo {
+  margin-left: 1.2em;
+}
+.Libros-Echados-Azul {
+  margin-left: 0.6em;
+}
+.Libros-Echados-Azul .Dibujo-Libro {
+  transform: rotate(180deg);
+}
+.Libros-Echados-Azul .Parte-Intermedia,
+.Libros-Echados-Azul .Tapa-Lateral-Izquierda,
+.Libros-Echados-Azul .Paginas {
+  height: 0.9em;
+}
+.Libros-Echados-Azul .Tapa-Superior,
+.Libros-Echados-Azul .Tapa-Inferior,
+.Libros-Echados-Azul .Tapa-Lateral-Izquierda {
+  background: #437993;
+}
+.Libros-Echados-Verde .Tapa-Superior,
+.Libros-Echados-Verde .Tapa-Inferior,
+.Libros-Echados-Verde .Tapa-Lateral-Izquierda {
+  background: #21b699;
+}
+.Libros-Echados-Verde .Parte-Intermedia,
+.Libros-Echados-Verde .Tapa-Lateral-Izquierda,
+.Libros-Echados-Verde .Paginas {
+  height: 1.2em;
+}
+.Libros-Echados-Verde .Paginas {
+  width: 7.5em;
+}
+.Libros-Echados-Naranja {
+  margin-left: 0.8em;
+}
+.Libros-Echados-Naranja .Tapa-Superior,
+.Libros-Echados-Naranja .Tapa-Inferior,
+.Libros-Echados-Naranja .Tapa-Lateral-Izquierda {
+  background: #f76f3f;
+}
+.Libros-Echados-Naranja .Tapa-Superior,
+.Libros-Echados-Naranja .Tapa-Inferior {
+  width: 9.5em;
+}
+.Libros-Echados-Naranja .Paginas {
+  width: 9em;
+}
+/**********Libros Echados***********/
+/**********Camara**********/
+.Camara-Boton-Superior {
+  background: #d8eaee;
+  height: 0.3em;
+  width: 1.3em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.Camara-Boton-Inferior {
+  width: 1.3em;
+  height: 0.3em;
+  background: #962b23;
+}
+.Camara-Cuerpo-Superior {
+  height: 1.2em;
+  background: #d8eaee;
+  width: 5em;
+  position: relative;
+}
+.Camara-Cuerpo-Superior-Lente {
+  height: 0.4em;
+  width: 0.4em;
+  background: #962b23;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 0.5em;
+}
+.Camara-Cuerpo-Superior-Cuadro {
+  width: 1.2em;
+  height: 0.7em;
+  background: #962b23;
+  position: absolute;
+  right: 9px;
+  top: 0.2em;
+}
+.Camara-Cuerpo-Intermedio {
+  height: 2.3em;
+  width: 5em;
+  background: #ed5552;
+  position: relative;
+}
+.Lente-Circular {
+  height: 2.7em;
+  width: 2.8em;
+  background: #fffdf3;
+  border-radius: 50%;
+  position: absolute;
+  right: 16px;
+  top: -5px;
+}
+.Lente-Circular-INterior {
+  width: 1.8em;
+  height: 1.8em;
+  background: #eecaba;
+  border-radius: 50%;
+  border: 2px solid #962b23;
+  position: absolute;
+  top: 5px;
+  right: 6px;
+}
+.CirculoBlancoGrande {
+  height: 0.8em;
+  width: 0.8em;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+.CirculoBlancoChico {
+  height: 0.5em;
+  width: 0.5em;
+  background: #fff;
+  position: absolute;
+  top: 9px;
+  border-radius: 50%;
+  left: 13px;
+}
+.Camara-Cuerpo-Inferior {
+  height: 0.4em;
+  width: 5em;
+  background: #d8eaee;
+}
+/**********Camara**********/
+body {
+  background: #edbd8d;
+}
+.Dibujo-Camara,
+.ContenedorDeLibrosEchados {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.Barra-Soporte {
+  background: #fffeff;
+  height: 1em;
+  width: 27em;
+}
+.Dibujo-Camara {
+  margin-left: 4em;
+}
+.ContenedorDeLibrosEchados {
+  margin-left: 5em;
+}

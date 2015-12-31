@@ -1,0 +1,37 @@
+.Dibujo-reloj
+	border 5px solid white
+	background #e66a5e
+	height alturaReloj
+	width anchoReloj
+	border-radius 50%
+	text-align center
+.hora-punto
+	height alturaPunto
+	width anchoPunto
+	//margin 0 auto
+	background backgroundHoraPunta
+	border-radius 50%
+	margin-top 0.2em
+.hora-punto, .hora-manecilla-superior,.hora-manecilla-inferior
+	display inline-block
+	vertical align-top
+.hora-manecilla-superior
+	background backgroundHoraPunta
+	height alturaManesilla
+	width anchoManesilla
+	margin 0em 2em
+	margin-top 0.5em
+.hora-inferior
+	position relative
+.hora-manecilla-inferior
+	height alturaManesillaInferior
+	width anchoManesillaInferior
+	background backgroundHoraPunta
+	position absolute
+	top -10px
+	left 68px
+	transform: rotate(-44deg)
+.hora-inferior .hora-punto
+	position absolute
+	top 31px
+	left 54px

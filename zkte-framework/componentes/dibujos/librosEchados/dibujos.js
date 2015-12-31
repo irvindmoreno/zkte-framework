@@ -1,0 +1,6 @@
+class DibujosLibrosEchados{
+	constructor()
+	{
+
+	}
+}

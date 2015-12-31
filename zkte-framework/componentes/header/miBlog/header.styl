@@ -1,0 +1,91 @@
+
+/********header mi blog***************/
+header
+	background background
+	height tamanioHeader
+	width 100%
+	position relative
+	& div
+		display inline-block
+		widht 5em
+		margin-left 0.5em
+		margin-right 1em
+		margin-top 0.7em
+	& span
+		color colorLetra
+		transition all ease 0.2s
+		width 100%
+		padding 0.5em 0em
+	& img
+		 margin-right 0.4em
+	& a
+		display flex
+		display -ms-flexbox
+		justify-content center
+		justify-content -ms-center
+		align-items center
+		align-items -ms-center
+		cursor pointer
+		text-decoration none
+		colo colorLetra
+header span:hover
+	color colorApellido 
+.img-header
+	height 1.5em
+.header-contenedor-Nombres
+	position absolute
+	top 6px
+	left 9px
+.header-contenedor-Nombres-Nombre
+	color colorNombre
+	font-size 2.5em
+.header-contenedor-Nombres-Apellido
+	color colorApellido
+	font-size 1.5em
+.ContenedorMiBlog-izquierda
+	margin-top 1em
+	font-size 1em
+	float right
+.header-contenedor-Nombres i
+	color colorApellido
+	position absolute
+	right 21px
+	top 18px
+	display none
+	cursor pointer
+@media screen and (max-width: 930px)	
+	.ContenedorMiBlog-izquierda
+		width 100%
+		margin-right 0
+		margin-top 0
+	.header-contenedor-Nombres
+		display block
+		text-align center
+		width 100%
+		position inherit
+		left 0
+		margin 0
+	.header-contenedor-Menu
+		width 100%
+		float none
+		text-align center
+		margin-right 0
+		margin-left 0
+		height 0em
+		overflow hidden
+		transition all ease 0.1s
+		margin 0 !important
+		padding 0
+	.contenedorDeOpcion-Header
+		float none
+		display	block
+		transition all ease 0.1s
+		margin-top 1em
+		margin 0
+		background backgroundMovilMenu
+	header span:hover
+		background backgroundHoverMovil
+		color colorHoverMovil
+	.header-contenedor-Nombres i
+		display inline
+/********header mi blog***************/

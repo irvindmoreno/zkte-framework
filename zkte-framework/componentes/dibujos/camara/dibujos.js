@@ -1,0 +1,6 @@
+class DibujosCamara{
+	constructor()
+	{
+
+	}
+}

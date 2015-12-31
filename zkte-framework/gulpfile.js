@@ -1,6 +1,6 @@
 /******no tocar linea 1,2 y 3********/
-var proyecto='footer';
-var vista='asep';
+var proyecto='dibujos';
+var vista='estante';
 
 /*librerias requeridas para correr gulp*/
 

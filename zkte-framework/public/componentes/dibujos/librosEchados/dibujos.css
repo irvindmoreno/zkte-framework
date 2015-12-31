@@ -1,0 +1,92 @@
+.Dibujo-Libro {
+  display: inline-block;
+  transform: rotate(0deg);
+}
+.Tapa-Lateral-Izquierda,
+.Paginas {
+  display: inline-block;
+  vertical-align: top;
+}
+.Tapa-Superior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 3px;
+}
+.Tapa-Lateral-Izquierda {
+  height: 1.5em;
+  width: 0.4em;
+  background: #f6b71c;
+}
+.Paginas {
+  width: 7.56em;
+  height: 1.5em;
+  background: #fff;
+  margin-left: -5px;
+}
+.Tapa-Inferior {
+  background: #f6b71c;
+  width: 8em;
+  height: 0.3em;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+}
+.ContenedorDeLibrosEchados {
+  width: 11em;
+}
+/***Libro Amarillo****/
+.Libros-Echados-Amarillo {
+  margin-left: 1.2em;
+}
+/***Libro Amarillo****/
+/***Libro Azul****/
+.Libros-Echados-Azul {
+  margin-left: 0.6em;
+}
+.Libros-Echados-Azul .Dibujo-Libro {
+  transform: rotate(180deg);
+}
+.Libros-Echados-Azul .Parte-Intermedia,
+.Libros-Echados-Azul .Tapa-Lateral-Izquierda,
+.Libros-Echados-Azul .Paginas {
+  height: 0.9em;
+}
+.Libros-Echados-Azul .Tapa-Superior,
+.Libros-Echados-Azul .Tapa-Inferior,
+.Libros-Echados-Azul .Tapa-Lateral-Izquierda {
+  background: #437993;
+}
+/***Libro Azul****/
+/***Libro Verde****/
+.Libros-Echados-Verde .Tapa-Superior,
+.Libros-Echados-Verde .Tapa-Inferior,
+.Libros-Echados-Verde .Tapa-Lateral-Izquierda {
+  background: #21b699;
+}
+.Libros-Echados-Verde .Parte-Intermedia,
+.Libros-Echados-Verde .Tapa-Lateral-Izquierda,
+.Libros-Echados-Verde .Paginas {
+  height: 1.2em;
+}
+.Libros-Echados-Verde .Paginas {
+  width: 7.5em;
+}
+/***Libro Verde****/
+/***Libro Naranja****/
+.Libros-Echados-Naranja {
+  margin-left: 0.8em;
+}
+.Libros-Echados-Naranja .Tapa-Superior,
+.Libros-Echados-Naranja .Tapa-Inferior,
+.Libros-Echados-Naranja .Tapa-Lateral-Izquierda {
+  background: #f76f3f;
+}
+.Libros-Echados-Naranja .Tapa-Superior,
+.Libros-Echados-Naranja .Tapa-Inferior {
+  width: 9.5em;
+}
+.Libros-Echados-Naranja .Paginas {
+  width: 9em;
+}
+/***Libro Naranja****/

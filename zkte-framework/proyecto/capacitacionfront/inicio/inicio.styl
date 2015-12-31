@@ -1,0 +1,73 @@
+rutaComponentes='../../../componentes'
+rutaImagenes='../../../imagenes'
+body
+	font-family 'Open Sans Condensed', sans-serif;
+.ContenedorDeSlider
+	margin-top 1em
+	padding 0em 3em
+.Contenedor-Verde
+	background #17c2a4
+	padding 3em 0em
+	text-align center
+
+/************Layout****************/
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/proyecto/capacitacionfront/layout/layout.styl')
+/************Layout****************/
+/************header-cuda****************/
+rutaImagen='../../../imagenes/'
+background=#87509C
+colorLetra=#504545
+backgroundMenu=#643A79
+colorNombre=#504545
+backgroundBoton=#17C2A4
+backgroundBotonHover=#2B2A29
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/header/cuda/header.styl')
+.header-Cuda-Boton button
+	color white
+.header-Cuda-Descripcion
+	font-weight normal
+	font-family 'Shadows Into Light', cursive
+.header-Cuda-Nav-Menu
+	font-family 'Open Sans Condensed', sans-serif;
+.header-Cuda-Nav-Menu ul li a:hover
+	background #17C2A4
+	color white
+.header-Cuda
+	    background-image: url(https://designcontest-com-designcontest.netdna-ssl.com/blog/wp-content/uploads/2013/07/flat-design-office-desk-02-preview-o.jpg);
+.certificaciones-titulo	    
+	color #594545
+	font-family 'Shadows Into Light', cursivesans-serif
+	font-size 3em
+@media screen and (max-width: 1030px)
+	.header-Cuda
+		background-size 100%;
+/************header-cuda****************/
+
+/************titulo-service****************/
+background=#17C2A4
+color=white
+borde=4px solid #14A58C
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/titulo/service/titulo.styl')
+.Titulo-Service-Titulo
+	font-family 'Shadows Into Light', cursive
+.Titulo-Service
+	color white
+/************titulo-service****************/
+
+
+/************post-cuda****************/
+rutaImagen='../../../imagenes/'
+anchoContenedor=18em
+background=#17C2A4
+colorLetra=white
+colorTitulo=#192530
+tamanioPost= inherit
+@import('/home/daniel/Escritorio/zkte-framework/zkte-framework/componentes/post/cuda/post.styl')
+.Contenedor-Post-Cuda
+	display inline-block
+	vertical-align top
+.Contenedor-Post-CudaSpan img
+	top 46%
+/************post-cuda****************/
+
+

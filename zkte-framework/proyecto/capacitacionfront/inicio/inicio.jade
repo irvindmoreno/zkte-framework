@@ -1,0 +1,62 @@
+extends ../layout/layout.jade
+block head
+	link(href='./inicio.css' rel='stylesheet')
+	script(src='./inicio.js')
+block header
+	//header-cuda
+	- rutaImagenes ='../../../imagenes'
+	- imagen="daniel_moreno.jpg"
+	- nombre="Daniel"
+	- apellido="Moreno"
+	- menu=['Tecnologías','Proyectos','Recomendaciones','Experiencia Laboral']
+	- descripcion='"Bachiller en ciencias de la computacón con experiencia en tecnologías web tanto front end como back end"'
+	include ../../../componentes/header/cuda/header.jade
+	//header-cuda
+
+block navegacion	
+block contenido
+	div(class="Contenedor-Verde")
+		div(class="contenedorTituloService")
+			//titulo-service
+			- titulo="ESTAS SON MIS ÁREAS"
+			- descripcion="Mi interes en aprender nuevas tecnologías me han llevado a tener las siguientes especialidades"
+			include ../../../componentes/titulo/service/titulo.jade
+			//titulo-service
+		div(class="ContenedorDeCudas")
+			span(class="Contenedor-Post-Cuda Contenedor-Post-CudaSpan")
+				//post-cuda
+				- rutaImagenes ='../../../imagenes'
+				- imagen="informatico.png"
+				- titulo="BACHILLER EN CIENCIAS DE LA COMPUTACIÓN"
+				- descripcion="Grado de bachhiller en ciencias de la computación en la universidad Nacional De Trujillo 2010-2014"
+				include ../../../componentes/post/cuda/post.jade
+				//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="front-end.png"
+			- titulo="DESARROLLADOR FRONT END"
+			- descripcion="Manejo de tecnologías como: html5, css3, javascrpit, gulp, jade, stylus, maquetación responsive, bootstrap"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="backend.png"
+			- titulo="DESARROLLADOR BACK END"
+			- descripcion="Manejo de tecnologías como: php orientado a objetos, laravel, mysql"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+			//post-cuda
+			- rutaImagenes ='../../../imagenes'
+			- imagen="herramientas.png"
+			- titulo="TECNOLOGÍAS ADICIONALES"
+			- descripcion="Manejo de tecnologías como: Git, Github, bitbucket, fireworks"
+			include ../../../componentes/post/cuda/post.jade
+			//post-cuda
+
+	div(class="ContenedorDeSlider")
+		div(class="certificaciones-titulo") Tengo las siguientes certificaciones:
+		
+block footer
+
+
+	

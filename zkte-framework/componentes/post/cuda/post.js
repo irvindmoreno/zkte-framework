@@ -1,0 +1,6 @@
+class PostCuda{
+	constructor()
+	{
+
+	}
+}

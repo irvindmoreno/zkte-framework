@@ -1,0 +1,83 @@
+.Camara-Boton-Superior {
+  background: #d8eaee;
+  height: 0.3em;
+  width: 1.3em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.Camara-Boton-Inferior {
+  width: 1.3em;
+  height: 0.3em;
+  background: #962b23;
+}
+.Camara-Cuerpo-Superior {
+  height: 1.2em;
+  background: #d8eaee;
+  width: 5em;
+  position: relative;
+}
+.Camara-Cuerpo-Superior-Lente {
+  height: 0.4em;
+  width: 0.4em;
+  background: #962b23;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 0.5em;
+}
+.Camara-Cuerpo-Superior-Cuadro {
+  width: 1.2em;
+  height: 0.7em;
+  background: #962b23;
+  position: absolute;
+  right: 9px;
+  top: 0.2em;
+}
+.Camara-Cuerpo-Intermedio {
+  height: 2.3em;
+  width: 5em;
+  background: #ed5552;
+  position: relative;
+}
+.Lente-Circular {
+  height: 2.7em;
+  width: 2.8em;
+  background: #fffdf3;
+  border-radius: 50%;
+  position: absolute;
+  right: 16px;
+  top: -5px;
+}
+.Lente-Circular-INterior {
+  width: 1.8em;
+  height: 1.8em;
+  background: #eecaba;
+  border-radius: 50%;
+  border: 2px solid #962b23;
+  position: absolute;
+  top: 5px;
+  right: 6px;
+}
+.CirculoBlancoGrande {
+  height: 0.8em;
+  width: 0.8em;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+.CirculoBlancoChico {
+  height: 0.5em;
+  width: 0.5em;
+  background: #fff;
+  position: absolute;
+  top: 9px;
+  border-radius: 50%;
+  left: 13px;
+}
+.Camara-Cuerpo-Inferior {
+  height: 0.4em;
+  width: 5em;
+  background: #d8eaee;
+}

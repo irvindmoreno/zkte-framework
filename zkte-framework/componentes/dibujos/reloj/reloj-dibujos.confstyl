@@ -1,0 +1,12 @@
+background=#e66a5e
+border=8px solid white
+alturaReloj=6.5em
+anchoReloj=7em
+alturaPunto=0.4em
+anchoPunto=0.5em
+backgroundHoraPunta=white
+alturaManesilla=2em
+anchoManesilla=0.2em
+alturaManesillaInferior=2.5em
+anchoManesillaInferior=0.25em
+fin

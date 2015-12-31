@@ -1,0 +1,255 @@
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.ContenedorDeSlider {
+  margin-top: 1em;
+  padding: 0em 3em;
+}
+.Contenedor-Verde {
+  background: #17c2a4;
+  padding: 3em 0em;
+  text-align: center;
+}
+/************Layout****************/
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Arial;
+}
+/************Layout****************/
+/************header-cuda****************/
+.header-Cuda {
+  background: #87509c;
+  color: #504545;
+  padding: 3em 6em;
+  padding-bottom: 9em;
+}
+.header-Cuda-Nav {
+  position: relative;
+}
+.header-Cuda-Nav-Titulo {
+  font-weight: bold;
+}
+.header-Cuda-Nav-Titulo-Nombre {
+  font-size: 2em;
+  text-decoration: overline;
+  color: #504545;
+}
+.header-Cuda-Nav-Titulo-Apellido {
+  font-size: 2.5em;
+  font-style: italic;
+}
+.header-Cuda-Nav-Titulo i {
+  display: none;
+}
+.header-Cuda-Nav-Menu {
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.header-Cuda-Nav-Menu ul {
+  margin: 0;
+  padding: 0;
+}
+.header-Cuda-Nav-Menu ul li {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+.header-Cuda-Nav-Menu ul li a {
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  color: #504545;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+.header-Cuda-Nav-Menu ul li a:hover {
+  background: #643a79;
+  font-weight: bold;
+}
+.header-Cuda-Nav-Titulo,
+.header-Cuda-Nav-Menu {
+  display: inline-block;
+  vertical-align: top;
+}
+.header-Cuda-Descripcion {
+  text-align: center;
+  padding: 3em 3em;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+.header-Cuda-Boton {
+  text-align: center;
+}
+.header-Cuda-Boton button {
+  background: #17c2a4;
+  border: none;
+  padding: 1em 3em;
+  font-size: 1em;
+  outline: none;
+  border-radius: 0.2em;
+  transition: all ease 0.3s;
+}
+.header-Cuda-Boton button:hover {
+  background: #2b2a29;
+}
+@media screen and (max-width: 1030px) {
+  .header-Cuda-Boton {
+    padding-top: 1em;
+  }
+  .header-Cuda-Descripcion {
+    display: none;
+  }
+  .header-Cuda-Nav {
+    text-align: center;
+  }
+  .header-Cuda {
+    padding-bottom: 3em;
+  }
+  .header-Cuda-Nav-Titulo i {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 17px;
+    cursor: pointer;
+  }
+  .header-Cuda-Nav-Menu {
+    display: none;
+    width: 100%;
+    position: initial;
+  }
+  .header-Cuda-Nav-Menu ul li {
+    display: block;
+  }
+  .header-Cuda-Nav-Menu ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .header-Cuda {
+    padding: 1em 0em;
+  }
+  .header-Cuda-Nav-Menu a {
+    padding: 0.5em 0em;
+  }
+  .header-Cuda-Nav-Titulo i {
+    right: 18px;
+    top: 17px;
+  }
+  .header-Cuda-Nav-Titulo-Nombre {
+    font-size: 1.5em;
+  }
+  .header-Cuda-Nav-Titulo-Apellido {
+    font-size: 2em;
+  }
+}
+.header-Cuda-Boton button {
+  color: #fff;
+}
+.header-Cuda-Descripcion {
+  font-weight: normal;
+  font-family: 'Shadows Into Light', cursive;
+}
+.header-Cuda-Nav-Menu {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.header-Cuda-Nav-Menu ul li a:hover {
+  background: #17c2a4;
+  color: #fff;
+}
+.header-Cuda {
+  background-image: url("https://designcontest-com-designcontest.netdna-ssl.com/blog/wp-content/uploads/2013/07/flat-design-office-desk-02-preview-o.jpg");
+}
+.certificaciones-titulo {
+  color: #594545;
+  font-family: 'Shadows Into Light', cursivesans-serif;
+  font-size: 3em;
+}
+@media screen and (max-width: 1030px) {
+  .header-Cuda {
+    background-size: 100%;
+  }
+}
+/************header-cuda****************/
+/************titulo-service****************/
+.Titulo-Service {
+  text-align: center;
+  padding: 1em 0em;
+  background: #17c2a4;
+  color: #504545;
+}
+.Titulo-Service-Titulo {
+  font-size: 3em;
+}
+.Titulo-Service-Borde {
+  border: 4px solid #14a58c;
+  margin: 0 auto;
+  width: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.Titulo-Service-Descripcion {
+  font-size: 1.2em;
+  width: 30%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 900px) {
+  .Titulo-Service-Titulo {
+    font-size: 2em;
+  }
+  .Titulo-Service-Descripcion {
+    width: 66%;
+  }
+}
+.Titulo-Service-Titulo {
+  font-family: 'Shadows Into Light', cursive;
+}
+.Titulo-Service {
+  color: #fff;
+}
+/************titulo-service****************/
+/************post-cuda****************/
+.Contenedor-Post-Cuda {
+  width: 18em;
+  max-width: 18em;
+  min-width: 18em;
+  text-align: center;
+  background: #17c2a4;
+  color: #fff;
+  height: inherit;
+  border-radius: 1em;
+}
+.Contenedor-Post-Cuda-Img {
+  position: relative;
+  height: 19em;
+}
+.Contenedor-Post-Cuda-Img img {
+  position: absolute;
+  top: 31%;
+  left: 45%;
+  width: 69%;
+  margin: -15% 0 0 -25%;
+}
+.Contenedor-Post-Cuda-Titulo {
+  font-weight: bold;
+  padding: 0em 2em;
+  font-size: 1em;
+  color: #192530;
+}
+.Contenedor-Post-Cuda-Descripcion {
+  padding: 1em 3em;
+  color: #fff;
+}
+.Contenedor-Post-Cuda {
+  display: inline-block;
+  vertical-align: top;
+}
+.Contenedor-Post-CudaSpan img {
+  top: 46%;
+}
+/************post-cuda****************/
