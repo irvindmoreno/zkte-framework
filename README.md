@@ -14,3 +14,7 @@
 
 descargar del slack de samuel el node modules porque el package json esta fallado
 
+Conocimientos de Yess
+----------------------
+*PHP POO
+*Composer
