@@ -1,0 +1,30 @@
+extends ../layout/layout.jade
+block head
+	link(href='./inicio.css' rel='stylesheet')
+	script(src='./inicio.js')
+block header
+	//header-asep
+	- rutaImagenes ='../../../imagenes'
+	- pestaniaUno='Login'
+	- iconoUno='login_icon.png'
+	- pestaniaDos='Hazte Socio'
+	- iconoDos='socio_icon.png'
+	include ../../../componentes/header/asep/header.jade
+	//header-asep
+block navegacion
+		//navegacion-asep
+		- rutaImagenes ='../../../imagenes'
+		- pestaniaUno='Nosotros'
+		- pestaniaDos='Directorio'
+		- pestaniaTres='Actividades'
+		- pestaniaCuatro='Noticias'
+		- pestaniaCinco='Beneficios'
+		- pestaniaSeis='Pregúntanos'
+		include ../../../componentes/navegacion/asep/navegacion.jade
+		//navegacion-asep
+block contenido	
+block footer
+
+	
+
+
